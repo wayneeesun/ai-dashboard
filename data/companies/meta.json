@@ -1,0 +1,82 @@
+{
+  "id": "meta",
+  "name": "Meta Platforms",
+  "ticker": "META",
+  "exchange": "NASDAQ",
+  "sector": "us-internet",
+  "logo_url": "https://logo.clearbit.com/meta.com",
+  "color": "#0082FB",
+
+  "profile": {
+    "summary": "全球最大社交媒体公司，旗下拥有 Facebook、Instagram、WhatsApp、Messenger 四大平台，月活用户合计超 32 亿。核心商业模式是精准数字广告，AI 驱动的推荐算法是广告效率的核心护城河。Reality Labs 部门长期亏损，但 Meta 将其视为未来计算平台的战略布局。",
+    "business_segments": [
+      {
+        "name": "Family of Apps (FoA)",
+        "description": "Facebook、Instagram、WhatsApp、Messenger 广告业务",
+        "revenue_pct": 98,
+        "note": "核心盈利来源，广告 ARPU 持续提升"
+      },
+      {
+        "name": "Reality Labs (RL)",
+        "description": "Quest VR 头显、Ray-Ban 智能眼镜、Metaverse 平台",
+        "revenue_pct": 2,
+        "note": "长期战略投入，2025 年亏损约 $17B"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "~$1.5T",
+      "ltm_revenue": "$164.5B",
+      "ltm_revenue_growth": "22%",
+      "ltm_operating_income": "$69.4B",
+      "ltm_operating_margin": "42%",
+      "ltm_capex": "$38.9B",
+      "capex_growth_yoy": "+66%",
+      "as_of": "Q4 2025"
+    },
+    "key_debates": [
+      "CapEx 激增（2026 指引 $60-65B）能否带来广告效率的对应回报",
+      "Reality Labs 亏损何时收窄，智能眼镜是否能成为下一代计算入口",
+      "Reels 货币化成熟度 vs. Stories 的历史路径",
+      "中国广告主（Temu、Shein）贡献比例及地缘风险敞口"
+    ]
+  },
+
+  "earnings": [
+    {
+      "quarter": "Q4 2025",
+      "fiscal_year": 2025,
+      "report_date": "2026-01-29",
+      "revenue": 48385,
+      "revenue_unit": "M USD",
+      "revenue_growth_yoy": "21%",
+      "operating_income": 23374,
+      "operating_margin": "48%",
+      "eps_diluted": 8.02,
+      "eps_vs_consensus": "+5.1%",
+      "revenue_vs_consensus": "+2.3%",
+      "dau_fam": "3.35B",
+      "capex": 14079,
+      "highlights": [
+        "广告收入 $48.2B，同比 +21%，AI 推荐算法驱动 Feed 和 Reels 参与度持续提升",
+        "2026 年 CapEx 指引 $60-65B（vs 此前预期 $50-55B），超出市场预期约 $10B",
+        "2026 年营业费用指引 $114-119B",
+        "Reality Labs Q4 亏损 $4.97B，全年亏损 $17.7B",
+        "回购 $9.3B，宣布首次现金股息 $0.525/股"
+      ],
+      "review_summary": "Q4 超预期，广告基本面强劲，但 CapEx 指引大幅上调压制短期情绪。核心逻辑不变：AI 基础设施投入正在转化为广告效率提升，ARPU 提升空间仍大。CapEx 争议本质是时间问题而非方向问题。",
+      "review_doc_url": "",
+      "analyst_note": "首次建档。市场焦点在 CapEx 回报时间表，下季度需关注广告 ARPU 环比趋势及 Llama 商业化进展。"
+    }
+  ],
+
+  "analyst_notes": {
+    "thesis": "AI 驱动广告效率提升是核心增长引擎，平台网络效应护城河深，CapEx 超支是短期阵痛而非结构性问题。长期看好智能眼镜作为下一代交互入口的可能性。",
+    "coverage_start": "2026-03-26",
+    "evolution_log": [
+      {
+        "date": "2026-03-26",
+        "note": "初始建档。数据基于 Q4 2025 财报及公开信息整理。核心关注点：CapEx 回报、RL 亏损轨迹、中国广告主敞口。"
+      }
+    ]
+  }
+}

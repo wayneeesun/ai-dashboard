@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equity Research Dashboard</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --bg-2: #181c27;
+      --bg-3: #1e2335;
+      --border: #2a2f45;
+      --text: #e8eaf0;
+      --text-muted: #8890a8;
+      --text-dim: #555e7a;
+      --accent: #4f8ef7;
+      --accent-soft: rgba(79, 142, 247, 0.12);
+      --green: #34d399;
+      --red: #f87171;
+      --yellow: #fbbf24;
+      --sidebar-w: 220px;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transition: 0.18s ease;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Helvetica Neue", sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: var(--sidebar-w);
+      min-width: var(--sidebar-w);
+      background: var(--bg-2);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      z-index: 10;
+    }
+
+    .sidebar-header {
+      padding: 24px 20px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-header h1 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .sidebar-header p {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .sidebar-section {
+      padding: 16px 12px 8px;
+    }
+
+    .sidebar-section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 0 8px;
+      margin-bottom: 6px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    .nav-item:hover {
+      background: var(--bg-3);
+      color: var(--text);
+    }
+
+    .nav-item.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .nav-item .icon { font-size: 15px; flex-shrink: 0; }
+    .nav-item .count {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-dim);
+      background: var(--bg-3);
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+    .nav-item.active .count { background: var(--accent-soft); color: var(--accent); }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    /* ── Main ── */
+    #main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Top Bar ── */
+    #topbar {
+      padding: 18px 28px 0;
+      flex-shrink: 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    #sector-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    #sector-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ── Card Grid ── */
+    #card-grid {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 28px 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      align-content: start;
+    }
+
+    .company-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      cursor: pointer;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .company-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--card-color, var(--accent));
+      opacity: 0.7;
+    }
+
+    .company-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #fff;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+
+    .card-logo-fallback {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--card-color, var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .card-title h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .card-title .ticker {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .card-summary {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .card-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .metric {
+      background: var(--bg-3);
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+
+    .metric-value {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .metric-value.green { color: var(--green); }
+    .metric-value.red { color: var(--red); }
+
+    .card-footer {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .earnings-badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .no-earnings-badge {
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+
+    /* ── Detail Panel (Drawer) ── */
+    #detail-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    #detail-overlay.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #detail-panel {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: min(820px, 90vw);
+      background: var(--bg-2);
+      border-left: 1px solid var(--border);
+      z-index: 101;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #detail-panel.visible {
+      transform: translateX(0);
+    }
+
+    .detail-header {
+      position: sticky;
+      top: 0;
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 10;
+    }
+
+    .detail-header-logo {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #fff;
+      padding: 4px;
+    }
+
+    .detail-header-logo-fallback {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .detail-header-info h2 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .detail-header-info .ticker-tag {
+      display: inline-block;
+      background: var(--bg-3);
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .detail-close {
+      margin-left: auto;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+      flex-shrink: 0;
+    }
+
+    .detail-close:hover { background: var(--border); color: var(--text); }
+
+    .detail-body { padding: 28px; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+
+    .tab {
+      padding: 8px 16px;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: all var(--transition);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Sections */
+    .section { margin-bottom: 28px; }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .summary-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Segments */
+    .segments { display: flex; flex-direction: column; gap: 10px; }
+
+    .segment {
+      background: var(--bg-3);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .segment-bar-wrap { flex-shrink: 0; width: 44px; text-align: center; }
+    .segment-pct { font-size: 18px; font-weight: 800; color: var(--accent); }
+    .segment-pct-label { font-size: 10px; color: var(--text-dim); }
+
+    .segment-info h4 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .segment-info p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    .segment-note {
+      margin-top: 4px;
+      font-size: 11px;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .metric-card {
+      background: var(--bg-3);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+
+    .metric-card .label { font-size: 11px; color: var(--text-dim); margin-bottom: 6px; }
+    .metric-card .value { font-size: 20px; font-weight: 800; color: var(--text); }
+    .metric-card .sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Key Debates */
+    .debates { display: flex; flex-direction: column; gap: 8px; }
+
+    .debate-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 14px;
+      background: var(--bg-3);
+      border-radius: var(--radius-sm);
+      border-left: 2px solid var(--yellow);
+    }
+
+    .debate-item p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+    /* Earnings */
+    .earnings-list { display: flex; flex-direction: column; gap: 16px; }
+
+    .earnings-card {
+      background: var(--bg-3);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .earnings-card-header {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .earnings-quarter {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .earnings-date {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .beat-badge {
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .beat-badge.beat { background: rgba(52,211,153,0.15); color: var(--green); }
+    .beat-badge.miss { background: rgba(248,113,113,0.15); color: var(--red); }
+
+    .earnings-card-body { padding: 16px 18px; }
+
+    .earnings-nums {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .earnings-num .label { font-size: 10px; color: var(--text-dim); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .earnings-num .value { font-size: 16px; font-weight: 700; color: var(--text); }
+    .earnings-num .delta { font-size: 11px; color: var(--green); margin-top: 2px; }
+    .earnings-num .delta.red { color: var(--red); }
+
+    .earnings-highlights { margin-bottom: 14px; }
+    .earnings-highlights h4 { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+
+    .highlight-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .highlight-list li {
+      padding: 8px 12px;
+      background: var(--bg-2);
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-left: 2px solid var(--accent);
+      line-height: 1.5;
+    }
+
+    .review-summary-box {
+      background: rgba(79,142,247,0.07);
+      border: 1px solid rgba(79,142,247,0.2);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+
+    .review-summary-box .review-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .review-summary-box p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .empty-earnings {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-dim);
+    }
+
+    .empty-earnings .icon { font-size: 36px; margin-bottom: 12px; }
+    .empty-earnings p { font-size: 13px; }
+
+    /* Analyst Notes */
+    .thesis-box {
+      background: var(--bg-3);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .evolution-log { display: flex; flex-direction: column; gap: 10px; }
+
+    .log-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .log-date {
+      font-size: 11px;
+      color: var(--text-dim);
+      white-space: nowrap;
+      padding-top: 2px;
+      min-width: 80px;
+    }
+
+    .log-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      padding: 8px 12px;
+      background: var(--bg-3);
+      border-radius: var(--radius-sm);
+      flex: 1;
+    }
+
+    /* Topic Page */
+    .topic-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 60vh;
+      color: var(--text-dim);
+      gap: 16px;
+    }
+
+    .topic-placeholder .big-icon { font-size: 56px; }
+    .topic-placeholder h2 { font-size: 20px; color: var(--text-muted); }
+    .topic-placeholder p { font-size: 13px; max-width: 360px; text-align: center; line-height: 1.6; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+    /* Loading */
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Sidebar ── -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h1>Equity Research</h1>
+    <p>白野 · 二级看板</p>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Coverage</div>
+    <div id="nav-list"><!-- injected by JS --></div>
+  </div>
+  <div class="sidebar-footer">
+    Updated: <span id="last-updated">—</span>
+  </div>
+</nav>
+
+<!-- ── Main ── -->
+<main id="main">
+  <div id="topbar">
+    <div class="topbar-inner">
+      <h2 id="sector-title">选择一个板块</h2>
+      <span id="sector-subtitle"></span>
+    </div>
+  </div>
+  <div id="card-grid">
+    <div class="loading">← 从左侧选择板块开始</div>
+  </div>
+</main>
+
+<!-- ── Detail Overlay + Panel ── -->
+<div id="detail-overlay"></div>
+<aside id="detail-panel">
+  <div class="detail-header" id="detail-header"><!-- injected --></div>
+  <div class="detail-body" id="detail-body"><!-- injected --></div>
+</aside>
+
+<script>
+// ── State ──
+const state = { sectors: [], companies: {}, activeSector: null };
+
+// ── Fetch helpers ──
+async function fetchJSON(path) {
+  const r = await fetch(path);
+  if (!r.ok) throw new Error(`Failed: ${path}`);
+  return r.json();
+}
+
+async function loadCompany(id) {
+  if (state.companies[id]) return state.companies[id];
+  try {
+    const data = await fetchJSON(`data/companies/${id}.json`);
+    state.companies[id] = data;
+    return data;
+  } catch { return null; }
+}
+
+// ── Init ──
+async function init() {
+  const data = await fetchJSON('data/sectors.json');
+  state.sectors = data.sectors;
+  renderSidebar();
+  // Auto-select first sector
+  if (state.sectors.length) selectSector(state.sectors[0].id);
+}
+
+// ── Sidebar ──
+function renderSidebar() {
+  const list = document.getElementById('nav-list');
+  list.innerHTML = state.sectors.map(s => {
+    const count = s.companies ? s.companies.length : '→';
+    return `
+      <div class="nav-item" data-id="${s.id}" onclick="selectSector('${s.id}')">
+        <span class="icon">${s.icon}</span>
+        <span>${s.name}</span>
+        <span class="count">${count}</span>
+      </div>`;
+  }).join('');
+}
+
+// ── Select Sector ──
+async function selectSector(id) {
+  state.activeSector = id;
+
+  // Update nav active state
+  document.querySelectorAll('.nav-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.id === id);
+  });
+
+  const sector = state.sectors.find(s => s.id === id);
+  if (!sector) return;
+
+  document.getElementById('sector-title').textContent = `${sector.icon} ${sector.name}`;
+
+  const grid = document.getElementById('card-grid');
+
+  if (sector.type === 'topic') {
+    document.getElementById('sector-subtitle').textContent = '';
+    grid.style.display = 'flex';
+    grid.style.flexDirection = 'column';
+    grid.innerHTML = renderTopicPage(sector);
+    return;
+  }
+
+  // Reset grid styles
+  grid.style.display = '';
+  grid.style.flexDirection = '';
+  grid.innerHTML = '<div class="loading">加载中…</div>';
+  document.getElementById('sector-subtitle').textContent = `${sector.companies.length} 家公司`;
+
+  const companies = await Promise.all(sector.companies.map(loadCompany));
+  const valid = companies.filter(Boolean);
+
+  grid.innerHTML = valid.map(renderCard).join('');
+}
+
+// ── Card ──
+function renderCard(c) {
+  const latestEarnings = c.earnings && c.earnings.length ? c.earnings[0] : null;
+  const m = c.profile.key_metrics;
+
+  const logoHtml = c.logo_url
+    ? `<img class="card-logo" src="${c.logo_url}" alt="${c.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+    + `<div class="card-logo-fallback" style="display:none;background:${c.color || '#4f8ef7'}">${c.ticker[0]}</div>`
+    : `<div class="card-logo-fallback" style="background:${c.color || '#4f8ef7'}">${c.ticker[0]}</div>`;
+
+  const earningsBadge = latestEarnings
+    ? `<span class="earnings-badge">${latestEarnings.quarter}</span>`
+    : `<span class="no-earnings-badge">暂无 Earnings</span>`;
+
+  return `
+    <div class="company-card" style="--card-color:${c.color || '#4f8ef7'}" onclick="openDetail('${c.id}')">
+      <div class="card-header">
+        <div style="position:relative">
+          ${logoHtml}
+        </div>
+        <div class="card-title">
+          <h3>${c.name}</h3>
+          <div class="ticker">${c.ticker} · ${c.exchange}</div>
+        </div>
+      </div>
+      <p class="card-summary">${c.profile.summary}</p>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-label">市值</div>
+          <div class="metric-value">${m.market_cap || '—'}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">营收增速</div>
+          <div class="metric-value green">${m.ltm_revenue_growth || '—'}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">营业利润率</div>
+          <div class="metric-value">${m.ltm_operating_margin || '—'}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">CapEx YoY</div>
+          <div class="metric-value ${m.capex_growth_yoy ? 'red' : ''}">${m.capex_growth_yoy || '—'}</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>截至 ${m.as_of || '—'}</span>
+        ${earningsBadge}
+      </div>
+    </div>`;
+}
+
+// ── Topic Page ──
+function renderTopicPage(sector) {
+  return `
+    <div class="topic-placeholder">
+      <div class="big-icon">${sector.icon}</div>
+      <h2>${sector.name}</h2>
+      <p>数据中心建设地图、CapEx 追踪、最新新闻动态。<br/>即将上线，敬请期待。</p>
+    </div>`;
+}
+
+// ── Detail Panel ──
+async function openDetail(id) {
+  const c = await loadCompany(id);
+  if (!c) return;
+
+  // Header
+  const logoHtml = c.logo_url
+    ? `<img class="detail-header-logo" src="${c.logo_url}" alt="${c.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+    + `<div class="detail-header-logo-fallback" style="display:none;background:${c.color || '#4f8ef7'}">${c.ticker[0]}</div>`
+    : `<div class="detail-header-logo-fallback" style="background:${c.color || '#4f8ef7'}">${c.ticker[0]}</div>`;
+
+  document.getElementById('detail-header').innerHTML = `
+    ${logoHtml}
+    <div class="detail-header-info">
+      <h2>${c.name}</h2>
+      <span class="ticker-tag">${c.ticker} · ${c.exchange}</span>
+    </div>
+    <button class="detail-close" onclick="closeDetail()">✕</button>
+  `;
+
+  // Body
+  document.getElementById('detail-body').innerHTML = `
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab(this,'tab-overview')">公司概况</div>
+      <div class="tab" onclick="switchTab(this,'tab-earnings')">Earnings (${c.earnings.length})</div>
+      <div class="tab" onclick="switchTab(this,'tab-notes')">分析师笔记</div>
+    </div>
+
+    <!-- Overview Tab -->
+    <div id="tab-overview" class="tab-content active">
+      <div class="section">
+        <div class="section-title">公司简介</div>
+        <p class="summary-text">${c.profile.summary}</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">主营业务构成</div>
+        <div class="segments">
+          ${c.profile.business_segments.map(seg => `
+            <div class="segment">
+              <div class="segment-bar-wrap">
+                <div class="segment-pct">${seg.revenue_pct}%</div>
+                <div class="segment-pct-label">营收</div>
+              </div>
+              <div class="segment-info">
+                <h4>${seg.name}</h4>
+                <p>${seg.description}</p>
+                ${seg.note ? `<p class="segment-note">${seg.note}</p>` : ''}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">关键财务指标</div>
+        <div class="metrics-grid">
+          ${renderMetricCards(c.profile.key_metrics)}
+        </div>
+      </div>
+
+      ${c.profile.key_debates ? `
+      <div class="section">
+        <div class="section-title">市场核心争议</div>
+        <div class="debates">
+          ${c.profile.key_debates.map(d => `
+            <div class="debate-item">
+              <p>${d}</p>
+            </div>`).join('')}
+        </div>
+      </div>` : ''}
+    </div>
+
+    <!-- Earnings Tab -->
+    <div id="tab-earnings" class="tab-content">
+      ${c.earnings.length ? `
+        <div class="earnings-list">
+          ${c.earnings.map(renderEarningsCard).join('')}
+        </div>` : `
+        <div class="empty-earnings">
+          <div class="icon">📭</div>
+          <p>暂无 Earnings 数据<br/>财报季后将自动更新</p>
+        </div>`}
+    </div>
+
+    <!-- Notes Tab -->
+    <div id="tab-notes" class="tab-content">
+      <div class="section">
+        <div class="section-title">投资主题</div>
+        <div class="thesis-box">${c.analyst_notes.thesis}</div>
+      </div>
+      <div class="section">
+        <div class="section-title">认知演变日志</div>
+        <div class="evolution-log">
+          ${c.analyst_notes.evolution_log.map(log => `
+            <div class="log-item">
+              <div class="log-date">${log.date}</div>
+              <div class="log-note">${log.note}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('detail-overlay').classList.add('visible');
+  document.getElementById('detail-panel').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function renderMetricCards(m) {
+  const items = [
+    { label: '市值', value: m.market_cap },
+    { label: 'LTM 营收', value: m.ltm_revenue },
+    { label: '营收增速', value: m.ltm_revenue_growth },
+    { label: '营业利润率', value: m.ltm_operating_margin },
+    { label: 'LTM CapEx', value: m.ltm_capex },
+    { label: 'CapEx YoY', value: m.capex_growth_yoy },
+  ].filter(i => i.value);
+
+  return items.map(i => `
+    <div class="metric-card">
+      <div class="label">${i.label}</div>
+      <div class="value">${i.value}</div>
+      <div class="sub">截至 ${m.as_of || '—'}</div>
+    </div>`).join('');
+}
+
+function renderEarningsCard(e) {
+  const isBeat = e.revenue_vs_consensus && e.revenue_vs_consensus.startsWith('+');
+  return `
+    <div class="earnings-card">
+      <div class="earnings-card-header">
+        <div>
+          <div class="earnings-quarter">${e.quarter}</div>
+          <div class="earnings-date">发布于 ${e.report_date}</div>
+        </div>
+        ${e.revenue_vs_consensus ? `
+          <span class="beat-badge ${isBeat ? 'beat' : 'miss'}">
+            营收 ${e.revenue_vs_consensus} vs. Consensus
+          </span>` : ''}
+      </div>
+      <div class="earnings-card-body">
+        <div class="earnings-nums">
+          <div class="earnings-num">
+            <div class="label">营收</div>
+            <div class="value">$${(e.revenue/1000).toFixed(1)}B</div>
+            <div class="delta">${e.revenue_growth_yoy} YoY</div>
+          </div>
+          <div class="earnings-num">
+            <div class="label">营业利润率</div>
+            <div class="value">${e.operating_margin || '—'}</div>
+          </div>
+          <div class="earnings-num">
+            <div class="label">EPS</div>
+            <div class="value">$${e.eps_diluted}</div>
+            ${e.eps_vs_consensus ? `<div class="delta">${e.eps_vs_consensus} vs. Est</div>` : ''}
+          </div>
+          <div class="earnings-num">
+            <div class="label">CapEx</div>
+            <div class="value">$${(e.capex/1000).toFixed(1)}B</div>
+          </div>
+        </div>
+        ${e.highlights && e.highlights.length ? `
+          <div class="earnings-highlights">
+            <h4>关键要点</h4>
+            <ul class="highlight-list">
+              ${e.highlights.map(h => `<li>${h}</li>`).join('')}
+            </ul>
+          </div>` : ''}
+        ${e.review_summary ? `
+          <div class="review-summary-box">
+            <div class="review-label">📊 Review 摘要</div>
+            <p>${e.review_summary}</p>
+          </div>` : ''}
+      </div>
+    </div>`;
+}
+
+function closeDetail() {
+  document.getElementById('detail-overlay').classList.remove('visible');
+  document.getElementById('detail-panel').classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+function switchTab(el, tabId) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+// Close on overlay click
+document.getElementById('detail-overlay').addEventListener('click', closeDetail);
+
+// Update timestamp
+document.getElementById('last-updated').textContent = new Date().toLocaleDateString('zh-CN');
+
+// ── Boot ──
+init().catch(console.error);
+</script>
+</body>
+</html>

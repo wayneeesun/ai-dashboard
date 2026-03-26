@@ -1,0 +1,33 @@
+{
+  "id": "pinterest",
+  "name": "Pinterest",
+  "ticker": "PINS",
+  "exchange": "NYSE",
+  "sector": "us-internet",
+  "logo_url": "https://logo.clearbit.com/pinterest.com",
+  "color": "#E60023",
+  "profile": {
+    "summary": "视觉发现平台，月活约 5.5 亿，以购物意图流量见长。Amazon 广告合作是近两年货币化的核心驱动。用户以女性、Z 世代为主，购买意愿强，广告 ARPU 有较大提升空间。",
+    "business_segments": [
+      { "name": "广告业务", "description": "全平台广告，含 Amazon 合作直投广告", "revenue_pct": 100 }
+    ],
+    "key_metrics": {
+      "market_cap": "~$14B",
+      "ltm_revenue": "$3.6B",
+      "ltm_revenue_growth": "18%",
+      "ltm_operating_margin": "8%",
+      "as_of": "Q4 2025"
+    },
+    "key_debates": [
+      "Amazon 合作广告占比及续约风险",
+      "国际市场 ARPU 提升路径",
+      "AI 驱动的视觉搜索商业化进展"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "小而美的购物意图平台，Amazon 合作是中期催化剂，ARPU 提升是长期逻辑。",
+    "coverage_start": "2026-03-26",
+    "evolution_log": [{ "date": "2026-03-26", "note": "初始建档，待补充 Earnings 数据。" }]
+  }
+}

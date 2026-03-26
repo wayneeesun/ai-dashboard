@@ -1,0 +1,39 @@
+{
+  "sectors": [
+    {
+      "id": "us-internet",
+      "name": "美国互联网",
+      "icon": "🌐",
+      "type": "companies",
+      "companies": ["meta", "google", "pinterest", "reddit"]
+    },
+    {
+      "id": "cn-internet",
+      "name": "中国互联网",
+      "icon": "🇨🇳",
+      "type": "companies",
+      "companies": ["pdd", "alibaba", "tencent", "jd"]
+    },
+    {
+      "id": "us-semi",
+      "name": "美国半导体",
+      "icon": "🔬",
+      "type": "companies",
+      "companies": ["nvidia", "amd", "broadcom", "tsmc"]
+    },
+    {
+      "id": "us-software",
+      "name": "美国软件",
+      "icon": "💾",
+      "type": "companies",
+      "companies": ["snowflake", "salesforce", "servicenow"]
+    },
+    {
+      "id": "ai-infra",
+      "name": "AI Infra",
+      "icon": "🏗️",
+      "type": "topic",
+      "topic": "ai-infra"
+    }
+  ]
+}

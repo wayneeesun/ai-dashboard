@@ -1,0 +1,34 @@
+{
+  "id": "reddit",
+  "name": "Reddit",
+  "ticker": "RDDT",
+  "exchange": "NYSE",
+  "sector": "us-internet",
+  "logo_url": "https://logo.clearbit.com/reddit.com",
+  "color": "#FF4500",
+  "profile": {
+    "summary": "全球最大论坛社区，2024 年 3 月上市。独特价值在于高质量 UGC 内容和垂直社区（Subreddit）。Google 内容授权协议（$60M/年）和 AI 数据授权是新兴收入来源。广告业务货币化尚早期，增长空间大但盈利路径尚不清晰。",
+    "business_segments": [
+      { "name": "广告业务", "description": "展示广告为主", "revenue_pct": 90 },
+      { "name": "数据授权 & 其他", "description": "AI 训练数据授权、Premium 订阅", "revenue_pct": 10 }
+    ],
+    "key_metrics": {
+      "market_cap": "~$18B",
+      "ltm_revenue": "$1.3B",
+      "ltm_revenue_growth": "62%",
+      "ltm_operating_margin": "-5%",
+      "as_of": "Q4 2025"
+    },
+    "key_debates": [
+      "广告货币化从早期阶段走向成熟的速度",
+      "数据授权协议的可持续性和规模化空间",
+      "用户增长能否维持上市初期的强劲势头"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "高增长早期阶段，广告 ARPU 极低意味着提升空间大；数据授权是差异化收入来源，但规模有限。",
+    "coverage_start": "2026-03-26",
+    "evolution_log": [{ "date": "2026-03-26", "note": "初始建档，待补充 Earnings 数据。" }]
+  }
+}
