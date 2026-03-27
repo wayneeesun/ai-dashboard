@@ -994,6 +994,39 @@
     .gh-detail-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent-soft); color: var(--accent); border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; text-decoration: none; transition: all var(--transition); }
     .gh-detail-link:hover { background: var(--accent); color: #fff; }
 
+    /* Category headers in grid */
+    .gh-category-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 4px 4px;
+      margin-top: 8px;
+    }
+
+    .gh-category-header:first-child { margin-top: 0; }
+
+    .gh-cat-icon { font-size: 18px; }
+
+    .gh-cat-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .gh-cat-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      flex: 1;
+    }
+
+    .gh-cat-count {
+      font-size: 11px;
+      color: var(--text-dim);
+      background: var(--bg-3);
+      padding: 1px 8px;
+      border-radius: 10px;
+    }
+
     /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -1271,45 +1304,84 @@ async function renderGithubTrending() {
     return;
   }
 
-  document.getElementById('sector-subtitle').textContent = `${data.projects.length} 个项目 · ${data.period === 'weekly' ? '本周' : data.period}`;
+  document.getElementById('sector-subtitle').textContent = `${data.projects.length} 个项目 · ${data.period === 'weekly' ? '本周' : data.period} · 更新于 ${data.updated_at}`;
 
-  grid.innerHTML = data.projects.map((p, i) => {
-    const lc = langColors[p.language] || '#8890a8';
-    const avatarUrl = `https://github.com/${p.owner}.png?size=72`;
-    return `
-      <div class="gh-card" style="--gh-lang-color:${lc}" onclick="openGhDetail(${i})">
-        <div class="gh-card-top">
-          <img class="gh-avatar" src="${avatarUrl}" alt="${p.owner}" onerror="this.style.background='var(--bg-3)';this.src=''" />
-          <div class="gh-card-title">
-            <h3>${p.repo}</h3>
-            <div class="gh-owner">${p.owner}</div>
-          </div>
-          <span class="gh-lang-badge">
-            <span class="gh-lang-dot" style="background:${lc}"></span>
-            ${p.language}
-          </span>
+  // Group by category
+  const catMap = {};
+  (data.categories || []).forEach(c => { catMap[c.id] = c; });
+  const groups = {};
+  const catOrder = (data.categories || []).map(c => c.id);
+  data.projects.forEach((p, i) => {
+    const cid = p.category || 'other';
+    if (!groups[cid]) groups[cid] = [];
+    groups[cid].push({ ...p, _index: i });
+  });
+
+  let html = '';
+  catOrder.forEach(cid => {
+    const items = groups[cid];
+    if (!items || !items.length) return;
+    const cat = catMap[cid] || { icon: '📦', name: cid, description: '' };
+    html += `<div class="gh-category-header" style="grid-column:1/-1;">
+      <span class="gh-cat-icon">${cat.icon}</span>
+      <span class="gh-cat-name">${cat.name}</span>
+      <span class="gh-cat-desc">${cat.description}</span>
+      <span class="gh-cat-count">${items.length}</span>
+    </div>`;
+    items.forEach(p => {
+      html += renderGhCard(p, p._index);
+    });
+  });
+  // Any uncategorized
+  if (groups['other']) {
+    html += `<div class="gh-category-header" style="grid-column:1/-1;">
+      <span class="gh-cat-icon">📦</span>
+      <span class="gh-cat-name">其他</span>
+      <span class="gh-cat-desc"></span>
+      <span class="gh-cat-count">${groups['other'].length}</span>
+    </div>`;
+    groups['other'].forEach(p => { html += renderGhCard(p, p._index); });
+  }
+
+  grid.innerHTML = html;
+}
+
+function renderGhCard(p, idx) {
+  const lc = langColors[p.language] || '#8890a8';
+  const avatarUrl = `https://github.com/${p.owner}.png?size=72`;
+  return `
+    <div class="gh-card" style="--gh-lang-color:${lc}" onclick="openGhDetail(${idx})">
+      <div class="gh-card-top">
+        <img class="gh-avatar" src="${avatarUrl}" alt="${p.owner}" onerror="this.style.background='var(--bg-3)';this.src=''" />
+        <div class="gh-card-title">
+          <h3>${p.repo}</h3>
+          <div class="gh-owner">${p.owner}</div>
         </div>
-        <p class="gh-explanation">${p.explanation}</p>
-        <div class="gh-stats">
-          <div class="gh-stat">
-            <div class="label">总 Star</div>
-            <div class="value">${formatNum(p.total_stars)}</div>
-          </div>
-          <div class="gh-stat">
-            <div class="label">本周新增</div>
-            <div class="value hot">+${formatNum(p.weekly_stars)}</div>
-          </div>
-          <div class="gh-stat">
-            <div class="label">Forks</div>
-            <div class="value">${formatNum(p.forks)}</div>
-          </div>
+        <span class="gh-lang-badge">
+          <span class="gh-lang-dot" style="background:${lc}"></span>
+          ${p.language}
+        </span>
+      </div>
+      <p class="gh-explanation">${p.explanation}</p>
+      <div class="gh-stats">
+        <div class="gh-stat">
+          <div class="label">总 Star</div>
+          <div class="value">${formatNum(p.total_stars)}</div>
         </div>
-        <div class="gh-card-footer">
-          <div class="author-label">👤 作者</div>
-          ${p.author_bio}
+        <div class="gh-stat">
+          <div class="label">本周新增</div>
+          <div class="value hot">+${formatNum(p.weekly_stars)}</div>
         </div>
-      </div>`;
-  }).join('');
+        <div class="gh-stat">
+          <div class="label">Forks</div>
+          <div class="value">${formatNum(p.forks)}</div>
+        </div>
+      </div>
+      <div class="gh-card-footer">
+        <div class="author-label">👤 作者</div>
+        ${p.author_bio}
+      </div>
+    </div>`;
 }
 
 function formatNum(n) {
