@@ -1,6 +1,45 @@
 {
   "updated_at": "2026-03-27",
   "period": "weekly",
+  "filter": "本周新增 ≥ 1,000 star 的项目，来源 GitHub Trending 周榜，全品类不限领域",
+  "categories": [
+    {
+      "id": "agent-framework",
+      "name": "Agent 框架",
+      "icon": "🤖",
+      "description": "编排、运行、优化 AI Agent 的基础设施"
+    },
+    {
+      "id": "coding-tools",
+      "name": "编码工具",
+      "icon": "💻",
+      "description": "辅助 AI 编程的开发者工具"
+    },
+    {
+      "id": "fintech",
+      "name": "金融交易",
+      "icon": "📊",
+      "description": "AI 驱动的量化交易与金融分析"
+    },
+    {
+      "id": "content-gen",
+      "name": "内容生成",
+      "icon": "🎬",
+      "description": "自动化生产视频、文案等内容"
+    },
+    {
+      "id": "data-infra",
+      "name": "数据 & 基础设施",
+      "icon": "🔧",
+      "description": "数据解析、记忆引擎、信息检索"
+    },
+    {
+      "id": "creative",
+      "name": "创意 & 工具",
+      "icon": "✨",
+      "description": "有趣的跨界项目和实用工具"
+    }
+  ],
   "projects": [
     {
       "owner": "affaan-m",
@@ -11,6 +50,7 @@
       "total_stars": 110428,
       "forks": 14407,
       "weekly_stars": 22821,
+      "category": "agent-framework",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "explanation": "一套针对 AI 编程助手的性能优化框架。提供技能库、记忆系统、安全策略和研究驱动的开发方法论，适配 Claude Code、Codex、Cursor 等主流 AI 编码工具。本质上是给 AI agent 装上了「操作系统」——让它在写代码时更有章法、更安全、产出质量更高。",
       "author_bio": "Affaan Mustafa，独立开发者，深耕 AI agent 工具链和开发者体验优化。"
@@ -24,6 +64,7 @@
       "total_stars": 115903,
       "forks": 9295,
       "weekly_stars": 17041,
+      "category": "agent-framework",
       "description": "An agentic skills framework & software development methodology that works.",
       "explanation": "一套 agent 技能框架 + 软件开发方法论。核心理念是把复杂的开发任务拆解成 agent 可执行的「技能模块」，形成一套可复用的工作流。可以理解为 AI 时代的「最佳实践 + 脚手架」，帮开发者把 agent 编排到实际项目里。",
       "author_bio": "Jesse Vincent（obra），资深开源开发者，Perl 和 RT（Request Tracker）的核心贡献者，长期关注开发者生产力工具。"
@@ -37,87 +78,10 @@
       "total_stars": 48542,
       "forks": 5786,
       "weekly_stars": 16126,
+      "category": "agent-framework",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates.",
       "explanation": "字节跳动开源的长周期 SuperAgent 框架。支持沙箱环境、记忆系统、工具调用、技能树和子 agent 编排，能处理从几分钟到几小时的复杂任务链。定位类似 Devin / OpenClaw 这类全栈 agent，但开源可控。",
       "author_bio": "字节跳动（ByteDance）开源项目，由内部 AI 基础设施团队维护。"
-    },
-    {
-      "owner": "Crosstalk-Solutions",
-      "repo": "project-nomad",
-      "full_name": "Crosstalk-Solutions/project-nomad",
-      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
-      "language": "TypeScript",
-      "total_stars": 17517,
-      "forks": 1676,
-      "weekly_stars": 14631,
-      "description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI.",
-      "explanation": "一个完全离线运行的「生存电脑」项目。把关键工具、知识库和 AI 打包成自包含系统，无需互联网即可使用。面向极端场景（断网、野外、灾难）下的信息获取和决策支持。概念很赛博朋克——随身 AI 百科 + 工具箱。",
-      "author_bio": "Crosstalk Solutions，由 Chris（chriscrosstalk）运营的技术解决方案工作室，YouTube 上有大量网络和 IT 教程。"
-    },
-    {
-      "owner": "FujiwaraChoki",
-      "repo": "MoneyPrinterV2",
-      "full_name": "FujiwaraChoki/MoneyPrinterV2",
-      "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
-      "language": "Python",
-      "total_stars": 26251,
-      "forks": 2736,
-      "weekly_stars": 10352,
-      "description": "Automate the process of making money online.",
-      "explanation": "AI 自动化赚钱工具，第二代。自动生成短视频内容并发布到社交平台变现。整合了文案生成、语音合成、视频剪辑的全流程自动化。本质是利用 LLM + TTS + 视频编辑 pipeline 批量生产内容。热度高但争议也大——自动化内容农场。",
-      "author_bio": "FujiwaraChoki，独立开发者，活跃于 AI 自动化和内容生成领域。"
-    },
-    {
-      "owner": "TauricResearch",
-      "repo": "TradingAgents",
-      "full_name": "TauricResearch/TradingAgents",
-      "url": "https://github.com/TauricResearch/TradingAgents",
-      "language": "Python",
-      "total_stars": 42436,
-      "forks": 7766,
-      "weekly_stars": 9209,
-      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "explanation": "多 agent 协作的金融交易框架。不同 agent 分别负责市场分析、风险评估、信号生成和执行，模拟华尔街交易团队的分工。用 LLM 驱动每个角色的决策。学术味比较浓，更适合研究和回测，距离实盘还有距离。",
-      "author_bio": "Tauric Research，由 Yijia Xiao 等研究者发起的金融 AI 研究团队。"
-    },
-    {
-      "owner": "jarrodwatts",
-      "repo": "claude-hud",
-      "full_name": "jarrodwatts/claude-hud",
-      "url": "https://github.com/jarrodwatts/claude-hud",
-      "language": "JavaScript",
-      "total_stars": 13821,
-      "forks": 565,
-      "weekly_stars": 5543,
-      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
-      "explanation": "给 Claude Code 加了一个「仪表盘」。实时显示 context 使用量、活跃工具、运行中的 agent 和 TODO 进度。解决了 AI 编程助手的「黑箱」问题——你终于能看到 agent 在干什么、用了多少资源。开发者体验的刚需。",
-      "author_bio": "Jarrod Watts，Web3 和 AI 开发者，前 thirdweb DevRel，活跃于开发者教育内容创作。"
-    },
-    {
-      "owner": "mvanhorn",
-      "repo": "last30days-skill",
-      "full_name": "mvanhorn/last30days-skill",
-      "url": "https://github.com/mvanhorn/last30days-skill",
-      "language": "Python",
-      "total_stars": 10409,
-      "forks": 889,
-      "weekly_stars": 4848,
-      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web",
-      "explanation": "一个 AI agent 技能模块，能自动从 Reddit、X、YouTube、HN、Polymarket 等多平台搜索任意主题的近期动态，然后合成一份有据可查的综合摘要。适合做快速主题调研、市场情绪监测、竞品追踪。",
-      "author_bio": "mvanhorn，独立开发者，专注 AI agent 技能生态。"
-    },
-    {
-      "owner": "opendataloader-project",
-      "repo": "opendataloader-pdf",
-      "full_name": "opendataloader-project/opendataloader-pdf",
-      "url": "https://github.com/opendataloader-project/opendataloader-pdf",
-      "language": "Java",
-      "total_stars": 9656,
-      "forks": 713,
-      "weekly_stars": 4661,
-      "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
-      "explanation": "PDF 解析器，专门为 AI 管线优化。把 PDF 中的表格、图表、文字精准提取为结构化数据，供 LLM/RAG 系统消费。解决的是 AI 时代的「数据入口」问题——大量有价值的信息锁在 PDF 里，这个工具负责把它们解放出来。",
-      "author_bio": "OpenDataLoader Project，开源数据处理社区项目。"
     },
     {
       "owner": "NousResearch",
@@ -128,61 +92,24 @@
       "total_stars": 13797,
       "forks": 1665,
       "weekly_stars": 4557,
+      "category": "agent-framework",
       "description": "The agent that grows with you",
       "explanation": "Nous Research 出品的自进化 agent 框架。核心卖点是 agent 能随着使用不断学习和成长，积累用户偏好和领域知识。基于 Hermes 系列模型构建，强调开源和可定制性。",
       "author_bio": "Nous Research，知名开源 AI 研究机构，以 Hermes 系列微调模型闻名，由 Teknium 等人创立。"
     },
     {
-      "owner": "harry0703",
-      "repo": "MoneyPrinterTurbo",
-      "full_name": "harry0703/MoneyPrinterTurbo",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
-      "language": "Python",
-      "total_stars": 53382,
-      "forks": 7546,
-      "weekly_stars": 3073,
-      "description": "利用AI大模型，一键生成高清短视频",
-      "explanation": "国人开发的 AI 短视频一键生成工具。输入主题即可自动生成脚本、配音、字幕和画面，输出成品短视频。支持多种 LLM 和 TTS 引擎。面向抖音/YouTube Shorts 等短视频平台的批量内容生产。",
-      "author_bio": "harry0703，国内独立开发者，专注 AI 视频自动化工具。"
-    },
-    {
-      "owner": "louis-e",
-      "repo": "arnis",
-      "full_name": "louis-e/arnis",
-      "url": "https://github.com/louis-e/arnis",
-      "language": "Rust",
-      "total_stars": 13416,
-      "forks": 1097,
-      "weekly_stars": 3070,
-      "description": "Generate any location from the real world in Minecraft with a high level of detail.",
-      "explanation": "把真实世界的任意地点生成为 Minecraft 地图，精度很高。利用 OpenStreetMap 等地理数据源，自动将建筑、道路、地形转换为 Minecraft 方块。Rust 写的所以性能好。有趣的跨界项目——GIS meets gaming。",
-      "author_bio": "louis-e，德国独立开发者，对 Rust 和地理数据可视化有浓厚兴趣。"
-    },
-    {
-      "owner": "hsliuping",
-      "repo": "TradingAgents-CN",
-      "full_name": "hsliuping/TradingAgents-CN",
-      "url": "https://github.com/hsliuping/TradingAgents-CN",
-      "language": "Python",
-      "total_stars": 21673,
-      "forks": 4489,
-      "weekly_stars": 2826,
-      "description": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版",
-      "explanation": "TradingAgents 的中文增强版。在原版基础上适配了 A 股市场、中文金融数据源和中文 LLM，加入了中国市场特有的技术指标和交易规则。对中国投资者更友好的版本。",
-      "author_bio": "hsliuping，国内金融科技开发者，专注量化交易和 AI 应用。"
-    },
-    {
-      "owner": "supermemoryai",
-      "repo": "supermemory",
-      "full_name": "supermemoryai/supermemory",
-      "url": "https://github.com/supermemoryai/supermemory",
-      "language": "TypeScript",
-      "total_stars": 19578,
-      "forks": 1829,
-      "weekly_stars": 2520,
-      "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
-      "explanation": "AI 时代的记忆引擎。提供高性能、可扩展的记忆 API，让 AI 应用拥有持久化记忆能力。可以存储、检索和关联用户的书签、笔记、对话历史等信息。类似给 AI 加了一个外接「大脑」，解决 LLM 无状态的硬伤。",
-      "author_bio": "Supermemory AI，由 Dhravya Shah 创立的 AI 记忆基础设施公司。"
+      "owner": "jarrodwatts",
+      "repo": "claude-hud",
+      "full_name": "jarrodwatts/claude-hud",
+      "url": "https://github.com/jarrodwatts/claude-hud",
+      "language": "JavaScript",
+      "total_stars": 13821,
+      "forks": 565,
+      "weekly_stars": 5543,
+      "category": "coding-tools",
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "explanation": "给 Claude Code 加了一个「仪表盘」。实时显示 context 使用量、活跃工具、运行中的 agent 和 TODO 进度。解决了 AI 编程助手的「黑箱」问题——你终于能看到 agent 在干什么、用了多少资源。开发者体验的刚需。",
+      "author_bio": "Jarrod Watts，Web3 和 AI 开发者，前 thirdweb DevRel，活跃于开发者教育内容创作。"
     },
     {
       "owner": "langchain-ai",
@@ -193,9 +120,136 @@
       "total_stars": 8587,
       "forks": 996,
       "weekly_stars": 1753,
+      "category": "coding-tools",
       "description": "An Open-Source Asynchronous Coding Agent",
       "explanation": "LangChain 团队出品的开源异步编码 agent。可以在后台异步处理编码任务——提交问题后不用等着，agent 自己跑完会通知你。对标 Devin 等编码 agent，但完全开源。基于 LangGraph 构建，支持多步推理和工具调用。",
       "author_bio": "LangChain AI，由 Harrison Chase 创立的 AI 应用框架公司，LangChain/LangGraph/LangSmith 的开发者。"
+    },
+    {
+      "owner": "TauricResearch",
+      "repo": "TradingAgents",
+      "full_name": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "language": "Python",
+      "total_stars": 42436,
+      "forks": 7766,
+      "weekly_stars": 9209,
+      "category": "fintech",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "explanation": "多 agent 协作的金融交易框架。不同 agent 分别负责市场分析、风险评估、信号生成和执行，模拟华尔街交易团队的分工。用 LLM 驱动每个角色的决策。学术味比较浓，更适合研究和回测，距离实盘还有距离。",
+      "author_bio": "Tauric Research，由 Yijia Xiao 等研究者发起的金融 AI 研究团队。"
+    },
+    {
+      "owner": "hsliuping",
+      "repo": "TradingAgents-CN",
+      "full_name": "hsliuping/TradingAgents-CN",
+      "url": "https://github.com/hsliuping/TradingAgents-CN",
+      "language": "Python",
+      "total_stars": 21673,
+      "forks": 4489,
+      "weekly_stars": 2826,
+      "category": "fintech",
+      "description": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版",
+      "explanation": "TradingAgents 的中文增强版。在原版基础上适配了 A 股市场、中文金融数据源和中文 LLM，加入了中国市场特有的技术指标和交易规则。对中国投资者更友好的版本。",
+      "author_bio": "hsliuping，国内金融科技开发者，专注量化交易和 AI 应用。"
+    },
+    {
+      "owner": "FujiwaraChoki",
+      "repo": "MoneyPrinterV2",
+      "full_name": "FujiwaraChoki/MoneyPrinterV2",
+      "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+      "language": "Python",
+      "total_stars": 26251,
+      "forks": 2736,
+      "weekly_stars": 10352,
+      "category": "content-gen",
+      "description": "Automate the process of making money online.",
+      "explanation": "AI 自动化赚钱工具，第二代。自动生成短视频内容并发布到社交平台变现。整合了文案生成、语音合成、视频剪辑的全流程自动化。本质是利用 LLM + TTS + 视频编辑 pipeline 批量生产内容。热度高但争议也大——自动化内容农场。",
+      "author_bio": "FujiwaraChoki，独立开发者，活跃于 AI 自动化和内容生成领域。"
+    },
+    {
+      "owner": "harry0703",
+      "repo": "MoneyPrinterTurbo",
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "language": "Python",
+      "total_stars": 53382,
+      "forks": 7546,
+      "weekly_stars": 3073,
+      "category": "content-gen",
+      "description": "利用AI大模型，一键生成高清短视频",
+      "explanation": "国人开发的 AI 短视频一键生成工具。输入主题即可自动生成脚本、配音、字幕和画面，输出成品短视频。支持多种 LLM 和 TTS 引擎。面向抖音/YouTube Shorts 等短视频平台的批量内容生产。",
+      "author_bio": "harry0703，国内独立开发者，专注 AI 视频自动化工具。"
+    },
+    {
+      "owner": "opendataloader-project",
+      "repo": "opendataloader-pdf",
+      "full_name": "opendataloader-project/opendataloader-pdf",
+      "url": "https://github.com/opendataloader-project/opendataloader-pdf",
+      "language": "Java",
+      "total_stars": 9656,
+      "forks": 713,
+      "weekly_stars": 4661,
+      "category": "data-infra",
+      "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
+      "explanation": "PDF 解析器，专门为 AI 管线优化。把 PDF 中的表格、图表、文字精准提取为结构化数据，供 LLM/RAG 系统消费。解决的是 AI 时代的「数据入口」问题——大量有价值的信息锁在 PDF 里，这个工具负责把它们解放出来。",
+      "author_bio": "OpenDataLoader Project，开源数据处理社区项目。"
+    },
+    {
+      "owner": "supermemoryai",
+      "repo": "supermemory",
+      "full_name": "supermemoryai/supermemory",
+      "url": "https://github.com/supermemoryai/supermemory",
+      "language": "TypeScript",
+      "total_stars": 19578,
+      "forks": 1829,
+      "weekly_stars": 2520,
+      "category": "data-infra",
+      "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
+      "explanation": "AI 时代的记忆引擎。提供高性能、可扩展的记忆 API，让 AI 应用拥有持久化记忆能力。可以存储、检索和关联用户的书签、笔记、对话历史等信息。类似给 AI 加了一个外接「大脑」，解决 LLM 无状态的硬伤。",
+      "author_bio": "Supermemory AI，由 Dhravya Shah 创立的 AI 记忆基础设施公司。"
+    },
+    {
+      "owner": "mvanhorn",
+      "repo": "last30days-skill",
+      "full_name": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "language": "Python",
+      "total_stars": 10409,
+      "forks": 889,
+      "weekly_stars": 4848,
+      "category": "data-infra",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web",
+      "explanation": "一个 AI agent 技能模块，能自动从 Reddit、X、YouTube、HN、Polymarket 等多平台搜索任意主题的近期动态，然后合成一份有据可查的综合摘要。适合做快速主题调研、市场情绪监测、竞品追踪。",
+      "author_bio": "mvanhorn，独立开发者，专注 AI agent 技能生态。"
+    },
+    {
+      "owner": "Crosstalk-Solutions",
+      "repo": "project-nomad",
+      "full_name": "Crosstalk-Solutions/project-nomad",
+      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "language": "TypeScript",
+      "total_stars": 17517,
+      "forks": 1676,
+      "weekly_stars": 14631,
+      "category": "creative",
+      "description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI.",
+      "explanation": "一个完全离线运行的「生存电脑」项目。把关键工具、知识库和 AI 打包成自包含系统，无需互联网即可使用。面向极端场景（断网、野外、灾难）下的信息获取和决策支持。概念很赛博朋克——随身 AI 百科 + 工具箱。",
+      "author_bio": "Crosstalk Solutions，由 Chris（chriscrosstalk）运营的技术解决方案工作室，YouTube 上有大量网络和 IT 教程。"
+    },
+    {
+      "owner": "louis-e",
+      "repo": "arnis",
+      "full_name": "louis-e/arnis",
+      "url": "https://github.com/louis-e/arnis",
+      "language": "Rust",
+      "total_stars": 13416,
+      "forks": 1097,
+      "weekly_stars": 3070,
+      "category": "creative",
+      "description": "Generate any location from the real world in Minecraft with a high level of detail.",
+      "explanation": "把真实世界的任意地点生成为 Minecraft 地图，精度很高。利用 OpenStreetMap 等地理数据源，自动将建筑、道路、地形转换为 Minecraft 方块。Rust 写的所以性能好。有趣的跨界项目——GIS meets gaming。",
+      "author_bio": "louis-e，德国独立开发者，对 Rust 和地理数据可视化有浓厚兴趣。"
     }
   ]
 }
