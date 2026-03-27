@@ -170,6 +170,66 @@
     #sidebar.collapsed .nav-item .count { opacity: 0; }
     .nav-item.active .count { background: var(--accent-soft); color: var(--accent); }
 
+    /* ── Two-level nav ── */
+    .nav-group {}
+
+    .nav-group-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      user-select: none;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .nav-group-header:hover {
+      background: var(--bg-3);
+      color: var(--text);
+    }
+
+    .nav-group-header .icon { font-size: 16px; flex-shrink: 0; }
+
+    .nav-group-header .nav-label {
+      overflow: hidden;
+      transition: opacity 0.15s ease, max-width 0.22s ease;
+      max-width: 120px;
+      flex: 1;
+    }
+    #sidebar.collapsed .nav-group-header .nav-label { opacity: 0; max-width: 0; }
+
+    .nav-group-header .chevron {
+      font-size: 10px;
+      color: var(--text-dim);
+      transition: transform 0.2s ease, opacity 0.15s ease;
+      flex-shrink: 0;
+    }
+    #sidebar.collapsed .nav-group-header .chevron { opacity: 0; }
+    .nav-group.expanded .nav-group-header .chevron { transform: rotate(90deg); }
+
+    .nav-group-children {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s cubic-bezier(0.4,0,0.2,1);
+      padding-left: 12px;
+    }
+    .nav-group.expanded .nav-group-children {
+      max-height: 500px;
+    }
+    #sidebar.collapsed .nav-group-children { max-height: 0 !important; }
+
+    .nav-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 6px 8px;
+    }
+
     .sidebar-footer {
       margin-top: auto;
       padding: 12px 14px;
@@ -771,7 +831,7 @@
 
 <script>
 // ── State ──
-const state = { sectors: [], companies: {}, activeSector: null };
+const state = { nav: [], sectors: [], companies: {}, activeSector: null };
 
 // ── Fetch helpers ──
 async function fetchJSON(path) {
@@ -792,24 +852,62 @@ async function loadCompany(id) {
 // ── Init ──
 async function init() {
   const data = await fetchJSON('data/sectors.json');
-  state.sectors = data.sectors;
+  state.nav = data.nav;
+  // Flatten all sectors (children of groups + top-level non-groups) for lookup
+  state.sectors = [];
+  data.nav.forEach(item => {
+    if (item.type === 'group' && item.children) {
+      item.children.forEach(child => state.sectors.push(child));
+    } else {
+      state.sectors.push(item);
+    }
+  });
   renderSidebar();
-  // Auto-select first sector
-  if (state.sectors.length) selectSector(state.sectors[0].id);
+  // Auto-select first leaf sector
+  const firstLeaf = state.sectors.find(s => s.type === 'companies' && s.companies && s.companies.length > 0);
+  if (firstLeaf) selectSector(firstLeaf.id);
 }
 
 // ── Sidebar ──
 function renderSidebar() {
   const list = document.getElementById('nav-list');
-  list.innerHTML = state.sectors.map(s => {
-    const count = s.companies ? s.companies.length : '→';
-    return `
-      <div class="nav-item" data-id="${s.id}" onclick="selectSector('${s.id}')">
-        <span class="icon">${s.icon}</span>
-        <span class="nav-label">${s.name}</span>
-        <span class="count">${count}</span>
-      </div>`;
+  list.innerHTML = state.nav.map(item => {
+    if (item.type === 'group') {
+      return renderNavGroup(item);
+    } else {
+      return renderNavItem(item);
+    }
   }).join('');
+}
+
+function renderNavGroup(group) {
+  const childrenHtml = group.children.map(child => renderNavItem(child)).join('');
+  return `
+    <div class="nav-group expanded" data-group="${group.id}">
+      <div class="nav-group-header" onclick="toggleGroup('${group.id}')">
+        <span class="icon">${group.icon}</span>
+        <span class="nav-label">${group.name}</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="nav-group-children">
+        ${childrenHtml}
+      </div>
+    </div>`;
+}
+
+function renderNavItem(s) {
+  const count = s.companies ? s.companies.length : '→';
+  return `
+    <div class="nav-item" data-id="${s.id}" onclick="selectSector('${s.id}')">
+      <span class="icon">${s.icon}</span>
+      <span class="nav-label">${s.name}</span>
+      <span class="count">${count}</span>
+    </div>`;
+}
+
+function toggleGroup(groupId) {
+  const el = document.querySelector(`.nav-group[data-group="${groupId}"]`);
+  if (el) el.classList.toggle('expanded');
 }
 
 // ── Select Sector ──

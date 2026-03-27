@@ -1,39 +1,68 @@
 {
-  "sectors": [
+  "nav": [
     {
-      "id": "us-internet",
-      "name": "美国互联网",
-      "icon": "🌐",
-      "type": "companies",
-      "companies": ["meta", "google", "pinterest", "reddit"]
+      "id": "key-companies",
+      "name": "重点公司",
+      "icon": "🏢",
+      "type": "group",
+      "children": [
+        {
+          "id": "us-internet",
+          "name": "美国互联网",
+          "icon": "🌐",
+          "type": "companies",
+          "companies": ["meta", "google", "pinterest", "reddit"]
+        },
+        {
+          "id": "cn-internet",
+          "name": "中国互联网",
+          "icon": "🇨🇳",
+          "type": "companies",
+          "companies": ["pdd", "alibaba", "tencent", "jd"]
+        },
+        {
+          "id": "us-semi",
+          "name": "半导体",
+          "icon": "🔬",
+          "type": "companies",
+          "companies": ["nvidia", "amd", "broadcom", "tsmc"]
+        },
+        {
+          "id": "us-software",
+          "name": "软件",
+          "icon": "💾",
+          "type": "companies",
+          "companies": ["snowflake", "salesforce", "servicenow"]
+        },
+        {
+          "id": "ai-native",
+          "name": "AI-Native",
+          "icon": "🤖",
+          "type": "companies",
+          "companies": []
+        }
+      ]
     },
     {
-      "id": "cn-internet",
-      "name": "中国互联网",
-      "icon": "🇨🇳",
-      "type": "companies",
-      "companies": ["pdd", "alibaba", "tencent", "jd"]
-    },
-    {
-      "id": "us-semi",
-      "name": "美国半导体",
-      "icon": "🔬",
-      "type": "companies",
-      "companies": ["nvidia", "amd", "broadcom", "tsmc"]
-    },
-    {
-      "id": "us-software",
-      "name": "美国软件",
-      "icon": "💾",
-      "type": "companies",
-      "companies": ["snowflake", "salesforce", "servicenow"]
-    },
-    {
-      "id": "ai-infra",
-      "name": "AI Infra",
-      "icon": "🏗️",
+      "id": "github-trend",
+      "name": "Github Trend",
+      "icon": "📈",
       "type": "topic",
-      "topic": "ai-infra"
+      "topic": "github-trend"
+    },
+    {
+      "id": "infra-map",
+      "name": "基建地图",
+      "icon": "🗺️",
+      "type": "topic",
+      "topic": "infra-map"
+    },
+    {
+      "id": "paper-reading",
+      "name": "论文导读",
+      "icon": "📄",
+      "type": "topic",
+      "topic": "paper-reading"
     }
   ]
 }
