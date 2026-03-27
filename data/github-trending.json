@@ -2,12 +2,20 @@
   "updated_at": "2026-03-27",
   "period": "weekly",
   "filter": "本周新增 ≥ 1,000 star 的项目，来源 GitHub Trending 周榜，全品类不限领域",
+  "source": "https://github.com/trending?since=weekly",
+  "source_label": "GitHub Trending (Weekly)",
   "categories": [
     {
       "id": "agent-framework",
       "name": "Agent 框架",
       "icon": "🤖",
       "description": "编排、运行、优化 AI Agent 的基础设施"
+    },
+    {
+      "id": "data-infra",
+      "name": "数据 & 基础设施",
+      "icon": "🔧",
+      "description": "数据解析、记忆引擎、信息检索"
     },
     {
       "id": "coding-tools",
@@ -26,12 +34,6 @@
       "name": "内容生成",
       "icon": "🎬",
       "description": "自动化生产视频、文案等内容"
-    },
-    {
-      "id": "data-infra",
-      "name": "数据 & 基础设施",
-      "icon": "🔧",
-      "description": "数据解析、记忆引擎、信息检索"
     },
     {
       "id": "creative",
