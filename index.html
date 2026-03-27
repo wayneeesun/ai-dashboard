@@ -1306,7 +1306,7 @@ async function renderGithubTrending() {
     return;
   }
 
-  document.getElementById('sector-subtitle').textContent = `${data.projects.length} 个项目 · ${data.period === 'weekly' ? '本周' : data.period} · 更新于 ${data.updated_at}`;
+  document.getElementById('sector-subtitle').innerHTML = `${data.projects.length} 个项目 · ${data.period === 'weekly' ? '本周' : data.period} · 更新于 ${data.updated_at} · <a href="${data.source || 'https://github.com/trending?since=weekly'}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">Source: ${data.source_label || 'GitHub Trending'} ↗</a>`;
 
   // Group by category
   const catMap = {};
