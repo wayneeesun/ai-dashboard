@@ -772,6 +772,228 @@
     .topic-placeholder h2 { font-size: 20px; color: var(--text-muted); }
     .topic-placeholder p { font-size: 13px; max-width: 360px; text-align: center; line-height: 1.6; }
 
+    /* ── GitHub Trending Cards ── */
+    .gh-trend-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .gh-trend-header .period-badge {
+      font-size: 11px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .gh-trend-header .updated {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+
+    .gh-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      cursor: pointer;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gh-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gh-lang-color, var(--accent));
+      opacity: 0.7;
+    }
+
+    .gh-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .gh-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .gh-avatar {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--bg-3);
+    }
+
+    .gh-card-title {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .gh-card-title h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      word-break: break-all;
+    }
+
+    .gh-card-title .gh-owner {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .gh-lang-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--bg-3);
+      padding: 2px 8px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .gh-lang-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gh-lang-color, var(--accent));
+    }
+
+    .gh-explanation {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .gh-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .gh-stat {
+      background: var(--bg-3);
+      border-radius: 6px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .gh-stat .label {
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+
+    .gh-stat .value {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .gh-stat .value.hot {
+      color: var(--yellow);
+    }
+
+    .gh-card-footer {
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    .gh-card-footer .author-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    /* GitHub detail overlay */
+    .gh-detail-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .gh-detail-overlay.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .gh-detail-box {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 28px;
+      position: relative;
+      transform: translateY(16px);
+      transition: transform 0.2s ease;
+    }
+
+    .gh-detail-overlay.visible .gh-detail-box {
+      transform: translateY(0);
+    }
+
+    .gh-detail-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+    }
+    .gh-detail-close:hover { background: #3a2a2a; border-color: var(--red); color: var(--red); }
+
+    .gh-detail-box h2 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .gh-detail-box .gh-detail-owner { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+    .gh-detail-box .gh-detail-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 12px; line-height: 1.5; font-style: italic; }
+    .gh-detail-box .gh-detail-explain { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+    .gh-detail-box .gh-detail-author { font-size: 13px; color: var(--text-muted); line-height: 1.6; padding: 12px 14px; background: var(--bg-3); border-radius: var(--radius-sm); margin-bottom: 20px; border-left: 2px solid var(--accent); }
+    .gh-detail-box .gh-detail-author .label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; font-weight: 600; }
+    .gh-detail-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent-soft); color: var(--accent); border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; text-decoration: none; transition: all var(--transition); }
+    .gh-detail-link:hover { background: var(--accent); color: #fff; }
+
     /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -820,6 +1042,14 @@
     <div class="loading">← 从左侧选择板块开始</div>
   </div>
 </main>
+
+<!-- ── GitHub Detail Overlay ── -->
+<div class="gh-detail-overlay" id="gh-detail-overlay" onclick="closeGhDetail(event)">
+  <div class="gh-detail-box" id="gh-detail-box">
+    <button class="gh-detail-close" onclick="closeGhDetail()">✕</button>
+    <div id="gh-detail-content"></div>
+  </div>
+</div>
 
 <!-- ── Detail Overlay + Panel ── -->
 <div id="detail-overlay"></div>
@@ -925,6 +1155,11 @@ async function selectSector(id) {
 
   const grid = document.getElementById('card-grid');
 
+  if (sector.topic === 'github-trend') {
+    await renderGithubTrending();
+    return;
+  }
+
   if (sector.type === 'topic') {
     document.getElementById('sector-subtitle').textContent = '';
     grid.style.display = 'flex';
@@ -1002,8 +1237,124 @@ function renderTopicPage(sector) {
     <div class="topic-placeholder">
       <div class="big-icon">${sector.icon}</div>
       <h2>${sector.name}</h2>
-      <p>数据中心建设地图、CapEx 追踪、最新新闻动态。<br/>即将上线，敬请期待。</p>
+      <p>即将上线，敬请期待。</p>
     </div>`;
+}
+
+// ── GitHub Trending ──
+const langColors = {
+  Python: '#3572A5', JavaScript: '#f1e05a', TypeScript: '#3178c6',
+  Rust: '#dea584', Java: '#b07219', Shell: '#89e051', Go: '#00ADD8',
+  'C++': '#f34b7d', C: '#555555', Ruby: '#701516', Swift: '#F05138',
+  Kotlin: '#A97BFF', Dart: '#00B4AB', Zig: '#ec915c',
+};
+
+let ghTrendingData = null;
+
+async function loadGithubTrending() {
+  if (ghTrendingData) return ghTrendingData;
+  try {
+    ghTrendingData = await fetchJSON('data/github-trending.json');
+    return ghTrendingData;
+  } catch { return null; }
+}
+
+async function renderGithubTrending() {
+  const grid = document.getElementById('card-grid');
+  grid.style.display = '';
+  grid.style.flexDirection = '';
+  grid.innerHTML = '<div class="loading">加载中…</div>';
+
+  const data = await loadGithubTrending();
+  if (!data || !data.projects.length) {
+    grid.innerHTML = '<div class="loading">暂无数据</div>';
+    return;
+  }
+
+  document.getElementById('sector-subtitle').textContent = `${data.projects.length} 个项目 · ${data.period === 'weekly' ? '本周' : data.period}`;
+
+  grid.innerHTML = data.projects.map((p, i) => {
+    const lc = langColors[p.language] || '#8890a8';
+    const avatarUrl = `https://github.com/${p.owner}.png?size=72`;
+    return `
+      <div class="gh-card" style="--gh-lang-color:${lc}" onclick="openGhDetail(${i})">
+        <div class="gh-card-top">
+          <img class="gh-avatar" src="${avatarUrl}" alt="${p.owner}" onerror="this.style.background='var(--bg-3)';this.src=''" />
+          <div class="gh-card-title">
+            <h3>${p.repo}</h3>
+            <div class="gh-owner">${p.owner}</div>
+          </div>
+          <span class="gh-lang-badge">
+            <span class="gh-lang-dot" style="background:${lc}"></span>
+            ${p.language}
+          </span>
+        </div>
+        <p class="gh-explanation">${p.explanation}</p>
+        <div class="gh-stats">
+          <div class="gh-stat">
+            <div class="label">总 Star</div>
+            <div class="value">${formatNum(p.total_stars)}</div>
+          </div>
+          <div class="gh-stat">
+            <div class="label">本周新增</div>
+            <div class="value hot">+${formatNum(p.weekly_stars)}</div>
+          </div>
+          <div class="gh-stat">
+            <div class="label">Forks</div>
+            <div class="value">${formatNum(p.forks)}</div>
+          </div>
+        </div>
+        <div class="gh-card-footer">
+          <div class="author-label">👤 作者</div>
+          ${p.author_bio}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function formatNum(n) {
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+  return String(n);
+}
+
+function openGhDetail(idx) {
+  const data = ghTrendingData;
+  if (!data) return;
+  const p = data.projects[idx];
+  const lc = langColors[p.language] || '#8890a8';
+
+  document.getElementById('gh-detail-content').innerHTML = `
+    <h2>${p.repo}</h2>
+    <div class="gh-detail-owner">${p.full_name} · <span class="gh-lang-badge" style="display:inline-flex"><span class="gh-lang-dot" style="background:${lc}"></span>${p.language}</span></div>
+    <div class="gh-detail-desc">${p.description}</div>
+    <div class="gh-detail-explain">${p.explanation}</div>
+    <div class="gh-detail-author">
+      <div class="label">👤 作者简介</div>
+      ${p.author_bio}
+    </div>
+    <div class="gh-stats" style="margin-bottom:20px">
+      <div class="gh-stat">
+        <div class="label">总 Star</div>
+        <div class="value">${formatNum(p.total_stars)}</div>
+      </div>
+      <div class="gh-stat">
+        <div class="label">本周新增</div>
+        <div class="value hot">+${formatNum(p.weekly_stars)}</div>
+      </div>
+      <div class="gh-stat">
+        <div class="label">Forks</div>
+        <div class="value">${formatNum(p.forks)}</div>
+      </div>
+    </div>
+    <a class="gh-detail-link" href="${p.url}" target="_blank" rel="noopener">🔗 在 GitHub 上查看</a>
+  `;
+
+  document.getElementById('gh-detail-overlay').classList.add('visible');
+}
+
+function closeGhDetail(e) {
+  if (e && e.target !== document.getElementById('gh-detail-overlay')) return;
+  document.getElementById('gh-detail-overlay').classList.remove('visible');
 }
 
 // ── Detail Panel ──
