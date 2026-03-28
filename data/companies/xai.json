@@ -1,0 +1,19 @@
+{
+  "id": "xai",
+  "name": "xAI",
+  "ticker": null,
+  "exchange": "Private",
+  "color": "#1DA1F2",
+  "logo_url": "https://logo.clearbit.com/xai.com",
+  "type": "ai-native",
+  "profile": {
+    "summary": "马斯克创立，Grok 系列模型借助 X 平台分发，Memphis 超算集群 Colossus 是全球最大单体 GPU 集群。",
+    "last_round": "2025-01",
+    "last_valuation_bn": "75",
+    "news": [
+      "Grok 3 发布后用户增长",
+      "与 X 平台的流量协同",
+      "Colossus 二期扩建进展"
+    ]
+  }
+}
