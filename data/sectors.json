@@ -11,35 +11,35 @@
           "name": "美国互联网",
           "icon": "🌐",
           "type": "companies",
-          "companies": ["meta", "google", "pinterest", "reddit"]
+          "companies": ["meta", "google", "amazon", "applovin", "pinterest", "reddit"]
         },
         {
           "id": "cn-internet",
           "name": "中国互联网",
           "icon": "🇨🇳",
           "type": "companies",
-          "companies": ["pdd", "alibaba", "tencent", "jd"]
+          "companies": ["tencent", "alibaba", "meituan", "pdd", "baidu", "jd"]
         },
         {
           "id": "us-semi",
           "name": "半导体",
           "icon": "🔬",
           "type": "companies",
-          "companies": ["nvidia", "amd", "broadcom", "tsmc"]
+          "companies": ["nvidia", "tsmc", "broadcom", "amd", "sandisk", "micron"]
         },
         {
           "id": "us-software",
           "name": "软件",
           "icon": "💾",
           "type": "companies",
-          "companies": ["snowflake", "salesforce", "servicenow"]
+          "companies": ["microsoft", "shopify", "oracle", "servicenow", "snowflake", "cloudflare"]
         },
         {
           "id": "ai-native",
           "name": "AI-Native",
           "icon": "🤖",
-          "type": "companies",
-          "companies": []
+          "type": "ai-native",
+          "companies": ["openai", "anthropic", "xai", "minimax", "moonshot", "zhipu"]
         }
       ]
     },
