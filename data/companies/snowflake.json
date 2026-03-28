@@ -1,0 +1,47 @@
+{
+  "id": "snowflake",
+  "name": "Snowflake",
+  "ticker": "SNOW",
+  "exchange": "NYSE",
+  "color": "#29B5E8",
+  "logo_url": "https://logo.clearbit.com/snowflake.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "云数据仓库领导者，正向 AI 数据平台转型，Cortex AI 和数据共享生态是核心差异化。",
+    "business_segments": [
+      {
+        "name": "产品收入",
+        "revenue_pct": 95,
+        "description": "按用量计费，数据仓库+AI"
+      },
+      {
+        "name": "专业服务",
+        "revenue_pct": 5,
+        "description": ""
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$507B",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 507.3,
+      "price": 152.8,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "消费型定价下的 RPO 可预测性",
+      "Databricks 竞争",
+      "AI 工作负载是否在 Snowflake 上运行"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
