@@ -1,0 +1,42 @@
+{
+  "id": "sandisk",
+  "name": "闪迪",
+  "ticker": "SNDK",
+  "exchange": "NASDAQ",
+  "color": "#FF6600",
+  "logo_url": "https://logo.clearbit.com/sandisk.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "从西数分拆上市的独立 NAND 闪存公司，HBM/NAND 需求受 AI 驱动，周期拐点博弈。",
+    "business_segments": [
+      {
+        "name": "NAND Flash",
+        "revenue_pct": 100,
+        "description": "企业级 SSD、消费级存储、eMMC/UFS"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$1.4T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 1428.7,
+      "price": 615.83,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "NAND 价格周期位置",
+      "AI 服务器存储需求拉动",
+      "与西数分拆后的独立运营能力"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
