@@ -8,12 +8,16 @@
   "type": "ai-native",
   "profile": {
     "summary": "全球最具影响力的 AI 实验室，ChatGPT 月活超 5 亿，GPT-4o/o1/o3 系列引领前沿，API 和 Enterprise 双线变现。",
-    "last_round": "2025 SoftBank 领投",
-    "last_valuation_bn": "3000",
+    "last_round": "2025-04 Series F，SoftBank 领投 $40B",
+    "last_valuation_bn": "300",
     "news": [
-      "即将 IPO 传闻（2025-2026）",
-      "与微软战略关系重组",
-      "o3 发布后市场份额进一步扩大"
-    ]
+      "2025-04：$40B Series F close，post-money $300B（FT / proactiveinvestors）",
+      "2026-01：SoftBank 洽谈追投 $30B，估值或升至 $830B（Bloomberg）",
+      "AGI 路线争议：o3 vs GPT-5 时间线"
+    ],
+    "valuation_source": "FT (Mar 2025), proactiveinvestors.co.uk",
+    "key_metrics": {
+      "market_cap_usd_bn": 300.0
+    }
   }
 }
