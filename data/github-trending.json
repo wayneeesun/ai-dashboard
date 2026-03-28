@@ -58,7 +58,8 @@
       "stars_this_week": 114162,
       "language": "JavaScript",
       "url": "https://github.com/affaan-m/everything-claude-code",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "Agent 性能优化系统，集成技能、记忆、安全与研究能力的完整 harness"
     },
     {
       "name": "autoresearch",
@@ -69,7 +70,8 @@
       "stars_this_week": 59249,
       "language": "Python",
       "url": "https://github.com/karpathy/autoresearch",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "Karpathy 作品：AI Agent 在单 GPU 上自动运行研究任务，探索 nanochat 训练"
     },
     {
       "name": "gstack",
@@ -80,7 +82,8 @@
       "stars_this_week": 53545,
       "language": "TypeScript",
       "url": "https://github.com/garrytan/gstack",
-      "category": "coding-tools"
+      "category": "coding-tools",
+      "description_zh": "Garry Tan 的 Claude Code 实战配置：15 个工具覆盖 CEO、设计师、工程经理等角色"
     },
     {
       "name": "worldmonitor",
@@ -91,7 +94,8 @@
       "stars_this_week": 44888,
       "language": "TypeScript",
       "url": "https://github.com/koala73/worldmonitor",
-      "category": "other"
+      "category": "other",
+      "description_zh": "实时全球情报看板，AI 驱动的新闻聚合与地缘政治监控仪表盘"
     },
     {
       "name": "awesome-openclaw-skills",
@@ -102,7 +106,8 @@
       "stars_this_week": 42683,
       "language": "",
       "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
-      "category": "other"
+      "category": "other",
+      "description_zh": "OpenClaw Skills 精选合集，5400+ 技能分类索引"
     },
     {
       "name": "nanobot",
@@ -113,7 +118,8 @@
       "stars_this_week": 36732,
       "language": "Python",
       "url": "https://github.com/HKUDS/nanobot",
-      "category": "other"
+      "category": "other",
+      "description_zh": "超轻量级 OpenClaw 实现，极简部署"
     },
     {
       "name": "paperclip",
@@ -124,7 +130,8 @@
       "stars_this_week": 36381,
       "language": "TypeScript",
       "url": "https://github.com/paperclipai/paperclip",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "开源零人力公司编排系统，自主运行业务流程"
     },
     {
       "name": "zeroclaw",
@@ -135,7 +142,8 @@
       "stars_this_week": 29032,
       "language": "Rust",
       "url": "https://github.com/zeroclaw-labs/zeroclaw",
-      "category": "other"
+      "category": "other",
+      "description_zh": "全自主 AI 个人助手基础设施，跨 OS/平台，一键部署"
     },
     {
       "name": "antigravity-awesome-skills",
@@ -146,7 +154,8 @@
       "stars_this_week": 28062,
       "language": "Python",
       "url": "https://github.com/sickn33/antigravity-awesome-skills",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "1326+ 可安装 Agent 技能库，覆盖 Claude Code / Cursor / Codex CLI 等主流平台"
     },
     {
       "name": "awesome-openclaw-usecases",
@@ -157,7 +166,8 @@
       "stars_this_week": 27796,
       "language": "",
       "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-      "category": "creative-tools"
+      "category": "creative-tools",
+      "description_zh": "OpenClaw 社区用例合集，收录日常效率提升场景"
     },
     {
       "name": "daily_stock_analysis",
@@ -168,7 +178,8 @@
       "stars_this_week": 26535,
       "language": "Python",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-      "category": "finance-trading"
+      "category": "finance-trading",
+      "description_zh": "LLM 驱动 A/H/美股智能分析：多数据源行情 + 实时新闻 + 决策仪表盘 + 多渠道推送"
     },
     {
       "name": "picoclaw",
@@ -179,7 +190,8 @@
       "stars_this_week": 26470,
       "language": "Go",
       "url": "https://github.com/sipeed/picoclaw",
-      "category": "other"
+      "category": "other",
+      "description_zh": "轻量快速、随处部署的自动化工具，激活创造力"
     },
     {
       "name": "nanoclaw",
@@ -190,7 +202,8 @@
       "stars_this_week": 25791,
       "language": "TypeScript",
       "url": "https://github.com/qwibitai/nanoclaw",
-      "category": "other"
+      "category": "other",
+      "description_zh": "容器化轻量版 OpenClaw 替代品，支持 WhatsApp/Telegram 等多渠道接入"
     },
     {
       "name": "agent-browser",
@@ -201,7 +214,8 @@
       "stars_this_week": 25461,
       "language": "Rust",
       "url": "https://github.com/vercel-labs/agent-browser",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "Vercel 出品：供 AI Agent 使用的浏览器自动化 CLI"
     },
     {
       "name": "CLI-Anything",
@@ -212,7 +226,8 @@
       "stars_this_week": 24209,
       "language": "Python",
       "url": "https://github.com/HKUDS/CLI-Anything",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "让所有软件 Agent-Native 化的命令行工具"
     },
     {
       "name": "cli",
@@ -223,7 +238,8 @@
       "stars_this_week": 22855,
       "language": "Rust",
       "url": "https://github.com/googleworkspace/cli",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "Google Workspace 统一 CLI：Drive、Gmail、Calendar、Sheets 等一站式操作"
     },
     {
       "name": "OpenViking",
@@ -234,7 +250,8 @@
       "stars_this_week": 19643,
       "language": "Python",
       "url": "https://github.com/volcengine/OpenViking",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "专为 AI Agent 设计的开源上下文数据库"
     },
     {
       "name": "llmfit",
@@ -245,7 +262,8 @@
       "stars_this_week": 19585,
       "language": "Rust",
       "url": "https://github.com/AlexsJones/llmfit",
-      "category": "coding-tools"
+      "category": "coding-tools",
+      "description_zh": "一条命令测试数百个 LLM 模型，快速找到适合自己硬件的最优解"
     },
     {
       "name": "planning-with-files",
@@ -256,7 +274,8 @@
       "stars_this_week": 17519,
       "language": "Python",
       "url": "https://github.com/OthmanAdi/planning-with-files",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "Claude Code 技能：Manus 风格持久化 Markdown 规划工作流"
     },
     {
       "name": "NemoClaw",
@@ -267,7 +286,8 @@
       "stars_this_week": 17417,
       "language": "JavaScript",
       "url": "https://github.com/NVIDIA/NemoClaw",
-      "category": "coding-tools"
+      "category": "coding-tools",
+      "description_zh": "在 NVIDIA OpenShell 内安全运行 OpenClaw，托管推理支持"
     },
     {
       "name": "marketingskills",
@@ -278,7 +298,8 @@
       "stars_this_week": 17121,
       "language": "JavaScript",
       "url": "https://github.com/coreyhaines31/marketingskills",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "Claude Code + AI Agent 营销技能包：CRO、文案、SEO、增长工程"
     },
     {
       "name": "openfang",
@@ -289,7 +310,8 @@
       "stars_this_week": 15798,
       "language": "Rust",
       "url": "https://github.com/RightNow-AI/openfang",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "开源 Agent 操作系统"
     },
     {
       "name": "rtk",
@@ -300,7 +322,8 @@
       "stars_this_week": 14704,
       "language": "Rust",
       "url": "https://github.com/rtk-ai/rtk",
-      "category": "other"
+      "category": "other",
+      "description_zh": "单 Rust 二进制 CLI 代理，降低常见开发命令 LLM token 消耗 60-90%"
     },
     {
       "name": "claude-hud",
@@ -311,7 +334,8 @@
       "stars_this_week": 14579,
       "language": "JavaScript",
       "url": "https://github.com/jarrodwatts/claude-hud",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "Claude Code 插件：实时显示上下文用量、活跃工具和运行中的 Agent"
     },
     {
       "name": "oh-my-claudecode",
@@ -322,7 +346,8 @@
       "stars_this_week": 14478,
       "language": "TypeScript",
       "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "面向团队的多 Agent Claude Code 编排框架"
     },
     {
       "name": "awesome-ai-research-writing",
@@ -333,7 +358,8 @@
       "stars_this_week": 14431,
       "language": "",
       "url": "https://github.com/Leey21/awesome-ai-research-writing",
-      "category": "data-infra"
+      "category": "data-infra",
+      "description_zh": "AI 研究写作提升资源，告别繁琐润色"
     },
     {
       "name": "voicebox",
@@ -344,7 +370,8 @@
       "stars_this_week": 14234,
       "language": "TypeScript",
       "url": "https://github.com/jamiepine/voicebox",
-      "category": "content-gen"
+      "category": "content-gen",
+      "description_zh": "开源语音合成工作室"
     },
     {
       "name": "symphony",
@@ -355,7 +382,8 @@
       "stars_this_week": 14169,
       "language": "Elixir",
       "url": "https://github.com/openai/symphony",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "OpenAI 出品：将项目工作拆分为隔离的自主实现 run，支持团队并发管理"
     },
     {
       "name": "last30days-skill",
@@ -366,7 +394,8 @@
       "stars_this_week": 13771,
       "language": "Python",
       "url": "https://github.com/mvanhorn/last30days-skill",
-      "category": "agent-framework"
+      "category": "agent-framework",
+      "description_zh": "AI Agent 技能：跨 Reddit/X/YouTube/HN/Polymarket 研究任意话题过去 30 天动态"
     },
     {
       "name": "json-render",
@@ -377,7 +406,8 @@
       "stars_this_week": 13607,
       "language": "TypeScript",
       "url": "https://github.com/vercel-labs/json-render",
-      "category": "creative-tools"
+      "category": "creative-tools",
+      "description_zh": "Vercel 出品：Generative UI 框架"
     }
   ],
   "by_category": {
@@ -391,7 +421,8 @@
         "stars_this_week": 114162,
         "language": "JavaScript",
         "url": "https://github.com/affaan-m/everything-claude-code",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "Agent 性能优化系统，集成技能、记忆、安全与研究能力的完整 harness"
       },
       {
         "name": "autoresearch",
@@ -402,7 +433,8 @@
         "stars_this_week": 59249,
         "language": "Python",
         "url": "https://github.com/karpathy/autoresearch",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "Karpathy 作品：AI Agent 在单 GPU 上自动运行研究任务，探索 nanochat 训练"
       },
       {
         "name": "paperclip",
@@ -413,7 +445,8 @@
         "stars_this_week": 36381,
         "language": "TypeScript",
         "url": "https://github.com/paperclipai/paperclip",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "开源零人力公司编排系统，自主运行业务流程"
       },
       {
         "name": "antigravity-awesome-skills",
@@ -424,7 +457,8 @@
         "stars_this_week": 28062,
         "language": "Python",
         "url": "https://github.com/sickn33/antigravity-awesome-skills",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "1326+ 可安装 Agent 技能库，覆盖 Claude Code / Cursor / Codex CLI 等主流平台"
       },
       {
         "name": "agent-browser",
@@ -435,7 +469,8 @@
         "stars_this_week": 25461,
         "language": "Rust",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "Vercel 出品：供 AI Agent 使用的浏览器自动化 CLI"
       },
       {
         "name": "CLI-Anything",
@@ -446,7 +481,8 @@
         "stars_this_week": 24209,
         "language": "Python",
         "url": "https://github.com/HKUDS/CLI-Anything",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "让所有软件 Agent-Native 化的命令行工具"
       },
       {
         "name": "cli",
@@ -457,7 +493,8 @@
         "stars_this_week": 22855,
         "language": "Rust",
         "url": "https://github.com/googleworkspace/cli",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "Google Workspace 统一 CLI：Drive、Gmail、Calendar、Sheets 等一站式操作"
       },
       {
         "name": "OpenViking",
@@ -468,7 +505,8 @@
         "stars_this_week": 19643,
         "language": "Python",
         "url": "https://github.com/volcengine/OpenViking",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "专为 AI Agent 设计的开源上下文数据库"
       },
       {
         "name": "planning-with-files",
@@ -479,7 +517,8 @@
         "stars_this_week": 17519,
         "language": "Python",
         "url": "https://github.com/OthmanAdi/planning-with-files",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "Claude Code 技能：Manus 风格持久化 Markdown 规划工作流"
       },
       {
         "name": "marketingskills",
@@ -490,7 +529,8 @@
         "stars_this_week": 17121,
         "language": "JavaScript",
         "url": "https://github.com/coreyhaines31/marketingskills",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "Claude Code + AI Agent 营销技能包：CRO、文案、SEO、增长工程"
       },
       {
         "name": "openfang",
@@ -501,7 +541,8 @@
         "stars_this_week": 15798,
         "language": "Rust",
         "url": "https://github.com/RightNow-AI/openfang",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "开源 Agent 操作系统"
       },
       {
         "name": "claude-hud",
@@ -512,7 +553,8 @@
         "stars_this_week": 14579,
         "language": "JavaScript",
         "url": "https://github.com/jarrodwatts/claude-hud",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "Claude Code 插件：实时显示上下文用量、活跃工具和运行中的 Agent"
       },
       {
         "name": "oh-my-claudecode",
@@ -523,7 +565,8 @@
         "stars_this_week": 14478,
         "language": "TypeScript",
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "面向团队的多 Agent Claude Code 编排框架"
       },
       {
         "name": "symphony",
@@ -534,7 +577,8 @@
         "stars_this_week": 14169,
         "language": "Elixir",
         "url": "https://github.com/openai/symphony",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "OpenAI 出品：将项目工作拆分为隔离的自主实现 run，支持团队并发管理"
       },
       {
         "name": "last30days-skill",
@@ -545,7 +589,8 @@
         "stars_this_week": 13771,
         "language": "Python",
         "url": "https://github.com/mvanhorn/last30days-skill",
-        "category": "agent-framework"
+        "category": "agent-framework",
+        "description_zh": "AI Agent 技能：跨 Reddit/X/YouTube/HN/Polymarket 研究任意话题过去 30 天动态"
       }
     ],
     "data-infra": [
@@ -558,7 +603,8 @@
         "stars_this_week": 14431,
         "language": "",
         "url": "https://github.com/Leey21/awesome-ai-research-writing",
-        "category": "data-infra"
+        "category": "data-infra",
+        "description_zh": "AI 研究写作提升资源，告别繁琐润色"
       }
     ],
     "coding-tools": [
@@ -571,7 +617,8 @@
         "stars_this_week": 53545,
         "language": "TypeScript",
         "url": "https://github.com/garrytan/gstack",
-        "category": "coding-tools"
+        "category": "coding-tools",
+        "description_zh": "Garry Tan 的 Claude Code 实战配置：15 个工具覆盖 CEO、设计师、工程经理等角色"
       },
       {
         "name": "llmfit",
@@ -582,7 +629,8 @@
         "stars_this_week": 19585,
         "language": "Rust",
         "url": "https://github.com/AlexsJones/llmfit",
-        "category": "coding-tools"
+        "category": "coding-tools",
+        "description_zh": "一条命令测试数百个 LLM 模型，快速找到适合自己硬件的最优解"
       },
       {
         "name": "NemoClaw",
@@ -593,7 +641,8 @@
         "stars_this_week": 17417,
         "language": "JavaScript",
         "url": "https://github.com/NVIDIA/NemoClaw",
-        "category": "coding-tools"
+        "category": "coding-tools",
+        "description_zh": "在 NVIDIA OpenShell 内安全运行 OpenClaw，托管推理支持"
       }
     ],
     "finance-trading": [
@@ -606,7 +655,8 @@
         "stars_this_week": 26535,
         "language": "Python",
         "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-        "category": "finance-trading"
+        "category": "finance-trading",
+        "description_zh": "LLM 驱动 A/H/美股智能分析：多数据源行情 + 实时新闻 + 决策仪表盘 + 多渠道推送"
       }
     ],
     "content-gen": [
@@ -619,7 +669,8 @@
         "stars_this_week": 14234,
         "language": "TypeScript",
         "url": "https://github.com/jamiepine/voicebox",
-        "category": "content-gen"
+        "category": "content-gen",
+        "description_zh": "开源语音合成工作室"
       }
     ],
     "creative-tools": [
@@ -632,7 +683,8 @@
         "stars_this_week": 27796,
         "language": "",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "category": "creative-tools"
+        "category": "creative-tools",
+        "description_zh": "OpenClaw 社区用例合集，收录日常效率提升场景"
       },
       {
         "name": "json-render",
@@ -643,7 +695,8 @@
         "stars_this_week": 13607,
         "language": "TypeScript",
         "url": "https://github.com/vercel-labs/json-render",
-        "category": "creative-tools"
+        "category": "creative-tools",
+        "description_zh": "Vercel 出品：Generative UI 框架"
       }
     ],
     "other": [
@@ -656,7 +709,8 @@
         "stars_this_week": 44888,
         "language": "TypeScript",
         "url": "https://github.com/koala73/worldmonitor",
-        "category": "other"
+        "category": "other",
+        "description_zh": "实时全球情报看板，AI 驱动的新闻聚合与地缘政治监控仪表盘"
       },
       {
         "name": "awesome-openclaw-skills",
@@ -667,7 +721,8 @@
         "stars_this_week": 42683,
         "language": "",
         "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
-        "category": "other"
+        "category": "other",
+        "description_zh": "OpenClaw Skills 精选合集，5400+ 技能分类索引"
       },
       {
         "name": "nanobot",
@@ -678,7 +733,8 @@
         "stars_this_week": 36732,
         "language": "Python",
         "url": "https://github.com/HKUDS/nanobot",
-        "category": "other"
+        "category": "other",
+        "description_zh": "超轻量级 OpenClaw 实现，极简部署"
       },
       {
         "name": "zeroclaw",
@@ -689,7 +745,8 @@
         "stars_this_week": 29032,
         "language": "Rust",
         "url": "https://github.com/zeroclaw-labs/zeroclaw",
-        "category": "other"
+        "category": "other",
+        "description_zh": "全自主 AI 个人助手基础设施，跨 OS/平台，一键部署"
       },
       {
         "name": "picoclaw",
@@ -700,7 +757,8 @@
         "stars_this_week": 26470,
         "language": "Go",
         "url": "https://github.com/sipeed/picoclaw",
-        "category": "other"
+        "category": "other",
+        "description_zh": "轻量快速、随处部署的自动化工具，激活创造力"
       },
       {
         "name": "nanoclaw",
@@ -711,7 +769,8 @@
         "stars_this_week": 25791,
         "language": "TypeScript",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "category": "other"
+        "category": "other",
+        "description_zh": "容器化轻量版 OpenClaw 替代品，支持 WhatsApp/Telegram 等多渠道接入"
       },
       {
         "name": "rtk",
@@ -722,7 +781,8 @@
         "stars_this_week": 14704,
         "language": "Rust",
         "url": "https://github.com/rtk-ai/rtk",
-        "category": "other"
+        "category": "other",
+        "description_zh": "单 Rust 二进制 CLI 代理，降低常见开发命令 LLM token 消耗 60-90%"
       }
     ]
   }
