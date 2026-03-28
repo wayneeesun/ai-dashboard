@@ -1,0 +1,19 @@
+{
+  "id": "minimax",
+  "name": "MiniMax",
+  "ticker": null,
+  "exchange": "Private",
+  "color": "#FF4B6E",
+  "logo_url": "https://logo.clearbit.com/minimax.com",
+  "type": "ai-native",
+  "profile": {
+    "summary": "中国头部 AI 独角兽，MiniMax-Text-01 支持 100 万 token 上下文，Hailuo 视频生成全球破圈。",
+    "last_round": "2024-08",
+    "last_valuation_bn": "25",
+    "news": [
+      "Hailuo 视频模型海外增长",
+      "To-B API 收入规模",
+      "下一轮融资进展"
+    ]
+  }
+}
