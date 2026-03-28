@@ -1,0 +1,48 @@
+{
+  "id": "applovin",
+  "name": "AppLovin",
+  "ticker": "APP",
+  "exchange": "NASDAQ",
+  "color": "#E8375A",
+  "logo_url": "https://logo.clearbit.com/applovin.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "移动广告技术公司，旗下 AXON 算法引擎驱动广告精准投放，已从游戏业务转向纯软件平台。",
+    "business_segments": [
+      {
+        "name": "软件平台",
+        "revenue_pct": 75,
+        "description": "AXON 广告引擎，高毛利",
+        "note": "2024年毛利率约75%"
+      },
+      {
+        "name": "应用组合",
+        "revenue_pct": 25,
+        "description": "自有游戏，逐步剥离中"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$1.3T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 1261.8,
+      "price": 381.2,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "AXON 算法护城河深度",
+      "游戏资产剥离后增长动力",
+      "CTV/电商广告扩张可行性"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
