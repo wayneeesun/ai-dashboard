@@ -8,12 +8,16 @@
   "type": "ai-native",
   "profile": {
     "summary": "专注长上下文的中国 AI 公司，Kimi 支持 200 万 token，在研究和文档处理场景有明显优势。",
-    "last_round": "2024-02 阿里领投",
-    "last_valuation_bn": "33",
+    "last_round": "2026-03 Pre-IPO，拟赴港上市",
+    "last_valuation_bn": "18",
     "news": [
-      "Kimi 月活规模",
-      "多模态能力进展",
-      "国际化布局"
-    ]
+      "2026-03：考虑赴港IPO，最新估值约 $18B，同步推进最高 $1B 新融资（华尔街见闻）",
+      "2025：C轮 $500M 超募（itiger）",
+      "Kimi 月活持续增长，K1.5 模型发布"
+    ],
+    "valuation_source": "华尔街见闻 (Mar 2026), 新浪财经",
+    "key_metrics": {
+      "market_cap_usd_bn": 18.0
+    }
   }
 }
