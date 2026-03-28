@@ -772,6 +772,58 @@
     .topic-placeholder h2 { font-size: 20px; color: var(--text-muted); }
     .topic-placeholder p { font-size: 13px; max-width: 360px; text-align: center; line-height: 1.6; }
 
+    /* ── Infra Map ── */
+    .infra-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 20px;
+      width: 100%;
+      min-height: 560px;
+    }
+    @media (max-width: 1100px) {
+      .infra-layout { grid-template-columns: 1fr; }
+    }
+    .infra-map-panel { display: flex; flex-direction: column; gap: 12px; position: relative; }
+    .infra-region-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .infra-region-btn {
+      padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border);
+      background: var(--bg-2); color: var(--text-muted); font-size: 12px; cursor: pointer;
+      transition: var(--transition);
+    }
+    .infra-region-btn:hover { border-color: var(--accent); color: var(--text); }
+    .infra-region-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .infra-tooltip {
+      position: absolute; z-index: 99;
+      background: var(--bg-3); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 13px; font-size: 12px; line-height: 1.6; color: var(--text);
+      pointer-events: none; max-width: 240px; box-shadow: 0 4px 20px rgba(0,0,0,.4);
+    }
+    .infra-table-panel {
+      display: flex; flex-direction: column; gap: 10px;
+      background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border); padding: 16px;
+    }
+    .infra-table-header {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; font-weight: 600; color: var(--text);
+    }
+    .infra-legend { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-muted); flex-wrap: wrap; }
+    .infra-legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .infra-table-wrap { overflow: auto; max-height: 440px; }
+    .infra-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .infra-table th {
+      text-align: left; padding: 7px 8px; font-weight: 500; color: var(--text-muted);
+      border-bottom: 1px solid var(--border); position: sticky; top: 0;
+      background: var(--bg-2); white-space: nowrap;
+    }
+    .infra-table td { padding: 8px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .infra-row { cursor: pointer; transition: background .12s; }
+    .infra-row:hover { background: var(--bg-3); }
+    .infra-row.highlighted { background: rgba(79,142,247,.08); }
+    .infra-status-badge {
+      display: inline-block; padding: 2px 8px; border-radius: 10px;
+      font-size: 11px; font-weight: 500; white-space: nowrap;
+    }
+
     /* ── GitHub Trending Cards ── */
     .gh-trend-header {
       display: flex;
@@ -1195,6 +1247,11 @@ async function selectSector(id) {
     return;
   }
 
+  if (sector.topic === 'infra-map') {
+    await renderInfraMap();
+    return;
+  }
+
   if (sector.type === 'topic') {
     document.getElementById('sector-subtitle').textContent = '';
     grid.style.display = 'flex';
@@ -1316,6 +1373,252 @@ function renderCard(c) {
 }
 
 // ── Topic Page ──
+// ── Infra Map ──
+let infraData = null;
+
+async function loadInfraData() {
+  if (infraData) return infraData;
+  try {
+    infraData = await fetchJSON('data/topics/infra-map.json');
+    return infraData;
+  } catch { return null; }
+}
+
+const STATUS_LABELS = {
+  under_construction: { label: '建设中', color: '#fbbf24' },
+  operational:        { label: '已投运', color: '#34d399' },
+  planned:            { label: '规划中', color: '#818cf8' },
+  announced:          { label: '已公布', color: '#60a5fa' },
+};
+
+const REGION_CENTERS = {
+  us:  { lat: 39,   lng: -98,  scale: 600 },
+  cn:  { lat: 35,   lng: 105,  scale: 700 },
+  sea: { lat: 5,    lng: 115,  scale: 700 },
+  eu:  { lat: 50,   lng: 10,   scale: 600 },
+  me:  { lat: 25,   lng: 45,   scale: 700 },
+};
+
+async function renderInfraMap() {
+  const grid = document.getElementById('card-grid');
+  grid.style.display = 'flex';
+  grid.style.flexDirection = 'column';
+  grid.innerHTML = '<div class="loading">加载地图数据…</div>';
+
+  const data = await loadInfraData();
+  if (!data) { grid.innerHTML = '<div class="loading">数据加载失败</div>'; return; }
+
+  document.getElementById('sector-subtitle').textContent = `${data.datacenters.length} 个数据中心 · 更新于 ${data.updated_at}`;
+
+  grid.innerHTML = `
+    <div class="infra-layout">
+      <!-- 左：地图 -->
+      <div class="infra-map-panel">
+        <div class="infra-region-tabs">
+          ${(data.regions||['us','cn','sea','eu','me']).map((r,i) =>
+            `<button class="infra-region-btn${i===0?' active':''}" onclick="switchRegion('${r}')" data-region="${r}">
+              ${(data.region_labels||{})[r]||r.toUpperCase()}
+            </button>`).join('')}
+        </div>
+        <div id="infra-globe-container" style="width:100%;position:relative">
+          <svg id="infra-globe" style="width:100%;height:500px;display:block;background:var(--bg-2);border-radius:12px"></svg>
+        </div>
+        <div id="infra-map-tooltip" class="infra-tooltip" style="display:none"></div>
+      </div>
+
+      <!-- 右：表格 -->
+      <div class="infra-table-panel">
+        <div class="infra-table-header">
+          <span>数据中心清单</span>
+          <div class="infra-legend">
+            ${Object.entries(STATUS_LABELS).map(([k,v]) =>
+              `<span class="infra-legend-dot" style="background:${v.color}"></span><span>${v.label}</span>`
+            ).join('')}
+          </div>
+        </div>
+        <div class="infra-table-wrap">
+          <table class="infra-table" id="infra-dc-table">
+            <thead><tr>
+              <th>名称</th><th>运营方</th><th>地区</th><th>容量</th><th>状态</th><th>开始时间</th>
+            </tr></thead>
+            <tbody>
+              ${data.datacenters.map(dc => {
+                const st = STATUS_LABELS[dc.status] || {label: dc.status, color: '#888'};
+                return `<tr class="infra-row" onclick="highlightDC('${dc.id}')" data-id="${dc.id}">
+                  <td><strong>${dc.name}</strong>${dc.city ? '<br><small style="color:var(--text-muted)">'+dc.city+(dc.state?', '+dc.state:'')+'</small>' : ''}</td>
+                  <td>${dc.owner||'—'}</td>
+                  <td>${(data.region_labels||{})[dc.region]||dc.country||'—'}</td>
+                  <td><strong>${dc.capacity_gw ? dc.capacity_gw+'GW' : '—'}</strong></td>
+                  <td><span class="infra-status-badge" style="background:${st.color}22;color:${st.color};border:1px solid ${st.color}44">${st.label}</span></td>
+                  <td>${dc.start_date||'—'}</td>
+                </tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>`;
+
+  // 加载 D3 + TopoJSON 然后渲染地球
+  await loadD3AndDraw(data, 'us');
+}
+
+let currentRegion = 'us';
+let d3Loaded = false;
+
+async function loadD3AndDraw(data, region) {
+  if (!d3Loaded) {
+    await Promise.all([
+      loadScript('https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js'),
+      loadScript('https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js'),
+    ]);
+    d3Loaded = true;
+  }
+  drawGlobe(data, region);
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    const s = document.createElement('script');
+    s.src = src; s.onload = resolve; s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+async function switchRegion(region) {
+  currentRegion = region;
+  document.querySelectorAll('.infra-region-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.region === region);
+  });
+  const data = await loadInfraData();
+  if (data) drawGlobe(data, region);
+}
+
+function highlightDC(id) {
+  document.querySelectorAll('.infra-row').forEach(r => {
+    r.classList.toggle('highlighted', r.dataset.id === id);
+  });
+}
+
+async function drawGlobe(data, region) {
+  const svg = document.getElementById('infra-globe');
+  if (!svg || typeof d3 === 'undefined') return;
+
+  const container = svg.parentElement;
+  const W = container.clientWidth || 600;
+  const H = 500;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  // 清空
+  d3.select(svg).selectAll('*').remove();
+
+  const center = REGION_CENTERS[region] || REGION_CENTERS['us'];
+
+  // 用 Mercator 投影，聚焦到当前区域
+  const projection = d3.geoMercator()
+    .center([center.lng, center.lat])
+    .scale(center.scale)
+    .translate([W / 2, H / 2]);
+
+  const path = d3.geoPath().projection(projection);
+  const s = d3.select(svg);
+
+  // 背景
+  s.append('rect').attr('width', W).attr('height', H).attr('fill', '#0f1117');
+
+  // 加载世界地图数据
+  let world;
+  try {
+    const res = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+    world = await res.json();
+  } catch(e) {
+    s.append('text').attr('x', W/2).attr('y', H/2).attr('text-anchor','middle')
+      .attr('fill','#666').text('地图数据加载失败，请检查网络');
+    return;
+  }
+
+  const countries = topojson.feature(world, world.objects.countries);
+  const borders = topojson.mesh(world, world.objects.countries, (a,b) => a !== b);
+
+  // 绘制国家
+  s.append('g').selectAll('path')
+    .data(countries.features)
+    .join('path')
+    .attr('d', path)
+    .attr('fill', '#1e2335')
+    .attr('stroke', '#2a2f45')
+    .attr('stroke-width', 0.5);
+
+  // 绘制边界
+  s.append('path').datum(borders)
+    .attr('d', path)
+    .attr('fill', 'none')
+    .attr('stroke', '#2a3050')
+    .attr('stroke-width', 0.8);
+
+  // 绘制数据中心点
+  const tooltip = document.getElementById('infra-map-tooltip');
+  const dcs = data.datacenters.filter(dc => {
+    if (region === 'us') return dc.country === 'US';
+    if (region === 'cn') return dc.country === 'CN';
+    if (region === 'sea') return ['SG','MY','ID','TH','VN','PH'].includes(dc.country);
+    if (region === 'eu') return ['GB','DE','FR','NL','SE','FI','IE','ES','IT','PL'].includes(dc.country);
+    if (region === 'me') return ['AE','SA','QA','BH','OM','IL'].includes(dc.country);
+    return true;
+  });
+
+  // 如果当前区域无数据，显示全部
+  const plotDcs = dcs.length > 0 ? dcs : data.datacenters;
+
+  s.selectAll('circle.dc-dot')
+    .data(plotDcs)
+    .join('circle')
+    .attr('class', 'dc-dot')
+    .attr('cx', d => { const p = projection([d.lng, d.lat]); return p ? p[0] : -999; })
+    .attr('cy', d => { const p = projection([d.lng, d.lat]); return p ? p[1] : -999; })
+    .attr('r', d => Math.max(6, Math.sqrt((d.capacity_gw||0.1) * 200)))
+    .attr('fill', d => (STATUS_LABELS[d.status]||{color:'#60a5fa'}).color)
+    .attr('fill-opacity', 0.75)
+    .attr('stroke', '#fff')
+    .attr('stroke-width', 1.5)
+    .style('cursor', 'pointer')
+    .on('mouseover', function(event, d) {
+      const st = STATUS_LABELS[d.status] || {label: d.status};
+      tooltip.style.display = 'block';
+      tooltip.innerHTML = `
+        <strong>${d.name}</strong><br>
+        ${d.city||''}${d.state ? ', '+d.state : ''}${d.country ? ' · '+d.country : ''}<br>
+        容量：<strong>${d.capacity_gw ? d.capacity_gw+'GW' : '—'}</strong><br>
+        状态：${st.label}　开始：${d.start_date||'—'}<br>
+        ${d.notes ? '<small>'+d.notes+'</small>' : ''}
+      `;
+      // 点位置跟随
+      const rect = svg.getBoundingClientRect();
+      const cx = +d3.select(this).attr('cx');
+      const cy = +d3.select(this).attr('cy');
+      tooltip.style.left = (cx + 14) + 'px';
+      tooltip.style.top  = (cy - 10) + 'px';
+      d3.select(this).attr('stroke', '#fbbf24').attr('stroke-width', 2.5);
+      highlightDC(d.id);
+    })
+    .on('mouseout', function() {
+      tooltip.style.display = 'none';
+      d3.select(this).attr('stroke', '#fff').attr('stroke-width', 1.5);
+    });
+
+  // 标签（只有点容量>=0.5GW才显示）
+  s.selectAll('text.dc-label')
+    .data(plotDcs.filter(d => (d.capacity_gw||0) >= 0.5))
+    .join('text')
+    .attr('class', 'dc-label')
+    .attr('x', d => { const p = projection([d.lng, d.lat]); return p ? p[0] + Math.max(8, Math.sqrt((d.capacity_gw||0.1)*200)) + 3 : -999; })
+    .attr('y', d => { const p = projection([d.lng, d.lat]); return p ? p[1] + 4 : -999; })
+    .attr('fill', '#e8eaf0')
+    .attr('font-size', '11px')
+    .text(d => d.name.length > 18 ? d.name.slice(0,16)+'…' : d.name);
+}
+
 function renderTopicPage(sector) {
   return `
     <div class="topic-placeholder">
