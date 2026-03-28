@@ -1,0 +1,52 @@
+{
+  "id": "tsmc",
+  "name": "台积电",
+  "ticker": "TSM",
+  "exchange": "NYSE",
+  "color": "#C0272D",
+  "logo_url": "https://logo.clearbit.com/tsmc.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "全球最先进晶圆代工厂，3nm/2nm 节点领先英特尔和三星，AI 算力芯片首选制造商。",
+    "business_segments": [
+      {
+        "name": "高性能计算",
+        "revenue_pct": 52,
+        "description": "AI/HPC 芯片，快速增长"
+      },
+      {
+        "name": "智能手机",
+        "revenue_pct": 33,
+        "description": "Apple A系列、高通骁龙"
+      },
+      {
+        "name": "IoT/汽车/其他",
+        "revenue_pct": 15,
+        "description": ""
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$846B",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 846.3,
+      "price": 326.74,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "美国 Arizona fab 良率和成本",
+      "日本/欧洲扩产节奏",
+      "地缘政治风险溢价"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
