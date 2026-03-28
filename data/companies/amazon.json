@@ -1,0 +1,63 @@
+{
+  "id": "amazon",
+  "name": "Amazon",
+  "ticker": "AMZN",
+  "exchange": "NASDAQ",
+  "color": "#FF9900",
+  "logo_url": "https://logo.clearbit.com/amazon.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "全球最大电商和云计算公司，AWS 是全球领先的云服务平台，广告业务高速增长。",
+    "business_segments": [
+      {
+        "name": "AWS",
+        "revenue_pct": 17,
+        "description": "云计算，全球份额约 30%",
+        "note": "营业利润贡献超 60%"
+      },
+      {
+        "name": "北美电商",
+        "revenue_pct": 42,
+        "description": "自营电商+第三方卖家服务"
+      },
+      {
+        "name": "广告",
+        "revenue_pct": 9,
+        "description": "站内广告，年增速超 20%"
+      },
+      {
+        "name": "国际电商",
+        "revenue_pct": 22,
+        "description": "欧洲、日本、新兴市场"
+      },
+      {
+        "name": "其他",
+        "revenue_pct": 10,
+        "description": "订阅、Alexa、实体店等"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$2.1T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 2117.0,
+      "price": 199.34,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "AWS 增速能否维持在 20%+",
+      "AI 资本开支能否转化为可见回报",
+      "广告业务天花板"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
