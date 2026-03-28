@@ -1,0 +1,57 @@
+{
+  "id": "amd",
+  "name": "AMD",
+  "ticker": "AMD",
+  "exchange": "NASDAQ",
+  "color": "#ED1C24",
+  "logo_url": "https://logo.clearbit.com/amd.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "CPU+GPU 双线作战，MI300X/MI350 在 AI 训练推理市场抢食 NVIDIA 份额，PC 市场强势复苏。",
+    "business_segments": [
+      {
+        "name": "数据中心",
+        "revenue_pct": 55,
+        "description": "EPYC CPU + MI300 GPU，高速增长"
+      },
+      {
+        "name": "客户端（PC）",
+        "revenue_pct": 25,
+        "description": "Ryzen，市场份额持续提升"
+      },
+      {
+        "name": "游戏",
+        "revenue_pct": 10,
+        "description": "显卡+主机芯片"
+      },
+      {
+        "name": "嵌入式",
+        "revenue_pct": 10,
+        "description": "FPGA，复苏中"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$3.3T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 3262.1,
+      "price": 201.99,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "MI350/400 能否拉近与 NVIDIA 的差距",
+      "软件生态（ROCm vs CUDA）成熟度",
+      "数据中心 GPU 收入预期管理"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
