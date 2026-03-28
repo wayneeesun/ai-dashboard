@@ -1,0 +1,52 @@
+{
+  "id": "microsoft",
+  "name": "Microsoft",
+  "ticker": "MSFT",
+  "exchange": "NASDAQ",
+  "color": "#00A4EF",
+  "logo_url": "https://logo.clearbit.com/microsoft.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "全球最大软件公司，Azure AI 高速增长，Copilot 系列产品嵌入 Office/GitHub 全面变现。",
+    "business_segments": [
+      {
+        "name": "Intelligent Cloud",
+        "revenue_pct": 43,
+        "description": "Azure + AI，增速加速中"
+      },
+      {
+        "name": "Productivity & Business",
+        "revenue_pct": 32,
+        "description": "Office 365、Teams、LinkedIn"
+      },
+      {
+        "name": "Personal Computing",
+        "revenue_pct": 25,
+        "description": "Windows、Xbox、Surface、Bing"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$2.7T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 2650.8,
+      "price": 356.77,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "Azure AI 增速持续性",
+      "Copilot ARR 货币化节奏",
+      "CapEx 回报周期"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
