@@ -8,12 +8,16 @@
   "type": "ai-native",
   "profile": {
     "summary": "中国头部 AI 独角兽，MiniMax-Text-01 支持 100 万 token 上下文，Hailuo 视频生成全球破圈。",
-    "last_round": "2024-08",
-    "last_valuation_bn": "25",
+    "last_round": "2025-12 港股上市聆讯通过",
+    "last_valuation_bn": "4",
     "news": [
-      "Hailuo 视频模型海外增长",
-      "To-B API 收入规模",
-      "下一轮融资进展"
-    ]
+      "2025-12-21：通过港股上市聆讯，拟募资 $6-7亿，估值约 $4B（ebrun.com）",
+      "2025-07：C轮近 $3亿，上海国资母基金参投（财联社）",
+      "MiniMax-01 模型发布，海外扩张提速"
+    ],
+    "valuation_source": "ebrun.com (Dec 2025), 财联社",
+    "key_metrics": {
+      "market_cap_usd_bn": 4.0
+    }
   }
 }
