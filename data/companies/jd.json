@@ -1,0 +1,47 @@
+{
+  "id": "jd",
+  "name": "京东",
+  "ticker": "JD",
+  "exchange": "NASDAQ",
+  "color": "#C0272D",
+  "logo_url": "https://logo.clearbit.com/jd.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "中国自营电商平台，以高品质物流和 3C/家电见长，正推进即时零售和 AI 降本。",
+    "business_segments": [
+      {
+        "name": "商品收入",
+        "revenue_pct": 77,
+        "description": "自营 3C、家电、百货"
+      },
+      {
+        "name": "服务收入",
+        "revenue_pct": 23,
+        "description": "平台佣金、广告、物流外部化"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$46B",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 45.9,
+      "price": 28.7,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "用户活跃度与 GMV 增速",
+      "即时零售竞争格局",
+      "利润率改善持续性"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
