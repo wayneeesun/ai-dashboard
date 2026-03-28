@@ -1,0 +1,19 @@
+{
+  "id": "anthropic",
+  "name": "Anthropic",
+  "ticker": null,
+  "exchange": "Private",
+  "color": "#C96A29",
+  "logo_url": "https://logo.clearbit.com/anthropic.com",
+  "type": "ai-native",
+  "profile": {
+    "summary": "OpenAI 前核心团队创立，主打安全可控 AI，Claude 系列在企业端口碑领先，AWS/GCP 双云战略。",
+    "last_round": "2025-03 Amazon 追投",
+    "last_valuation_bn": "61.5",
+    "news": [
+      "Claude 4 发布时间线",
+      "Amazon 独家供应关系",
+      "企业端 ARR 规模"
+    ]
+  }
+}
