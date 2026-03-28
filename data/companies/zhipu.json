@@ -8,12 +8,16 @@
   "type": "ai-native",
   "profile": {
     "summary": "清华系 AI 公司，GLM 系列模型，To-B 政企客户基础扎实，是中国最早商业化的大模型公司之一。",
-    "last_round": "2024-06",
-    "last_valuation_bn": "—",
+    "last_round": "2026-01 港股上市",
+    "last_valuation_bn": "5.5",
     "news": [
-      "IPO 准备进展",
-      "GLM-4 商业化规模",
-      "政企客户续约率"
-    ]
+      "2026-01-08：港股主板上市，IPO募资约 43亿港元，估值约 $5.5B（财联社/itiger）",
+      "GLM-4 系列模型持续迭代",
+      "清华系背景，国资持股比例高"
+    ],
+    "valuation_source": "财联社 (Dec 2025), itiger",
+    "key_metrics": {
+      "market_cap_usd_bn": 5.5
+    }
   }
 }
