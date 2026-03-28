@@ -1,0 +1,30 @@
+{
+  "updated_at": "2026-03-29",
+  "datacenters": [
+    {
+      "id": "dc-001",
+      "name": "Ohio Hyperscale DC",
+      "owner": "Unknown",
+      "capacity_gw": 1.0,
+      "status": "under_construction",
+      "start_date": "2024",
+      "completion_date": null,
+      "country": "US",
+      "state": "OH",
+      "city": "Ohio",
+      "lat": 40.4173,
+      "lng": -82.9071,
+      "region": "us",
+      "notes": "1GW 超大规模数据中心，2024年开始建设",
+      "sources": []
+    }
+  ],
+  "regions": ["us", "cn", "sea", "eu", "me"],
+  "region_labels": {
+    "us": "美国",
+    "cn": "中国",
+    "sea": "东南亚",
+    "eu": "欧洲",
+    "me": "中东"
+  }
+}
