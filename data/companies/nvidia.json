@@ -1,0 +1,53 @@
+{
+  "id": "nvidia",
+  "name": "NVIDIA",
+  "ticker": "NVDA",
+  "exchange": "NASDAQ",
+  "color": "#76B900",
+  "logo_url": "https://logo.clearbit.com/nvidia.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "AI 计算基础设施绝对龙头，H100/B200 GPU 供不应求，CUDA 生态构建深厚护城河。",
+    "business_segments": [
+      {
+        "name": "数据中心",
+        "revenue_pct": 87,
+        "description": "H100/B200/GB200，超大规模+主权AI",
+        "note": "FY2025 收入约 $1154亿"
+      },
+      {
+        "name": "游戏",
+        "revenue_pct": 9,
+        "description": "GeForce RTX 系列"
+      },
+      {
+        "name": "专业可视化+汽车",
+        "revenue_pct": 4,
+        "description": "Omniverse, DRIVE"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$4.1T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 4094.2,
+      "price": 167.52,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "Blackwell 产能爬坡节奏",
+      "客户自研芯片（Google TPU/AWS Trainium）替代风险",
+      "出口管制影响"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
