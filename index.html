@@ -1212,7 +1212,56 @@ async function selectSector(id) {
   const companies = await Promise.all(sector.companies.map(loadCompany));
   const valid = companies.filter(Boolean);
 
-  grid.innerHTML = valid.map(renderCard).join('');
+  // 按市值降序排列（AI-native 用估值排序）
+  valid.sort((a, b) => {
+    const ma = a.profile?.key_metrics?.market_cap_usd_bn ?? a.profile?.last_valuation_bn ?? 0;
+    const mb = b.profile?.key_metrics?.market_cap_usd_bn ?? b.profile?.last_valuation_bn ?? 0;
+    return Number(mb) - Number(ma);
+  });
+
+  // 区分普通公司和 AI-native 私司
+  if (sector.type === 'ai-native') {
+    grid.innerHTML = valid.map(renderAiNativeCard).join('');
+  } else {
+    grid.innerHTML = valid.map(renderCard).join('');
+  }
+}
+
+// ── AI-Native Card (私司：估值 + 融资轮次 + 新闻) ──
+function renderAiNativeCard(c) {
+  const p = c.profile || {};
+  const logoHtml = c.logo_url
+    ? `<img class="card-logo" src="${c.logo_url}" alt="${c.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+    + `<div class="card-logo-fallback" style="display:none;background:${c.color || '#4f8ef7'}">${(c.name||'?')[0]}</div>`
+    : `<div class="card-logo-fallback" style="background:${c.color || '#4f8ef7'}">${(c.name||'?')[0]}</div>`;
+
+  const valuation = p.last_valuation_bn ? `$${Number(p.last_valuation_bn) >= 1000 ? (Number(p.last_valuation_bn)/1000).toFixed(1)+'T' : p.last_valuation_bn+'B'}` : '—';
+  const newsItems = (p.news || []).slice(0, 2).map(n => `<li>${n}</li>`).join('');
+
+  return `
+    <div class="company-card ai-native-card" style="--card-color:${c.color || '#4f8ef7'}" onclick="openDetail('${c.id}')">
+      <div class="card-header">
+        <div style="position:relative">${logoHtml}</div>
+        <div class="card-title">
+          <h3>${c.name}</h3>
+          <div class="ticker">Private · ${p.last_round || '—'}</div>
+        </div>
+      </div>
+      <p class="card-summary">${p.summary || ''}</p>
+      <div class="card-metrics">
+        <div class="metric">
+          <div class="metric-label">最新估值</div>
+          <div class="metric-value">${valuation}</div>
+        </div>
+        <div class="metric" style="grid-column: span 3">
+          <div class="metric-label">近期动态</div>
+          <ul style="margin:4px 0 0 16px;font-size:12px;color:var(--text-muted);line-height:1.6">${newsItems || '<li>暂无</li>'}</ul>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="no-earnings-badge">Private</span>
+      </div>
+    </div>`;
 }
 
 // ── Card ──
