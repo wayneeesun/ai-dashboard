@@ -1,0 +1,47 @@
+{
+  "id": "broadcom",
+  "name": "博通",
+  "ticker": "AVGO",
+  "exchange": "NASDAQ",
+  "color": "#CC0000",
+  "logo_url": "https://logo.clearbit.com/broadcom.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "半导体+基础设施软件混合体，VMware 并购完成，AI ASIC（XPU）业务快速成长。",
+    "business_segments": [
+      {
+        "name": "半导体",
+        "revenue_pct": 60,
+        "description": "网络交换、AI ASIC、存储控制器"
+      },
+      {
+        "name": "基础设施软件",
+        "revenue_pct": 40,
+        "description": "VMware，高毛利订阅"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$1.4T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 1401.2,
+      "price": 300.68,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "VMware 整合与留存率",
+      "AI ASIC 收入规模化时间线",
+      "关键客户集中度"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
