@@ -1,0 +1,19 @@
+{
+  "id": "zhipu",
+  "name": "智谱 AI",
+  "ticker": null,
+  "exchange": "Private",
+  "color": "#3B82F6",
+  "logo_url": "https://logo.clearbit.com/zhipu.com",
+  "type": "ai-native",
+  "profile": {
+    "summary": "清华系 AI 公司，GLM 系列模型，To-B 政企客户基础扎实，是中国最早商业化的大模型公司之一。",
+    "last_round": "2024-06",
+    "last_valuation_bn": "—",
+    "news": [
+      "IPO 准备进展",
+      "GLM-4 商业化规模",
+      "政企客户续约率"
+    ]
+  }
+}
