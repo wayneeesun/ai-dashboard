@@ -9,17 +9,33 @@
   "profile": {
     "summary": "全球最大搜索引擎及数字广告平台，同时经营全球第三大云服务（Google Cloud）。AI 是当前核心叙事：Gemini 模型族群、AI Overview 对搜索的改造、以及 Cloud AI 服务是三大战略重点。",
     "business_segments": [
-      { "name": "Google Services", "description": "搜索、YouTube、Google Play、广告网络", "revenue_pct": 87 },
-      { "name": "Google Cloud", "description": "GCP + Google Workspace", "revenue_pct": 12 },
-      { "name": "Other Bets", "description": "Waymo、生命科学等早期项目", "revenue_pct": 1 }
+      {
+        "name": "Google Services",
+        "description": "搜索、YouTube、Google Play、广告网络",
+        "revenue_pct": 87
+      },
+      {
+        "name": "Google Cloud",
+        "description": "GCP + Google Workspace",
+        "revenue_pct": 12
+      },
+      {
+        "name": "Other Bets",
+        "description": "Waymo、生命科学等早期项目",
+        "revenue_pct": 1
+      }
     ],
     "key_metrics": {
-      "market_cap": "~$2.1T",
+      "market_cap": "$3.3T",
       "ltm_revenue": "$350B",
       "ltm_revenue_growth": "14%",
       "ltm_operating_margin": "32%",
       "ltm_capex": "$52B",
-      "as_of": "Q4 2025"
+      "as_of": "Q4 2025",
+      "market_cap_usd_bn": 3322.3,
+      "price": 274.34,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
     },
     "key_debates": [
       "AI Overview 对搜索广告变现的影响是正向还是负向",
@@ -31,6 +47,11 @@
   "analyst_notes": {
     "thesis": "搜索护城河短期稳固，Cloud 是增长第二曲线，AI 既是威胁也是机遇。",
     "coverage_start": "2026-03-26",
-    "evolution_log": [{ "date": "2026-03-26", "note": "初始建档，待补充 Earnings 数据。" }]
+    "evolution_log": [
+      {
+        "date": "2026-03-26",
+        "note": "初始建档，待补充 Earnings 数据。"
+      }
+    ]
   }
 }
