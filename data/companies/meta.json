@@ -6,7 +6,6 @@
   "sector": "us-internet",
   "logo_url": "https://logo.clearbit.com/meta.com",
   "color": "#0082FB",
-
   "profile": {
     "summary": "全球最大社交媒体公司，旗下拥有 Facebook、Instagram、WhatsApp、Messenger 四大平台，月活用户合计超 32 亿。核心商业模式是精准数字广告，AI 驱动的推荐算法是广告效率的核心护城河。Reality Labs 部门长期亏损，但 Meta 将其视为未来计算平台的战略布局。",
     "business_segments": [
@@ -24,14 +23,18 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "~$1.5T",
+      "market_cap": "$1.3T",
       "ltm_revenue": "$164.5B",
       "ltm_revenue_growth": "22%",
       "ltm_operating_income": "$69.4B",
       "ltm_operating_margin": "42%",
       "ltm_capex": "$38.9B",
       "capex_growth_yoy": "+66%",
-      "as_of": "Q4 2025"
+      "as_of": "Q4 2025",
+      "market_cap_usd_bn": 1345.8,
+      "price": 525.72,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
     },
     "key_debates": [
       "CapEx 激增（2026 指引 $60-65B）能否带来广告效率的对应回报",
@@ -40,7 +43,6 @@
       "中国广告主（Temu、Shein）贡献比例及地缘风险敞口"
     ]
   },
-
   "earnings": [
     {
       "quarter": "Q4 2025",
@@ -68,7 +70,6 @@
       "analyst_note": "首次建档。市场焦点在 CapEx 回报时间表，下季度需关注广告 ARPU 环比趋势及 Llama 商业化进展。"
     }
   ],
-
   "analyst_notes": {
     "thesis": "AI 驱动广告效率提升是核心增长引擎，平台网络效应护城河深，CapEx 超支是短期阵痛而非结构性问题。长期看好智能眼镜作为下一代交互入口的可能性。",
     "coverage_start": "2026-03-26",
