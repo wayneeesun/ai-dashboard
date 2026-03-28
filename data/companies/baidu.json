@@ -1,0 +1,52 @@
+{
+  "id": "baidu",
+  "name": "百度",
+  "ticker": "BIDU",
+  "exchange": "NASDAQ",
+  "color": "#2932E1",
+  "logo_url": "https://logo.clearbit.com/baidu.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "中国最大搜索引擎，文心一言/ERNIE 大模型赋能 AI 转型，Apollo 自动驾驶是长期期权。",
+    "business_segments": [
+      {
+        "name": "核心（搜索+信息流）",
+        "revenue_pct": 65,
+        "description": "广告主要收入来源"
+      },
+      {
+        "name": "百度云/智能云",
+        "revenue_pct": 20,
+        "description": "AI 加速拉动"
+      },
+      {
+        "name": "Apollo 及其他",
+        "revenue_pct": 15,
+        "description": "自动驾驶、萝卜快跑"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$150B",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 150.3,
+      "price": 108.12,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "搜索份额被 AI 产品蚕食",
+      "文心大模型商业化进度",
+      "Apollo 盈利路径"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
