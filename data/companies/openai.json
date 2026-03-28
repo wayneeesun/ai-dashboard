@@ -1,0 +1,19 @@
+{
+  "id": "openai",
+  "name": "OpenAI",
+  "ticker": null,
+  "exchange": "Private",
+  "color": "#10A37F",
+  "logo_url": "https://logo.clearbit.com/openai.com",
+  "type": "ai-native",
+  "profile": {
+    "summary": "全球最具影响力的 AI 实验室，ChatGPT 月活超 5 亿，GPT-4o/o1/o3 系列引领前沿，API 和 Enterprise 双线变现。",
+    "last_round": "2025 SoftBank 领投",
+    "last_valuation_bn": "3000",
+    "news": [
+      "即将 IPO 传闻（2025-2026）",
+      "与微软战略关系重组",
+      "o3 发布后市场份额进一步扩大"
+    ]
+  }
+}
