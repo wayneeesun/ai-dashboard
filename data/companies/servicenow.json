@@ -1,0 +1,47 @@
+{
+  "id": "servicenow",
+  "name": "ServiceNow",
+  "ticker": "NOW",
+  "exchange": "NYSE",
+  "color": "#62D84E",
+  "logo_url": "https://logo.clearbit.com/servicenow.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "企业工作流自动化 SaaS 龙头，AI Agent 能力深嵌 Now Platform，ARR 增速稳定在 20%+。",
+    "business_segments": [
+      {
+        "name": "订阅",
+        "revenue_pct": 95,
+        "description": "Now Platform，IT/HR/Legal 工作流"
+      },
+      {
+        "name": "服务",
+        "revenue_pct": 5,
+        "description": "实施、培训"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$202B",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 201.8,
+      "price": 99.41,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "AI Agent 定价模式",
+      "政府/公共部门增长",
+      "NRR 维持能力"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
