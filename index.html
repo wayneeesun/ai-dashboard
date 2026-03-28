@@ -1292,8 +1292,10 @@ function renderAiNativeCard(c) {
     + `<div class="card-logo-fallback" style="display:none;background:${c.color || '#4f8ef7'}">${(c.name||'?')[0]}</div>`
     : `<div class="card-logo-fallback" style="background:${c.color || '#4f8ef7'}">${(c.name||'?')[0]}</div>`;
 
-  const valuation = p.last_valuation_bn ? `$${Number(p.last_valuation_bn) >= 1000 ? (Number(p.last_valuation_bn)/1000).toFixed(1)+'T' : p.last_valuation_bn+'B'}` : '—';
+  const valBn = Number(p.last_valuation_bn);
+  const valuation = p.last_valuation_bn ? `$${valBn >= 1000 ? (valBn/1000).toFixed(1)+'T' : valBn+'B'}` : '—';
   const newsItems = (p.news || []).slice(0, 2).map(n => `<li>${n}</li>`).join('');
+  const src = p.valuation_source ? `<small style="color:var(--text-dim);font-size:10px">来源：${p.valuation_source}</small>` : '';
 
   return `
     <div class="company-card ai-native-card" style="--card-color:${c.color || '#4f8ef7'}" onclick="openDetail('${c.id}')">
@@ -1309,6 +1311,7 @@ function renderAiNativeCard(c) {
         <div class="metric">
           <div class="metric-label">最新估值</div>
           <div class="metric-value">${valuation}</div>
+          ${src}
         </div>
         <div class="metric" style="grid-column: span 3">
           <div class="metric-label">近期动态</div>
@@ -1366,7 +1369,7 @@ function renderCard(c) {
         </div>
       </div>
       <div class="card-footer">
-        <span>截至 ${m.as_of || '—'}</span>
+        <span style="font-size:10px;color:var(--text-dim)">市值 via Stooq · ${m.updated_at || m.as_of || '—'}</span>
         ${earningsBadge}
       </div>
     </div>`;
@@ -1501,122 +1504,181 @@ function highlightDC(id) {
   });
 }
 
+let globeWorld = null;   // 缓存地图数据
+let globeRotation = [0, -20]; // [lambda, phi] 当前旋转状态
+let globeProjection = null;
+
 async function drawGlobe(data, region) {
   const svg = document.getElementById('infra-globe');
   if (!svg || typeof d3 === 'undefined') return;
 
   const container = svg.parentElement;
-  const W = container.clientWidth || 600;
+  const W = Math.min(container.clientWidth || 600, 700);
   const H = 500;
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const CX = W / 2, CY = H / 2;
+  const RADIUS = Math.min(W, H) / 2 - 20;
 
-  // 清空
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   d3.select(svg).selectAll('*').remove();
 
-  const center = REGION_CENTERS[region] || REGION_CENTERS['us'];
+  // 加载地图数据（缓存）
+  if (!globeWorld) {
+    try {
+      const res = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+      globeWorld = await res.json();
+    } catch(e) {
+      d3.select(svg).append('text').attr('x', CX).attr('y', CY)
+        .attr('text-anchor','middle').attr('fill','#666').text('地图数据加载失败');
+      return;
+    }
+  }
 
-  // 用 Mercator 投影，聚焦到当前区域
-  const projection = d3.geoMercator()
-    .center([center.lng, center.lat])
-    .scale(center.scale)
-    .translate([W / 2, H / 2]);
+  // 旋转到目标区域
+  const center = REGION_CENTERS[region] || REGION_CENTERS['us'];
+  globeRotation = [-center.lng, -center.lat];
+
+  const projection = d3.geoOrthographic()
+    .scale(RADIUS)
+    .translate([CX, CY])
+    .rotate(globeRotation)
+    .clipAngle(90);
+  globeProjection = projection;
 
   const path = d3.geoPath().projection(projection);
   const s = d3.select(svg);
 
-  // 背景
-  s.append('rect').attr('width', W).attr('height', H).attr('fill', '#0f1117');
+  // 海洋背景
+  s.append('circle').attr('cx', CX).attr('cy', CY).attr('r', RADIUS)
+    .attr('fill', '#0d1526').attr('stroke', '#2a2f45').attr('stroke-width', 1);
 
-  // 加载世界地图数据
-  let world;
-  try {
-    const res = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
-    world = await res.json();
-  } catch(e) {
-    s.append('text').attr('x', W/2).attr('y', H/2).attr('text-anchor','middle')
-      .attr('fill','#666').text('地图数据加载失败，请检查网络');
-    return;
-  }
+  // 国家层
+  const countries = topojson.feature(globeWorld, globeWorld.objects.countries);
+  const borders = topojson.mesh(globeWorld, globeWorld.objects.countries, (a,b) => a !== b);
 
-  const countries = topojson.feature(world, world.objects.countries);
-  const borders = topojson.mesh(world, world.objects.countries, (a,b) => a !== b);
-
-  // 绘制国家
-  s.append('g').selectAll('path')
+  const countryG = s.append('g').attr('class', 'countries');
+  countryG.selectAll('path')
     .data(countries.features)
     .join('path')
     .attr('d', path)
-    .attr('fill', '#1e2335')
-    .attr('stroke', '#2a2f45')
-    .attr('stroke-width', 0.5);
+    .attr('fill', '#1e2740')
+    .attr('stroke', '#2a3555')
+    .attr('stroke-width', 0.4);
 
-  // 绘制边界
-  s.append('path').datum(borders)
-    .attr('d', path)
-    .attr('fill', 'none')
-    .attr('stroke', '#2a3050')
-    .attr('stroke-width', 0.8);
+  const borderPath = s.append('path').datum(borders)
+    .attr('d', path).attr('fill', 'none')
+    .attr('stroke', '#3a4565').attr('stroke-width', 0.6);
 
-  // 绘制数据中心点
+  // 经纬网格
+  const graticule = d3.geoGraticule()();
+  s.append('path').datum(graticule)
+    .attr('d', path).attr('fill', 'none')
+    .attr('stroke', '#1e2535').attr('stroke-width', 0.4);
+
+  // 数据中心点
   const tooltip = document.getElementById('infra-map-tooltip');
-  const dcs = data.datacenters.filter(dc => {
-    if (region === 'us') return dc.country === 'US';
-    if (region === 'cn') return dc.country === 'CN';
-    if (region === 'sea') return ['SG','MY','ID','TH','VN','PH'].includes(dc.country);
-    if (region === 'eu') return ['GB','DE','FR','NL','SE','FI','IE','ES','IT','PL'].includes(dc.country);
-    if (region === 'me') return ['AE','SA','QA','BH','OM','IL'].includes(dc.country);
-    return true;
-  });
+  const dcG = s.append('g').attr('class', 'dc-points');
 
-  // 如果当前区域无数据，显示全部
-  const plotDcs = dcs.length > 0 ? dcs : data.datacenters;
+  function renderDots() {
+    dcG.selectAll('circle.dc-dot').remove();
+    dcG.selectAll('text.dc-label').remove();
 
-  s.selectAll('circle.dc-dot')
-    .data(plotDcs)
-    .join('circle')
-    .attr('class', 'dc-dot')
-    .attr('cx', d => { const p = projection([d.lng, d.lat]); return p ? p[0] : -999; })
-    .attr('cy', d => { const p = projection([d.lng, d.lat]); return p ? p[1] : -999; })
-    .attr('r', d => Math.max(6, Math.sqrt((d.capacity_gw||0.1) * 200)))
-    .attr('fill', d => (STATUS_LABELS[d.status]||{color:'#60a5fa'}).color)
-    .attr('fill-opacity', 0.75)
-    .attr('stroke', '#fff')
-    .attr('stroke-width', 1.5)
-    .style('cursor', 'pointer')
-    .on('mouseover', function(event, d) {
-      const st = STATUS_LABELS[d.status] || {label: d.status};
-      tooltip.style.display = 'block';
-      tooltip.innerHTML = `
-        <strong>${d.name}</strong><br>
-        ${d.city||''}${d.state ? ', '+d.state : ''}${d.country ? ' · '+d.country : ''}<br>
-        容量：<strong>${d.capacity_gw ? d.capacity_gw+'GW' : '—'}</strong><br>
-        状态：${st.label}　开始：${d.start_date||'—'}<br>
-        ${d.notes ? '<small>'+d.notes+'</small>' : ''}
-      `;
-      // 点位置跟随
-      const rect = svg.getBoundingClientRect();
-      const cx = +d3.select(this).attr('cx');
-      const cy = +d3.select(this).attr('cy');
-      tooltip.style.left = (cx + 14) + 'px';
-      tooltip.style.top  = (cy - 10) + 'px';
-      d3.select(this).attr('stroke', '#fbbf24').attr('stroke-width', 2.5);
-      highlightDC(d.id);
-    })
-    .on('mouseout', function() {
+    dcG.selectAll('circle.dc-dot')
+      .data(data.datacenters)
+      .join('circle')
+      .attr('class', 'dc-dot')
+      .attr('cx', d => { const p = projection([d.lng, d.lat]); return p ? p[0] : -9999; })
+      .attr('cy', d => { const p = projection([d.lng, d.lat]); return p ? p[1] : -9999; })
+      .attr('r', d => Math.max(7, Math.sqrt((d.capacity_gw||0.1) * 300)))
+      .attr('fill', d => (STATUS_LABELS[d.status]||{color:'#60a5fa'}).color)
+      .attr('fill-opacity', d => {
+        // 背面的点不显示
+        const p = projection([d.lng, d.lat]);
+        return p ? 0.8 : 0;
+      })
+      .attr('stroke', '#fff').attr('stroke-width', 1.5)
+      .style('cursor', 'pointer')
+      .on('mouseover', function(event, d) {
+        const p = projection([d.lng, d.lat]);
+        if (!p) return;
+        const st = STATUS_LABELS[d.status] || {label: d.status};
+        tooltip.style.display = 'block';
+        tooltip.innerHTML = `
+          <strong>${d.name}</strong><br>
+          ${[d.city, d.state, d.country].filter(Boolean).join(', ')}<br>
+          容量：<strong>${d.capacity_gw ? d.capacity_gw+'GW' : '—'}</strong><br>
+          状态：${st.label}　开始：${d.start_date||'—'}<br>
+          ${d.owner && d.owner !== 'Unknown' ? '运营：'+d.owner+'<br>' : ''}
+          ${d.notes ? '<small style="color:var(--text-muted)">'+d.notes+'</small>' : ''}
+        `;
+        tooltip.style.left = (p[0] + 14) + 'px';
+        tooltip.style.top  = (p[1] - 10) + 'px';
+        d3.select(this).attr('stroke', '#fbbf24').attr('stroke-width', 2.5).attr('r', d => Math.max(9, Math.sqrt((d.capacity_gw||0.1)*300)+2));
+        highlightDC(d.id);
+      })
+      .on('mouseout', function(event, d) {
+        tooltip.style.display = 'none';
+        d3.select(this).attr('stroke', '#fff').attr('stroke-width', 1.5).attr('r', d => Math.max(7, Math.sqrt((d.capacity_gw||0.1)*300)));
+      });
+
+    // 标签
+    dcG.selectAll('text.dc-label')
+      .data(data.datacenters.filter(d => (d.capacity_gw||0) >= 0.3))
+      .join('text')
+      .attr('class', 'dc-label')
+      .attr('x', d => { const p = projection([d.lng, d.lat]); return p ? p[0] + Math.max(9, Math.sqrt((d.capacity_gw||0.1)*300)) + 3 : -9999; })
+      .attr('y', d => { const p = projection([d.lng, d.lat]); return p ? p[1] + 4 : -9999; })
+      .attr('fill', '#e8eaf0').attr('font-size', '11px').attr('pointer-events', 'none')
+      .text(d => d.name.length > 20 ? d.name.slice(0,18)+'…' : d.name);
+  }
+
+  renderDots();
+
+  // ── 拖拽旋转 ──
+  let dragStart = null;
+  let rotationStart = globeRotation.slice();
+
+  s.call(d3.drag()
+    .on('start', (event) => {
+      dragStart = [event.x, event.y];
+      rotationStart = projection.rotate().slice();
       tooltip.style.display = 'none';
-      d3.select(this).attr('stroke', '#fff').attr('stroke-width', 1.5);
-    });
+    })
+    .on('drag', (event) => {
+      if (!dragStart) return;
+      const dx = event.x - dragStart[0];
+      const dy = event.y - dragStart[1];
+      const sensitivity = 0.3;
+      const newRot = [
+        rotationStart[0] + dx * sensitivity,
+        Math.max(-85, Math.min(85, rotationStart[1] - dy * sensitivity)),
+      ];
+      projection.rotate(newRot);
+      globeRotation = newRot;
+      // 重绘
+      countryG.selectAll('path').attr('d', path);
+      borderPath.attr('d', path);
+      s.select('path[datum]').attr('d', path);
+      renderDots();
+    })
+  );
 
-  // 标签（只有点容量>=0.5GW才显示）
-  s.selectAll('text.dc-label')
-    .data(plotDcs.filter(d => (d.capacity_gw||0) >= 0.5))
-    .join('text')
-    .attr('class', 'dc-label')
-    .attr('x', d => { const p = projection([d.lng, d.lat]); return p ? p[0] + Math.max(8, Math.sqrt((d.capacity_gw||0.1)*200)) + 3 : -999; })
-    .attr('y', d => { const p = projection([d.lng, d.lat]); return p ? p[1] + 4 : -999; })
-    .attr('fill', '#e8eaf0')
-    .attr('font-size', '11px')
-    .text(d => d.name.length > 18 ? d.name.slice(0,16)+'…' : d.name);
+  // 滚轮缩放
+  s.call(d3.zoom()
+    .scaleExtent([0.5, 4])
+    .on('zoom', (event) => {
+      const newScale = RADIUS * event.transform.k;
+      projection.scale(newScale);
+      countryG.selectAll('path').attr('d', path);
+      borderPath.attr('d', path);
+      s.select('circle').attr('r', newScale);
+      renderDots();
+    })
+  );
+
+  // 提示文字
+  s.append('text').attr('x', CX).attr('y', H - 8)
+    .attr('text-anchor', 'middle').attr('fill', '#555e7a').attr('font-size', '11px')
+    .text('拖拽旋转 · 滚轮缩放');
 }
 
 function renderTopicPage(sector) {
@@ -1701,39 +1763,47 @@ async function renderGithubTrending() {
 }
 
 function renderGhCard(p, idx) {
-  const lc = langColors[p.language] || '#8890a8';
+  const lang = p.language || '';
+  const lc = langColors[lang] || '#8890a8';
   const avatarUrl = `https://github.com/${p.owner}.png?size=72`;
+  // 字段兼容（旧数据用 total_stars/weekly_stars，新数据用 stars/stars_this_week）
+  const totalStars = p.total_stars ?? p.stars ?? 0;
+  const weeklyStars = p.weekly_stars ?? p.stars_this_week ?? 0;
+  const forks = p.forks ?? 0;
+  const explanation = p.explanation || p.description || '暂无描述';
+  const authorBio = p.author_bio || `<a href="https://github.com/${p.owner}" target="_blank" style="color:var(--accent)">@${p.owner}</a>`;
+
   return `
     <div class="gh-card" style="--gh-lang-color:${lc}" onclick="openGhDetail(${idx})">
       <div class="gh-card-top">
         <img class="gh-avatar" src="${avatarUrl}" alt="${p.owner}" onerror="this.style.background='var(--bg-3)';this.src=''" />
         <div class="gh-card-title">
-          <h3>${p.repo}</h3>
+          <h3>${p.name || p.repo || ''}</h3>
           <div class="gh-owner">${p.owner}</div>
         </div>
         <span class="gh-lang-badge">
           <span class="gh-lang-dot" style="background:${lc}"></span>
-          ${p.language}
+          ${lang || '—'}
         </span>
       </div>
-      <p class="gh-explanation">${p.explanation}</p>
+      <p class="gh-explanation">${explanation}</p>
       <div class="gh-stats">
         <div class="gh-stat">
           <div class="label">总 Star</div>
-          <div class="value">${formatNum(p.total_stars)}</div>
+          <div class="value">${formatNum(totalStars)}</div>
         </div>
         <div class="gh-stat">
-          <div class="label">本周新增</div>
-          <div class="value hot">+${formatNum(p.weekly_stars)}</div>
+          <div class="label">近期新增</div>
+          <div class="value hot">${weeklyStars ? '+'+formatNum(weeklyStars) : '—'}</div>
         </div>
         <div class="gh-stat">
           <div class="label">Forks</div>
-          <div class="value">${formatNum(p.forks)}</div>
+          <div class="value">${forks ? formatNum(forks) : '—'}</div>
         </div>
       </div>
       <div class="gh-card-footer">
         <div class="author-label">👤 作者</div>
-        ${p.author_bio}
+        ${authorBio}
       </div>
     </div>`;
 }
@@ -1751,25 +1821,25 @@ function openGhDetail(idx) {
 
   document.getElementById('gh-detail-content').innerHTML = `
     <h2>${p.repo}</h2>
-    <div class="gh-detail-owner">${p.full_name} · <span class="gh-lang-badge" style="display:inline-flex"><span class="gh-lang-dot" style="background:${lc}"></span>${p.language}</span></div>
-    <div class="gh-detail-desc">${p.description}</div>
-    <div class="gh-detail-explain">${p.explanation}</div>
+    <div class="gh-detail-owner">${p.full_name} · <span class="gh-lang-badge" style="display:inline-flex"><span class="gh-lang-dot" style="background:${lc}"></span>${p.language||'—'}</span></div>
+    <div class="gh-detail-desc">${p.description || ''}</div>
+    <div class="gh-detail-explain">${p.explanation || p.description || ''}</div>
     <div class="gh-detail-author">
       <div class="label">👤 作者简介</div>
-      ${p.author_bio}
+      ${p.author_bio || `<a href="https://github.com/${p.owner}" target="_blank" style="color:var(--accent)">@${p.owner} ↗</a>`}
     </div>
     <div class="gh-stats" style="margin-bottom:20px">
       <div class="gh-stat">
         <div class="label">总 Star</div>
-        <div class="value">${formatNum(p.total_stars)}</div>
+        <div class="value">${formatNum(p.total_stars ?? p.stars ?? 0)}</div>
       </div>
       <div class="gh-stat">
-        <div class="label">本周新增</div>
-        <div class="value hot">+${formatNum(p.weekly_stars)}</div>
+        <div class="label">近期新增</div>
+        <div class="value hot">${(p.weekly_stars ?? p.stars_this_week) ? '+'+formatNum(p.weekly_stars ?? p.stars_this_week) : '—'}</div>
       </div>
       <div class="gh-stat">
         <div class="label">Forks</div>
-        <div class="value">${formatNum(p.forks)}</div>
+        <div class="value">${p.forks ? formatNum(p.forks) : '—'}</div>
       </div>
     </div>
     <a class="gh-detail-link" href="${p.url}" target="_blank" rel="noopener">🔗 在 GitHub 上查看</a>
