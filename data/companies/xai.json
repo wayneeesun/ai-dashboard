@@ -8,12 +8,16 @@
   "type": "ai-native",
   "profile": {
     "summary": "马斯克创立，Grok 系列模型借助 X 平台分发，Memphis 超算集群 Colossus 是全球最大单体 GPU 集群。",
-    "last_round": "2025-01",
-    "last_valuation_bn": "75",
+    "last_round": "2026-01 Series E $20B",
+    "last_valuation_bn": "113",
     "news": [
-      "Grok 3 发布后用户增长",
-      "与 X 平台的流量协同",
-      "Colossus 二期扩建进展"
-    ]
+      "2026-01：Series E $20B close，超额完成 $15B 目标（Guardian / aibusiness.com）",
+      "2025-12：Series G $30.5B post-money（Crunchbase）",
+      "Grok 3 发布 + Colossus 二期扩建进行中"
+    ],
+    "valuation_source": "The Guardian (Jan 6, 2026), Crunchbase (Dec 2025)",
+    "key_metrics": {
+      "market_cap_usd_bn": 113.0
+    }
   }
 }
