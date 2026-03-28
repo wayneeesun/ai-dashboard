@@ -1,0 +1,67 @@
+{
+  "id": "alibaba",
+  "name": "阿里巴巴",
+  "ticker": "BABA",
+  "exchange": "NYSE",
+  "color": "#FF6A00",
+  "logo_url": "https://logo.clearbit.com/alibaba.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "中国最大电商生态，同时拥有阿里云、菜鸟物流、蚂蚁金服等核心资产，估值重塑进行中。",
+    "business_segments": [
+      {
+        "name": "淘天集团",
+        "revenue_pct": 42,
+        "description": "淘宝/天猫，客户管理收入"
+      },
+      {
+        "name": "阿里云",
+        "revenue_pct": 13,
+        "description": "中国最大云，AI 拉动增速"
+      },
+      {
+        "name": "国际数字商业",
+        "revenue_pct": 12,
+        "description": "速卖通、Lazada、Trendyol"
+      },
+      {
+        "name": "菜鸟",
+        "revenue_pct": 10,
+        "description": "物流网络"
+      },
+      {
+        "name": "本地生活",
+        "revenue_pct": 9,
+        "description": "饿了么、高德"
+      },
+      {
+        "name": "大文娱及其他",
+        "revenue_pct": 14,
+        "description": "优酷、大麦等"
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$335B",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 335.4,
+      "price": 122.6,
+      "price_currency": "HKD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "淘天 GMV 能否企稳",
+      "阿里云 AI 收入加速",
+      "管理层战略清晰度"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
