@@ -1,0 +1,52 @@
+{
+  "id": "oracle",
+  "name": "Oracle",
+  "ticker": "ORCL",
+  "exchange": "NYSE",
+  "color": "#F80000",
+  "logo_url": "https://logo.clearbit.com/oracle.com",
+  "market_cap_usd": null,
+  "profile": {
+    "summary": "传统数据库巨头正在 AI 基础设施时代焕新，OCI 数据中心被 OpenAI 等选为主要供应商。",
+    "business_segments": [
+      {
+        "name": "Cloud Services & License Support",
+        "revenue_pct": 76,
+        "description": "数据库订阅、OCI"
+      },
+      {
+        "name": "Cloud License & On-Premise",
+        "revenue_pct": 16,
+        "description": ""
+      },
+      {
+        "name": "Hardware",
+        "revenue_pct": 8,
+        "description": ""
+      }
+    ],
+    "key_metrics": {
+      "market_cap": "$3.8T",
+      "ltm_revenue": "—",
+      "ltm_revenue_growth": "—",
+      "ltm_operating_margin": "—",
+      "ltm_capex": "—",
+      "capex_growth_yoy": "—",
+      "as_of": "—",
+      "market_cap_usd_bn": 3832.3,
+      "price": 139.66,
+      "price_currency": "USD",
+      "updated_at": "2026-03-28"
+    },
+    "key_debates": [
+      "OCI 数据中心增速",
+      "与 OpenAI 大合同的持续性",
+      "传统数据库向云迁移节奏"
+    ]
+  },
+  "earnings": [],
+  "analyst_notes": {
+    "thesis": "",
+    "evolution_log": []
+  }
+}
