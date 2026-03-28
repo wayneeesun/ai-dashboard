@@ -1156,6 +1156,53 @@ async function fetchJSON(path) {
   return r.json();
 }
 
+// ── 实时市值（Yahoo Finance，浏览器直接请求） ──
+const TICKER_MAP = {
+  meta: 'META', google: 'GOOGL', amazon: 'AMZN', applovin: 'APP',
+  pinterest: 'PINS', reddit: 'RDDT', pdd: 'PDD', baidu: 'BIDU', jd: 'JD',
+  nvidia: 'NVDA', tsmc: 'TSM', broadcom: 'AVGO', amd: 'AMD',
+  sandisk: 'SNDK', micron: 'MU', microsoft: 'MSFT', shopify: 'SHOP',
+  oracle: 'ORCL', servicenow: 'NOW', snowflake: 'SNOW', cloudflare: 'NET',
+  tencent: '0700.HK', alibaba: '9988.HK', meituan: '3690.HK',
+};
+const liveMarketCaps = {}; // id → { fmt, usd_bn }
+let marketCapFetchDone = false;
+
+async function fetchLiveMarketCaps() {
+  if (marketCapFetchDone) return;
+  const usTickers = Object.entries(TICKER_MAP).filter(([,t]) => !t.endsWith('.HK')).map(([,t]) => t);
+  const hkTickers = Object.entries(TICKER_MAP).filter(([,t]) => t.endsWith('.HK')).map(([,t]) => t);
+  const allTickers = [...usTickers, ...hkTickers].join(',');
+  try {
+    const url = `https://query1.finance.yahoo.com/v8/finance/quote?symbols=${allTickers}&fields=marketCap,shortName,regularMarketPrice,currency`;
+    const r = await fetch(url, { headers: { 'Accept': 'application/json' } });
+    if (!r.ok) throw new Error('Yahoo Finance API error');
+    const data = await r.json();
+    const results = data?.quoteResponse?.result || [];
+    // 建立 ticker → company_id 的反向映射
+    const reverseMap = {};
+    Object.entries(TICKER_MAP).forEach(([id, t]) => { reverseMap[t] = id; });
+    results.forEach(item => {
+      const id = reverseMap[item.symbol];
+      if (!id || !item.marketCap) return;
+      const bn = item.marketCap / 1e9;
+      let fmt;
+      if (bn >= 1000) fmt = `$${(bn/1000).toFixed(1)}T`;
+      else fmt = `$${Math.round(bn)}B`;
+      // HK 市值转 USD（HKD/USD ≈ 0.128）
+      const isHK = item.currency === 'HKD';
+      const usd_bn = isHK ? bn * 0.128 : bn;
+      let usd_fmt;
+      if (usd_bn >= 1000) usd_fmt = `$${(usd_bn/1000).toFixed(1)}T`;
+      else usd_fmt = `$${Math.round(usd_bn)}B`;
+      liveMarketCaps[id] = { fmt: isHK ? usd_fmt : fmt, usd_bn, raw_fmt: fmt, currency: item.currency };
+    });
+    marketCapFetchDone = true;
+  } catch(e) {
+    console.warn('Live market cap fetch failed:', e.message);
+  }
+}
+
 async function loadCompany(id) {
   if (state.companies[id]) return state.companies[id];
   try {
@@ -1266,13 +1313,16 @@ async function selectSector(id) {
   grid.innerHTML = '<div class="loading">加载中…</div>';
   document.getElementById('sector-subtitle').textContent = `${sector.companies.length} 家公司`;
 
+  // 先拉实时市值
+  await fetchLiveMarketCaps();
+
   const companies = await Promise.all(sector.companies.map(loadCompany));
   const valid = companies.filter(Boolean);
 
-  // 按市值降序排列（AI-native 用估值排序）
+  // 按市值降序排列（优先用实时市值，AI-native 用估值）
   valid.sort((a, b) => {
-    const ma = a.profile?.key_metrics?.market_cap_usd_bn ?? a.profile?.last_valuation_bn ?? 0;
-    const mb = b.profile?.key_metrics?.market_cap_usd_bn ?? b.profile?.last_valuation_bn ?? 0;
+    const ma = liveMarketCaps[a.id]?.usd_bn ?? a.profile?.key_metrics?.market_cap_usd_bn ?? a.profile?.last_valuation_bn ?? 0;
+    const mb = liveMarketCaps[b.id]?.usd_bn ?? b.profile?.key_metrics?.market_cap_usd_bn ?? b.profile?.last_valuation_bn ?? 0;
     return Number(mb) - Number(ma);
   });
 
@@ -1353,7 +1403,7 @@ function renderCard(c) {
       <div class="card-metrics">
         <div class="metric">
           <div class="metric-label">市值</div>
-          <div class="metric-value">${m.market_cap || '—'}</div>
+          <div class="metric-value">${liveMarketCaps[c.id]?.fmt || m.market_cap || '—'}</div>
         </div>
         <div class="metric">
           <div class="metric-label">营收增速</div>
@@ -1369,7 +1419,7 @@ function renderCard(c) {
         </div>
       </div>
       <div class="card-footer">
-        <span style="font-size:10px;color:var(--text-dim)">市值 via Stooq · ${m.updated_at || m.as_of || '—'}</span>
+        <span style="font-size:10px;color:var(--text-dim)">${liveMarketCaps[c.id] ? '实时市值 via Yahoo Finance' : (m.updated_at ? '市值 '+m.updated_at : '—')}</span>
         ${earningsBadge}
       </div>
     </div>`;
@@ -1748,17 +1798,7 @@ async function renderGithubTrending() {
       html += renderGhCard(p, p._index);
     });
   });
-  // Any uncategorized
-  if (groups['other']) {
-    html += `<div class="gh-category-header" style="grid-column:1/-1;">
-      <span class="gh-cat-icon">📦</span>
-      <span class="gh-cat-name">其他</span>
-      <span class="gh-cat-desc"></span>
-      <span class="gh-cat-count">${groups['other'].length}</span>
-    </div>`;
-    groups['other'].forEach(p => { html += renderGhCard(p, p._index); });
-  }
-
+  // other 已在 catOrder 中处理，不重复渲染
   grid.innerHTML = html;
 }
 
@@ -1770,7 +1810,7 @@ function renderGhCard(p, idx) {
   const totalStars = p.total_stars ?? p.stars ?? 0;
   const weeklyStars = p.weekly_stars ?? p.stars_this_week ?? 0;
   const forks = p.forks ?? 0;
-  const explanation = p.explanation || p.description || '暂无描述';
+  const explanation = p.explanation || p.description_zh || p.description || '暂无描述';
   const authorBio = p.author_bio || `<a href="https://github.com/${p.owner}" target="_blank" style="color:var(--accent)">@${p.owner}</a>`;
 
   return `
@@ -1822,8 +1862,8 @@ function openGhDetail(idx) {
   document.getElementById('gh-detail-content').innerHTML = `
     <h2>${p.repo}</h2>
     <div class="gh-detail-owner">${p.full_name} · <span class="gh-lang-badge" style="display:inline-flex"><span class="gh-lang-dot" style="background:${lc}"></span>${p.language||'—'}</span></div>
-    <div class="gh-detail-desc">${p.description || ''}</div>
-    <div class="gh-detail-explain">${p.explanation || p.description || ''}</div>
+    <div class="gh-detail-desc">${p.description_zh || p.description || ''}</div>
+    <div class="gh-detail-explain">${p.explanation || p.description_zh || p.description || ''}</div>
     <div class="gh-detail-author">
       <div class="label">👤 作者简介</div>
       ${p.author_bio || `<a href="https://github.com/${p.owner}" target="_blank" style="color:var(--accent)">@${p.owner} ↗</a>`}
