@@ -7,7 +7,7 @@
   "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjRTYwMDIzIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTEyLjAxNyAwQzUuMzk2IDAgLjAyOSA1LjM2Ny4wMjkgMTEuOTg3YzAgNS4wNzkgMy4xNTggOS40MTcgNy42MTggMTEuMTYyLS4xMDUtLjk0OS0uMTk5LTIuNDAzLjA0MS0zLjQzOS4yMTktLjkzNyAxLjQwNi01Ljk1NyAxLjQwNi01Ljk1N3MtLjM1OS0uNzItLjM1OS0xLjc4MWMwLTEuNjYzLjk2Ny0yLjkxMSAyLjE2OC0yLjkxMSAxLjAyNCAwIDEuNTE4Ljc2OSAxLjUxOCAxLjY4OCAwIDEuMDI5LS42NTMgMi41NjctLjk5MiAzLjk5Mi0uMjg1IDEuMTkzLjYgMi4xNjUgMS43NzUgMi4xNjUgMi4xMjggMCAzLjc2OC0yLjI0NSAzLjc2OC01LjQ4NyAwLTIuODYxLTIuMDYzLTQuODY5LTUuMDA4LTQuODY5LTMuNDEgMC01LjQwOSAyLjU2Mi01LjQwOSA1LjE5OSAwIDEuMDMzLjM5NCAyLjE0My44ODkgMi43NDEuMDk5LjEyLjExMi4yMjUuMDg1LjM0NS0uMDkuMzc1LS4yOTMgMS4xOTktLjMzNCAxLjM2My0uMDUzLjIyNS0uMTcyLjI3MS0uNDAxLjE2NS0xLjQ5NS0uNjktMi40MzMtMi44NzgtMi40MzMtNC42NDYgMC0zLjc3NiAyLjc0OC03LjI1MiA3LjkyLTcuMjUyIDQuMTU4IDAgNy4zOTIgMi45NjcgNy4zOTIgNi45MjMgMCA0LjEzNS0yLjYwNyA3LjQ2Mi02LjIzMyA3LjQ2Mi0xLjIxNCAwLTIuMzU0LS42MjktMi43NTgtMS4zNzlsLS43NDkgMi44NDhjLS4yNjkgMS4wNDUtMS4wMDQgMi4zNTItMS40OTggMy4xNDYgMS4xMjMuMzQ1IDIuMzA2LjUzNSAzLjU1LjUzNSA2LjYwNyAwIDExLjk4NS01LjM2NSAxMS45ODUtMTEuOTg3QzIzLjk3IDUuMzkgMTguNTkyLjAyNiAxMS45ODUuMDI2TDEyLjAxNyAweiIvPgogIDwvZz4KPC9zdmc+",
   "color": "#E60023",
   "profile": {
-    "summary": "视觉发现平台，月活约 5.5 亿，以购物意图流量见长。Amazon 广告合作是近两年货币化的核心驱动。用户以女性、Z 世代为主，购买意愿强，广告 ARPU 有较大提升空间。",
+    "summary": "视觉发现平台，月活 6.19 亿（Q4 +12%），80 亿次月搜索中 50%+ 具商业意图。Amazon 广告合作是货币化核心驱动，但大零售广告主受关税冲击系统性减预算导致 Q4 营收 Miss（-1.5%）。AI 技术栈（OmniSage/PinFM）是长期差异化底层。",
     "business_segments": [
       {
         "name": "广告业务",
@@ -16,30 +16,80 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$26B",
-      "ltm_revenue": "$3.6B",
-      "ltm_revenue_growth": "18%",
-      "ltm_operating_margin": "8%",
+      "market_cap": "$16B",
+      "market_cap_usd_bn": 16.0,
+      "ltm_revenue": "$3.9B",
+      "ltm_revenue_growth": "14%",
+      "ltm_operating_income": "$400M",
+      "ltm_operating_margin": "10%",
+      "mau": "619M",
+      "ucan_arpu": "$30.84",
       "as_of": "Q4 2025",
-      "market_cap_usd_bn": 26.1,
-      "price": 17.76,
+      "price": 21.5,
       "price_currency": "USD",
-      "updated_at": "2026-03-28"
+      "updated_at": "2026-03-29"
     },
     "key_debates": [
-      "Amazon 合作广告占比及续约风险",
-      "国际市场 ARPU 提升路径",
-      "AI 驱动的视觉搜索商业化进展"
+      {
+        "id": "monetization_gap",
+        "title": "参与度与变现的结构性缺口：80 亿次月搜索，ARPU 为何还这么低？",
+        "bull": "UCAN ARPU $30.84 仍在增长，Amazon 合作持续深化（可购物 SKU 较 2023 增 5x）；tvScientific 并购开拓 CTV 预算池；Lee Brown（新 CBO）和 SMB 销售转型是变现加速的组织准备",
+        "bear": "UCAN ARPU vs Meta/Google 仍有数倍差距；大零售广告主关税敏感、集中度高（不对称风险）；销售能力建设需要「几个季度」；CPM 持续负增长说明供给远超需求",
+        "sources": [
+          "Q4 Call：CFO Julia Donnelly 关税分析",
+          "Bernstein 2026 Outlook：PINS 变现阶梯缺口"
+        ],
+        "verdict": "变现缺口是真实的，但不是永久性的。关键时间点：Lee Brown 上任后 1-2 个季度的销售团队重组效果 + tvScientific 并购关闭后的 CTV 增量"
+      },
+      {
+        "id": "tariff_exposure",
+        "title": "关税风险：大零售广告主高集中度，下次冲击来袭时防御性如何？",
+        "bull": "关税是外部冲击，不是 Pinterest 平台的问题；SMB 占比在增长（目前 ~15%，收入翻倍 YoY）；国际市场其他地区 +16% 提供分散化",
+        "bear": "Pinterest 大零售广告主集中度高于同类平台，是不对称风险；关税升级时会出现「比例更大的收入影响」（CFO 直接表述）；UCAN 核心市场增速趋缓",
+        "sources": [
+          "Q4 Call：CFO 明确量化关税冲击的集中度差异",
+          "MS 2026 Sector Outlook"
+        ],
+        "verdict": "关税敏感是 Pinterest 特有的结构性脆弱点。分散化需要时间（SMB 渗透、国际化），是中期而非近期的缓冲"
+      }
     ]
   },
-  "earnings": [],
+  "earnings": [
+    {
+      "quarter": "Q4 2025",
+      "fiscal_year": 2025,
+      "report_date": "2026-02-12",
+      "revenue": 1319,
+      "revenue_unit": "M USD",
+      "revenue_growth_yoy": "14%",
+      "operating_margin": "8%",
+      "eps_diluted": 0.67,
+      "eps_vs_consensus": "-3%",
+      "revenue_vs_consensus": "-1.5%",
+      "stock_reaction": "-16.8%",
+      "mau": "619M",
+      "highlights": [
+        "营收 $13.19亿 +14%，低于预期 $13.39亿（-1.5%），大零售广告主受关税冲击系统性削减预算",
+        "全球 MAU 6.19 亿 +12%（连续 10 季历史新高），但 UCAN MAU +4% 趋缓",
+        "广告曝光量 +41%，CPM -19%，量价分化延续；80 亿月搜索，17 亿月外链点击",
+        "新 CBO Lee Brown 加入，重组省 ~$1亿/年；收购 tvScientific（联网电视效果广告）",
+        "OmniSage AI 推荐模型驱动全站 Saves +450bps；Navigator One 成本较第三方降 90%"
+      ],
+      "review_summary": "Q4 营收 Miss 是关税冲击下大零售广告主集体减预算的直接结果，与执行无关。核心逻辑没有破坏：搜索量/点击量增速远超营收，说明用户参与度变现缺口仍大、上行空间真实。但 UCAN MAU 放缓是结构性隐忧。",
+      "review_doc_url": ""
+    }
+  ],
   "analyst_notes": {
-    "thesis": "小而美的购物意图平台，Amazon 合作是中期催化剂，ARPU 提升是长期逻辑。",
-    "coverage_start": "2026-03-26",
+    "thesis": "Pinterest 是一个变现落后于参与度的平台，缺口真实，上行空间存在。但执行风险（销售团队能力、大广告主集中度）是主要不确定性。短期关注：Lee Brown 上任后变现加速信号 + tvScientific 并购关闭时间。",
+    "coverage_start": "2026-03-29",
+    "sources": [
+      "Pinterest Q4 2025 Earnings Call Transcript (2026-02-12)",
+      "Bernstein 2026 Internet Outlook"
+    ],
     "evolution_log": [
       {
-        "date": "2026-03-26",
-        "note": "初始建档，待补充 Earnings 数据。"
+        "date": "2026-03-29",
+        "note": "Q4 2025 review 取数建档。营收 Miss 因关税冲击大零售广告主，股价 -16.8%。"
       }
     ]
   },
