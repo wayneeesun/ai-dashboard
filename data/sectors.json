@@ -11,35 +11,78 @@
           "name": "美国互联网",
           "icon": "🌐",
           "type": "companies",
-          "companies": ["meta", "google", "amazon", "applovin", "pinterest", "reddit"]
+          "companies": [
+            "meta",
+            "google",
+            "amazon",
+            "applovin",
+            "pinterest",
+            "reddit"
+          ]
         },
         {
           "id": "cn-internet",
           "name": "中国互联网",
           "icon": "🇨🇳",
           "type": "companies",
-          "companies": ["tencent", "alibaba", "meituan", "pdd", "baidu", "jd"]
+          "companies": [
+            "tencent",
+            "alibaba",
+            "meituan",
+            "pdd",
+            "baidu",
+            "jd"
+          ]
+        },
+        {
+          "id": "cn-ai-listed",
+          "name": "中国 AI 上市",
+          "icon": "🇨🇳",
+          "type": "companies",
+          "companies": [
+            "minimax",
+            "zhipu"
+          ]
         },
         {
           "id": "us-semi",
           "name": "半导体",
           "icon": "🔬",
           "type": "companies",
-          "companies": ["nvidia", "tsmc", "broadcom", "amd", "sandisk", "micron"]
+          "companies": [
+            "nvidia",
+            "tsmc",
+            "broadcom",
+            "amd",
+            "sandisk",
+            "micron"
+          ]
         },
         {
           "id": "us-software",
           "name": "软件",
           "icon": "💾",
           "type": "companies",
-          "companies": ["microsoft", "shopify", "oracle", "servicenow", "snowflake", "cloudflare"]
+          "companies": [
+            "microsoft",
+            "shopify",
+            "oracle",
+            "servicenow",
+            "snowflake",
+            "cloudflare"
+          ]
         },
         {
           "id": "ai-native",
           "name": "AI-Native",
           "icon": "🤖",
           "type": "ai-native",
-          "companies": ["openai", "anthropic", "xai", "minimax", "moonshot", "zhipu"]
+          "companies": [
+            "openai",
+            "anthropic",
+            "xai",
+            "moonshot"
+          ]
         }
       ]
     },
@@ -49,6 +92,13 @@
       "icon": "📈",
       "type": "topic",
       "topic": "github-trend"
+    },
+    {
+      "id": "youtubers",
+      "name": "AI YouTubers",
+      "icon": "▶️",
+      "type": "topic",
+      "topic": "youtubers"
     },
     {
       "id": "infra-map",
