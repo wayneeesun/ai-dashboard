@@ -1,0 +1,141 @@
+{
+  "updated_at": "2026-03-29",
+  "description": "AI 领域精选 YouTube 频道，每周末更新最新视频摘要",
+  "channels": [
+    {
+      "id": "karpathy",
+      "name": "Andrej Karpathy",
+      "handle": "@AndrejKarpathy",
+      "url": "https://www.youtube.com/@AndrejKarpiro",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKZWeMCsx4Q9e_Hm6VKOOuIEVLc-7QQ7Lp5D9HgQ=s176-c-k-c0x00ffffff-no-rj",
+      "category": "技术深度",
+      "category_color": "#6366f1",
+      "description": "前 OpenAI 研究总监、Tesla AI 负责人。LLM 底层教学最高质量，出手不频繁但每次必看。",
+      "focus": ["LLM 底层", "神经网络", "AI 教育"],
+      "subscribers": "~1.2M",
+      "latest_videos": []
+    },
+    {
+      "id": "3b1b",
+      "name": "3Blue1Brown",
+      "handle": "@3blue1brown",
+      "url": "https://www.youtube.com/@3blue1brown",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKaEQOd8T1zFnGPMx2EsO5Lg-sKaRdOuQXy2Td1DZQ=s176-c-k-c0x00ffffff-no-rj",
+      "category": "技术深度",
+      "category_color": "#6366f1",
+      "description": "数学动画大神 Grant Sanderson。神经网络、Transformer 原理用动画讲得极清晰，永不过时。",
+      "focus": ["数学直觉", "神经网络原理", "Transformer"],
+      "subscribers": "~7M",
+      "latest_videos": []
+    },
+    {
+      "id": "yannic",
+      "name": "Yannic Kilcher",
+      "handle": "@YannicKilcher",
+      "url": "https://www.youtube.com/@YannicKilcher",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKb0CnbxKqiKwvHi2YRkOj7_n--NalDlJ-4Iknwx=s176-c-k-c0x00ffffff-no-rj",
+      "category": "技术深度",
+      "category_color": "#6366f1",
+      "description": "论文精读频道，每集拆解一篇重要 AI 论文。AI 研究圈自己在看的频道。",
+      "focus": ["论文精读", "RLHF", "研究前沿"],
+      "subscribers": "~450K",
+      "latest_videos": []
+    },
+    {
+      "id": "lex",
+      "name": "Lex Fridman",
+      "handle": "@lexfridman",
+      "url": "https://www.youtube.com/@lexfridman",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKb5XT7mv9IKo9i4Mu7pDrEqZLdUEXhqaBiVwX9-=s176-c-k-c0x00ffffff-no-rj",
+      "category": "行业动态",
+      "category_color": "#10b981",
+      "description": "长访谈格式，采访过 Altman、Hinton、LeCun、Musk、黄仁勋等几乎所有 AI 大佬。",
+      "focus": ["大佬访谈", "AGI 路线", "行业观察"],
+      "subscribers": "~4.5M",
+      "latest_videos": []
+    },
+    {
+      "id": "aiexplained",
+      "name": "AI Explained",
+      "handle": "@aiexplained-official",
+      "url": "https://www.youtube.com/@aiexplained-official",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKZe1lhKKh5EDRtKqETGE3k6h4jRGOdwFGFq7t_f=s176-c-k-c0x00ffffff-no-rj",
+      "category": "行业动态",
+      "category_color": "#10b981",
+      "description": "AI 能力评测和行业分析，信噪比很高，不追噱头。对新模型发布后能力拆解质量是 YouTube 最好之一。",
+      "focus": ["模型评测", "能力分析", "行业判断"],
+      "subscribers": "~600K",
+      "latest_videos": []
+    },
+    {
+      "id": "twominutepapers",
+      "name": "Two Minute Papers",
+      "handle": "@TwoMinutePapers",
+      "url": "https://www.youtube.com/@TwoMinutePapers",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKbBBTBToRaGXfEWYMsD8x1WGb_BIqzPPHTz1-2O=s176-c-k-c0x00ffffff-no-rj",
+      "category": "行业动态",
+      "category_color": "#10b981",
+      "description": "每集 2-5 分钟讲最新 AI 论文结果，节奏快频率高，快速扫描「这周 AI 圈出了什么新成果」。",
+      "focus": ["论文速递", "研究成果", "AI 进展"],
+      "subscribers": "~1.7M",
+      "latest_videos": []
+    },
+    {
+      "id": "davidshapiro",
+      "name": "David Shapiro",
+      "handle": "@DavidShapiroAI",
+      "url": "https://www.youtube.com/@DavidShapiroAI",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKZyiuE1RIGb9H-X3B7lnjAFYNxalg7hRhbT2pIU=s176-c-k-c0x00ffffff-no-rj",
+      "category": "行业动态",
+      "category_color": "#10b981",
+      "description": "偏 AGI 路线、Agent 架构讨论，有自己的判断框架，适合思考 AI 长期走向。",
+      "focus": ["AGI", "Agent 架构", "AI 未来"],
+      "subscribers": "~350K",
+      "latest_videos": []
+    },
+    {
+      "id": "mattwolfe",
+      "name": "Matt Wolfe",
+      "handle": "@mreflow",
+      "url": "https://www.youtube.com/@mreflow",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKY_e3FjFvpzDL1aMiPBN7bCg4VIOi9QKTQY7NjV=s176-c-k-c0x00ffffff-no-rj",
+      "category": "工具应用",
+      "category_color": "#f59e0b",
+      "description": "AI 工具测评最勤快的频道之一，新工具出来基本一周内有视频。快速了解 AI 产品全景。",
+      "focus": ["AI 工具", "产品测评", "应用实践"],
+      "subscribers": "~900K",
+      "latest_videos": []
+    },
+    {
+      "id": "fireship",
+      "name": "Fireship",
+      "handle": "@Fireship",
+      "url": "https://www.youtube.com/@Fireship",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKb4Bv1NxIBXBwbXFBQ8f_Hw93BNUA4lTUn_c2Nf=s176-c-k-c0x00ffffff-no-rj",
+      "category": "工具应用",
+      "category_color": "#f59e0b",
+      "description": "技术向，每集极短（5-10分钟），讲新框架/工具/Agent 开发实践，节奏感强。",
+      "focus": ["开发工具", "框架速览", "AI 编程"],
+      "subscribers": "~4M",
+      "latest_videos": []
+    },
+    {
+      "id": "matthewberman",
+      "name": "Matthew Berman",
+      "handle": "@matthew_berman",
+      "url": "https://www.youtube.com/@matthew_berman",
+      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKY7MxO2iSkh0LjH7uIl4sL9MDII2QMHrEDDpb3x=s176-c-k-c0x00ffffff-no-rj",
+      "category": "工具应用",
+      "category_color": "#f59e0b",
+      "description": "专注开源 AI 模型测评（Llama、Mistral、DeepSeek 等），每次新开源模型发布都第一时间跑 benchmark。",
+      "focus": ["开源模型", "Benchmark", "本地部署"],
+      "subscribers": "~500K",
+      "latest_videos": []
+    }
+  ],
+  "categories": [
+    { "id": "技术深度", "color": "#6366f1", "icon": "🧠" },
+    { "id": "行业动态", "color": "#10b981", "icon": "📰" },
+    { "id": "工具应用", "color": "#f59e0b", "icon": "🛠️" }
+  ]
+}
