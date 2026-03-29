@@ -34,16 +34,7 @@
             "jd"
           ]
         },
-        {
-          "id": "cn-ai-listed",
-          "name": "中国 AI 上市",
-          "icon": "🇨🇳",
-          "type": "companies",
-          "companies": [
-            "minimax",
-            "zhipu"
-          ]
-        },
+
         {
           "id": "us-semi",
           "name": "半导体",
@@ -81,7 +72,9 @@
             "openai",
             "anthropic",
             "xai",
-            "moonshot"
+            "moonshot",
+            "minimax",
+            "zhipu"
           ]
         }
       ]
@@ -95,8 +88,8 @@
     },
     {
       "id": "youtubers",
-      "name": "AI YouTubers",
-      "icon": "▶️",
+      "name": "YouTuber & 播客",
+      "icon": "🎙️",
       "type": "topic",
       "topic": "youtubers"
     },
