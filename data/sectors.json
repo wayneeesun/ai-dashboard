@@ -93,13 +93,7 @@
       "type": "topic",
       "topic": "youtubers"
     },
-    {
-      "id": "infra-map",
-      "name": "基建地图",
-      "icon": "🗺️",
-      "type": "topic",
-      "topic": "infra-map"
-    },
+
     {
       "id": "paper-reading",
       "name": "论文导读",
