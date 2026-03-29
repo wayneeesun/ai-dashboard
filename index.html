@@ -1516,12 +1516,12 @@
       background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 20px 20px 16px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
       box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
       align-self: start;
@@ -1530,9 +1530,10 @@
     .paper-card::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0; left: -1px; right: -1px;
       height: 3px;
       background: var(--paper-direction-color, var(--accent));
+      border-radius: var(--radius) var(--radius) 0 0;
     }
 
     .paper-card:hover {
@@ -1588,10 +1589,36 @@
       font-size: 13px;
       color: var(--text-muted);
       line-height: 1.6;
-      padding: 12px 14px;
+      padding: 10px 12px;
       background: var(--bg-3);
       border-radius: var(--radius-sm);
       border-left: 3px solid var(--paper-direction-color, var(--accent));
+      overflow: visible;
+    }
+
+    .paper-section-header {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 4px 4px;
+      border-bottom: 2px solid var(--paper-direction-color, var(--border));
+      margin-top: 8px;
+    }
+    .paper-section-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--paper-direction-color, var(--accent));
+      flex-shrink: 0;
+    }
+    .paper-section-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .paper-section-count {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-left: 4px;
     }
 
     .paper-tags {
@@ -2905,29 +2932,43 @@ async function renderPapers() {
   if (data.direction_summary) {
     html += `<div class="paper-summary-banner">`;
     html += `<div class="paper-summary-headline">${data.direction_summary.headline}</div>`;
-
     if (data.direction_summary.emerging_directions && data.direction_summary.emerging_directions.length) {
       html += `<div class="paper-trends">`;
-      html += `<div class="paper-trends-label">本月趋势</div>`;
+      html += `<div class="paper-trends-label">本月趋势 · 来源：<a href="https://huggingface.co/papers" target="_blank" rel="noopener" style="color:var(--accent)">Hugging Face Daily Papers</a> / arXiv</div>`;
       html += `<div class="paper-trend-list">`;
       data.direction_summary.emerging_directions.forEach(t => {
         html += `<span class="paper-trend-item">${t}</span>`;
       });
       html += `</div></div>`;
     }
-
     html += `</div>`;
   }
 
-  // Sort papers by significance
-  const sortedPapers = [...data.papers].sort((a, b) => {
-    const orderA = paperSignificanceOrder[a.significance] ?? 99;
-    const orderB = paperSignificanceOrder[b.significance] ?? 99;
-    return orderA - orderB;
+  // ── 按 direction 分组 ──
+  const dirOrder = ['长上下文', 'Agent', 'AI for Science', '多模态', '推理 / Scaling', '推理 / 评估', '推理 / 优化', '训练方法', '图像生成', '语音生成', '安全', '前沿方法'];
+  const groups = {};
+  data.papers.forEach(p => {
+    const dir = p.direction || '其他';
+    if (!groups[dir]) groups[dir] = [];
+    groups[dir].push(p);
   });
 
-  sortedPapers.forEach(p => {
-    html += renderPaperCard(p);
+  // 每组内按 significance 排序
+  const sigOrder = { hot: 0, breakthrough: 1, notable: 2, emerging: 3 };
+  Object.values(groups).forEach(arr => arr.sort((a,b) => (sigOrder[a.significance]??9) - (sigOrder[b.significance]??9)));
+
+  // 按预设顺序输出分组，没有的跳过，其余附在末尾
+  const orderedDirs = [...dirOrder.filter(d => groups[d]), ...Object.keys(groups).filter(d => !dirOrder.includes(d))];
+
+  orderedDirs.forEach(dir => {
+    const papers = groups[dir];
+    const dirColor = paperDirectionColors[dir] || '#94A3B8';
+    html += `<div class="paper-section-header" style="--paper-direction-color:${dirColor}">
+      <span class="paper-section-dot"></span>
+      <span class="paper-section-name">${dir}</span>
+      <span class="paper-section-count">${papers.length} 篇</span>
+    </div>`;
+    papers.forEach(p => { html += renderPaperCard(p); });
   });
 
   grid.innerHTML = html;
