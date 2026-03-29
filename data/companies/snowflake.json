@@ -21,17 +21,17 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$507B",
+      "market_cap": "$50B",
       "ltm_revenue": "—",
       "ltm_revenue_growth": "—",
       "ltm_operating_margin": "—",
       "ltm_capex": "—",
       "capex_growth_yoy": "—",
       "as_of": "—",
-      "market_cap_usd_bn": 507.3,
+      "market_cap_usd_bn": 50.0,
       "price": 152.8,
       "price_currency": "USD",
-      "updated_at": "2026-03-28"
+      "updated_at": "2026-03-29"
     },
     "key_debates": [
       "消费型定价下的 RPO 可预测性",
