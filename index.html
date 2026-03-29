@@ -1769,10 +1769,10 @@ async function loadInfraData() {
 }
 
 const STATUS_LABELS = {
-  under_construction: { label: '建设中', color: '#fbbf24' },
-  operational:        { label: '已投运', color: '#34d399' },
-  planned:            { label: '规划中', color: '#818cf8' },
-  announced:          { label: '已公布', color: '#60a5fa' },
+  under_construction: { label: '建设中', color: '#D97706' },   // amber-600
+  operational:        { label: '已投运', color: '#059669' },   // emerald-600
+  planned:            { label: '规划中', color: '#7C3AED' },   // violet-600
+  announced:          { label: '已公布', color: '#2563EB' },   // blue-600
 };
 
 const REGION_CENTERS = {
@@ -1928,11 +1928,23 @@ async function drawGlobe(data, region) {
   const path = d3.geoPath().projection(projection);
   const s = d3.select(svg);
 
-  // 海洋背景
-  s.append('circle').attr('cx', CX).attr('cy', CY).attr('r', RADIUS)
-    .attr('fill', '#C8D8F0').attr('stroke', '#B0C4E0').attr('stroke-width', 1);
+  // 外圈阴影光晕
+  const defs = s.append('defs');
+  const shadowFilter = defs.append('filter').attr('id', 'globe-shadow').attr('x', '-20%').attr('y', '-20%').attr('width', '140%').attr('height', '140%');
+  shadowFilter.append('feDropShadow').attr('dx', 0).attr('dy', 4).attr('stdDeviation', 12).attr('flood-color', 'rgba(37,99,235,0.18)');
 
-  // 国家层
+  // 海洋：干净的浅蓝渐变
+  const oceanGrad = defs.append('radialGradient').attr('id', 'ocean-grad')
+    .attr('cx', '40%').attr('cy', '38%').attr('r', '60%');
+  oceanGrad.append('stop').attr('offset', '0%').attr('stop-color', '#DDEEFF');
+  oceanGrad.append('stop').attr('offset', '100%').attr('stop-color', '#B8D0F0');
+
+  s.append('circle').attr('cx', CX).attr('cy', CY).attr('r', RADIUS)
+    .attr('fill', 'url(#ocean-grad)')
+    .attr('stroke', '#C4D8EE').attr('stroke-width', 1)
+    .attr('filter', 'url(#globe-shadow)');
+
+  // 国家层：干净中性灰，接近 Bloomberg/Notion 地图风格
   const countries = topojson.feature(globeWorld, globeWorld.objects.countries);
   const borders = topojson.mesh(globeWorld, globeWorld.objects.countries, (a,b) => a !== b);
 
@@ -1941,19 +1953,15 @@ async function drawGlobe(data, region) {
     .data(countries.features)
     .join('path')
     .attr('d', path)
-    .attr('fill', '#1e2740')
-    .attr('stroke', '#2a3555')
-    .attr('stroke-width', 0.4);
+    .attr('fill', '#E8EDF5')
+    .attr('stroke', '#C8D2E4')
+    .attr('stroke-width', 0.5);
 
   const borderPath = s.append('path').datum(borders)
     .attr('d', path).attr('fill', 'none')
-    .attr('stroke', '#3a4565').attr('stroke-width', 0.6);
+    .attr('stroke', '#B8C4D8').attr('stroke-width', 0.4);
 
-  // 经纬网格
-  const graticule = d3.geoGraticule()();
-  s.append('path').datum(graticule)
-    .attr('d', path).attr('fill', 'none')
-    .attr('stroke', '#1e2535').attr('stroke-width', 0.4);
+  // 不画经纬网格（去掉 graticule）
 
   // 数据中心点
   const tooltip = document.getElementById('infra-map-tooltip');
@@ -1993,7 +2001,7 @@ async function drawGlobe(data, region) {
         `;
         tooltip.style.left = (p[0] + 14) + 'px';
         tooltip.style.top  = (p[1] - 10) + 'px';
-        d3.select(this).attr('stroke', '#fbbf24').attr('stroke-width', 2.5).attr('r', d => Math.max(9, Math.sqrt((d.capacity_gw||0.1)*300)+2));
+        d3.select(this).attr('stroke', '#F59E0B').attr('stroke-width', 3).attr('r', d => Math.max(9, Math.sqrt((d.capacity_gw||0.1)*300)+2));
         highlightDC(d.id);
       })
       .on('mouseout', function(event, d) {
