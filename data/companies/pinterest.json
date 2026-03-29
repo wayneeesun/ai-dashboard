@@ -4,7 +4,7 @@
   "ticker": "PINS",
   "exchange": "NYSE",
   "sector": "us-internet",
-  "logo_url": "https://logo.clearbit.com/pinterest.com",
+  "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjRTYwMDIzIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTEyLjAxNyAwQzUuMzk2IDAgLjAyOSA1LjM2Ny4wMjkgMTEuOTg3YzAgNS4wNzkgMy4xNTggOS40MTcgNy42MTggMTEuMTYyLS4xMDUtLjk0OS0uMTk5LTIuNDAzLjA0MS0zLjQzOS4yMTktLjkzNyAxLjQwNi01Ljk1NyAxLjQwNi01Ljk1N3MtLjM1OS0uNzItLjM1OS0xLjc4MWMwLTEuNjYzLjk2Ny0yLjkxMSAyLjE2OC0yLjkxMSAxLjAyNCAwIDEuNTE4Ljc2OSAxLjUxOCAxLjY4OCAwIDEuMDI5LS42NTMgMi41NjctLjk5MiAzLjk5Mi0uMjg1IDEuMTkzLjYgMi4xNjUgMS43NzUgMi4xNjUgMi4xMjggMCAzLjc2OC0yLjI0NSAzLjc2OC01LjQ4NyAwLTIuODYxLTIuMDYzLTQuODY5LTUuMDA4LTQuODY5LTMuNDEgMC01LjQwOSAyLjU2Mi01LjQwOSA1LjE5OSAwIDEuMDMzLjM5NCAyLjE0My44ODkgMi43NDEuMDk5LjEyLjExMi4yMjUuMDg1LjM0NS0uMDkuMzc1LS4yOTMgMS4xOTktLjMzNCAxLjM2My0uMDUzLjIyNS0uMTcyLjI3MS0uNDAxLjE2NS0xLjQ5NS0uNjktMi40MzMtMi44NzgtMi40MzMtNC42NDYgMC0zLjc3NiAyLjc0OC03LjI1MiA3LjkyLTcuMjUyIDQuMTU4IDAgNy4zOTIgMi45NjcgNy4zOTIgNi45MjMgMCA0LjEzNS0yLjYwNyA3LjQ2Mi02LjIzMyA3LjQ2Mi0xLjIxNCAwLTIuMzU0LS42MjktMi43NTgtMS4zNzlsLS43NDkgMi44NDhjLS4yNjkgMS4wNDUtMS4wMDQgMi4zNTItMS40OTggMy4xNDYgMS4xMjMuMzQ1IDIuMzA2LjUzNSAzLjU1LjUzNSA2LjYwNyAwIDExLjk4NS01LjM2NSAxMS45ODUtMTEuOTg3QzIzLjk3IDUuMzkgMTguNTkyLjAyNiAxMS45ODUuMDI2TDEyLjAxNyAweiIvPgogIDwvZz4KPC9zdmc+",
   "color": "#E60023",
   "profile": {
     "summary": "视觉发现平台，月活约 5.5 亿，以购物意图流量见长。Amazon 广告合作是近两年货币化的核心驱动。用户以女性、Z 世代为主，购买意愿强，广告 ARPU 有较大提升空间。",
@@ -42,5 +42,6 @@
         "note": "初始建档，待补充 Earnings 数据。"
       }
     ]
-  }
+  },
+  "logo_file": "logos/pinterest.svg"
 }
