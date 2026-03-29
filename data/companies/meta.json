@@ -85,14 +85,16 @@
       },
       {
         "id": "reality_labs_peak",
-        "title": "Reality Labs 亏损是否真的见顶？智能眼镜能成为下一代平台吗？",
-        "bull": "Zuckerberg 明确将 FY26 RL 亏损定性为「历史峰值」，之后逐步收窄；眼镜销量同比 3 倍增长，定位为「消费电子史上增长最快产品之一」；战略重心已从 VR 转向眼镜和可穿戴",
-        "bear": "RL Q4 revenue $955M 同比 -12%；VR 高基数；眼镜销量绝对数仍小，变现路径不清晰；Horizon Worlds 用户规模与期待相比仍差距大",
+        "title": "Reality Labs 亏损见顶？Horizon Worlds 差点关停、持续裁员，眼镜能撑起下一代平台叙事吗？",
+        "bull": "Zuckerberg 承诺 FY26 RL 亏损为历史峰值、之后收窄；眼镜销量 3x YoY，定位为「消费电子史上增长最快产品之一」；3/19 Bosworth 在用户反弹后当天 U-turn 保留 Horizon Worlds VR 版本——说明眼镜/AR 硬件才是真正重心，VR 社交是可以舍弃的",
+        "bear": "RL 自 2021 年至今累计亏损 $73B；1月裁员 1000+（RL 约 10%），关闭多个 VR 游戏工作室；3/18 曾宣布 Horizon Worlds 6/15 停止 VR 支持（后撤回）；3/25 再裁数百人波及 RL；Quest 销量 2025 同比 -16%；$73B 的元宇宙投入几乎颗粒无收",
         "sources": [
-          "Q4 Call：Sandler（Barclays）追问 Horizon 移动端转向",
-          "Bernstein 2026 Outlook：RL 是叙事负担，但「峰值」定性是重要信号"
+          "CNBC 2026-03-25: Meta cutting several hundred jobs across Reality Labs, Facebook",
+          "TechCrunch 2026-03-19: Meta decides not to shut down Horizon Worlds on VR after all",
+          "TechCrunch 2026-01-19: Well, there goes the metaverse (RL 关闭 VR 工作室)",
+          "Q4 2025 Earnings Call: Zuckerberg 定性 FY26 RL 亏损为历史峰值"
         ],
-        "verdict": "RL 亏损见顶是管理层的承诺，投资者需要 1-2 个季度验证。眼镜是最具说服力的叙事支点，但需要看到销量持续增长和变现路径明确"
+        "verdict": "Reality Labs 的「关停」是误读——关的是 Horizon Worlds VR（且已撤回），而非整个部门。但裁员信号很清晰：VR 社交是失败，眼镜是新赌注。核心验证点：①眼镜销量是否维持 3x 增速 ②RL 亏损是否在 Q1/Q2 开始兑现收窄承诺 ③Horizon Worlds 移动版的 MAU 能否有意义地增长"
       },
       {
         "id": "china_advertiser",
@@ -105,6 +107,11 @@
         ],
         "verdict": "这是 2026 年最大的外部变量。宏观贸易战升级时，中国广告主预算是最先被砍的一项。当前不可量化，但属于尾部风险而非基准情景"
       }
+    ],
+    "news": [
+      "2026-03-25：Meta 再裁数百人，涉及 Reality Labs、Facebook、全球运营（CNBC）",
+      "2026-03-18/19：Horizon Worlds 宣布停止 VR 版本支持（6/15）→ 用户抗议后 CTO Bosworth 当天 U-turn，保留 VR（TechCrunch）",
+      "2026-01：RL 裁员 1000+（约 10%），关闭多个 VR 游戏工作室（CNBC）；RL 2021 至今累计亏损 $73B"
     ]
   },
   "earnings": [
@@ -125,7 +132,7 @@
       "highlights": [
         "广告收入 $48.2B，同比 +21%，AI 推荐算法驱动 Feed 和 Reels 参与度持续提升",
         "FY26 CapEx 指引 $115-135B（vs FY25 实际 $67.5B，同比 +70-100%），以及 FY26 Opex 指引 $114-119B，均大幅超出市场预期",
-        "Reality Labs FY26 亏损与 FY25 相近（约 $17-18B），Zuckerberg 定性为历史峰值，之后逐步收窄",
+        "Reality Labs：FY26 亏损与 FY25（$17.7B）相近，承诺为历史峰值；但 3月接连裁员（1月 1000+、3/25 数百人）、Horizon Worlds 一度宣布关停 VR 版（后撤回），VR 社交战略收缩信号明确",
         "Q4 营业利润率 41%（Operating Income $24.7B），Q1 FY26 Revenue 指引 $53.5-56.5B，中值增速 +33.5% YoY 为近5年最快",
         "回购 $9.3B，宣布首次现金股息 $0.525/股"
       ],
@@ -149,6 +156,10 @@
       {
         "date": "2026-03-29",
         "note": "修正 earnings[0].highlights 中 CapEx 数字：$60-65B（Q3 2025 给出的 FY25 指引，已是旧数据）→ 正确数字为 Q4 财报中给出的 FY26 CapEx 指引 $115-135B。同步修正 key_metrics.ltm_capex 为 FY25 全年实际值 $67.5B，新增 fy26_capex_guidance / fy26_opex_guidance 字段。"
+      },
+      {
+        "date": "2026-03-29",
+        "note": "更新 Reality Labs 争议条目：补充 3月接连裁员（1月 1000+、3/25 数百人）、Horizon Worlds VR 版差点关停（3/18 宣布→3/19 撤回）、RL 累计亏损 $73B 等最新事实。厘清误读：关停的是 Horizon Worlds VR 版（且已撤回），非整个 Reality Labs 部门。来源：CNBC 2026-03-25 / TechCrunch 2026-03-19。"
       }
     ],
     "sources": [
