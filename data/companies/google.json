@@ -7,50 +7,115 @@
   "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjNDI4NUY0Ii8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTEyLjQ4IDEwLjkydjMuMjhoNy44NGMtLjI0IDEuODQtLjg1MyAzLjE4Ny0xLjc4NyA0LjEzMy0xLjE0NyAxLjE0Ny0yLjkzMyAyLjQtNi4wNTMgMi40LTQuODI3IDAtOC42LTMuODkzLTguNi04LjcyczMuNzczLTguNzIgOC42LTguNzJjMi42IDAgNC41MDcgMS4wMjcgNS45MDcgMi4zNDdsMi4zMDctMi4zMDdDMTguNzQ3IDEuNDQgMTYuMTMzIDAgMTIuNDggMCA1Ljg2NyAwIC4zMDcgNS4zODcuMzA3IDEyczUuNTYgMTIgMTIuMTczIDEyYzMuNTczIDAgNi4yNjctMS4xNzMgOC4zNzMtMy4zNiAyLjE2LTIuMTYgMi44NC01LjIxMyAyLjg0LTcuNjY3IDAtLjc2LS4wNTMtMS40NjctLjE3My0yLjA1M0gxMi40OHoiLz4KICA8L2c+Cjwvc3ZnPg==",
   "color": "#4285F4",
   "profile": {
-    "summary": "全球最大搜索引擎及数字广告平台，同时经营全球第三大云服务（Google Cloud）。AI 是当前核心叙事：Gemini 模型族群、AI Overview 对搜索的改造、以及 Cloud AI 服务是三大战略重点。",
+    "summary": "全球最大搜索引擎及数字广告平台，同时经营全球领先云服务 GCP。AI 是当前核心叙事：Gemini 模型系列、Cloud 大幅加速（Q4 +48%）、AI Overview 和 AI Mode 重构搜索体验。FY25 全年营收首次突破 $400B。",
     "business_segments": [
       {
         "name": "Google Services",
-        "description": "搜索、YouTube、Google Play、广告网络",
-        "revenue_pct": 87
+        "description": "Search、YouTube、Play、Maps、Pixel 等广告及订阅",
+        "revenue_pct": 87,
+        "note": "Search +17% Q4，YouTube Ads +9%，订阅 +17%"
       },
       {
-        "name": "Google Cloud",
-        "description": "GCP + Google Workspace",
-        "revenue_pct": 12
+        "name": "Google Cloud (GCP)",
+        "description": "云计算、AI 平台（Vertex AI、Gemini Enterprise）",
+        "revenue_pct": 12,
+        "note": "Q4 +48%，Operating Margin 30.1%，Backlog $240B"
       },
       {
         "name": "Other Bets",
-        "description": "Waymo、生命科学等早期项目",
-        "revenue_pct": 1
+        "description": "Waymo、DeepMind 商业化等",
+        "revenue_pct": 1,
+        "note": "Waymo 完成 $16B 融资，每周 40 万次行程"
       }
     ],
     "key_metrics": {
-      "market_cap": "$3.3T",
-      "ltm_revenue": "$350B",
-      "ltm_revenue_growth": "14%",
+      "market_cap": "$2.0T",
+      "market_cap_usd_bn": 2005.0,
+      "ltm_revenue": "$403B",
+      "ltm_revenue_growth": "18%",
+      "ltm_operating_income": "$143.5B",
       "ltm_operating_margin": "32%",
-      "ltm_capex": "$52B",
+      "ltm_capex": "$91.4B",
+      "fy26_capex_guidance": "$175-185B",
       "as_of": "Q4 2025",
-      "market_cap_usd_bn": 3322.3,
-      "price": 274.34,
+      "price": 161.3,
       "price_currency": "USD",
-      "updated_at": "2026-03-28"
+      "updated_at": "2026-03-29"
     },
     "key_debates": [
-      "AI Overview 对搜索广告变现的影响是正向还是负向",
-      "Google Cloud 能否缩小与 AWS/Azure 的差距",
-      "反垄断诉讼对搜索分发协议的潜在冲击"
+      {
+        "id": "search_ai_cannibalization",
+        "title": "AI 会蚕食 Search 广告吗？ChatGPT/Perplexity 是威胁还是噪音？",
+        "bull": "Search Q4 +17% 加速，AI Mode 上线后查询量翻倍、查询复杂度 3 倍，管理层明确表示未见蚕食信号；AI Overviews 在全球 20 亿用户中推出后搜索量在增长而非萎缩",
+        "bear": "ChatGPT 月访问量已超 Google Search 的相当比例；OpenAI 广告产品即将上线；年轻用户直接问 AI 而不搜索的比例在上升；AI Mode 货币化仍是早期实验",
+        "sources": [
+          "Bernstein Shmulik 2026 Outlook：GOOGL Market-Perform，ChatGPT 广告是真正威胁时间点",
+          "Q4 Call：Sundar 直接回应蚕食问题"
+        ],
+        "verdict": "短期（FY26）蚕食风险有限，Search 业务仍在加速。中期风险窗口是 OpenAI 广告产品规模化的时间点。关键观测：AI Mode 货币化数据何时变得重要"
+      },
+      {
+        "id": "cloud_capex_roic",
+        "title": "CapEx $175-185B 的 ROIC：GCP 能否消化这么大的投资？",
+        "bull": "Cloud Backlog $240B 环比 +55%，$1B+ 合同数超过过去 3 年总和；Q4 Cloud Margin 从 17.5% 升至 30.1%，已跨过盈利临界点；Gemini Enterprise 4 个月 800 万席位证明企业需求真实",
+        "bear": "FY26 CapEx 是 FY25 的 2 倍，折旧加速将压制利润；全年 supply-constrained 意味着现有产能不够用；CapEx 回报周期长，市场在 ROI 信号前不愿买单",
+        "sources": [
+          "Q4 Call：Sundar/Anat 详细拆解 CapEx 构成",
+          "MS TMT Conference 2026-03：超大规模 CapEx 持续，电力/内存瓶颈制约"
+        ],
+        "verdict": "Cloud 增速能见度高（Backlog 驱动），但 CapEx 压折旧、压 FCF 是 FY26 主要财务摩擦。验证点：GCP 增速是否维持 40%+ 以及 Cloud margin 扩张路径"
+      },
+      {
+        "id": "waymo_monetization",
+        "title": "Waymo $16B 融资后：Other Bets 什么时候从亏损变成价值释放？",
+        "bull": "Waymo 每周 40 万次行程（每月 2000 万次），6 个城市，刚完成 $16B 史上最大 AV 融资（Alphabet 出大头）；城市扩张路线图清晰（Miami 刚开，英国/日本在计划中）",
+        "bear": "Other Bets Q4 亏损 $3.6B（含 $2.1B Waymo SBC），估值提升但亏损也在放大；Robotaxi 规模化时间线仍有不确定性；Tesla FSD 竞争格局变数",
+        "sources": [
+          "Q4 Call：Waymo 独立融资公告",
+          "GS Robotaxi Tracker 2026-03：Waymo vs Tesla 安全数据跟踪"
+        ],
+        "verdict": "Waymo 是真实期权而非噱头，但要计入 GOOGL 估值需要更清晰的变现路径。FY26 关注：城市扩张速度 + Other Bets 亏损是否收窄"
+      }
     ]
   },
-  "earnings": [],
+  "earnings": [
+    {
+      "quarter": "Q4 2025",
+      "fiscal_year": 2025,
+      "report_date": "2026-02-05",
+      "revenue": 113800,
+      "revenue_unit": "M USD",
+      "revenue_growth_yoy": "18%",
+      "operating_income": 35900,
+      "operating_margin": "31.6%",
+      "eps_diluted": 2.82,
+      "eps_vs_consensus": "+5%",
+      "revenue_vs_consensus": "+2%",
+      "stock_reaction": "-2.5%",
+      "capex": 14068,
+      "highlights": [
+        "Consolidated Revenue $113.8B +18%，FY25 全年首次突破 $400B（$403B）",
+        "Google Cloud $17.7B +48% 大幅加速，Operating Margin 30.1%（vs 去年 17.5%），Backlog $240B 环比 +55%",
+        "FY26 CapEx 指引 $175-185B（约 FY25 的 2 倍），60% 投向服务器，市场反应负面",
+        "Search +17% 加速，AI Overviews/AI Mode 驱动使用量扩张，未见 Gemini App 蚕食信号",
+        "Gemini App 750M MAU，Gemini Enterprise 800 万付费席位（仅 4 个月）"
+      ],
+      "review_summary": "Cloud 是本季度最大惊喜（+48%、margin 翻身至 30%），Search 和广告基本面强劲。CapEx 跳升压制情绪，但逻辑清晰：supply-constrained，投资面向未来 Cloud 增长。核心辩论从「AI 是否侵蚀 Search」转为「Cloud CapEx 何时转化为更高增速」。",
+      "review_doc_url": ""
+    }
+  ],
   "analyst_notes": {
-    "thesis": "搜索护城河短期稳固，Cloud 是增长第二曲线，AI 既是威胁也是机遇。",
-    "coverage_start": "2026-03-26",
+    "thesis": "GCP 是 GOOGL FY26 最重要的估值催化剂，Cloud Margin 跨越 30% 是里程碑，Backlog 提供增速能见度。Search 的 AI 竞争风险被过度定价——Search +17% 加速说明问题。CapEx 跳升是短期阵痛，不是结构性威胁。关键跟踪：①Cloud 增速是否维持 40%+ ② AI Mode 货币化早期信号 ③折旧加速对 margin 的实际影响。",
+    "coverage_start": "2026-03-29",
+    "sources": [
+      "Bernstein Shmulik, US Internet Narratives 2026 (2026-01-12)",
+      "MS Nowak, 10 Debates 2026 (2026-01-12)",
+      "Alphabet Q4 2025 Earnings Call Transcript (2026-02-05)"
+    ],
     "evolution_log": [
       {
-        "date": "2026-03-26",
-        "note": "初始建档，待补充 Earnings 数据。"
+        "date": "2026-03-29",
+        "note": "从 Q4 2025 review 文档取数建档，填充 earnings、key_debates（3条）、analyst_notes。"
       }
     ]
   },
