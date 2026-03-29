@@ -1,23 +1,32 @@
 {
   "id": "minimax",
   "name": "MiniMax",
-  "ticker": null,
-  "exchange": "Private",
+  "ticker": "100",
+  "exchange": "HKEX",
   "color": "#FF4B6E",
-  "logo_url": "https://logo.clearbit.com/minimax.com",
-  "type": "ai-native",
+  "logo_url": "data:image/png;base64,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",
+  "type": "listed",
   "profile": {
-    "summary": "中国头部 AI 独角兽，MiniMax-Text-01 支持 100 万 token 上下文，Hailuo 视频生成全球破圈。",
-    "last_round": "2025-12 港股上市聆讯通过",
-    "last_valuation_bn": "4",
+    "summary": "中国头部 AI 公司，Hailuo 视频生成全球破圈，M 系列多模态大模型，海外扩张提速。2026-01-09 港股上市，3月市值超越百度。",
+    "last_round": "2026-01-09 港股 IPO",
+    "last_valuation_bn": null,
     "news": [
-      "2025-12-21：通过港股上市聆讯，拟募资 $6-7亿，估值约 $4B（ebrun.com）",
-      "2025-07：C轮近 $3亿，上海国资母基金参投（财联社）",
-      "MiniMax-01 模型发布，海外扩张提速"
+      "2026-01-09：港股主板上市（00100.HK），发行价 165 HKD，首日涨 42%~78%（各媒体报价不同），史上 IPO 规模最大 AI 大模型公司",
+      "2026-03-10：市值达 3826 亿港元，首次超越百度（3322 亿港元），上市仅 61 天",
+      "2026-03-20：股价 630.5 HKD，较发行价累涨 +442.6%（moomoo）",
+      "股价：发行价 165 HKD → 现约 986 HKD（+497%）；新一代 M3 & Hailuo 3 系列模型研发中"
     ],
-    "valuation_source": "ebrun.com (Dec 2025), 财联社",
+    "valuation_source": "Yahoo Finance / 财新 / 新浪财经 (2026-03-29)",
     "key_metrics": {
-      "market_cap_usd_bn": 4.0
+      "market_cap": "~$3000B+ HKD",
+      "market_cap_usd_bn": 126.5,
+      "price": 986.0,
+      "price_currency": "HKD",
+      "ipo_price": 165.0,
+      "ipo_date": "2026-01-09",
+      "updated_at": "2026-03-29"
     }
-  }
+  },
+  "logo_file": "logos/minimax.png",
+  "sector": "cn-ai-listed"
 }
