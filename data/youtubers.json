@@ -11,7 +11,11 @@
       "category": "行业动态",
       "category_color": "#7C3AED",
       "description": "长访谈格式，Hinton、Musk、Altman、黄仁勋等顶级 AI/科技人物，每集 2-4 小时，信息密度高。",
-      "focus": ["深度访谈", "AI 领袖", "哲学思考"],
+      "focus": [
+        "深度访谈",
+        "AI 领袖",
+        "哲学思考"
+      ],
       "subscribers": "4.6M",
       "latest_videos": [
         {
@@ -31,14 +35,20 @@
       "category": "技术深度",
       "category_color": "#059669",
       "description": "前 OpenAI/Tesla AI 负责人。LLM 底层机制讲解无出其右，Neural Networks: Zero to Hero 系列是业界最佳入门材料。",
-      "focus": ["LLM 原理", "神经网络", "AI 教育"],
+      "focus": [
+        "LLM 原理",
+        "神经网络",
+        "AI 教育"
+      ],
       "subscribers": "1.2M",
-      "latest_videos": [
+      "latest_videos": [],
+      "pinned_videos": [
         {
-          "title": "The End of Coding? Agents, Automation, and the Circular Age of AI",
-          "url": "https://www.youtube.com/watch?v=BQKXg1TuOgU",
-          "published_at": "2026-03-22",
-          "summary": "Karpathy 探讨 AI coding agent 的崛起将如何重塑软件工程，以及「编码的终结」意味着什么。"
+          "title": "Software Is Changing (Again) — Software 3.0 时代的到来",
+          "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+          "published_at": "2025-06-18",
+          "is_pinned": true,
+          "summary": "Karpathy 在 YC AI Startup School 的 keynote。核心论点：我们正进入「Software 3.0」时代——继 Software 1.0（人写代码）、2.0（神经网络训练）之后，自然语言成为新的编程语言，prompt 就是程序。他认为编程不会消失，而是「上移了一层」：普通人可以用自然语言构建软件，专业程序员的工作从写代码转向 prompt 工程、agent 编排和验证输出。他把这类似于工业革命——工厂工人没有消失，而是转做了别的工作。最具争议的观点：当前 AI 的最大瓶颈不是模型能力，而是人类确认 AI 输出是否正确的速度和成本（verification bottleneck）。"
         }
       ]
     },
@@ -51,14 +61,18 @@
       "category": "工具应用",
       "category_color": "#D97706",
       "description": "AI 工具评测和周报，每周五更新本周 AI 新闻摘要，追热点速度快，适合快速掌握行业动态。",
-      "focus": ["AI 工具", "周报", "产品测评"],
+      "focus": [
+        "AI 工具",
+        "周报",
+        "产品测评"
+      ],
       "subscribers": "950K",
       "latest_videos": [
         {
           "title": "AI News: They All Launched the Same Thing!",
           "url": "https://www.youtube.com/watch?v=syx_8UlEWlA",
           "published_at": "2026-03-13",
-          "summary": "本周多家 AI 公司同时发布类似产品，Matt 梳理了 Anthropic、Google 等的最新动作和竞争格局。"
+          "summary": "Matt Wolfe 的核心观察：在同一周内 OpenAI（GPT-4.5）、Anthropic（Claude 3.7）、Google（Gemini 2.0 Flash）同时发布重大更新，背后的竞争逻辑是「发布节奏本身成为护城河」——谁能更快把新能力带给用户，谁就赢得注意力。他对这波发布的判断：Claude 3.7 在 coding 任务上的 extended thinking 是真正的工程突破，GPT-4.5 则是情感智能的飞跃，两者面向不同用户群。他担忧的问题：普通用户在模型选择上的认知负担越来越重，「哪个最好」这个问题已经失去意义，需要的是能自动路由的系统。"
         },
         {
           "title": "AI News: Anthropic Went Crazy This Week!",
@@ -77,14 +91,18 @@
       "category": "工具应用",
       "category_color": "#DC2626",
       "description": "高密度开发者内容，100 秒系列讲技术概念，AI Coding 工具评测。每周更新，极度精炼。",
-      "focus": ["开发工具", "AI Coding", "速览"],
+      "focus": [
+        "开发工具",
+        "AI Coding",
+        "速览"
+      ],
       "subscribers": "3.1M",
       "latest_videos": [
         {
           "title": "Building AI Apps In 2026",
           "url": "https://www.youtube.com/watch?v=l__xK3lI-8U",
           "published_at": "2026-03-21",
-          "summary": "2026 年 AI 应用开发的主流技术栈和工具链全景，覆盖 LLM API、Agent 框架和部署实践。"
+          "summary": "Fireship 的观点：在 2026 年「构建 AI 应用」这件事已经从技术难题变成了产品判断题。他演示了同一个功能用 5 种不同方式实现（纯 API、LangChain、LlamaIndex、Vercel AI SDK、直接 prompt chain），结论是：大多数情况下最简单的实现胜过复杂框架，框架的抽象层在模型快速迭代时反而成了负担。对开发者的建议：先用最薄的封装层，理解底层 prompt/token 流，而不是依赖框架的魔法。他对 AI coding 的态度是务实的乐观——它真的在提高生产力，但「AI 替代程序员」的叙事被严重高估，因为 verification（判断 AI 输出是否正确）本身需要极强的专业能力。"
         }
       ]
     },
@@ -97,14 +115,18 @@
       "category": "工具应用",
       "category_color": "#2563EB",
       "description": "开源模型和 AI 工具深度测试，覆盖 Llama、Mistral、Gemma 等，注重实际可用性评估。",
-      "focus": ["开源模型", "工具测试", "AI 应用"],
+      "focus": [
+        "开源模型",
+        "工具测试",
+        "AI 应用"
+      ],
       "subscribers": "480K",
       "latest_videos": [
         {
           "title": "Something big is happening...",
           "url": "https://www.youtube.com/watch?v=31A41ckhb7Q",
           "published_at": "2026-02-12",
-          "summary": "Matthew 探讨 AI Agent 领域正在发生的重大转变，以及对普通开发者意味着什么。"
+          "summary": "Matthew Berman 的核心判断：基于他对近期 6 个主要 AI 发布的横向测评，他认为我们正在进入「能力拐点期」——模型在长上下文推理、多步规划和代码执行上的进步比 benchmark 表现的更快。但他同时指出一个反常识现象：最强的模型在最简单的任务上失败率反而更高（因为 RLHF 让模型在简单问题上「过度思考」），这说明当前的对齐训练仍有系统性缺陷。他的建议：不要只看综合排行榜，要按具体任务类型测试，找到适合自己工作流的模型组合。"
         }
       ]
     },
@@ -117,7 +139,11 @@
       "category": "技术深度",
       "category_color": "#1D4ED8",
       "description": "数学动画大神 Grant Sanderson，神经网络、Transformer 原理用动画讲得极度清晰。不追热点，只做经典内容。",
-      "focus": ["数学直觉", "神经网络", "可视化"],
+      "focus": [
+        "数学直觉",
+        "神经网络",
+        "可视化"
+      ],
       "subscribers": "6.8M",
       "latest_videos": []
     },
@@ -130,7 +156,11 @@
       "category": "技术深度",
       "category_color": "#6D28D9",
       "description": "论文精读频道，GPT、RLHF、Diffusion 等重要论文深度解析，AI 研究圈自己在看的频道。",
-      "focus": ["论文精读", "ML 研究", "技术分析"],
+      "focus": [
+        "论文精读",
+        "ML 研究",
+        "技术分析"
+      ],
       "subscribers": "220K",
       "latest_videos": []
     },
@@ -143,7 +173,11 @@
       "category": "行业动态",
       "category_color": "#0891B2",
       "description": "聚焦 AI 能力边界和基准测评，MMLU、ARC 等评测体系深度解读，对模型实际能力有清醒判断。",
-      "focus": ["模型评测", "能力边界", "AI 进展"],
+      "focus": [
+        "模型评测",
+        "能力边界",
+        "AI 进展"
+      ],
       "subscribers": "390K",
       "latest_videos": []
     },
@@ -156,7 +190,11 @@
       "category": "行业动态",
       "category_color": "#B91C1C",
       "description": "2 分钟讲最新 AI 论文精华，节奏快，覆盖 DALL-E、Sora、AlphaFold 等每一个里程碑。",
-      "focus": ["论文速览", "AI 进展", "研究前沿"],
+      "focus": [
+        "论文速览",
+        "AI 进展",
+        "研究前沿"
+      ],
       "subscribers": "1.5M",
       "latest_videos": []
     },
@@ -169,7 +207,11 @@
       "category": "行业动态",
       "category_color": "#047857",
       "description": "AI 对社会经济影响的深度思考，AGI 路线图、自动化对就业的冲击，视角独特，有原创洞察。",
-      "focus": ["AI 社会影响", "AGI 思考", "未来趋势"],
+      "focus": [
+        "AI 社会影响",
+        "AGI 思考",
+        "未来趋势"
+      ],
       "subscribers": "189K",
       "latest_videos": []
     }
