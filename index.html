@@ -938,6 +938,19 @@
       flex-shrink: 0;
       background: var(--bg-3);
     }
+    .yt-avatar-fallback {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
     .yt-card-info { flex: 1; min-width: 0; }
     .yt-name {
       font-size: 15px;
@@ -1188,6 +1201,18 @@
       object-fit: cover;
       flex-shrink: 0;
       background: var(--bg-3);
+    }
+    .gh-avatar-fallback {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      background: var(--accent-soft);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
     }
 
     .gh-card-title {
@@ -2172,7 +2197,8 @@ function renderGhCard(p, idx) {
   return `
     <div class="gh-card" style="--gh-lang-color:${lc}" onclick="openGhDetail(${idx})">
       <div class="gh-card-top">
-        <img class="gh-avatar" src="${avatarUrl}" alt="${p.owner}" onerror="this.style.background='var(--bg-3)';this.src=''" />
+        <img class="gh-avatar" src="${avatarUrl}" alt="${p.owner}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="gh-avatar-fallback" style="display:none">${(p.owner||'?')[0].toUpperCase()}</div>
         <div class="gh-card-title">
           <h3>${p.name || p.repo || ''}</h3>
           <div class="gh-owner">${p.owner}</div>
@@ -2549,7 +2575,8 @@ function renderYtChannelCard(ch) {
     <div class="yt-card" style="--yt-cat-color:${catColor}">
       <div class="yt-card-top">
         <img class="yt-avatar" src="${ch.avatar_url}" alt="${ch.name}"
-          onerror="this.style.background='${catColor}33';this.src=''"/>
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="yt-avatar-fallback" style="display:none;background:${catColor}">${ch.name[0]}</div>
         <div class="yt-card-info">
           <h3 class="yt-name">${ch.name}</h3>
           <div class="yt-handle">
