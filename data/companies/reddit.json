@@ -7,7 +7,7 @@
   "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjRkY0NTAwIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTEyIDBBMTIgMTIgMCAwIDAgMCAxMmExMiAxMiAwIDAgMCAxMiAxMiAxMiAxMiAwIDAgMCAxMi0xMkExMiAxMiAwIDAgMCAxMiAwem01LjAxIDQuNzQ0Yy42ODggMCAxLjI1LjU2MSAxLjI1IDEuMjQ5YTEuMjUgMS4yNSAwIDAgMS0yLjQ5OC4wNTZsLTIuNTk3LS41NDctLjggMy43NDdjMS44MjQuMDcgMy40OC42MzIgNC42NzQgMS40ODguMzA4LS4zMDkuNzMtLjQ5MSAxLjIwNy0uNDkxLjk2OCAwIDEuNzU0Ljc4NiAxLjc1NCAxLjc1NCAwIC43MTYtLjQzNSAxLjMzMy0xLjAxIDEuNjE0YTMuMTExIDMuMTExIDAgMCAxIC4wNDIuNTJjMCAyLjY5NC0zLjEzIDQuODctNy4wMDQgNC44Ny0zLjg3NCAwLTcuMDA0LTIuMTc2LTcuMDA0LTQuODcgMC0uMTgzLjAxNS0uMzY2LjA0My0uNTM0QTEuNzQ4IDEuNzQ4IDAgMCAxIDQuMDI4IDEyYzAtLjk2OC43ODYtMS43NTQgMS43NTQtMS43NTQuNDYzIDAgLjg5OC4xOTYgMS4yMDcuNDkgMS4yMDctLjg4MyAyLjg3OC0xLjQzIDQuNzQ0LTEuNDg3bC44ODUtNC4xODJhLjM0Mi4zNDIgMCAwIDEgLjE0LS4xOTcuMzUuMzUgMCAwIDEgLjIzOC0uMDQybDIuOTA2LjYxN2ExLjIxNCAxLjIxNCAwIDAgMSAxLjEwOC0uNzAxek05LjI1IDEyQzguNTYxIDEyIDggMTIuNTYyIDggMTMuMjVjMCAuNjg3LjU2MSAxLjI0OCAxLjI1IDEuMjQ4LjY4NyAwIDEuMjQ4LS41NjEgMS4yNDgtMS4yNDkgMC0uNjg4LS41NjEtMS4yNDktMS4yNDktMS4yNDl6bTUuNSAwYy0uNjg3IDAtMS4yNDguNTYxLTEuMjQ4IDEuMjUgMCAuNjg3LjU2MSAxLjI0OCAxLjI0OSAxLjI0OC42ODggMCAxLjI0OS0uNTYxIDEuMjQ5LTEuMjQ5IDAtLjY4Ny0uNTYyLTEuMjQ5LTEuMjUtMS4yNDl6bS01LjQ2NiAzLjk5YS4zMjcuMzI3IDAgMCAwLS4yMzEuMDk0LjMzLjMzIDAgMCAwIDAgLjQ2M2MuODQyLjg0MiAyLjQ4NC45MTMgMi45NjEuOTEzLjQ3NyAwIDIuMTA1LS4wNTYgMi45NjEtLjkxM2EuMzYxLjM2MSAwIDAgMCAuMDI5LS40NjMuMzMuMzMgMCAwIDAtLjQ2NCAwYy0uNTQ3LjUzMy0xLjY4NC43My0yLjUxMi43My0uODI4IDAtMS45NzktLjE5Ni0yLjUxMi0uNzNhLjMyNi4zMjYgMCAwIDAtLjIzMi0uMDk1eiIvPgogIDwvZz4KPC9zdmc+",
   "color": "#FF4500",
   "profile": {
-    "summary": "全球最大论坛社区，2024 年 3 月上市。独特价值在于高质量 UGC 内容和垂直社区（Subreddit）。Google 内容授权协议（$60M/年）和 AI 数据授权是新兴收入来源。广告业务货币化尚早期，增长空间大但盈利路径尚不清晰。",
+    "summary": "全球最大论坛社区，2024 年 3 月上市。FY25 营收 $2.2B +69%，六季连续 60%+ 增速。AI 广告平台（Reddit Max）、数据授权（Google/OpenAI）、$1B 股票回购计划是当前核心叙事。最大风险：美国登录用户增长放缓。",
     "business_segments": [
       {
         "name": "广告业务",
@@ -21,30 +21,92 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$28B",
-      "ltm_revenue": "$1.3B",
-      "ltm_revenue_growth": "62%",
-      "ltm_operating_margin": "-5%",
+      "market_cap": "$18B",
+      "market_cap_usd_bn": 18.0,
+      "ltm_revenue": "$2.2B",
+      "ltm_revenue_growth": "69%",
+      "ltm_operating_income": "$120M",
+      "ltm_operating_margin": "5%",
+      "ltm_adj_ebitda_margin": "38%",
+      "dau": "121M",
+      "wau": "471M",
       "as_of": "Q4 2025",
-      "market_cap_usd_bn": 28.0,
-      "price": 121.84,
+      "price": 105.0,
       "price_currency": "USD",
-      "updated_at": "2026-03-28"
+      "updated_at": "2026-03-29"
     },
     "key_debates": [
-      "广告货币化从早期阶段走向成熟的速度",
-      "数据授权协议的可持续性和规模化空间",
-      "用户增长能否维持上市初期的强劲势头"
+      {
+        "id": "user_growth_slowdown",
+        "title": "美国用户增长放缓：商业化「吃老本」，还是用户基础扩张已到瓶颈？",
+        "bull": "WAU 4.71 亿 +24% 仍强劲，用户质量（留存、参与深度）在提升；新用户引导实验进行中，LLM 辅助兴趣定向初步有效；管理层承诺 2026 年加大 ML 投入，H2 2026 预计显现",
+        "bear": "美国登录用户 Q4 环比下滑（低于 MS 预期 30 万），是连续第一次出现；当前增速主要靠 ARPU 提升而非用户扩张；新用户留存改善无明确时间表",
+        "sources": [
+          "Q4 Call：Huffman 直接回应用户增长问题",
+          "MS：美国用户是估值倍数的核心观察指标"
+        ],
+        "verdict": "短期内 ARPU 提升足以驱动营收增长，但 2026 H2 是关键验证节点——新用户引导改善能否体现在 DAU 加速上"
+      },
+      {
+        "id": "reddit_max_timeline",
+        "title": "Reddit Max AI 广告平台：迁移需要多个季度，SMB 规模化时间线是否过慢？",
+        "bull": "早期数据强劲（CPA -17%，转化 +27%）；SMB 收入 FY25 翻倍 YoY；是广告系统自动化和国际扩张的核心基础设施",
+        "bear": "CES 公测到全面上线需要「多个季度」；新广告主 onboarding 比 MS 预期慢；SMB 目前仅占营收 ~15%，远低于同类平台",
+        "sources": [
+          "Q4 Call：Huffman/Wong 关于 Reddit Max 时间线",
+          "MS 分析：SMB 渗透率是中期关键指标"
+        ],
+        "verdict": "Reddit Max 是结构性正确的方向，但时间线偏慢。2026 年每季度观察 SMB 占比变化和 Reddit Max 迁移率"
+      },
+      {
+        "id": "ai_data_moat",
+        "title": "AI 数据授权：$36M 的当前收入 vs 人类内容护城河的战略价值，如何定价？",
+        "bull": "Reddit 是 AI 回答 #1 被引用来源，人类内容 Ground Truth 不可替代；Google/OpenAI 合作从商业协议演进为产品合作（AI 引用→引流社区）；$1B 回购说明管理层对 FCF 生成有信心",
+        "bear": "数据授权 Other Revenue $36M 仅 +8%，增速已放缓；合同细节不透明；AI 抓取自动化后协议重谈压力；用户数据主权意识增强可能产生监管风险",
+        "sources": [
+          "Q4 Call：Huffman AI 生态定位叙事",
+          "Bernstein Age of Agents 报告"
+        ],
+        "verdict": "数据授权的战略价值大于当期财务贡献。关键：合同续期和新增合同的规模是否能支撑「AI 时代人类内容增值」的叙事"
+      }
     ]
   },
-  "earnings": [],
+  "earnings": [
+    {
+      "quarter": "Q4 2025",
+      "fiscal_year": 2025,
+      "report_date": "2026-02-05",
+      "revenue": 726,
+      "revenue_unit": "M USD",
+      "revenue_growth_yoy": "70%",
+      "operating_margin": "35%",
+      "eps_diluted": 1.24,
+      "eps_vs_consensus": "+10%",
+      "revenue_vs_consensus": "+3%",
+      "stock_reaction": "-7.4%",
+      "dau": "121M",
+      "highlights": [
+        "Q4 营收 $726M +70%，Adj. EBITDA Margin 45%（历史最高），FY25 全年 $2.2B +69%",
+        "DAU 1.21 亿 +19%，WAU 4.71 亿 +24%；但美国登录用户低于预期，环比下滑",
+        "宣布 $10 亿股票回购计划，净现金 $25B，全年 CapEx < $1B，FCF $684M（同比 3x+）",
+        "广告收入 $690M +75%，下漏斗转化翻倍，SMB 收入翻倍，15 个垂直中 11 个增速 50%+",
+        "Reddit Max AI 广告平台 CES 公测：CPA -17%，转化 +27%；Reddit 是 AI 回答 #1 被引用来源"
+      ],
+      "review_summary": "财务全面超预期，但美国用户增长低于预期引发「增速是否已 Peak」的担忧。核心逻辑仍在：ARPU +42% 说明广告商业化在加速，Reddit Max 是结构性升级。新用户留存改进预计 H2 2026 才显现，是短期的叙事空窗期。",
+      "review_doc_url": ""
+    }
+  ],
   "analyst_notes": {
-    "thesis": "高增长早期阶段，广告 ARPU 极低意味着提升空间大；数据授权是差异化收入来源，但规模有限。",
-    "coverage_start": "2026-03-26",
+    "thesis": "Reddit 是当前互联网板块中增速最高（+70%）、利润率改善最快的公司之一。AI 广告平台（Reddit Max）是商业化提速的核心引擎。主要风险是美国用户增长放缓——如果 2026 H2 用户改善不出现，估值倍数将承压。FCF 生成加速（$684M 全年）和 $1B 回购是正向信号。",
+    "coverage_start": "2026-03-29",
+    "sources": [
+      "Reddit Q4 2025 Earnings Call Transcript (2026-02-05)",
+      "MS 2026 Internet Sector Outlook"
+    ],
     "evolution_log": [
       {
-        "date": "2026-03-26",
-        "note": "初始建档，待补充 Earnings 数据。"
+        "date": "2026-03-29",
+        "note": "Q4 2025 review 取数建档。营收超预期但美国用户低预期，$1B 回购首次宣布。"
       }
     ]
   },
