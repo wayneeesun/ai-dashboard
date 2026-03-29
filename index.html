@@ -1128,6 +1128,9 @@
 
     /* ── 代表作 badge ── */
     .yt-video-pinned { background: var(--bg-3); border-radius: 6px; padding: 10px 12px; margin: 0 -12px; }
+    .yt-video-more { margin-top: 6px; font-size: 12px; }
+    .yt-video-more a { color: var(--accent); text-decoration: none; }
+    .yt-video-more a:hover { text-decoration: underline; }
     .yt-video-pinned-badge {
       display: inline-block;
       font-size: 10px;
@@ -3049,13 +3052,16 @@ function renderYtChannelCard(ch) {
     `<span class="yt-focus-tag" style="border-color:${catColor}33;color:${catColor}">${f}</span>`
   ).join('');
 
-  // 本周视频（latest_videos）
-  const weekVideos = (ch.latest_videos || []).map(v => renderVideoItem(v, false)).join('');
-  // 代表作（pinned_videos），仅在无本周视频时显示
+  // 本周视频（latest_videos）最多显示 1 条，多余的折叠
+  const allWeekVideos = ch.latest_videos || [];
+  const weekVideos = allWeekVideos.slice(0, 1).map(v => renderVideoItem(v, false)).join('');
+  const weekExtra = allWeekVideos.length > 1
+    ? `<div class="yt-video-more"><a href="${ch.url}" target="_blank" rel="noopener">+ ${allWeekVideos.length - 1} 条更多视频 →</a></div>` : '';
+  // 代表作（pinned_videos），仅在无本周视频时显示，也最多 1 条
   const pinnedVideos = (!weekVideos && ch.pinned_videos && ch.pinned_videos.length)
-    ? (ch.pinned_videos || []).map(v => renderVideoItem(v, true)).join('') : '';
+    ? (ch.pinned_videos || []).slice(0, 1).map(v => renderVideoItem(v, true)).join('') : '';
 
-  const videoSection = weekVideos || pinnedVideos;
+  const videoSection = weekVideos ? weekVideos + weekExtra : pinnedVideos;
   const sectionLabel = weekVideos ? '📹 本周视频' : '📌 代表作';
 
   return `
