@@ -9,22 +9,22 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0f1117;
-      --bg-2: #181c27;
-      --bg-3: #1e2335;
-      --border: #2a2f45;
-      --text: #e8eaf0;
-      --text-muted: #8890a8;
-      --text-dim: #555e7a;
-      --accent: #4f8ef7;
-      --accent-soft: rgba(79, 142, 247, 0.12);
-      --green: #34d399;
-      --red: #f87171;
-      --yellow: #fbbf24;
+      --bg: #F0F2F5;
+      --bg-2: #FFFFFF;
+      --bg-3: #F4F6FA;
+      --border: #E2E6EF;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --text-dim: #94A3B8;
+      --accent: #2563EB;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --green: #059669;
+      --red: #DC2626;
+      --yellow: #D97706;
       --sidebar-w: 220px;
       --radius: 12px;
       --radius-sm: 8px;
-      --transition: 0.18s ease;
+      --transition: 0.15s ease;
     }
 
     body {
@@ -252,8 +252,11 @@
 
     /* ── Top Bar ── */
     #topbar {
-      padding: 18px 28px 0;
+      padding: 14px 28px;
       flex-shrink: 0;
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 0 var(--border);
     }
 
     .topbar-inner {
@@ -280,19 +283,20 @@
       padding: 20px 28px 28px;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
+      gap: 18px;
       align-content: start;
     }
 
     .company-card {
-      background: var(--bg-2);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 22px;
       cursor: pointer;
       transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     }
 
     .company-card::before {
@@ -306,8 +310,8 @@
 
     .company-card:hover {
       border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
     }
 
     .card-header {
@@ -426,13 +430,14 @@
     #detail-panel {
       position: fixed;
       inset: 0;
-      background: var(--bg);
+      background: var(--bg-2);
       z-index: 200;
       overflow-y: auto;
       opacity: 0;
       pointer-events: none;
       transform: translateY(16px);
       transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -4px 0 24px rgba(0,0,0,0.08);
     }
 
     #detail-panel.visible {
@@ -444,7 +449,7 @@
     .detail-header {
       position: sticky;
       top: 0;
-      background: var(--bg);
+      background: var(--bg-2);
       border-bottom: 1px solid var(--border);
       padding: 20px 32px;
       display: flex;
@@ -506,7 +511,7 @@
       font-weight: 600;
     }
 
-    .detail-close:hover { background: #3a2a2a; border-color: var(--red); color: var(--red); }
+    .detail-close:hover { background: rgba(220,38,38,0.08); border-color: var(--red); color: var(--red); }
 
     .detail-body {
       padding: 28px 32px;
@@ -546,7 +551,7 @@
     .section { margin-bottom: 28px; }
 
     .section-title {
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -606,19 +611,87 @@
     .metric-card .sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
     /* Key Debates */
-    .debates { display: flex; flex-direction: column; gap: 8px; }
+    .debates { display: flex; flex-direction: column; gap: 10px; }
 
     .debate-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 10px 14px;
       background: var(--bg-3);
       border-radius: var(--radius-sm);
-      border-left: 2px solid var(--yellow);
+      border-left: 3px solid var(--yellow);
+      overflow: hidden;
     }
+    .debate-item.simple {
+      padding: 10px 14px;
+    }
+    .debate-item.simple p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
 
-    .debate-item p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+    /* 结构化争议 */
+    .debate-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 12px 16px 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .debate-header:hover { background: var(--bg-3); }
+    .debate-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--yellow);
+      background: rgba(217,119,6,0.12);
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .debate-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.45;
+      flex: 1;
+    }
+    .debate-toggle {
+      font-size: 11px;
+      color: var(--text-dim);
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: transform 0.2s;
+    }
+    .debate-item.open .debate-toggle { transform: rotate(180deg); }
+    .debate-body {
+      display: none;
+      padding: 0 16px 14px 16px;
+      border-top: 1px solid var(--border);
+    }
+    .debate-item.open .debate-body { display: block; }
+    .debate-side {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .debate-side-label {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+    .debate-side-label.bull { background: rgba(5,150,105,0.10); color: var(--green); }
+    .debate-side-label.bear { background: rgba(220,38,38,0.10); color: var(--red); }
+    .debate-side-label.verdict { background: rgba(37,99,235,0.10); color: var(--accent); }
+    .debate-side-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .debate-sources {
+      margin-top: 10px;
+      font-size: 10px;
+      color: var(--text-dim);
+    }
 
     /* Earnings */
     .earnings-list { display: flex; flex-direction: column; gap: 16px; }
@@ -627,6 +700,7 @@
       background: var(--bg-3);
       border-radius: var(--radius);
       border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
       overflow: hidden;
     }
 
@@ -636,7 +710,7 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      background: var(--bg);
+      background: var(--bg-2);
     }
 
     .earnings-quarter {
@@ -657,8 +731,8 @@
       font-weight: 600;
     }
 
-    .beat-badge.beat { background: rgba(52,211,153,0.15); color: var(--green); }
-    .beat-badge.miss { background: rgba(248,113,113,0.15); color: var(--red); }
+    .beat-badge.beat { background: rgba(5,150,105,0.10); color: var(--green); }
+    .beat-badge.miss { background: rgba(220,38,38,0.10); color: var(--red); }
 
     .earnings-card-body { padding: 16px 18px; }
 
@@ -689,8 +763,8 @@
     }
 
     .review-summary-box {
-      background: rgba(79,142,247,0.07);
-      border: 1px solid rgba(79,142,247,0.2);
+      background: rgba(37,99,235,0.04);
+      border: 1px solid rgba(37,99,235,0.12);
       border-radius: var(--radius-sm);
       padding: 14px 16px;
     }
@@ -796,11 +870,12 @@
       position: absolute; z-index: 99;
       background: var(--bg-3); border: 1px solid var(--border); border-radius: 8px;
       padding: 10px 13px; font-size: 12px; line-height: 1.6; color: var(--text);
-      pointer-events: none; max-width: 240px; box-shadow: 0 4px 20px rgba(0,0,0,.4);
+      pointer-events: none; max-width: 240px; box-shadow: 0 4px 20px rgba(0,0,0,.12);
     }
     .infra-table-panel {
       display: flex; flex-direction: column; gap: 10px;
-      background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border); padding: 16px;
+      background: #FFFFFF; border-radius: 12px; border: 1px solid var(--border); padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     }
     .infra-table-header {
       display: flex; justify-content: space-between; align-items: center;
@@ -818,10 +893,233 @@
     .infra-table td { padding: 8px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
     .infra-row { cursor: pointer; transition: background .12s; }
     .infra-row:hover { background: var(--bg-3); }
-    .infra-row.highlighted { background: rgba(79,142,247,.08); }
+    .infra-row.highlighted { background: var(--accent-soft); }
     .infra-status-badge {
       display: inline-block; padding: 2px 8px; border-radius: 10px;
       font-size: 11px; font-weight: 500; white-space: nowrap;
+    }
+
+    /* ── YouTubers Cards ── */
+    .yt-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .yt-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--yt-cat-color, var(--accent));
+    }
+    .yt-card:hover {
+      border-color: var(--yt-cat-color, var(--accent));
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    }
+    .yt-card-top {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .yt-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--bg-3);
+    }
+    .yt-card-info { flex: 1; min-width: 0; }
+    .yt-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 4px;
+    }
+    .yt-handle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+    .yt-subs {
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+    .yt-focus-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 7px;
+    }
+    .yt-focus-tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid;
+      font-weight: 500;
+    }
+    .yt-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .yt-videos-section {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .yt-videos-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .yt-video-item {
+      padding: 10px 12px;
+      background: var(--bg-3);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .yt-video-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .yt-video-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .yt-video-title a:hover { color: var(--accent); }
+    .yt-video-meta {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    .yt-video-summary {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .yt-no-video {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-style: italic;
+      padding: 8px 0;
+    }
+    .yt-channel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--yt-cat-color, var(--accent));
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: auto;
+    }
+    .yt-channel-link:hover { text-decoration: underline; }
+
+    /* ── GitHub Trending Summary Banner ── */
+    .gh-summary-banner {
+      grid-column: 1 / -1;
+      background: rgba(37,99,235,0.04);
+      border: 1px solid rgba(37,99,235,0.12);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 8px;
+    }
+    .gh-summary-headline {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .gh-summary-top3 {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .gh-top3-item {
+      flex: 1;
+      min-width: 200px;
+      background: var(--bg-3);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--accent);
+    }
+    .gh-top3-rank {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .gh-top3-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .gh-top3-name a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .gh-top3-name a:hover { color: var(--accent); }
+    .gh-top3-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .gh-top3-stars {
+      color: #f59e0b;
+      font-weight: 600;
+    }
+    .gh-summary-cats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .gh-cat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--bg-3);
+      border-radius: 14px;
+      padding: 5px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .gh-cat-pill .pill-count {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .gh-summary-trends {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .gh-trend-tag {
+      font-size: 11px;
+      color: var(--text-dim);
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      line-height: 1.4;
     }
 
     /* ── GitHub Trending Cards ── */
@@ -848,10 +1146,10 @@
     }
 
     .gh-card {
-      background: var(--bg-2);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 22px;
       cursor: pointer;
       transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
       position: relative;
@@ -859,6 +1157,7 @@
       display: flex;
       flex-direction: column;
       min-height: 320px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     }
 
     .gh-card::before {
@@ -872,8 +1171,8 @@
 
     .gh-card:hover {
       border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
     }
 
     .gh-card-top {
@@ -991,7 +1290,7 @@
     .gh-detail-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.3);
       z-index: 300;
       display: flex;
       align-items: center;
@@ -1007,7 +1306,7 @@
     }
 
     .gh-detail-box {
-      background: var(--bg-2);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       max-width: 600px;
@@ -1018,6 +1317,7 @@
       position: relative;
       transform: translateY(16px);
       transition: transform 0.2s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     }
 
     .gh-detail-overlay.visible .gh-detail-box {
@@ -1037,7 +1337,7 @@
       display: flex; align-items: center; justify-content: center;
       transition: all var(--transition);
     }
-    .gh-detail-close:hover { background: #3a2a2a; border-color: var(--red); color: var(--red); }
+    .gh-detail-close:hover { background: rgba(220,38,38,0.08); border-color: var(--red); color: var(--red); }
 
     .gh-detail-box h2 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
     .gh-detail-box .gh-detail-owner { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
@@ -1083,7 +1383,7 @@
 
     /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
 
@@ -1164,6 +1464,7 @@ const TICKER_MAP = {
   sandisk: 'SNDK', micron: 'MU', microsoft: 'MSFT', shopify: 'SHOP',
   oracle: 'ORCL', servicenow: 'NOW', snowflake: 'SNOW', cloudflare: 'NET',
   tencent: '0700.HK', alibaba: '9988.HK', meituan: '3690.HK',
+  zhipu: '2513.HK', minimax: '0100.HK',
 };
 const liveMarketCaps = {}; // id → { fmt, usd_bn }
 let marketCapFetchDone = false;
@@ -1291,6 +1592,11 @@ async function selectSector(id) {
 
   if (sector.topic === 'github-trend') {
     await renderGithubTrending();
+    return;
+  }
+
+  if (sector.topic === 'youtubers') {
+    await renderYoutubers();
     return;
   }
 
@@ -1599,7 +1905,7 @@ async function drawGlobe(data, region) {
 
   // 海洋背景
   s.append('circle').attr('cx', CX).attr('cy', CY).attr('r', RADIUS)
-    .attr('fill', '#0d1526').attr('stroke', '#2a2f45').attr('stroke-width', 1);
+    .attr('fill', '#C8D8F0').attr('stroke', '#B0C4E0').attr('stroke-width', 1);
 
   // 国家层
   const countries = topojson.feature(globeWorld, globeWorld.objects.countries);
@@ -1677,7 +1983,7 @@ async function drawGlobe(data, region) {
       .attr('class', 'dc-label')
       .attr('x', d => { const p = projection([d.lng, d.lat]); return p ? p[0] + Math.max(9, Math.sqrt((d.capacity_gw||0.1)*300)) + 3 : -9999; })
       .attr('y', d => { const p = projection([d.lng, d.lat]); return p ? p[1] + 4 : -9999; })
-      .attr('fill', '#e8eaf0').attr('font-size', '11px').attr('pointer-events', 'none')
+      .attr('fill', '#0F172A').attr('font-size', '11px').attr('pointer-events', 'none')
       .text(d => d.name.length > 20 ? d.name.slice(0,18)+'…' : d.name);
   }
 
@@ -1727,7 +2033,7 @@ async function drawGlobe(data, region) {
 
   // 提示文字
   s.append('text').attr('x', CX).attr('y', H - 8)
-    .attr('text-anchor', 'middle').attr('fill', '#555e7a').attr('font-size', '11px')
+    .attr('text-anchor', 'middle').attr('fill', '#475569').attr('font-size', '11px')
     .text('拖拽旋转 · 滚轮缩放');
 }
 
@@ -1784,6 +2090,56 @@ async function renderGithubTrending() {
   });
 
   let html = '';
+
+  // ── Summary Banner ──
+  const s = data.summary;
+  if (s) {
+    html += `<div class="gh-summary-banner">`;
+    html += `<div class="gh-summary-headline">${s.headline || `本周共收录 ${s.total_projects} 个项目`}</div>`;
+
+    // Top 3
+    if (s.top3_by_weekly_stars && s.top3_by_weekly_stars.length) {
+      html += `<div class="gh-summary-top3">`;
+      const medals = ['🥇','🥈','🥉'];
+      s.top3_by_weekly_stars.forEach((t, i) => {
+        if (typeof t === 'string') {
+          // legacy format
+          html += `<div class="gh-top3-item"><div class="gh-top3-rank">${medals[i]} #${i+1}</div><div class="gh-top3-name">${t}</div></div>`;
+        } else {
+          html += `<div class="gh-top3-item">
+            <div class="gh-top3-rank">${medals[i]} TOP ${t.rank}</div>
+            <div class="gh-top3-name"><a href="https://github.com/${t.owner}/${t.name}" target="_blank">${t.owner}/${t.name}</a></div>
+            <div class="gh-top3-meta">
+              <span class="gh-top3-stars">+${formatNum(t.stars_this_week)}</span> 本周 · 总 ${formatNum(t.total_stars)} ⭐ · ${t.category}<br/>
+              ${t.one_liner || ''}
+            </div>
+          </div>`;
+        }
+      });
+      html += `</div>`;
+    }
+
+    // Category breakdown pills
+    if (s.category_breakdown && s.category_breakdown.length) {
+      html += `<div class="gh-summary-cats">`;
+      s.category_breakdown.forEach(cb => {
+        html += `<div class="gh-cat-pill">${cb.category} <span class="pill-count">${cb.count}</span> (${cb.pct})</div>`;
+      });
+      html += `</div>`;
+    }
+
+    // Key trends as tags
+    if (s.key_trends && s.key_trends.length) {
+      html += `<div class="gh-summary-trends">`;
+      s.key_trends.forEach(t => {
+        html += `<span class="gh-trend-tag">${t}</span>`;
+      });
+      html += `</div>`;
+    }
+
+    html += `</div>`;
+  }
+
   catOrder.forEach(cid => {
     const items = groups[cid];
     if (!items || !items.length) return;
@@ -1804,7 +2160,7 @@ async function renderGithubTrending() {
 
 function renderGhCard(p, idx) {
   const lang = p.language || '';
-  const lc = langColors[lang] || '#8890a8';
+  const lc = langColors[lang] || '#94A3B8';
   const avatarUrl = `https://github.com/${p.owner}.png?size=72`;
   // 字段兼容（旧数据用 total_stars/weekly_stars，新数据用 stars/stars_this_week）
   const totalStars = p.total_stars ?? p.stars ?? 0;
@@ -1857,7 +2213,7 @@ function openGhDetail(idx) {
   const data = ghTrendingData;
   if (!data) return;
   const p = data.projects[idx];
-  const lc = langColors[p.language] || '#8890a8';
+  const lc = langColors[p.language] || '#94A3B8';
 
   document.getElementById('gh-detail-content').innerHTML = `
     <h2>${p.repo}</h2>
@@ -1957,10 +2313,35 @@ async function openDetail(id) {
       <div class="section">
         <div class="section-title">市场核心争议</div>
         <div class="debates">
-          ${c.profile.key_debates.map(d => `
-            <div class="debate-item">
-              <p>${d}</p>
-            </div>`).join('')}
+          ${c.profile.key_debates.map((d, i) => {
+            if (typeof d === 'string') {
+              return `<div class="debate-item simple"><p>${d}</p></div>`;
+            }
+            const idx = i + 1;
+            return `
+            <div class="debate-item" id="debate-${c.id}-${idx}">
+              <div class="debate-header" onclick="toggleDebate('${c.id}',${idx})">
+                <span class="debate-num">#${idx}</span>
+                <span class="debate-title">${d.title}</span>
+                <span class="debate-toggle">▼</span>
+              </div>
+              <div class="debate-body">
+                <div class="debate-side">
+                  <span class="debate-side-label bull">多方</span>
+                  <span class="debate-side-text">${d.bull}</span>
+                </div>
+                <div class="debate-side">
+                  <span class="debate-side-label bear">空方</span>
+                  <span class="debate-side-text">${d.bear}</span>
+                </div>
+                <div class="debate-side">
+                  <span class="debate-side-label verdict">判断</span>
+                  <span class="debate-side-text">${d.verdict}</span>
+                </div>
+                ${d.sources && d.sources.length ? `<div class="debate-sources">来源：${d.sources.join(' · ')}</div>` : ''}
+              </div>
+            </div>`;
+          }).join('')}
         </div>
       </div>` : ''}
     </div>
@@ -2069,6 +2450,11 @@ function renderEarningsCard(e) {
     </div>`;
 }
 
+function toggleDebate(companyId, idx) {
+  const el = document.getElementById(`debate-${companyId}-${idx}`);
+  if (el) el.classList.toggle('open');
+}
+
 function closeDetail() {
   document.getElementById('detail-panel').classList.remove('visible');
   document.body.style.overflow = '';
@@ -2088,6 +2474,98 @@ function toggleSidebar() {
   const collapsed = sidebar.classList.toggle('collapsed');
   btn.textContent = collapsed ? '▶' : '◀';
   btn.title = collapsed ? '展开侧边栏' : '收缩侧边栏';
+}
+
+// ── YouTubers ──
+let ytData = null;
+
+async function loadYoutubers() {
+  if (ytData) return ytData;
+  try {
+    ytData = await fetchJSON('data/youtubers.json');
+    return ytData;
+  } catch(e) { return null; }
+}
+
+async function renderYoutubers() {
+  const grid = document.getElementById('card-grid');
+  grid.style.display = 'grid';
+  grid.innerHTML = '<div class="loading">加载中…</div>';
+
+  const data = await loadYoutubers();
+  if (!data) { grid.innerHTML = '<div class="loading">暂无数据</div>'; return; }
+
+  document.getElementById('sector-subtitle').innerHTML =
+    `${data.channels.length} 位博主 · 每周末更新 · 更新于 ${data.updated_at}`;
+
+  // Group by category
+  const catMap = {};
+  (data.categories || []).forEach(c => { catMap[c.id] = c; });
+  const groups = {};
+  const catOrder = (data.categories || []).map(c => c.id);
+  data.channels.forEach(ch => {
+    const cid = ch.category || '其他';
+    if (!groups[cid]) groups[cid] = [];
+    groups[cid].push(ch);
+  });
+
+  let html = '';
+  catOrder.forEach(cid => {
+    const items = groups[cid];
+    if (!items || !items.length) return;
+    const cat = catMap[cid] || { icon: '📺', color: '#94A3B8' };
+    html += `<div class="gh-category-header" style="grid-column:1/-1;">
+      <span class="gh-cat-icon">${cat.icon}</span>
+      <span class="gh-cat-name">${cid}</span>
+      <span class="gh-cat-desc" style="color:${cat.color}">·</span>
+      <span class="gh-cat-count">${items.length}</span>
+    </div>`;
+    items.forEach(ch => { html += renderYtChannelCard(ch); });
+  });
+
+  grid.innerHTML = html;
+}
+
+function renderYtChannelCard(ch) {
+  const catColor = ch.category_color || '#94A3B8';
+  const focusTags = (ch.focus || []).map(f =>
+    `<span class="yt-focus-tag" style="border-color:${catColor}33;color:${catColor}">${f}</span>`
+  ).join('');
+
+  // latest videos section
+  let videosHtml = '';
+  if (ch.latest_videos && ch.latest_videos.length) {
+    videosHtml = ch.latest_videos.map(v => `
+      <div class="yt-video-item">
+        <div class="yt-video-title"><a href="${v.url || '#'}" target="_blank" rel="noopener">${v.title}</a></div>
+        <div class="yt-video-meta">${v.date || ''} · ${v.duration || ''}</div>
+        ${v.summary ? `<div class="yt-video-summary">${v.summary}</div>` : ''}
+      </div>`).join('');
+  } else {
+    videosHtml = `<div class="yt-no-video">本周暂无新视频 / 待更新</div>`;
+  }
+
+  return `
+    <div class="yt-card" style="--yt-cat-color:${catColor}">
+      <div class="yt-card-top">
+        <img class="yt-avatar" src="${ch.avatar_url}" alt="${ch.name}"
+          onerror="this.style.background='${catColor}33';this.src=''"/>
+        <div class="yt-card-info">
+          <h3 class="yt-name">${ch.name}</h3>
+          <div class="yt-handle">
+            <a href="${ch.url}" target="_blank" rel="noopener" style="color:var(--accent)">${ch.handle}</a>
+            <span class="yt-subs">${ch.subscribers || ''}</span>
+          </div>
+          <div class="yt-focus-tags">${focusTags}</div>
+        </div>
+      </div>
+      <p class="yt-desc">${ch.description}</p>
+      <div class="yt-videos-section">
+        <div class="yt-videos-label">📹 本周更新</div>
+        ${videosHtml}
+      </div>
+      <a class="yt-channel-link" href="${ch.url}" target="_blank" rel="noopener">▶ 前往频道</a>
+    </div>`;
 }
 
 // Update timestamp
