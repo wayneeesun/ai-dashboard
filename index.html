@@ -170,6 +170,20 @@
     #sidebar.collapsed .nav-item .count { opacity: 0; }
     .nav-item.active .count { background: var(--accent-soft); color: var(--accent); }
 
+    .freshness-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 4px;
+      flex-shrink: 0;
+    }
+    #sidebar.collapsed .freshness-dot { opacity: 0; }
+    .freshness-dot.fresh { background: #22C55E; }
+    .freshness-dot.stale { background: #F59E0B; }
+    .freshness-dot.old { background: #EF4444; }
+    .freshness-dot.none { background: #D1D5DB; }
+
     /* ── Two-level nav ── */
     .nav-group {}
 
@@ -1748,7 +1762,7 @@
 
 <script>
 // ── State ──
-const state = { nav: [], sectors: [], companies: {}, activeSector: null };
+const state = { nav: [], sectors: [], companies: {}, activeSector: null, updateStatus: { sectors: {} } };
 
 // ── Fetch helpers ──
 async function fetchJSON(path) {
@@ -1816,6 +1830,15 @@ async function loadCompany(id) {
 
 // ── Init ──
 async function init() {
+  // Load update status
+  try {
+    const statusData = await fetchJSON('data/update_status.json');
+    state.updateStatus = statusData || { sectors: {} };
+  } catch (e) {
+    console.warn('Failed to load update_status.json:', e);
+    state.updateStatus = { sectors: {} };
+  }
+
   const data = await fetchJSON('data/sectors.json');
   state.nav = data.nav;
   // Flatten all sectors (children of groups + top-level non-groups) for lookup
@@ -1831,6 +1854,16 @@ async function init() {
   // Auto-select first leaf sector
   const firstLeaf = state.sectors.find(s => s.type === 'companies' && s.companies && s.companies.length > 0);
   if (firstLeaf) selectSector(firstLeaf.id);
+}
+
+// ── Freshness helper ──
+function getFreshnessClass(dateStr) {
+  if (!dateStr) return 'none';
+  const today = new Date().toISOString().slice(0, 10);
+  const diff = Math.floor((new Date(today) - new Date(dateStr)) / 86400000);
+  if (diff === 0) return 'fresh';
+  if (diff <= 2) return 'stale';
+  return 'old';
 }
 
 // ── Sidebar ──
@@ -1862,11 +1895,16 @@ function renderNavGroup(group) {
 
 function renderNavItem(s) {
   const count = s.companies ? s.companies.length : '→';
+  const sectorStatus = state.updateStatus.sectors[s.id] || {};
+  const lastUpdated = sectorStatus.last_updated || '';
+  const freshClass = getFreshnessClass(lastUpdated);
+  const titleText = lastUpdated ? `更新于 ${lastUpdated}` : '未更新';
   return `
     <div class="nav-item" data-id="${s.id}" onclick="selectSector('${s.id}')">
       <span class="icon">${s.icon}</span>
       <span class="nav-label">${s.name}</span>
       <span class="count">${count}</span>
+      <span class="freshness-dot ${freshClass}" title="${titleText}"></span>
     </div>`;
 }
 
@@ -1893,30 +1931,41 @@ async function selectSector(id) {
 
   document.getElementById('sector-title').textContent = `${sector.icon} ${sector.name}`;
 
+  // Get update status for this sector
+  const sectorStatus = state.updateStatus.sectors[id] || {};
+  const lastUpdated = sectorStatus.last_updated || '';
+  const freshClass = getFreshnessClass(lastUpdated);
+  const updateText = lastUpdated ? `更新于 ${lastUpdated}` : '';
+  const updateColor = freshClass === 'fresh' ? 'style="color:#22C55E"' : '';
+
   const grid = document.getElementById('card-grid');
 
   if (sector.topic === 'github-trend') {
+    document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}GitHub Trending`;
     await renderGithubTrending();
     return;
   }
 
   if (sector.topic === 'youtubers') {
+    document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}YouTubers`;
     await renderYoutubers();
     return;
   }
 
   if (sector.topic === 'infra-map') {
+    document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}数据中心地图`;
     await renderInfraMap();
     return;
   }
 
   if (sector.topic === 'paper-reading') {
+    document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}论文导读`;
     await renderPapers();
     return;
   }
 
   if (sector.type === 'topic') {
-    document.getElementById('sector-subtitle').textContent = '';
+    document.getElementById('sector-subtitle').innerHTML = updateText ? `<span ${updateColor}>${updateText}</span>` : '';
     grid.style.display = 'flex';
     grid.style.flexDirection = 'column';
     grid.innerHTML = renderTopicPage(sector);
@@ -1927,7 +1976,7 @@ async function selectSector(id) {
   grid.style.display = '';
   grid.style.flexDirection = '';
   grid.innerHTML = '<div class="loading">加载中…</div>';
-  document.getElementById('sector-subtitle').textContent = `${sector.companies.length} 家公司`;
+  document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}${sector.companies.length} 家公司`;
 
   // 先拉实时市值
   await fetchLiveMarketCaps();
