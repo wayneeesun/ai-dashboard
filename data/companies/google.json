@@ -4,7 +4,7 @@
   "ticker": "GOOGL",
   "exchange": "NASDAQ",
   "sector": "us-internet",
-  "logo_url": "https://logo.clearbit.com/google.com",
+  "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjNDI4NUY0Ii8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTEyLjQ4IDEwLjkydjMuMjhoNy44NGMtLjI0IDEuODQtLjg1MyAzLjE4Ny0xLjc4NyA0LjEzMy0xLjE0NyAxLjE0Ny0yLjkzMyAyLjQtNi4wNTMgMi40LTQuODI3IDAtOC42LTMuODkzLTguNi04LjcyczMuNzczLTguNzIgOC42LTguNzJjMi42IDAgNC41MDcgMS4wMjcgNS45MDcgMi4zNDdsMi4zMDctMi4zMDdDMTguNzQ3IDEuNDQgMTYuMTMzIDAgMTIuNDggMCA1Ljg2NyAwIC4zMDcgNS4zODcuMzA3IDEyczUuNTYgMTIgMTIuMTczIDEyYzMuNTczIDAgNi4yNjctMS4xNzMgOC4zNzMtMy4zNiAyLjE2LTIuMTYgMi44NC01LjIxMyAyLjg0LTcuNjY3IDAtLjc2LS4wNTMtMS40NjctLjE3My0yLjA1M0gxMi40OHoiLz4KICA8L2c+Cjwvc3ZnPg==",
   "color": "#4285F4",
   "profile": {
     "summary": "全球最大搜索引擎及数字广告平台，同时经营全球第三大云服务（Google Cloud）。AI 是当前核心叙事：Gemini 模型族群、AI Overview 对搜索的改造、以及 Cloud AI 服务是三大战略重点。",
@@ -53,5 +53,6 @@
         "note": "初始建档，待补充 Earnings 数据。"
       }
     ]
-  }
+  },
+  "logo_file": "logos/google.svg"
 }
