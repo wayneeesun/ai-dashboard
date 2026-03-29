@@ -1094,6 +1094,23 @@
     }
     .yt-quiet-name { white-space: nowrap; }
 
+    /* ── 代表作 badge ── */
+    .yt-video-pinned { background: var(--bg-3); border-radius: 6px; padding: 10px 12px; margin: 0 -12px; }
+    .yt-video-pinned-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-dim);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+      margin-left: 6px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
     /* ── GitHub Trending Summary Banner ── */
     .gh-summary-banner {
       grid-column: 1 / -1;
@@ -2578,9 +2595,15 @@ async function renderYoutubers() {
   const data = await loadYoutubers();
   if (!data) { grid.innerHTML = '<div class="loading">暂无数据</div>'; return; }
 
-  // 分组：有视频的 vs 无视频的
-  const withVideos = data.channels.filter(ch => ch.latest_videos && ch.latest_videos.length > 0);
-  const noVideos   = data.channels.filter(ch => !ch.latest_videos || ch.latest_videos.length === 0);
+  // 分组：有内容的（有本周视频 OR 有代表作 pinned_videos）vs 完全无内容的
+  const withVideos = data.channels.filter(ch =>
+    (ch.latest_videos && ch.latest_videos.length > 0) ||
+    (ch.pinned_videos && ch.pinned_videos.length > 0)
+  );
+  const noVideos = data.channels.filter(ch =>
+    (!ch.latest_videos || ch.latest_videos.length === 0) &&
+    (!ch.pinned_videos || ch.pinned_videos.length === 0)
+  );
 
   document.getElementById('sector-subtitle').innerHTML =
     `${withVideos.length} 位本周有更新 · ${noVideos.length} 位暂无新内容 · ${data.updated_at}`;
@@ -2616,20 +2639,32 @@ async function renderYoutubers() {
   grid.innerHTML = html;
 }
 
+function renderVideoItem(v, isPinned) {
+  const badge = isPinned ? `<span class="yt-video-pinned-badge">代表作</span>` : '';
+  return `
+    <div class="yt-video-item${isPinned ? ' yt-video-pinned' : ''}">
+      <div class="yt-video-title">
+        <a href="${v.url || '#'}" target="_blank" rel="noopener">${v.title}</a>${badge}
+      </div>
+      <div class="yt-video-meta">${v.published_at || v.date || ''}</div>
+      ${v.summary ? `<div class="yt-video-summary">${v.summary}</div>` : ''}
+    </div>`;
+}
+
 function renderYtChannelCard(ch) {
   const catColor = ch.category_color || '#94A3B8';
   const focusTags = (ch.focus || []).map(f =>
     `<span class="yt-focus-tag" style="border-color:${catColor}33;color:${catColor}">${f}</span>`
   ).join('');
 
-  const videosHtml = (ch.latest_videos || []).map(v => `
-    <div class="yt-video-item">
-      <div class="yt-video-title">
-        <a href="${v.url || '#'}" target="_blank" rel="noopener">${v.title}</a>
-      </div>
-      <div class="yt-video-meta">${v.published_at || v.date || ''}</div>
-      ${v.summary ? `<div class="yt-video-summary">${v.summary}</div>` : ''}
-    </div>`).join('');
+  // 本周视频（latest_videos）
+  const weekVideos = (ch.latest_videos || []).map(v => renderVideoItem(v, false)).join('');
+  // 代表作（pinned_videos），仅在无本周视频时显示
+  const pinnedVideos = (!weekVideos && ch.pinned_videos && ch.pinned_videos.length)
+    ? (ch.pinned_videos || []).map(v => renderVideoItem(v, true)).join('') : '';
+
+  const videoSection = weekVideos || pinnedVideos;
+  const sectionLabel = weekVideos ? '📹 本周视频' : '📌 代表作';
 
   return `
     <div class="yt-card" style="--yt-cat-color:${catColor}">
@@ -2647,10 +2682,11 @@ function renderYtChannelCard(ch) {
         </div>
       </div>
       <p class="yt-desc">${ch.description}</p>
+      ${videoSection ? `
       <div class="yt-videos-section">
-        <div class="yt-videos-label">📹 本周视频</div>
-        ${videosHtml}
-      </div>
+        <div class="yt-videos-label">${sectionLabel}</div>
+        ${videoSection}
+      </div>` : ''}
       <a class="yt-channel-link" href="${ch.url}" target="_blank" rel="noopener">▶ 前往频道</a>
     </div>`;
 }
