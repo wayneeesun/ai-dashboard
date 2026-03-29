@@ -917,24 +917,20 @@
     .yt-card {
       background: #FFFFFF;
       border: 1px solid var(--border);
+      border-top: 3px solid var(--yt-cat-color, var(--accent));
       border-radius: var(--radius);
       padding: 22px;
       display: flex;
       flex-direction: column;
       gap: 14px;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
       box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
       align-self: start;
+      z-index: 0;
     }
-    .yt-card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--yt-cat-color, var(--accent));
-    }
+    .yt-card::before { display: none; }
     .yt-card:hover {
       border-color: var(--yt-cat-color, var(--accent));
       transform: translateY(-1px);
@@ -1079,10 +1075,14 @@
 
     /* ── YouTubers 无更新区域 ── */
     .yt-quiet-section {
+      grid-column: 1 / -1;
       background: var(--bg-3);
       border-radius: var(--radius-sm);
       padding: 14px 18px;
       border: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+      margin-top: 8px;
     }
     .yt-quiet-label {
       font-size: 11px;
@@ -1476,11 +1476,14 @@
 
     /* Category headers in grid */
     .gh-category-header {
+      grid-column: 1 / -1;
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 8px 4px 4px;
       margin-top: 8px;
+      position: relative;
+      z-index: 1;
     }
 
     .gh-category-header:first-child { margin-top: 0; }
