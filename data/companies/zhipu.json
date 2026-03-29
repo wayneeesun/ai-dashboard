@@ -18,9 +18,9 @@
     ],
     "valuation_source": "Yahoo Finance / 财新 / 富途 (2026-03-29)",
     "key_metrics": {
-      "market_cap": "~$380B HKD",
-      "market_cap_usd_bn": 49.4,
-      "price": 684.0,
+      "market_cap": "~2978亿 HKD",
+      "market_cap_usd_bn": 38.4,
+      "price": 668.0,
       "price_currency": "HKD",
       "ipo_price": 116.2,
       "ipo_date": "2026-01-08",
@@ -28,5 +28,5 @@
     }
   },
   "logo_file": "logos/zhipu.png",
-  "sector": "cn-ai-listed"
+  "sector": "ai-native"
 }
