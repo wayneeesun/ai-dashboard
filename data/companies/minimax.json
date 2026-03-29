@@ -18,8 +18,8 @@
     ],
     "valuation_source": "Yahoo Finance / 财新 / 新浪财经 (2026-03-29)",
     "key_metrics": {
-      "market_cap": "~$3000B+ HKD",
-      "market_cap_usd_bn": 126.5,
+      "market_cap": "~3090亿 HKD",
+      "market_cap_usd_bn": 39.9,
       "price": 986.0,
       "price_currency": "HKD",
       "ipo_price": 165.0,
@@ -28,5 +28,5 @@
     }
   },
   "logo_file": "logos/minimax.png",
-  "sector": "cn-ai-listed"
+  "sector": "ai-native"
 }
