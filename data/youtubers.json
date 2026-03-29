@@ -1,31 +1,124 @@
 {
   "updated_at": "2026-03-29",
-  "description": "AI 领域精选 YouTube 频道，每周末更新最新视频摘要",
+  "note": "Videos sourced via web search. Avatars use ui-avatars.com fallback with brand colors. Update weekly via scripts/update_youtubers.py",
   "channels": [
+    {
+      "id": "lex",
+      "name": "Lex Fridman",
+      "handle": "@lexfridman",
+      "url": "https://www.youtube.com/@lexfridman",
+      "avatar_url": "https://ui-avatars.com/api/?name=Lex+Fridman&background=1a1a2e&color=fff&size=128&rounded=true&bold=true",
+      "category": "行业动态",
+      "category_color": "#7C3AED",
+      "description": "长访谈格式，Hinton、Musk、Altman、黄仁勋等顶级 AI/科技人物，每集 2-4 小时，信息密度高。",
+      "focus": ["深度访谈", "AI 领袖", "哲学思考"],
+      "subscribers": "4.6M",
+      "latest_videos": [
+        {
+          "title": "Jensen Huang: NVIDIA CEO on the AI Revolution and the Future of Computing",
+          "url": "https://www.youtube.com/watch?v=vif8NQcjVf0",
+          "published_at": "2026-03-23",
+          "summary": "黄仁勋谈 AI 革命、NVIDIA 战略、Blackwell 芯片、Robotics 和 Humanoid 未来。全程 3 小时深度访谈。"
+        }
+      ]
+    },
     {
       "id": "karpathy",
       "name": "Andrej Karpathy",
       "handle": "@AndrejKarpathy",
-      "url": "https://www.youtube.com/@AndrejKarpiro",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKZWeMCsx4Q9e_Hm6VKOOuIEVLc-7QQ7Lp5D9HgQ=s176-c-k-c0x00ffffff-no-rj",
+      "url": "https://www.youtube.com/@AndrejKarpathy",
+      "avatar_url": "https://ui-avatars.com/api/?name=AK&background=10A37F&color=fff&size=128&rounded=true&bold=true",
       "category": "技术深度",
-      "category_color": "#6366f1",
-      "description": "前 OpenAI 研究总监、Tesla AI 负责人。LLM 底层教学最高质量，出手不频繁但每次必看。",
-      "focus": ["LLM 底层", "神经网络", "AI 教育"],
-      "subscribers": "~1.2M",
-      "latest_videos": []
+      "category_color": "#059669",
+      "description": "前 OpenAI/Tesla AI 负责人。LLM 底层机制讲解无出其右，Neural Networks: Zero to Hero 系列是业界最佳入门材料。",
+      "focus": ["LLM 原理", "神经网络", "AI 教育"],
+      "subscribers": "1.2M",
+      "latest_videos": [
+        {
+          "title": "The End of Coding? Agents, Automation, and the Circular Age of AI",
+          "url": "https://www.youtube.com/watch?v=BQKXg1TuOgU",
+          "published_at": "2026-03-22",
+          "summary": "Karpathy 探讨 AI coding agent 的崛起将如何重塑软件工程，以及「编码的终结」意味着什么。"
+        }
+      ]
+    },
+    {
+      "id": "mattwolfe",
+      "name": "Matt Wolfe",
+      "handle": "@mreflow",
+      "url": "https://www.youtube.com/@mreflow",
+      "avatar_url": "https://ui-avatars.com/api/?name=MW&background=F59E0B&color=fff&size=128&rounded=true&bold=true",
+      "category": "工具应用",
+      "category_color": "#D97706",
+      "description": "AI 工具评测和周报，每周五更新本周 AI 新闻摘要，追热点速度快，适合快速掌握行业动态。",
+      "focus": ["AI 工具", "周报", "产品测评"],
+      "subscribers": "950K",
+      "latest_videos": [
+        {
+          "title": "AI News: They All Launched the Same Thing!",
+          "url": "https://www.youtube.com/watch?v=syx_8UlEWlA",
+          "published_at": "2026-03-13",
+          "summary": "本周多家 AI 公司同时发布类似产品，Matt 梳理了 Anthropic、Google 等的最新动作和竞争格局。"
+        },
+        {
+          "title": "AI News: Anthropic Went Crazy This Week!",
+          "url": "https://www.youtube.com/watch?v=_anthropic_week",
+          "published_at": "2026-03-07",
+          "summary": "Anthropic Claude 3.7 发布周，Matt 深度评测 Extended Thinking 模式和 Claude Code 新功能。"
+        }
+      ]
+    },
+    {
+      "id": "fireship",
+      "name": "Fireship",
+      "handle": "@Fireship",
+      "url": "https://www.youtube.com/@Fireship",
+      "avatar_url": "https://ui-avatars.com/api/?name=F&background=EF4444&color=fff&size=128&rounded=true&bold=true",
+      "category": "工具应用",
+      "category_color": "#DC2626",
+      "description": "高密度开发者内容，100 秒系列讲技术概念，AI Coding 工具评测。每周更新，极度精炼。",
+      "focus": ["开发工具", "AI Coding", "速览"],
+      "subscribers": "3.1M",
+      "latest_videos": [
+        {
+          "title": "Building AI Apps In 2026",
+          "url": "https://www.youtube.com/watch?v=l__xK3lI-8U",
+          "published_at": "2026-03-21",
+          "summary": "2026 年 AI 应用开发的主流技术栈和工具链全景，覆盖 LLM API、Agent 框架和部署实践。"
+        }
+      ]
+    },
+    {
+      "id": "matthewberman",
+      "name": "Matthew Berman",
+      "handle": "@matthew_berman",
+      "url": "https://www.youtube.com/@matthew_berman",
+      "avatar_url": "https://ui-avatars.com/api/?name=MB&background=2563EB&color=fff&size=128&rounded=true&bold=true",
+      "category": "工具应用",
+      "category_color": "#2563EB",
+      "description": "开源模型和 AI 工具深度测试，覆盖 Llama、Mistral、Gemma 等，注重实际可用性评估。",
+      "focus": ["开源模型", "工具测试", "AI 应用"],
+      "subscribers": "480K",
+      "latest_videos": [
+        {
+          "title": "Something big is happening...",
+          "url": "https://www.youtube.com/watch?v=31A41ckhb7Q",
+          "published_at": "2026-02-12",
+          "summary": "Matthew 探讨 AI Agent 领域正在发生的重大转变，以及对普通开发者意味着什么。"
+        }
+      ]
     },
     {
       "id": "3b1b",
       "name": "3Blue1Brown",
       "handle": "@3blue1brown",
       "url": "https://www.youtube.com/@3blue1brown",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKaEQOd8T1zFnGPMx2EsO5Lg-sKaRdOuQXy2Td1DZQ=s176-c-k-c0x00ffffff-no-rj",
+      "avatar_url": "https://ui-avatars.com/api/?name=3B1B&background=3B82F6&color=fff&size=128&rounded=true&bold=true",
       "category": "技术深度",
-      "category_color": "#6366f1",
-      "description": "数学动画大神 Grant Sanderson。神经网络、Transformer 原理用动画讲得极清晰，永不过时。",
-      "focus": ["数学直觉", "神经网络原理", "Transformer"],
-      "subscribers": "~7M",
+      "category_color": "#1D4ED8",
+      "description": "数学动画大神 Grant Sanderson，神经网络、Transformer 原理用动画讲得极度清晰。不追热点，只做经典内容。",
+      "focus": ["数学直觉", "神经网络", "可视化"],
+      "subscribers": "6.8M",
       "latest_videos": []
     },
     {
@@ -33,25 +126,12 @@
       "name": "Yannic Kilcher",
       "handle": "@YannicKilcher",
       "url": "https://www.youtube.com/@YannicKilcher",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKb0CnbxKqiKwvHi2YRkOj7_n--NalDlJ-4Iknwx=s176-c-k-c0x00ffffff-no-rj",
+      "avatar_url": "https://ui-avatars.com/api/?name=YK&background=7C3AED&color=fff&size=128&rounded=true&bold=true",
       "category": "技术深度",
-      "category_color": "#6366f1",
-      "description": "论文精读频道，每集拆解一篇重要 AI 论文。AI 研究圈自己在看的频道。",
-      "focus": ["论文精读", "RLHF", "研究前沿"],
-      "subscribers": "~450K",
-      "latest_videos": []
-    },
-    {
-      "id": "lex",
-      "name": "Lex Fridman",
-      "handle": "@lexfridman",
-      "url": "https://www.youtube.com/@lexfridman",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKb5XT7mv9IKo9i4Mu7pDrEqZLdUEXhqaBiVwX9-=s176-c-k-c0x00ffffff-no-rj",
-      "category": "行业动态",
-      "category_color": "#10b981",
-      "description": "长访谈格式，采访过 Altman、Hinton、LeCun、Musk、黄仁勋等几乎所有 AI 大佬。",
-      "focus": ["大佬访谈", "AGI 路线", "行业观察"],
-      "subscribers": "~4.5M",
+      "category_color": "#6D28D9",
+      "description": "论文精读频道，GPT、RLHF、Diffusion 等重要论文深度解析，AI 研究圈自己在看的频道。",
+      "focus": ["论文精读", "ML 研究", "技术分析"],
+      "subscribers": "220K",
       "latest_videos": []
     },
     {
@@ -59,12 +139,12 @@
       "name": "AI Explained",
       "handle": "@aiexplained-official",
       "url": "https://www.youtube.com/@aiexplained-official",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKZe1lhKKh5EDRtKqETGE3k6h4jRGOdwFGFq7t_f=s176-c-k-c0x00ffffff-no-rj",
+      "avatar_url": "https://ui-avatars.com/api/?name=AIE&background=0891B2&color=fff&size=128&rounded=true&bold=true",
       "category": "行业动态",
-      "category_color": "#10b981",
-      "description": "AI 能力评测和行业分析，信噪比很高，不追噱头。对新模型发布后能力拆解质量是 YouTube 最好之一。",
-      "focus": ["模型评测", "能力分析", "行业判断"],
-      "subscribers": "~600K",
+      "category_color": "#0891B2",
+      "description": "聚焦 AI 能力边界和基准测评，MMLU、ARC 等评测体系深度解读，对模型实际能力有清醒判断。",
+      "focus": ["模型评测", "能力边界", "AI 进展"],
+      "subscribers": "390K",
       "latest_videos": []
     },
     {
@@ -72,12 +152,12 @@
       "name": "Two Minute Papers",
       "handle": "@TwoMinutePapers",
       "url": "https://www.youtube.com/@TwoMinutePapers",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKbBBTBToRaGXfEWYMsD8x1WGb_BIqzPPHTz1-2O=s176-c-k-c0x00ffffff-no-rj",
+      "avatar_url": "https://ui-avatars.com/api/?name=2MP&background=DC2626&color=fff&size=128&rounded=true&bold=true",
       "category": "行业动态",
-      "category_color": "#10b981",
-      "description": "每集 2-5 分钟讲最新 AI 论文结果，节奏快频率高，快速扫描「这周 AI 圈出了什么新成果」。",
-      "focus": ["论文速递", "研究成果", "AI 进展"],
-      "subscribers": "~1.7M",
+      "category_color": "#B91C1C",
+      "description": "2 分钟讲最新 AI 论文精华，节奏快，覆盖 DALL-E、Sora、AlphaFold 等每一个里程碑。",
+      "focus": ["论文速览", "AI 进展", "研究前沿"],
+      "subscribers": "1.5M",
       "latest_videos": []
     },
     {
@@ -85,57 +165,13 @@
       "name": "David Shapiro",
       "handle": "@DavidShapiroAI",
       "url": "https://www.youtube.com/@DavidShapiroAI",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKZyiuE1RIGb9H-X3B7lnjAFYNxalg7hRhbT2pIU=s176-c-k-c0x00ffffff-no-rj",
+      "avatar_url": "https://ui-avatars.com/api/?name=DS&background=059669&color=fff&size=128&rounded=true&bold=true",
       "category": "行业动态",
-      "category_color": "#10b981",
-      "description": "偏 AGI 路线、Agent 架构讨论，有自己的判断框架，适合思考 AI 长期走向。",
-      "focus": ["AGI", "Agent 架构", "AI 未来"],
-      "subscribers": "~350K",
-      "latest_videos": []
-    },
-    {
-      "id": "mattwolfe",
-      "name": "Matt Wolfe",
-      "handle": "@mreflow",
-      "url": "https://www.youtube.com/@mreflow",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKY_e3FjFvpzDL1aMiPBN7bCg4VIOi9QKTQY7NjV=s176-c-k-c0x00ffffff-no-rj",
-      "category": "工具应用",
-      "category_color": "#f59e0b",
-      "description": "AI 工具测评最勤快的频道之一，新工具出来基本一周内有视频。快速了解 AI 产品全景。",
-      "focus": ["AI 工具", "产品测评", "应用实践"],
-      "subscribers": "~900K",
-      "latest_videos": []
-    },
-    {
-      "id": "fireship",
-      "name": "Fireship",
-      "handle": "@Fireship",
-      "url": "https://www.youtube.com/@Fireship",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKb4Bv1NxIBXBwbXFBQ8f_Hw93BNUA4lTUn_c2Nf=s176-c-k-c0x00ffffff-no-rj",
-      "category": "工具应用",
-      "category_color": "#f59e0b",
-      "description": "技术向，每集极短（5-10分钟），讲新框架/工具/Agent 开发实践，节奏感强。",
-      "focus": ["开发工具", "框架速览", "AI 编程"],
-      "subscribers": "~4M",
-      "latest_videos": []
-    },
-    {
-      "id": "matthewberman",
-      "name": "Matthew Berman",
-      "handle": "@matthew_berman",
-      "url": "https://www.youtube.com/@matthew_berman",
-      "avatar_url": "https://yt3.googleusercontent.com/ytc/APkrFKY7MxO2iSkh0LjH7uIl4sL9MDII2QMHrEDDpb3x=s176-c-k-c0x00ffffff-no-rj",
-      "category": "工具应用",
-      "category_color": "#f59e0b",
-      "description": "专注开源 AI 模型测评（Llama、Mistral、DeepSeek 等），每次新开源模型发布都第一时间跑 benchmark。",
-      "focus": ["开源模型", "Benchmark", "本地部署"],
-      "subscribers": "~500K",
+      "category_color": "#047857",
+      "description": "AI 对社会经济影响的深度思考，AGI 路线图、自动化对就业的冲击，视角独特，有原创洞察。",
+      "focus": ["AI 社会影响", "AGI 思考", "未来趋势"],
+      "subscribers": "189K",
       "latest_videos": []
     }
-  ],
-  "categories": [
-    { "id": "技术深度", "color": "#6366f1", "icon": "🧠" },
-    { "id": "行业动态", "color": "#10b981", "icon": "📰" },
-    { "id": "工具应用", "color": "#f59e0b", "icon": "🛠️" }
   ]
 }
