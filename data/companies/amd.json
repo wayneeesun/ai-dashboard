@@ -4,7 +4,7 @@
   "ticker": "AMD",
   "exchange": "NASDAQ",
   "color": "#ED1C24",
-  "logo_url": "https://logo.clearbit.com/amd.com",
+  "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjRUQxQzI0Ii8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTE4LjMyNCA5LjEzN2wxLjU1OSAxLjU2aDIuNTU2djIuNTU3TDI0IDE0LjgxNFY5LjEzN3pNMiA5LjUybC0yIDQuOTZoMS4zMDlsLjM3LS45ODJIMy45bC40MDguOTgyaDEuMzM4TDMuNDMyIDkuNTJ6bTQuMjA5IDB2NC45NTVoMS4yMzh2LTMuMDkybDEuMzM4IDEuNTYyaC4xODhsMS4zMzgtMS41NTZ2My4wOTFoMS4yMzhWOS41MkgxMC40N2wtMS41OTIgMS44NDVMNy4yODcgOS41MnptNi4yODMgMHY0Ljk2aDIuMDU3YzEuOTc5IDAgMi44OC0xLjA0NiAyLjg4LTIuNDcyIDAtMS4zNi0uOTM3LTIuNDg4LTIuNzQ3LTIuNDg4em0xLjIzNy45MWguNzkyYzEuMTcgMCAxLjYzLjcxMSAxLjYzIDEuNTcgMCAuNzI4LS4zNzIgMS41NzItMS42MTYgMS41NzJoLS44MDZ6bS0xMC45ODUuMjczbC43OTEgMS45MzJIMi4wMDh6bTE3LjEzNy4zMDdsLTEuNjA0IDEuNjAzdjIuMjVoMi4yNDZsMS42MDQtMS42MDdoLTIuMjQ2eiIvPgogIDwvZz4KPC9zdmc+",
   "market_cap_usd": null,
   "profile": {
     "summary": "CPU+GPU 双线作战，MI300X/MI350 在 AI 训练推理市场抢食 NVIDIA 份额，PC 市场强势复苏。",
@@ -53,5 +53,6 @@
   "analyst_notes": {
     "thesis": "",
     "evolution_log": []
-  }
+  },
+  "logo_file": "logos/amd.svg"
 }
