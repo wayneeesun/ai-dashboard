@@ -4,7 +4,7 @@
   "ticker": "3690",
   "exchange": "HKEX",
   "color": "#FFCC00",
-  "logo_url": "https://logo.clearbit.com/meituan.com",
+  "logo_url": "data:image/png;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDIBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAIAAgAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APRqKKK/HD6QKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoxRkDqcVwegfE+z1zxOND/s+S3kZnVZXlBBKgnGMdwK6qGDr14ylTjdR3M51YwaTe53mKMUbl9R+dJuHqPzrn5WaXQtFcNqHxMsrLxknhxLKSZzcR25nWQBQzkDpjtnn6V3O4E8EGt6+ErUFGVSNlJXXoZxqxn8LDFFc/4o8Y6Z4Rjtn1JbhhcFgnkoG+7jOcketc3/wujwwOsOo/9+V/+KrejleLrwVSnTbTJlXpxdmz0SivO/8AhdHhj/nlqP8A35X/AOKo/wCF0eGP+eWo/wDflf8A4qtP7Gx3/Ppk/WaX8x6JRivO/wDhdPhj/nlqP/flf/iqu6T8VfD+tarbabbRXyz3DhELxKBn3+alLJ8bGLlKm7IaxNJuykdvRRRXmG4UvY0lKKLgeZeOvh6fEfiE6idatrJWhWMRzLknGeeo45rmf+FPLnI8U2A/4D/9lXb/ABA8A3XjO6spob6K2FujKQ6Fs5IPb6Vx3/Ci9Q/6Ddt/35b/ABr7PA4ySw0YvE8tla3KnY82rSXO/cv8zm/FngL/AIRjSo74a1a3peYReXEuCMgnPU8cfrU3hj4eDxHoq6g2u2tpudk8qRfmGO/UUni/4bXXhDR49Qn1GG4WScQ7UQqQSrHP/jtS+Fvhhd+KtEXU4tSht1aRk2PGSfl9wa9l4j/ZVP2/W3Ny/hb9Tm5H7S3L8jV/4U+nH/FUWH/fP/2VdT4B+H3/AAjOuyaius216pgaExxLypJByTk/3f1rm/8AhRmof9Bu2/78t/jXb/D/AMEXHgwagJ71Ln7UY9uxCu3Zu65/3v514uY4yUsLNLEc11typX+Z00adpr3LfM5f46f8euif9dJv5LXTaL8P/ClzoOnzS6RA8slrG7tufklQSetcz8dP+PXRP+uk38krS8TeENV8V+FvDK6VcQQ/ZrQeZ5sjLnckeMYB9DWNNv8As/Dx9pyJuWvzZT/jTdr7HR/8K38I/wDQEg/76f8AxrP1zwb4M0LRLrU5fD8Ukdum9kR2BA==",
   "market_cap_usd": null,
   "profile": {
     "summary": "中国本地生活龙头，外卖市场份额超 65%，到店业务与闪购是第二增长极。",
@@ -43,5 +43,6 @@
   "analyst_notes": {
     "thesis": "",
     "evolution_log": []
-  }
+  },
+  "logo_file": "logos/meituan.png"
 }
