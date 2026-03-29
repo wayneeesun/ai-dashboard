@@ -5,7 +5,7 @@
   "exchange": "NASDAQ",
   "sector": "cn-internet",
   "color": "#E02020",
-  "logo_url": "https://logo.clearbit.com/pinduoduo.com",
+  "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE2IiBmaWxsPSIjRTAyMDIwIi8+CiAgPHRleHQgeD0iNTAiIHk9IjQyIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuaLvOWkmuWkmjwvdGV4dD4KICA8dGV4dCB4PSI1MCIgeT0iNjYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjZmZjY2NjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5QREQ8L3RleHQ+Cjwvc3ZnPgo=",
   "profile": {
     "summary": "中国第二大电商平台，Temu 全球扩张带动高速增长，主打低价策略，农业直供和社交拼团是核心差异化。",
     "business_segments": [
@@ -41,5 +41,6 @@
       "农业供应链护城河"
     ],
     "conviction_log": []
-  }
+  },
+  "logo_file": "logos/pdd.svg"
 }
