@@ -27,32 +27,6 @@
       ]
     },
     {
-      "id": "karpathy",
-      "name": "Andrej Karpathy",
-      "handle": "@AndrejKarpathy",
-      "url": "https://www.youtube.com/@AndrejKarpathy",
-      "avatar_url": "https://ui-avatars.com/api/?name=AK&background=10A37F&color=fff&size=128&rounded=true&bold=true",
-      "category": "技术深度",
-      "category_color": "#059669",
-      "description": "前 OpenAI/Tesla AI 负责人。LLM 底层机制讲解无出其右，Neural Networks: Zero to Hero 系列是业界最佳入门材料。",
-      "focus": [
-        "LLM 原理",
-        "神经网络",
-        "AI 教育"
-      ],
-      "subscribers": "1.2M",
-      "latest_videos": [],
-      "pinned_videos": [
-        {
-          "title": "Software Is Changing (Again) — Software 3.0 时代的到来",
-          "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
-          "published_at": "2025-06-18",
-          "is_pinned": true,
-          "summary": "Karpathy 在 YC AI Startup School 的 keynote。核心论点：我们正进入「Software 3.0」时代——继 Software 1.0（人写代码）、2.0（神经网络训练）之后，自然语言成为新的编程语言，prompt 就是程序。他认为编程不会消失，而是「上移了一层」：普通人可以用自然语言构建软件，专业程序员的工作从写代码转向 prompt 工程、agent 编排和验证输出。他把这类似于工业革命——工厂工人没有消失，而是转做了别的工作。最具争议的观点：当前 AI 的最大瓶颈不是模型能力，而是人类确认 AI 输出是否正确的速度和成本（verification bottleneck）。"
-        }
-      ]
-    },
-    {
       "id": "mattwolfe",
       "name": "Matt Wolfe",
       "handle": "@mreflow",
