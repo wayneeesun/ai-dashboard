@@ -1,0 +1,37 @@
+{
+  "sectors": {
+    "us-internet": {
+      "last_updated": "2026-03-29",
+      "status": "ok",
+      "note": "市值已更新"
+    },
+    "cn-internet": {
+      "last_updated": "2026-03-29",
+      "status": "ok"
+    },
+    "semiconductor": {
+      "last_updated": "2026-03-29",
+      "status": "ok"
+    },
+    "software": {
+      "last_updated": "2026-03-29",
+      "status": "ok"
+    },
+    "ai-native": {
+      "last_updated": "2026-03-29",
+      "status": "ok"
+    },
+    "github-trend": {
+      "last_updated": "2026-03-29",
+      "status": "ok"
+    },
+    "youtubers": {
+      "last_updated": "2026-03-29",
+      "status": "ok"
+    },
+    "paper-reading": {
+      "last_updated": "2026-03-29",
+      "status": "ok"
+    }
+  }
+}
