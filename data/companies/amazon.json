@@ -7,58 +7,125 @@
   "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjRkY5OTAwIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTS4wNDUgMTguMDJjLjA3Mi0uMTE2LjE4Ny0uMTI0LjM0OC0uMDIyIDMuNjM2IDIuMTEgNy41OTQgMy4xNjYgMTEuODcgMy4xNjYgMi44NTIgMCA1LjY2OC0uNTMzIDguNDQ3LTEuNTk1bC4zMTUtLjE0Yy4xMzgtLjA2LjIzNC0uMS4yOTMtLjEzLjIyNi0uMDg4LjM5LS4wNDYuNTI1LjEzLjEyLjE3NC4wOS4zMzYtLjEyLjQ4LS4yNTYuMTktLjYuNDEtMS4wMDYuNjU0LTEuMjQ0Ljc0My0yLjY0IDEuMzE2LTQuMTg1IDEuNzI2YTE3LjYxNyAxNy42MTcgMCAwMS0xMC45NTEtLjU3NyAxNy44OCAxNy44OCAwIDAxLTUuNDMtMy4zNWMtLjEtLjA3NC0uMTUxLS4xNS0uMTUxLS4yMiAwLS4wNDcuMDIxLS4wOS4wNTEtLjEzem02LjU2NS02LjIxOGMwLTEuMDA1LjI0Ny0xLjg2My43NDMtMi41NzcuNDk1LS43MSAxLjE3LTEuMjUgMi4wNC0xLjYxNS43OTYtLjMzNSAxLjc1Ni0uNTc1IDIuOTEyLS43Mi4zOS0uMDQ2IDEuMDMzLS4xMDMgMS45Mi0uMTc0di0uMzdjMC0uOTMtLjEwNS0xLjU1OC0uMy0xLjg3NS0uMzAyLS40My0uNzgtLjY1LTEuNDQtLjY1aC0uMTgyYy0uNDguMDQ2LS44OTYuMTk2LTEuMjQ2LjQ2LS4zNS4yNy0uNTc1LjYzLS42NzUgMS4wOTYtLjA2LjMtLjIwNi40NjUtLjQzNS41MWwtMi41Mi0uMzE1Yy0uMjQ4LS4wNi0uMzcyLS4xOC0uMzcyLS4zOSAwLS4wNDYuMDA3LS4wOS4wMjItLjE1LjI0Ny0xLjI5Ljg1NS0yLjI1IDEuODItMi44OC45NzYtLjYxNiAyLjEtLjk3NSAzLjM5LTEuMDVoLjU0YzEuNjUgMCAyLjk1Ny40MzQgMy44ODggMS4yOS4xMzUuMTUuMjcuMy40MDUuNDguMTIuMTY1LjIyNC4zMTQuMjgzLjQ1LjA3NS4xMzQuMTUuMzMuMTk1LjU3LjA2LjI1NC4xMDUuNDIuMTM1LjUxLjAzLjEwNC4wNjIuMy4wNzYuNjE1LjAxLjMxMy4wMi40OTMuMDIuNTUzdjUuMjhjMCAuMzc2LjA2LjcyLjE2NSAxLjAzNi4xMDUuMzEzLjIxLjU0LjMxNS42NzRsLjUxLjY3NGMuMDkuMTM2LjEzNi4yNTYuMTM2LjM2IDAgLjEyLS4wNi4yMjYtLjE4LjMxNC0xLjIgMS4wNS0xLjg2IDEuNjItMS45NjMgMS43MS0uMTY1LjEzNS0uMzc1LjE1LS42My4wNDVhNi4wNjIgNi4wNjIgMCAwMS0uNTI2LS40OTZsLS4zMS0uMzQ3YTkuMzkxIDkuMzkxIDAgMDEtLjMxNy0uNDJsLS4zLS40MzVjLS44MS44ODYtMS42MDMgMS40NC0yLjQgMS42NjUtLjQ5NC4xNS0xLjA5My4yMjctMS44My4yMjctMS4xMSAwLTIuMDQtLjM0My0yLjc2LTEuMDM0LS43Mi0uNjktMS4wOC0xLjY2NS0xLjA4LTIuOTRsLS4wNS0uMDc2em0zLjc1My0uNDM4YzAgLjU2Ni4xNCAxLjAyLjQyNSAxLjM2NC4yODUuMzQuNjc1LjUxMiAxLjE1NS41MTIuMDQ1IDAgLjEwNi0uMDA3LjE5NS0uMDIuMDktLjAxNi4xMzQtLjAyMy4xNjYtLjAyMy42MTQtLjE2IDEuMDgtLjU1MyAxLjQyNC0xLjE3OC4xNjUtLjI4LjI4NS0uNTguMzYtLjkxLjA5LS4zMi4xMi0uNTkuMTM1LS44LjAxNS0uMTk1LjAxNS0uNTQuMDE1LTEuMDA1di0uNTRjLS44NCAwLTEuNDg0LjA2LTEuOTIuMTgtMS4yNzUuMzYtMS45MiAxLjE3LTEuOTIgMi40M2wtLjAzNS0uMDJ6bTkuMTYyIDcuMDI3Yy4wMy0uMDYuMDc1LS4xMS4xMzItLjE3LjM2Mi0uMjQzLjcxNC0uNDEgMS4wNS0uNWE4LjA5NCA4LjA5NCAwIDAxMS42MTItLjI0Yy4xNC0uMDEyLjI4IDAgLjQxLjAzLjY1LjA2IDEuMDUuMTY4IDEuMTcyLjMzLjA2My4wOS4wOTkuMjI4LjA5OS4zOXYuMTVjMCAuNTEtLjE0OSAxLjExLS40MjQgMS44LS4yNzguNjktLjY2NCAxLjI0OC0xLjE1NiAxLjY4LS4wNzMuMDYtLjE0LjA5LS4xOTcuMDktLjAzIDAtLjA2IDAtLjA5LS4wMTItLjA5LS4wNDQtLjEwNy0uMTItLjA2NC0uMjQuNTQtMS4yNi44MDYtMi4xNDMuODA2LTIuNjQgMC0uMTUtLjAzLS4yNy0uMDg3LS4zNDQtLjE0NS0uMTY2LS41NS0uMjU3LTEuMjI0LS4yNTctLjI0MyAwLS41MzMuMDE2LS44Ny4wNDYtLjM2My4wNDUtLjcuMDktMSAuMTM1LS4wOSAwLS4xNDgtLjAxNC0uMTgtLjA0NC0uMDMtLjAzLS4wMzYtLjA0Ny0uMDItLjA3NyAwLS4wMTcuMDA2LS4wMy4wMi0uMDYzdi0uMDZ6Ii8+CiAgPC9nPgo8L3N2Zz4=",
   "market_cap_usd": null,
   "profile": {
-    "summary": "全球最大电商和云计算公司，AWS 是全球领先的云服务平台，广告业务高速增长。",
+    "summary": "全球最大电商和云计算公司。AWS 以 $142B 年化规模加速增长（Q4 +24%），广告业务 +22% 成第三大收入来源，零售效率持续提升。自研芯片（Trainium+Graviton）年化超 $100B 成核心差异化。FY26 CapEx 指引 $200B。",
     "business_segments": [
       {
         "name": "AWS",
+        "description": "云计算、AI 基础设施、自研芯片",
         "revenue_pct": 17,
-        "description": "云计算，全球份额约 30%",
-        "note": "营业利润贡献超 60%"
+        "note": "Q4 +24%，Margin 35%，Backlog $244B"
       },
       {
-        "name": "北美电商",
-        "revenue_pct": 42,
-        "description": "自营电商+第三方卖家服务"
+        "name": "北美零售",
+        "description": "电商、Prime、广告、物流",
+        "revenue_pct": 60,
+        "note": "Q4 +10%，OI Margin 9%，同日达 80 亿件"
       },
       {
         "name": "广告",
-        "revenue_pct": 9,
-        "description": "站内广告，年增速超 20%"
-      },
-      {
-        "name": "国际电商",
-        "revenue_pct": 22,
-        "description": "欧洲、日本、新兴市场"
-      },
-      {
-        "name": "其他",
+        "description": "站内搜索广告、Prime Video 广告",
         "revenue_pct": 10,
-        "description": "订阅、Alexa、实体店等"
+        "note": "Q4 +22%，FY25 新增超 $12B 增量"
+      },
+      {
+        "name": "国际零售",
+        "description": "欧洲、日本、新兴市场",
+        "revenue_pct": 24,
+        "note": "Q4 +11% cc，持续加大投入"
       }
     ],
     "key_metrics": {
-      "market_cap": "$2.1T",
-      "ltm_revenue": "—",
-      "ltm_revenue_growth": "—",
-      "ltm_operating_margin": "—",
-      "ltm_capex": "—",
-      "capex_growth_yoy": "—",
-      "as_of": "—",
-      "market_cap_usd_bn": 2117.0,
-      "price": 199.34,
+      "market_cap": "$1.9T",
+      "market_cap_usd_bn": 1900.0,
+      "ltm_revenue": "$638B",
+      "ltm_revenue_growth": "11%",
+      "ltm_operating_income": "$90B",
+      "ltm_operating_margin": "14%",
+      "ltm_capex": "$95B",
+      "fy26_capex_guidance": "$200B",
+      "aws_run_rate": "$142B",
+      "aws_backlog": "$244B",
+      "as_of": "Q4 2025",
+      "price": 195.0,
       "price_currency": "USD",
-      "updated_at": "2026-03-28"
+      "updated_at": "2026-03-29"
     },
     "key_debates": [
-      "AWS 增速能否维持在 20%+",
-      "AI 资本开支能否转化为可见回报",
-      "广告业务天花板"
+      {
+        "id": "aws_acceleration",
+        "title": "AWS +24% 加速是否可持续？企业 AI 工作负载中间段何时释放？",
+        "bull": "Backlog $244B +40% YoY，$1B+ 合同超过过去 3 年总和；容量即时被消化（no wasted capacity）；企业 AI 工作负载的「中间段」（核心生产工作负载迁云）尚未规模化，是最大的未来增量",
+        "bear": "Backlog 到收入有时间差；Azure 在 AI startup 工作负载上占优；GCP 增速更快（+48%）；Trainium vs NVIDIA 的 adoption 不确定性",
+        "sources": [
+          "Q4 Call：Andy Jassy AWS 叙事",
+          "Bernstein eCommerce + AWS 报告 2026-01"
+        ],
+        "verdict": "AWS +24% 已是 $142B 规模上，增速可持续性高于市场预期。关键：企业 AI 核心工作负载迁云的时间线，预计 2026-2027 年是主要窗口"
+      },
+      {
+        "id": "capex_leo",
+        "title": "CapEx $200B + Leo 卫星：投入规模是否过大，ROI 信号何时出现？",
+        "bull": "AWS CapEx 历史 ROIC 已证明能力；容量即时变现，无浪费；Leo 年内商业化后费用转资本化，OI 拖累消失；自研芯片提供长期经济性优势",
+        "bear": "Q1 Leo 拖累 ~$10B OI，市场对没有明确 ROI 信号的大额投入不宽容；FY26 $200B 是 FY25 的 2 倍+；Leo 合同量化数字仍不透明",
+        "sources": [
+          "Q4 Call：Brian Olsavsky 拆解 Q1 指引 delta",
+          "MS：Leo 是本季度市场失望的主要来源"
+        ],
+        "verdict": "Leo 是临时性干扰，年内商业化后影响收窄。CapEx ROIC 逻辑有历史支撑。核心观察：Leo 客户合同公布时间点 + AWS margin 是否维持 35%+"
+      },
+      {
+        "id": "retail_efficiency",
+        "title": "零售业务是否进入持续利润扩张通道？同日达 + Everyday Essentials 能否抵御竞争？",
+        "bull": "NA Margin 9%（+1ppt YoY），Fulfillment Cost/Unit 超预期 3%；同日达 80 亿件 +30%，覆盖近 1 亿美国客户；Everyday Essentials 占总单位量 1/3，增速 2x 其他品类",
+        "bear": "Amazon Now（30 分钟）仍在测试，Temu/Shein 低价竞争压力；国际零售持续加大投入压 margin；$200B CapEx 的折旧摊销长期压制 FCF",
+        "sources": [
+          "Q4 Call：Amazon Now/同日达数据",
+          "Bernstein eCommerce 2026 Outlook"
+        ],
+        "verdict": "零售利润率扩张趋势明确，但增速取决于 Everyday Essentials 渗透和配送效率优化的持续性"
+      }
     ]
   },
-  "earnings": [],
+  "earnings": [
+    {
+      "quarter": "Q4 2025",
+      "fiscal_year": 2025,
+      "report_date": "2026-02-05",
+      "revenue": 213400,
+      "revenue_unit": "M USD",
+      "revenue_growth_yoy": "12%",
+      "operating_income": 25000,
+      "operating_margin": "11.7%",
+      "eps_diluted": 1.86,
+      "eps_vs_consensus": "+8%",
+      "revenue_vs_consensus": "+1%",
+      "stock_reaction": "-5.6%",
+      "capex": 26300,
+      "highlights": [
+        "AWS Q4 $35.6B +24%（13季度最快），Backlog $244B +40% YoY，Trainium+Graviton年化超 $100B",
+        "Q1 OI 指引中值 $19B 低于市场预期 $23.5B，主因：Leo 卫星 ~$10亿费用化拖累",
+        "FY26 CapEx 指引 $200B（vs FY25 $95B，翻倍），自研芯片 + AI 基础设施驱动",
+        "广告 $21.3B +22%，Prime Video 广告覆盖 16 国 3.15 亿受众",
+        "Rufus AI 购物助手全年超 3 亿客户，用户购买可能性高 60%；Alexa+ 向全美开放"
+      ],
+      "review_summary": "AWS 加速是本季度最重要信号（+24%，13 季度最快），但 Q1 OI 指引低于预期（Leo 卫星费用化拖累 ~$10B）导致股价 -5.6%。核心逻辑：AWS 增速能见度高（Backlog $244B），CapEx $200B 的 ROIC 框架有历史佐证，Leo 拖累是临时性的。",
+      "review_doc_url": ""
+    }
+  ],
   "analyst_notes": {
-    "thesis": "",
-    "evolution_log": []
+    "thesis": "AWS 是 AMZN 估值的核心支柱，增速加速 + Backlog 高能见度 + 自研芯片差异化构成强逻辑。零售利润率持续扩张，广告成为高增长第三极。短期关注：Leo OI 拖累何时消退，AWS 增速能否维持 25%+。长期：Trainium 生态是否能在大模型训练市场对 NVIDIA 形成替代。",
+    "coverage_start": "2026-03-29",
+    "sources": [
+      "MS Nowak, 10 Debates 2026",
+      "Amazon Q4 2025 Earnings Call Transcript (2026-02-05)",
+      "Bernstein eCommerce 2026 Outlook"
+    ],
+    "evolution_log": [
+      {
+        "date": "2026-03-29",
+        "note": "Q4 2025 review 取数建档。AWS +24%，Q1 OI 指引低于预期，Leo 拖累是临时性因素。"
+      }
+    ]
   },
   "logo_file": "logos/amazon.svg"
 }
