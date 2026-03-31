@@ -266,7 +266,7 @@ def update_youtubers():
         import update_youtubers as yt
         yt.DATA_FILE = DATA_DIR / "youtubers.json"
         yt.main()
-        update_status("youtubers", "ok")
+        update_status("voices", "ok")
         return True
     except Exception as e:
         print(f"  ❌ 失败: {e}")
@@ -319,21 +319,21 @@ def main():
         files_to_push.append("data/github-trending.json")
         files_to_push.append("data/update_status.json")
 
-    # 3. 更新 YouTubers
+    # 3. 更新 YouTubers（Voices 板块）
     if update_youtubers():
         files_to_push.append("data/youtubers.json")
+        files_to_push.append("data/voices_x.json")
         files_to_push.append("data/update_status.json")
 
-    # 4. 更新论文（每周一次，这里直接调用）
-    # 判断是否是星期天或 papers.json 不存在
+    # 4. 更新论文（每天尝试，/tmp/hf_papers_*.txt 由小白 fetch 写入）
     papers_file = DATA_DIR / "papers.json"
-    should_update_papers = datetime.now(timezone(timedelta(hours=8))).weekday() == 6 or not papers_file.exists()
-    if should_update_papers:
+    tmp_files = list(Path("/tmp").glob("hf_papers_*.txt"))
+    if tmp_files:
         if update_papers():
             files_to_push.append("data/papers.json")
             files_to_push.append("data/update_status.json")
     else:
-        print("\n📝 论文导读（跳过，非周日且文件已存在）")
+        print("\n📝 论文导读（跳过，/tmp 无 hf_papers_*.txt，需先由小白 fetch）")
 
     # 去重
     files_to_push = list(dict.fromkeys(files_to_push))
