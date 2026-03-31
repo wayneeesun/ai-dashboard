@@ -23,14 +23,14 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$141.7B",
-      "market_cap_usd_bn": 141.7,
+      "market_cap": "$1.4T",
+      "market_cap_usd_bn": 1406.0,
       "ltm_revenue": "$67B",
       "ltm_revenue_growth": "+59% YoY",
       "ltm_ebitda_margin": "~28%",
-      "price": 99.81,
+      "price": 100.93,
       "price_currency": "USD",
-      "updated_at": "2026-03-29"
+      "updated_at": "2026-03-31"
     }
   },
   "earnings": [],
