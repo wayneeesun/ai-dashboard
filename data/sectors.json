@@ -87,11 +87,11 @@
       "topic": "github-trend"
     },
     {
-      "id": "youtubers",
-      "name": "YouTuber & 播客",
+      "id": "voices",
+      "name": "Voices",
       "icon": "🎙️",
       "type": "topic",
-      "topic": "youtubers"
+      "topic": "voices"
     },
 
     {
