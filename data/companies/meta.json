@@ -7,7 +7,7 @@
   "logo_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjE4IiBmaWxsPSIjMDA4MkZCIi8+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgsMTgpIHNjYWxlKDIuNjcsMi42NykiPgogICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTYuOTE1IDQuMDNjLTEuOTY4IDAtMy42ODMgMS4yOC00Ljg3MSAzLjExM0MuNzA0IDkuMjA4IDAgMTEuODgzIDAgMTQuNDQ5YzAgLjcwNi4wNyAxLjM2OS4yMSAxLjk3M2E2LjYyNCA2LjYyNCAwIDAgMCAuMjY1Ljg2IDUuMjk3IDUuMjk3IDAgMCAwIC4zNzEuNzYxYy42OTYgMS4xNTkgMS44MTggMS45MjcgMy41OTMgMS45MjcgMS40OTcgMCAyLjYzMy0uNjcxIDMuOTY1LTIuNDQ0Ljc2LTEuMDEyIDEuMTQ0LTEuNjI2IDIuNjYzLTQuMzJsLjc1Ni0xLjMzOS4xODYtLjMyNWMuMDYxLjEuMTIxLjE5Ni4xODMuM2wyLjE1MiAzLjU5NWMuNzI0IDEuMjEgMS42NjUgMi41NTYgMi40NyAzLjMxNCAxLjA0Ni45ODcgMS45OTIgMS4yMiAzLjA2IDEuMjIgMS4wNzUgMCAxLjg3Ni0uMzU1IDIuNDU1LS44NDNhMy43NDMgMy43NDMgMCAwIDAgLjgxLS45NzNjLjU0Mi0uOTM5Ljg2MS0yLjEyNy44NjEtMy43NDUgMC0yLjcyLS42ODEtNS4zNTctMi4wODQtNy40NS0xLjI4Mi0xLjkxMi0yLjk1Ny0yLjkzLTQuNzE2LTIuOTMtMS4wNDcgMC0yLjA4OC40NjctMy4wNTMgMS4zMDgtLjY1Mi41Ny0xLjI1NyAxLjI5LTEuODIgMi4wNS0uNjktLjg3NS0xLjMzNS0xLjU0Ny0xLjk1OC0yLjA1Ni0xLjE4Mi0uOTY2LTIuMzE1LTEuMzAzLTMuNDU0LTEuMzAzem0xMC4xNiAyLjA1M2MxLjE0NyAwIDIuMTg4Ljc1OCAyLjk5MiAxLjk5OSAxLjEzMiAxLjc0OCAxLjY0NyA0LjE5NSAxLjY0NyA2LjQgMCAxLjU0OC0uMzY4IDIuOS0xLjgzOSAyLjktLjU4IDAtMS4wMjctLjIzLTEuNjY0LTEuMDA0LS40OTYtLjYwMS0xLjM0My0xLjg3OC0yLjgzMi00LjM1OGwtLjYxNy0xLjAyOGE0NC45MDggNDQuOTA4IDAgMCAwLTEuMjU1LTEuOThjLjA3LS4xMDkuMTQxLS4yMjQuMjExLS4zMjcgMS4xMi0xLjY2NyAyLjExOC0yLjYwMiAzLjM1OC0yLjYwMnptLTEwLjIwMS41NTNjMS4yNjUgMCAyLjA1OC43OTEgMi42NzUgMS40NDYuMzA3LjMyNy43MzcuODcxIDEuMjM0IDEuNTc5bC0xLjAyIDEuNTY2Yy0uNzU3IDEuMTYzLTEuODgyIDMuMDE3LTIuODM3IDQuMzM4LTEuMTkxIDEuNjQ5LTEuODEgMS44MTctMi40ODYgMS44MTctLjUyNCAwLTEuMDM4LS4yMzctMS4zODMtLjc5NC0uMjYzLS40MjYtLjQ2NC0xLjEzLS40NjQtMi4wNDYgMC0yLjIyMS42My00LjUzNSAxLjY2LTYuMDg4LjQ1NC0uNjg3Ljk2NC0xLjIyNiAxLjUzMy0xLjUzM2EyLjI2NCAyLjI2NCAwIDAgMSAxLjA4OC0uMjg1eiIvPgogIDwvZz4KPC9zdmc+",
   "color": "#0082FB",
   "profile": {
-    "summary": "全球最大社交媒体公司，旗下拥有 Facebook、Instagram、WhatsApp、Messenger 四大平台，月活用户合计超 32 亿。核心商业模式是精准数字广告，AI 驱动的推荐算法是广告效率的核心护城河。Reality Labs 部门长期亏损，但 Meta 将其视为未来计算平台的战略布局。",
+    "summary": "全球最大社交媒体公司，旗下拥有 Facebook、Instagram、WhatsApp、Messenger 四大平台，月活用户合计超 32 亿。核心商业模式是精准数字广告，AI 驱动的推荐算法是广告效率的核心护城河。Reality Labs 持续裁员、VR 社交战略收缩，眼镜硬件是当前唯一有增长信号的方向，但距离「下一代计算平台」仍遥远。",
     "business_segments": [
       {
         "name": "Family of Apps (FoA)",
@@ -17,9 +17,9 @@
       },
       {
         "name": "Reality Labs (RL)",
-        "description": "Quest VR 头显、Ray-Ban 智能眼镜、Metaverse 平台",
+        "description": "Ray-Ban 智能眼镜（唯一增长点）、Quest VR 头显（销量下滑）、Horizon Worlds（VR 社交已实质放弃）",
         "revenue_pct": 2,
-        "note": "长期战略投入，2025 年亏损约 $17B"
+        "note": "2021 年至今累计亏损 $73B，持续裁员，FY26 亏损为管理层承诺的历史峰值"
       }
     ],
     "key_metrics": {
