@@ -41,17 +41,17 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$292.7B",
+      "market_cap": "$326B",
       "ltm_revenue": "—",
       "ltm_revenue_growth": "—",
       "ltm_operating_margin": "—",
       "ltm_capex": "—",
       "capex_growth_yoy": "—",
       "as_of": "—",
-      "market_cap_usd_bn": 292.7,
-      "price": 122.5,
-      "price_currency": "USD",
-      "updated_at": "2026-03-29"
+      "market_cap_usd_bn": 325.5,
+      "price": 119.0,
+      "price_currency": "HKD",
+      "updated_at": "2026-03-31"
     },
     "key_debates": [
       "淘天 GMV 能否企稳",
