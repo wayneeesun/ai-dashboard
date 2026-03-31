@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-29",
+  "updated_at": "2026-03-31",
   "note": "Videos sourced via web search. Avatars use ui-avatars.com fallback with brand colors. Update weekly via scripts/update_youtubers.py",
   "channels": [
     {
@@ -17,14 +17,7 @@
         "哲学思考"
       ],
       "subscribers": "4.6M",
-      "latest_videos": [
-        {
-          "title": "Jensen Huang: NVIDIA CEO on the AI Revolution and the Future of Computing",
-          "url": "https://www.youtube.com/watch?v=vif8NQcjVf0",
-          "published_at": "2026-03-23",
-          "summary": "黄仁勋谈 AI 革命、NVIDIA 战略、Blackwell 芯片、Robotics 和 Humanoid 未来。全程 3 小时深度访谈。"
-        }
-      ]
+      "latest_videos": []
     },
     {
       "id": "mattwolfe",
@@ -41,20 +34,7 @@
         "产品测评"
       ],
       "subscribers": "950K",
-      "latest_videos": [
-        {
-          "title": "AI News: They All Launched the Same Thing!",
-          "url": "https://www.youtube.com/watch?v=syx_8UlEWlA",
-          "published_at": "2026-03-13",
-          "summary": "Matt Wolfe 的核心观察：OpenAI（GPT-4.5）、Anthropic（Claude 3.7）、Google（Gemini 2.0 Flash）在同一周内密集发布，他认为这不是巧合——背后是「发布节奏本身成为市场竞争武器」的战略逻辑，谁先宣布谁就先占据社交媒体叙事。他的判断：Claude 3.7 的 extended thinking 是工程实质性进步，GPT-4.5 更多是情感智能层面的提升，面向不同使用场景。他担忧的问题：用户在模型选择上的认知负担越来越重，「哪个最好」已无意义，真正需要的是能根据任务自动路由到最优模型的系统。"
-        },
-        {
-          "title": "AI News: Anthropic Went Crazy This Week!",
-          "url": "https://www.youtube.com/watch?v=OYyS0Gu5xj8",
-          "published_at": "2026-03-27",
-          "summary": "Matt Wolfe 梳理 Anthropic 本周密集发布（Claude 4.6 系列 + Claude Code 重大更新）。他的判断：Anthropic 正在从「模型公司」转向「开发者基础设施公司」，Claude Code 的 Remote Control 功能（让 AI 直接操控浏览器）是这一战略转向最直接的信号。他认为这对 Cursor/Windsurf 等 coding 工具构成直接威胁——Anthropic 在向上游整合。对于普通用户：claude.ai 的能力提升是真实的，但他直接说「大多数人还没意识到现在能用 AI 做什么」。"
-        }
-      ]
+      "latest_videos": []
     },
     {
       "id": "fireship",
@@ -71,14 +51,7 @@
         "速览"
       ],
       "subscribers": "3.1M",
-      "latest_videos": [
-        {
-          "title": "7 new open source AI tools you need right now…",
-          "url": "https://www.youtube.com/watch?v=Xn-gtHDsaPY",
-          "published_at": "2026-03-12",
-          "summary": "Fireship 的核心判断：当前 AI agent 基础设施（工具层）比 AI 模型本身发展更快、更务实。他介绍的 7 个开源工具全部围绕「让 agent 可靠跑起来」这个实际问题：记忆管理、工具调用规范化、agent 间通信协议、沙箱执行环境。他的结论：AI 能力不再是瓶颈，基础设施才是——现在最有价值的工程工作是「让 agent 不出错」而不是「让 agent 更聪明」。对开发者的建议：不要再从零构建 agent 框架，这些开源工具已经解决了 80% 的重复问题。"
-        }
-      ]
+      "latest_videos": []
     },
     {
       "id": "matthewberman",
@@ -95,20 +68,7 @@
         "AI 应用"
       ],
       "subscribers": "480K",
-      "latest_videos": [
-        {
-          "title": "Something big is happening...",
-          "url": "https://www.youtube.com/watch?v=u5eycQfpZqI",
-          "published_at": "2026-02-13",
-          "summary": "Matthew Berman 的判断：2026 年的 AI 进步速度是指数级的，而多数人的感知是线性的——这个认知差才是当前最大的机会窗口。他用 6 个近期发布的横向对比得出结论：在多步推理、代码执行和长上下文任务上，模型能力的实际进步比 benchmark 排行榜反映的更快更真实。同时他指出一个反常识的现象：最强的模型在最简单的任务上失败率反而更高，因为 RLHF 训练让模型在简单问题上倾向于「过度思考」。他的建议：停止用综合排行榜选模型，按具体任务类型测试，针对不同工作场景组合不同模型。"
-        },
-        {
-          "title": "03.13.26 | Guests from Slack, Giga, Letta, and Microsoft AI!",
-          "url": "https://www.youtube.com/watch?v=5dfu6NvnTZM",
-          "published_at": "2026-03-14",
-          "summary": "Matthew Berman 的 live 圆桌，邀请 Slack、Giga、Letta、Microsoft AI 四家的一线从业者。核心议题：企业真正在 AI 上做什么（不是 demo，是已上线的生产系统）。共识：企业 AI 落地的最大障碍不是模型能力，而是「谁来拥有 AI 输出的质量责任」——这是组织问题而非技术问题。Letta 的视角最具争议性：他认为 AI agent 的记忆管理是下一个关键战场，当前所有框架（LangChain、LlamaIndex等）都没有认真解决这个问题。"
-        }
-      ]
+      "latest_videos": []
     },
     {
       "id": "3b1b",
