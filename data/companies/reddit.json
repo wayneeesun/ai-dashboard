@@ -21,8 +21,8 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$18B",
-      "market_cap_usd_bn": 18.0,
+      "market_cap": "$30B",
+      "market_cap_usd_bn": 30.3,
       "ltm_revenue": "$2.2B",
       "ltm_revenue_growth": "69%",
       "ltm_operating_income": "$120M",
@@ -31,9 +31,9 @@
       "dau": "121M",
       "wau": "471M",
       "as_of": "Q4 2025",
-      "price": 105.0,
+      "price": 131.53,
       "price_currency": "USD",
-      "updated_at": "2026-03-29",
+      "updated_at": "2026-03-31",
       "fy26_capex_guidance": "轻资产"
     },
     "key_debates": [
