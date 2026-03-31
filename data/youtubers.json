@@ -139,6 +139,23 @@
       "latest_videos": []
     },
     {
+      "id": "guigu101",
+      "name": "硅谷101",
+      "handle": "@TheValley101",
+      "url": "https://www.youtube.com/@TheValley101",
+      "avatar_url": "https://ui-avatars.com/api/?name=硅谷&background=1E3A5F&color=fff&size=128&rounded=true&bold=true",
+      "category": "行业动态",
+      "category_color": "#1E3A5F",
+      "description": "泓君主持的深度访谈节目，英伟达、OpenAI、机器人等重大议题的中文最佳讲解。40万订阅，内容同步小宇宙，覆盖 AI/科技/美股核心叙事。",
+      "focus": [
+        "深度访谈",
+        "AI 产业",
+        "硅谷动态"
+      ],
+      "subscribers": "409K",
+      "latest_videos": []
+    },
+    {
       "id": "davidshapiro",
       "name": "David Shapiro",
       "handle": "@DavidShapiroAI",
