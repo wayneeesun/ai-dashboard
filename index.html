@@ -3121,44 +3121,34 @@ async function loadXAccounts() {
   catch(e) { return null; }
 }
 
-async function renderVoices(tab) {
-  if (tab) voicesActiveTab = tab;
+async function renderVoices() {
   const grid = document.getElementById('card-grid');
   grid.style.display = 'grid';
   grid.classList.add('yt-grid');
   grid.innerHTML = '<div class="loading">加载中…</div>';
 
-  // Tab bar HTML
-  const tabs = [
-    { id: 'youtube', label: '📺 YouTube' },
-    { id: 'x',       label: '𝕏 X / Twitter' },
-    { id: 'podcast', label: '🎙️ 播客' },
-  ];
-  const tabBar = `<div class="voices-tabs" style="grid-column:1/-1">
-    ${tabs.map(t => `<button class="voices-tab${voicesActiveTab===t.id?' active':''}"
-      onclick="renderVoices('${t.id}')">${t.label}</button>`).join('')}
-  </div>`;
+  const [ytDataResult, xDataResult] = await Promise.all([loadYoutubers(), loadXAccounts()]);
 
-  if (voicesActiveTab === 'youtube') {
-    const data = await loadYoutubers();
-    if (!data) { grid.innerHTML = tabBar + '<div class="loading">暂无数据</div>'; return; }
-    const withVideos = data.channels.filter(ch =>
+  let totalCount = 0;
+  let html = '';
+
+  // ── Section 1: YouTube ──
+  if (ytDataResult) {
+    const withVideos = ytDataResult.channels.filter(ch =>
       (ch.latest_videos && ch.latest_videos.length > 0) ||
       (ch.pinned_videos && ch.pinned_videos.length > 0)
     );
-    const noVideos = data.channels.filter(ch =>
+    const noVideos = ytDataResult.channels.filter(ch =>
       (!ch.latest_videos || ch.latest_videos.length === 0) &&
       (!ch.pinned_videos || ch.pinned_videos.length === 0)
     );
-    document.getElementById('sector-subtitle').innerHTML =
-      `${withVideos.length} 位本周有更新 · ${noVideos.length} 位暂无新内容 · ${data.updated_at}`;
-    let html = tabBar;
+    totalCount += ytDataResult.channels.length;
+    html += `<div class="gh-category-header" style="grid-column:1/-1">
+      <span class="gh-cat-icon">📺</span>
+      <span class="gh-cat-name">YouTube</span>
+      <span class="gh-cat-count">${ytDataResult.channels.length} 位博主</span>
+    </div>`;
     if (withVideos.length) {
-      html += `<div class="gh-category-header" style="grid-column:1/-1">
-        <span class="gh-cat-icon">🎬</span>
-        <span class="gh-cat-name">本周有更新</span>
-        <span class="gh-cat-count">${withVideos.length} 位博主</span>
-      </div>`;
       withVideos.forEach(ch => { html += renderYtChannelCard(ch); });
     }
     if (noVideos.length) {
@@ -3174,38 +3164,90 @@ async function renderVoices(tab) {
         <div class="yt-quiet-list">${quietList}</div>
       </div>`;
     }
-    grid.innerHTML = html;
+  }
 
-  } else if (voicesActiveTab === 'x') {
-    const data = await loadXAccounts();
-    if (!data) { grid.innerHTML = tabBar + '<div class="loading">暂无数据</div>'; return; }
-    document.getElementById('sector-subtitle').innerHTML =
-      `${data.accounts.length} 位博主 · ${data.updated_at}`;
-    // 按 category 分组
+  // ── Section 2: X / Twitter ──
+  if (xDataResult) {
+    totalCount += xDataResult.accounts.length;
     const cats = {};
-    data.accounts.forEach(a => {
+    xDataResult.accounts.forEach(a => {
       if (!cats[a.category]) cats[a.category] = [];
       cats[a.category].push(a);
     });
-    let html = tabBar;
-    Object.entries(cats).forEach(([cat, accounts]) => {
-      const catColor = accounts[0].category_color || '#94A3B8';
-      html += `<div class="gh-category-header" style="grid-column:1/-1">
-        <span class="gh-cat-icon">𝕏</span>
-        <span class="gh-cat-name">${cat}</span>
-        <span class="gh-cat-count">${accounts.length} 位</span>
-      </div>`;
-      accounts.forEach(a => { html += renderXCard(a); });
-    });
-    grid.innerHTML = html;
-
-  } else if (voicesActiveTab === 'podcast') {
-    document.getElementById('sector-subtitle').innerHTML = '即将上线';
-    grid.innerHTML = tabBar + `<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);font-size:14px">
-      🎙️ 播客栏目即将上线<br><br>
-      <span style="font-size:12px">计划收录：Lex Fridman Podcast、Dwarkesh Podcast、No Priors、The MAD Podcast 等</span>
+    html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
+      <span class="gh-cat-icon">𝕏</span>
+      <span class="gh-cat-name">X / Twitter</span>
+      <span class="gh-cat-count">${xDataResult.accounts.length} 位博主</span>
     </div>`;
+    xDataResult.accounts.forEach(a => { html += renderXCard(a); });
   }
+
+  // ── Section 3: 播客 ──
+  const podcasts = [
+    {
+      id: 'dwarkesh',
+      name: 'Dwarkesh Podcast',
+      handle: '@dwarkesh_sp',
+      url: 'https://www.dwarkeshpatel.com/podcast',
+      avatar_url: 'https://ui-avatars.com/api/?name=DP&background=7C3AED&color=fff&size=128&rounded=true&bold=true',
+      category_color: '#7C3AED',
+      description: '目前最好的 AI 研究者访谈。Sutskever、Schulman、Zuckerberg 都上过，问题质量极高，深度碾压大多数媒体。',
+      focus: ['前沿研究者', 'AI 战略', '深度访谈'],
+      platform: 'Apple Podcasts / Spotify / YouTube'
+    },
+    {
+      id: 'nopriors',
+      name: 'No Priors',
+      handle: '@no_priors',
+      url: 'https://www.nopriorsshow.com',
+      avatar_url: 'https://ui-avatars.com/api/?name=NP&background=0F766E&color=fff&size=128&rounded=true&bold=true',
+      category_color: '#0F766E',
+      description: 'a16z 出品，Sarah Guo 主持。AI 创始人/投资人视角，30-45 分钟高密度，信息比同类商业播客高一个档次。',
+      focus: ['AI 创业', '投资视角', 'a16z'],
+      platform: 'Apple Podcasts / Spotify'
+    },
+    {
+      id: 'cogrev',
+      name: 'Cognitive Revolution',
+      handle: '@cogrev_pod',
+      url: 'https://www.cognitiverevolution.ai',
+      avatar_url: 'https://ui-avatars.com/api/?name=CR&background=B45309&color=fff&size=128&rounded=true&bold=true',
+      category_color: '#B45309',
+      description: 'Nathan Labenz 主持，专门评估 frontier model 实际能力，有大量自己做的 benchmark 测试，硬核但务实。',
+      focus: ['模型能力评估', 'Frontier AI', 'Benchmark'],
+      platform: 'Apple Podcasts / Spotify'
+    }
+  ];
+  html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
+    <span class="gh-cat-icon">🎙️</span>
+    <span class="gh-cat-name">播客</span>
+    <span class="gh-cat-count">${podcasts.length} 个节目</span>
+  </div>`;
+  podcasts.forEach(p => {
+    const focusTags = (p.focus||[]).map(f =>
+      `<span class="x-focus-tag" style="border-color:${p.category_color}33;color:${p.category_color}">${f}</span>`
+    ).join('');
+    html += `
+      <div class="x-card" style="--x-cat-color:${p.category_color}">
+        <div class="x-card-top">
+          <img class="x-avatar" src="${p.avatar_url}" alt="${p.name}"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="x-avatar-fallback" style="display:none;background:${p.category_color}">${p.name[0]}</div>
+          <div class="x-card-info">
+            <h3 class="x-name">${p.name}</h3>
+            <div class="x-handle"><span style="color:var(--muted);font-size:11px">${p.platform}</span></div>
+            <div class="x-focus-tags">${focusTags}</div>
+          </div>
+        </div>
+        <p class="x-desc">${p.description}</p>
+        <a class="x-profile-link" href="${p.url}" target="_blank" rel="noopener">🎙️ 前往收听</a>
+      </div>`;
+  });
+  totalCount += podcasts.length;
+
+  document.getElementById('sector-subtitle').innerHTML =
+    `YouTube · X · 播客 共 ${totalCount} 个 · ${ytDataResult?.updated_at || ''}`;
+  grid.innerHTML = html;
 }
 
 
