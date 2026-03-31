@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-03-29",
+  "updated_at": "2026-03-31",
   "period": "weekly",
-  "filter": "本周新增 ≥1000 star 的项目，via GitHub Trending 周榜（全语言 + Python + TypeScript + Rust），按 star 排序",
+  "filter": "GitHub Trending 周榜，全品类不限领域，按本周新增 star 排序",
   "source": "https://github.com/trending?since=weekly",
   "source_label": "GitHub Trending (Weekly)",
   "categories": [
@@ -15,25 +15,31 @@
       "id": "data-infra",
       "name": "数据 & 基础设施",
       "icon": "🔧",
-      "description": "数据解析、记忆引擎、信息检索、AI 研究工具"
+      "description": "数据解析、记忆引擎、信息检索"
     },
     {
       "id": "coding-tools",
       "name": "编码工具",
       "icon": "💻",
-      "description": "代码生成、辅助开发、IDE 插件、开发者工具"
+      "description": "代码生成、辅助开发、IDE 插件"
     },
     {
       "id": "finance-trading",
       "name": "金融 & 交易",
       "icon": "📊",
-      "description": "量化交易、金融分析、股票研究"
+      "description": "量化交易、金融分析、加密资产"
     },
     {
       "id": "content-gen",
       "name": "内容生成",
       "icon": "🎨",
-      "description": "图像、视频、音乐、语音生成"
+      "description": "图像、视频、音乐生成"
+    },
+    {
+      "id": "creative-tools",
+      "name": "创意工具",
+      "icon": "🎮",
+      "description": "游戏、3D、设计、创作类"
     },
     {
       "id": "other",
@@ -48,312 +54,330 @@
       "owner": "affaan-m",
       "full_name": "affaan-m/everything-claude-code",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 114708,
-      "stars_this_week": 21644,
+      "stars": 124832,
+      "stars_this_week": 124832,
       "language": "JavaScript",
       "url": "https://github.com/affaan-m/everything-claude-code",
-      "category": "agent-framework",
-      "description_zh": "Agent 性能优化系统，集成技能、记忆、安全与研究能力的完整 harness"
+      "category": "agent-framework"
     },
     {
-      "name": "superpowers",
-      "owner": "obra",
-      "full_name": "obra/superpowers",
-      "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 120771,
-      "stars_this_week": 17608,
-      "language": "Shell",
-      "url": "https://github.com/obra/superpowers",
-      "category": "agent-framework",
-      "description_zh": "Agent 技能框架与软件开发方法论，久经实战验证"
-    },
-    {
-      "name": "deer-flow",
-      "owner": "bytedance",
-      "full_name": "bytedance/deer-flow",
-      "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway.",
-      "stars": 51265,
-      "stars_this_week": 18872,
+      "name": "autoresearch",
+      "owner": "karpathy",
+      "full_name": "karpathy/autoresearch",
+      "description": "AI agents running research on single-GPU nanochat training automatically",
+      "stars": 62479,
+      "stars_this_week": 62479,
       "language": "Python",
-      "url": "https://github.com/bytedance/deer-flow",
-      "category": "agent-framework",
-      "description_zh": "字节出品：开源长周期 SuperAgent harness，集成沙箱/记忆/工具/技能/子 Agent"
+      "url": "https://github.com/karpathy/autoresearch",
+      "category": "agent-framework"
     },
     {
-      "name": "project-nomad",
-      "owner": "Crosstalk-Solutions",
-      "full_name": "Crosstalk-Solutions/project-nomad",
-      "description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered.",
-      "stars": 19127,
-      "stars_this_week": 13244,
+      "name": "paperclip",
+      "owner": "paperclipai",
+      "full_name": "paperclipai/paperclip",
+      "description": "Open-source orchestration for zero-human companies",
+      "stars": 42161,
+      "stars_this_week": 42161,
       "language": "TypeScript",
-      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
-      "category": "other",
-      "description_zh": "离线生存计算机：集成关键工具、知识库和 AI 的自包含系统"
+      "url": "https://github.com/paperclipai/paperclip",
+      "category": "agent-framework"
     },
     {
-      "name": "MoneyPrinterV2",
-      "owner": "FujiwaraChoki",
-      "full_name": "FujiwaraChoki/MoneyPrinterV2",
-      "description": "Automate the process of making money online.",
-      "stars": 26996,
-      "stars_this_week": 10133,
+      "name": "antigravity-awesome-skills",
+      "owner": "sickn33",
+      "full_name": "sickn33/antigravity-awesome-skills",
+      "description": "Installable GitHub library of 1,340+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill coll",
+      "stars": 29287,
+      "stars_this_week": 29287,
       "language": "Python",
-      "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
-      "category": "content-gen",
-      "description_zh": "自动化线上赚钱流程，AI 驱动内容生成与分发"
+      "url": "https://github.com/sickn33/antigravity-awesome-skills",
+      "category": "agent-framework"
+    },
+    {
+      "name": "agent-browser",
+      "owner": "vercel-labs",
+      "full_name": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "stars": 25963,
+      "stars_this_week": 25963,
+      "language": "Rust",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "category": "agent-framework"
+    },
+    {
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "full_name": "HKUDS/CLI-Anything",
+      "description": "CLI-Anything: Making ALL Software Agent-Native",
+      "stars": 25560,
+      "stars_this_week": 25560,
+      "language": "Python",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "category": "agent-framework"
+    },
+    {
+      "name": "cli",
+      "owner": "googleworkspace",
+      "full_name": "googleworkspace/cli",
+      "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
+      "stars": 23323,
+      "stars_this_week": 23323,
+      "language": "Rust",
+      "url": "https://github.com/googleworkspace/cli",
+      "category": "agent-framework"
+    },
+    {
+      "name": "OpenViking",
+      "owner": "volcengine",
+      "full_name": "volcengine/OpenViking",
+      "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need throu",
+      "stars": 20234,
+      "stars_this_week": 20234,
+      "language": "Python",
+      "url": "https://github.com/volcengine/OpenViking",
+      "category": "agent-framework"
+    },
+    {
+      "name": "oh-my-claudecode",
+      "owner": "Yeachan-Heo",
+      "full_name": "Yeachan-Heo/oh-my-claudecode",
+      "description": "Teams-first Multi-agent orchestration for Claude Code",
+      "stars": 18357,
+      "stars_this_week": 18357,
+      "language": "TypeScript",
+      "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+      "category": "agent-framework"
+    },
+    {
+      "name": "marketingskills",
+      "owner": "coreyhaines31",
+      "full_name": "coreyhaines31/marketingskills",
+      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "stars": 17825,
+      "stars_this_week": 17825,
+      "language": "JavaScript",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "category": "agent-framework"
     },
     {
       "name": "last30days-skill",
       "owner": "mvanhorn",
       "full_name": "mvanhorn/last30days-skill",
-      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary.",
-      "stars": 14096,
-      "stars_this_week": 9091,
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "stars": 16791,
+      "stars_this_week": 16791,
       "language": "Python",
       "url": "https://github.com/mvanhorn/last30days-skill",
-      "category": "agent-framework",
-      "description_zh": "AI Agent 技能：跨 Reddit/X/YouTube/HN/Polymarket 研究任意话题过去 30 天动态"
+      "category": "agent-framework"
     },
     {
-      "name": "TradingAgents",
-      "owner": "TauricResearch",
-      "full_name": "TauricResearch/TradingAgents",
-      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "stars": 43369,
-      "stars_this_week": 8220,
-      "language": "Python",
-      "url": "https://github.com/TauricResearch/TradingAgents",
-      "category": "finance-trading",
-      "description_zh": "多 Agent LLM 金融交易框架，覆盖研究/分析/执行全链路"
-    },
-    {
-      "name": "learn-claude-code",
-      "owner": "shareAI-lab",
-      "full_name": "shareAI-lab/learn-claude-code",
-      "description": "Bash is all you need - A nano claude code-like agent harness, built from 0 to 1.",
-      "stars": 41774,
-      "stars_this_week": 6588,
-      "language": "TypeScript",
-      "url": "https://github.com/shareAI-lab/learn-claude-code",
-      "category": "coding-tools",
-      "description_zh": "从零构建类 Claude Code 的极简 Agent harness，\"Bash is all you need\""
-    },
-    {
-      "name": "ruflo",
-      "owner": "ruvnet",
-      "full_name": "ruvnet/ruflo",
-      "description": "The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems.",
-      "stars": 27959,
-      "stars_this_week": 5646,
-      "language": "TypeScript",
-      "url": "https://github.com/ruvnet/ruflo",
-      "category": "agent-framework",
-      "description_zh": "Claude 多 Agent 编排平台：分布式群体智能、自主工作流、企业级架构"
-    },
-    {
-      "name": "hermes-agent",
-      "owner": "NousResearch",
-      "full_name": "NousResearch/hermes-agent",
-      "description": "The agent that grows with you.",
-      "stars": 15375,
-      "stars_this_week": 5382,
-      "language": "Python",
-      "url": "https://github.com/NousResearch/hermes-agent",
-      "category": "agent-framework",
-      "description_zh": "NousResearch 出品：随你成长的 Agent，自适应学习能力"
+      "name": "openfang",
+      "owner": "RightNow-AI",
+      "full_name": "RightNow-AI/openfang",
+      "description": "Open-source Agent Operating System",
+      "stars": 16003,
+      "stars_this_week": 16003,
+      "language": "Rust",
+      "url": "https://github.com/RightNow-AI/openfang",
+      "category": "agent-framework"
     },
     {
       "name": "claude-hud",
       "owner": "jarrodwatts",
       "full_name": "jarrodwatts/claude-hud",
-      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress.",
-      "stars": 14674,
-      "stars_this_week": 4505,
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "stars": 15682,
+      "stars_this_week": 15682,
       "language": "JavaScript",
       "url": "https://github.com/jarrodwatts/claude-hud",
-      "category": "coding-tools",
-      "description_zh": "Claude Code 插件：实时显示上下文用量、活跃工具、运行中 Agent 和 TODO 进度"
+      "category": "agent-framework"
     },
     {
-      "name": "awesome-claude-code",
-      "owner": "hesreallyhim",
-      "full_name": "hesreallyhim/awesome-claude-code",
-      "description": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code.",
-      "stars": 33673,
-      "stars_this_week": 3980,
-      "language": "Python",
-      "url": "https://github.com/hesreallyhim/awesome-claude-code",
-      "category": "agent-framework",
-      "description_zh": "Claude Code 精选资源列表：技能、钩子、命令、编排器、插件汇总"
-    },
-    {
-      "name": "Deep-Live-Cam",
-      "owner": "hacksider",
-      "full_name": "hacksider/Deep-Live-Cam",
-      "description": "Real time face swap and one-click video deepfake with only a single image.",
-      "stars": 84333,
-      "stars_this_week": 3667,
-      "language": "Python",
-      "url": "https://github.com/hacksider/Deep-Live-Cam",
-      "category": "content-gen",
-      "description_zh": "实时换脸+一键视频 deepfake，仅需一张图片"
-    },
-    {
-      "name": "cc-switch",
-      "owner": "farion1231",
-      "full_name": "farion1231/cc-switch",
-      "description": "A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw & Gemini CLI.",
-      "stars": 34834,
-      "stars_this_week": 3517,
-      "language": "Rust",
-      "url": "https://github.com/farion1231/cc-switch",
-      "category": "coding-tools",
-      "description_zh": "跨平台桌面 All-in-One 助手：统一管理 Claude Code / Codex / OpenCode / Gemini CLI"
-    },
-    {
-      "name": "MoneyPrinterTurbo",
-      "owner": "harry0703",
-      "full_name": "harry0703/MoneyPrinterTurbo",
-      "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
-      "stars": 53748,
-      "stars_this_week": 3362,
-      "language": "Python",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
-      "category": "content-gen",
-      "description_zh": "AI 大模型一键生成高清短视频"
-    },
-    {
-      "name": "browser-use",
-      "owner": "browser-use",
-      "full_name": "browser-use/browser-use",
-      "description": "Make websites accessible for AI agents. Automate tasks online with ease.",
-      "stars": 84856,
-      "stars_this_week": 3204,
-      "language": "Python",
-      "url": "https://github.com/browser-use/browser-use",
-      "category": "agent-framework",
-      "description_zh": "让网站对 AI Agent 可访问，轻松自动化在线任务"
-    },
-    {
-      "name": "supermemory",
-      "owner": "supermemoryai",
-      "full_name": "supermemoryai/supermemory",
-      "description": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
-      "stars": 20134,
-      "stars_this_week": 3029,
-      "language": "TypeScript",
-      "url": "https://github.com/supermemoryai/supermemory",
-      "category": "data-infra",
-      "description_zh": "AI 时代的记忆 API：极速、可扩展的记忆引擎"
-    },
-    {
-      "name": "TradingAgents-CN",
-      "owner": "hsliuping",
-      "full_name": "hsliuping/TradingAgents-CN",
-      "description": "基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版",
-      "stars": 21946,
-      "stars_this_week": 2657,
-      "language": "Python",
-      "url": "https://github.com/hsliuping/TradingAgents-CN",
-      "category": "finance-trading",
-      "description_zh": "TradingAgents 中文增强版：多 Agent LLM 中文金融交易框架"
-    },
-    {
-      "name": "minimind",
-      "owner": "jingyaogong",
-      "full_name": "jingyaogong/minimind",
-      "description": "🚀 「大模型」2小时完全从0训练64M的小参数GPT！Train a 64M-parameter GPT from scratch in just 2h!",
-      "stars": 44361,
-      "stars_this_week": 2617,
-      "language": "Python",
-      "url": "https://github.com/jingyaogong/minimind",
-      "category": "other",
-      "description_zh": "2 小时从零训练 64M 参数 GPT，LLM 教学经典项目"
-    },
-    {
-      "name": "dexter",
-      "owner": "virattt",
-      "full_name": "virattt/dexter",
-      "description": "An autonomous agent for deep financial research.",
-      "stars": 20200,
-      "stars_this_week": 1962,
-      "language": "TypeScript",
-      "url": "https://github.com/virattt/dexter",
-      "category": "finance-trading",
-      "description_zh": "自主 Agent 深度金融研究工具"
-    },
-    {
-      "name": "arnis",
-      "owner": "louis-e",
-      "full_name": "louis-e/arnis",
-      "description": "Generate any location from the real world in Minecraft with a high level of detail.",
-      "stars": 13798,
-      "stars_this_week": 1822,
-      "language": "Rust",
-      "url": "https://github.com/louis-e/arnis",
-      "category": "other",
-      "description_zh": "在 Minecraft 中高精度生成真实世界任意地点"
-    },
-    {
-      "name": "twenty",
-      "owner": "twentyhq",
-      "full_name": "twentyhq/twenty",
-      "description": "Building a modern alternative to Salesforce, powered by the community.",
-      "stars": 42429,
-      "stars_this_week": 1734,
-      "language": "TypeScript",
-      "url": "https://github.com/twentyhq/twenty",
-      "category": "other",
-      "description_zh": "社区驱动的现代 Salesforce 替代品"
-    },
-    {
-      "name": "DayuanJiang/next-ai-draw-io",
-      "owner": "DayuanJiang",
-      "full_name": "DayuanJiang/next-ai-draw-io",
-      "description": "A next.js web application that integrates AI capabilities with draw.io diagrams. Create, modify, and enhance diagrams through natural language commands.",
-      "stars": 25276,
-      "stars_this_week": 1492,
-      "language": "TypeScript",
-      "url": "https://github.com/DayuanJiang/next-ai-draw-io",
-      "category": "coding-tools",
-      "description_zh": "AI + draw.io：用自然语言创建和修改流程图/架构图"
-    },
-    {
-      "name": "codex",
+      "name": "symphony",
       "owner": "openai",
-      "full_name": "openai/codex",
-      "description": "Lightweight coding agent that runs in your terminal.",
-      "stars": 68155,
-      "stars_this_week": 1484,
+      "full_name": "openai/symphony",
+      "description": "Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents.",
+      "stars": 14331,
+      "stars_this_week": 14331,
+      "language": "Elixir",
+      "url": "https://github.com/openai/symphony",
+      "category": "agent-framework"
+    },
+    {
+      "name": "pua",
+      "owner": "tanweai",
+      "full_name": "tanweai/pua",
+      "description": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.",
+      "stars": 14157,
+      "stars_this_week": 14157,
+      "language": "TypeScript",
+      "url": "https://github.com/tanweai/pua",
+      "category": "agent-framework"
+    },
+    {
+      "name": "Agent-Reach",
+      "owner": "Panniantong",
+      "full_name": "Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "stars": 14112,
+      "stars_this_week": 14112,
+      "language": "Python",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "category": "agent-framework"
+    },
+    {
+      "name": "gstack",
+      "owner": "garrytan",
+      "full_name": "garrytan/gstack",
+      "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+      "stars": 59147,
+      "stars_this_week": 59147,
+      "language": "TypeScript",
+      "url": "https://github.com/garrytan/gstack",
+      "category": "coding-tools"
+    },
+    {
+      "name": "claw-code",
+      "owner": "instructkr",
+      "full_name": "instructkr/claw-code",
+      "description": "Better Harness Tools, not merely storing the archive of leaked Claude Code but also make shit things done. Now rewriting in Rust.",
+      "stars": 36857,
+      "stars_this_week": 36857,
+      "language": "Python",
+      "url": "https://github.com/instructkr/claw-code",
+      "category": "coding-tools"
+    },
+    {
+      "name": "llmfit",
+      "owner": "AlexsJones",
+      "full_name": "AlexsJones/llmfit",
+      "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+      "stars": 20390,
+      "stars_this_week": 20390,
       "language": "Rust",
-      "url": "https://github.com/openai/codex",
-      "category": "coding-tools",
-      "description_zh": "OpenAI 出品：终端轻量级编码 Agent"
+      "url": "https://github.com/AlexsJones/llmfit",
+      "category": "coding-tools"
     },
     {
-      "name": "chrome-devtools-mcp",
-      "owner": "ChromeDevTools",
-      "full_name": "ChromeDevTools/chrome-devtools-mcp",
-      "description": "Chrome DevTools for coding agents.",
-      "stars": 32079,
-      "stars_this_week": 1459,
-      "language": "TypeScript",
-      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-      "category": "coding-tools",
-      "description_zh": "Chrome DevTools MCP 服务：让编码 Agent 直接操控浏览器调试工具"
+      "name": "NemoClaw",
+      "owner": "NVIDIA",
+      "full_name": "NVIDIA/NemoClaw",
+      "description": "Run OpenClaw more securely inside NVIDIA OpenShell with managed inference",
+      "stars": 17924,
+      "stars_this_week": 17924,
+      "language": "JavaScript",
+      "url": "https://github.com/NVIDIA/NemoClaw",
+      "category": "coding-tools"
     },
     {
-      "name": "claude-subconscious",
-      "owner": "letta-ai",
-      "full_name": "letta-ai/claude-subconscious",
-      "description": "Give Claude Code a subconscious.",
-      "stars": 2128,
-      "stars_this_week": 1112,
+      "name": "daily_stock_analysis",
+      "owner": "ZhuLinsen",
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM驱动的 A/H/美股智能分析器：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
+      "stars": 27323,
+      "stars_this_week": 27323,
+      "language": "Python",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "category": "finance-trading"
+    },
+    {
+      "name": "worldmonitor",
+      "owner": "koala73",
+      "full_name": "koala73/worldmonitor",
+      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "stars": 45718,
+      "stars_this_week": 45718,
       "language": "TypeScript",
-      "url": "https://github.com/letta-ai/claude-subconscious",
-      "category": "data-infra",
-      "description_zh": "给 Claude Code 加上「潜意识」层——持久化记忆与上下文管理"
+      "url": "https://github.com/koala73/worldmonitor",
+      "category": "other"
+    },
+    {
+      "name": "awesome-openclaw-skills",
+      "owner": "VoltAgent",
+      "full_name": "VoltAgent/awesome-openclaw-skills",
+      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
+      "stars": 43383,
+      "stars_this_week": 43383,
+      "language": "",
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "category": "other"
+    },
+    {
+      "name": "nanobot",
+      "owner": "HKUDS",
+      "full_name": "HKUDS/nanobot",
+      "description": "\"🐈 nanobot: The Ultra-Lightweight OpenClaw\"",
+      "stars": 37305,
+      "stars_this_week": 37305,
+      "language": "Python",
+      "url": "https://github.com/HKUDS/nanobot",
+      "category": "other"
+    },
+    {
+      "name": "picoclaw",
+      "owner": "sipeed",
+      "full_name": "sipeed/picoclaw",
+      "description": "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity",
+      "stars": 26893,
+      "stars_this_week": 26893,
+      "language": "Go",
+      "url": "https://github.com/sipeed/picoclaw",
+      "category": "other"
+    },
+    {
+      "name": "nanoclaw",
+      "owner": "qwibitai",
+      "full_name": "qwibitai/nanoclaw",
+      "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs direct",
+      "stars": 26082,
+      "stars_this_week": 26082,
+      "language": "TypeScript",
+      "url": "https://github.com/qwibitai/nanoclaw",
+      "category": "other"
+    },
+    {
+      "name": "pretext",
+      "owner": "chenglou",
+      "full_name": "chenglou/pretext",
+      "description": "",
+      "stars": 25954,
+      "stars_this_week": 25954,
+      "language": "TypeScript",
+      "url": "https://github.com/chenglou/pretext",
+      "category": "other"
+    },
+    {
+      "name": "rtk",
+      "owner": "rtk-ai",
+      "full_name": "rtk-ai/rtk",
+      "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+      "stars": 16000,
+      "stars_this_week": 16000,
+      "language": "Rust",
+      "url": "https://github.com/rtk-ai/rtk",
+      "category": "other"
+    },
+    {
+      "name": "awesome-ai-research-writing",
+      "owner": "Leey21",
+      "full_name": "Leey21/awesome-ai-research-writing",
+      "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
+      "stars": 15004,
+      "stars_this_week": 15004,
+      "language": "",
+      "url": "https://github.com/Leey21/awesome-ai-research-writing",
+      "category": "other"
+    },
+    {
+      "name": "voicebox",
+      "owner": "jamiepine",
+      "full_name": "jamiepine/voicebox",
+      "description": "The open-source voice synthesis studio",
+      "stars": 14350,
+      "stars_this_week": 14350,
+      "language": "TypeScript",
+      "url": "https://github.com/jamiepine/voicebox",
+      "category": "other"
     }
   ],
   "by_category": {
@@ -361,272 +385,339 @@
       {
         "name": "everything-claude-code",
         "owner": "affaan-m",
-        "stars": 114708,
-        "stars_this_week": 21644,
+        "full_name": "affaan-m/everything-claude-code",
+        "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+        "stars": 124832,
+        "stars_this_week": 124832,
         "language": "JavaScript",
         "url": "https://github.com/affaan-m/everything-claude-code",
-        "description_zh": "Agent 性能优化系统，集成技能、记忆、安全与研究能力的完整 harness"
+        "category": "agent-framework"
       },
       {
-        "name": "deer-flow",
-        "owner": "bytedance",
-        "stars": 51265,
-        "stars_this_week": 18872,
+        "name": "autoresearch",
+        "owner": "karpathy",
+        "full_name": "karpathy/autoresearch",
+        "description": "AI agents running research on single-GPU nanochat training automatically",
+        "stars": 62479,
+        "stars_this_week": 62479,
         "language": "Python",
-        "url": "https://github.com/bytedance/deer-flow",
-        "description_zh": "字节出品：开源长周期 SuperAgent harness"
+        "url": "https://github.com/karpathy/autoresearch",
+        "category": "agent-framework"
       },
       {
-        "name": "superpowers",
-        "owner": "obra",
-        "stars": 120771,
-        "stars_this_week": 17608,
-        "language": "Shell",
-        "url": "https://github.com/obra/superpowers",
-        "description_zh": "Agent 技能框架与软件开发方法论"
+        "name": "paperclip",
+        "owner": "paperclipai",
+        "full_name": "paperclipai/paperclip",
+        "description": "Open-source orchestration for zero-human companies",
+        "stars": 42161,
+        "stars_this_week": 42161,
+        "language": "TypeScript",
+        "url": "https://github.com/paperclipai/paperclip",
+        "category": "agent-framework"
+      },
+      {
+        "name": "antigravity-awesome-skills",
+        "owner": "sickn33",
+        "full_name": "sickn33/antigravity-awesome-skills",
+        "description": "Installable GitHub library of 1,340+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill coll",
+        "stars": 29287,
+        "stars_this_week": 29287,
+        "language": "Python",
+        "url": "https://github.com/sickn33/antigravity-awesome-skills",
+        "category": "agent-framework"
+      },
+      {
+        "name": "agent-browser",
+        "owner": "vercel-labs",
+        "full_name": "vercel-labs/agent-browser",
+        "description": "Browser automation CLI for AI agents",
+        "stars": 25963,
+        "stars_this_week": 25963,
+        "language": "Rust",
+        "url": "https://github.com/vercel-labs/agent-browser",
+        "category": "agent-framework"
+      },
+      {
+        "name": "CLI-Anything",
+        "owner": "HKUDS",
+        "full_name": "HKUDS/CLI-Anything",
+        "description": "CLI-Anything: Making ALL Software Agent-Native",
+        "stars": 25560,
+        "stars_this_week": 25560,
+        "language": "Python",
+        "url": "https://github.com/HKUDS/CLI-Anything",
+        "category": "agent-framework"
+      },
+      {
+        "name": "cli",
+        "owner": "googleworkspace",
+        "full_name": "googleworkspace/cli",
+        "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
+        "stars": 23323,
+        "stars_this_week": 23323,
+        "language": "Rust",
+        "url": "https://github.com/googleworkspace/cli",
+        "category": "agent-framework"
+      },
+      {
+        "name": "OpenViking",
+        "owner": "volcengine",
+        "full_name": "volcengine/OpenViking",
+        "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need throu",
+        "stars": 20234,
+        "stars_this_week": 20234,
+        "language": "Python",
+        "url": "https://github.com/volcengine/OpenViking",
+        "category": "agent-framework"
+      },
+      {
+        "name": "oh-my-claudecode",
+        "owner": "Yeachan-Heo",
+        "full_name": "Yeachan-Heo/oh-my-claudecode",
+        "description": "Teams-first Multi-agent orchestration for Claude Code",
+        "stars": 18357,
+        "stars_this_week": 18357,
+        "language": "TypeScript",
+        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+        "category": "agent-framework"
+      },
+      {
+        "name": "marketingskills",
+        "owner": "coreyhaines31",
+        "full_name": "coreyhaines31/marketingskills",
+        "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+        "stars": 17825,
+        "stars_this_week": 17825,
+        "language": "JavaScript",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "category": "agent-framework"
       },
       {
         "name": "last30days-skill",
         "owner": "mvanhorn",
-        "stars": 14096,
-        "stars_this_week": 9091,
+        "full_name": "mvanhorn/last30days-skill",
+        "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+        "stars": 16791,
+        "stars_this_week": 16791,
         "language": "Python",
         "url": "https://github.com/mvanhorn/last30days-skill",
-        "description_zh": "跨平台 30 天话题研究 Agent 技能"
+        "category": "agent-framework"
       },
       {
-        "name": "ruflo",
-        "owner": "ruvnet",
-        "stars": 27959,
-        "stars_this_week": 5646,
-        "language": "TypeScript",
-        "url": "https://github.com/ruvnet/ruflo",
-        "description_zh": "Claude 多 Agent 编排平台"
-      },
-      {
-        "name": "hermes-agent",
-        "owner": "NousResearch",
-        "stars": 15375,
-        "stars_this_week": 5382,
-        "language": "Python",
-        "url": "https://github.com/NousResearch/hermes-agent",
-        "description_zh": "NousResearch：随你成长的 Agent"
-      },
-      {
-        "name": "awesome-claude-code",
-        "owner": "hesreallyhim",
-        "stars": 33673,
-        "stars_this_week": 3980,
-        "language": "Python",
-        "url": "https://github.com/hesreallyhim/awesome-claude-code",
-        "description_zh": "Claude Code 精选资源汇总"
-      },
-      {
-        "name": "browser-use",
-        "owner": "browser-use",
-        "stars": 84856,
-        "stars_this_week": 3204,
-        "language": "Python",
-        "url": "https://github.com/browser-use/browser-use",
-        "description_zh": "让网站对 AI Agent 可访问"
-      }
-    ],
-    "data-infra": [
-      {
-        "name": "supermemory",
-        "owner": "supermemoryai",
-        "stars": 20134,
-        "stars_this_week": 3029,
-        "language": "TypeScript",
-        "url": "https://github.com/supermemoryai/supermemory",
-        "description_zh": "AI 时代的记忆 API：极速可扩展记忆引擎"
-      },
-      {
-        "name": "claude-subconscious",
-        "owner": "letta-ai",
-        "stars": 2128,
-        "stars_this_week": 1112,
-        "language": "TypeScript",
-        "url": "https://github.com/letta-ai/claude-subconscious",
-        "description_zh": "给 Claude Code 加上潜意识层"
-      }
-    ],
-    "coding-tools": [
-      {
-        "name": "learn-claude-code",
-        "owner": "shareAI-lab",
-        "stars": 41774,
-        "stars_this_week": 6588,
-        "language": "TypeScript",
-        "url": "https://github.com/shareAI-lab/learn-claude-code",
-        "description_zh": "从零构建类 Claude Code 极简 Agent harness"
+        "name": "openfang",
+        "owner": "RightNow-AI",
+        "full_name": "RightNow-AI/openfang",
+        "description": "Open-source Agent Operating System",
+        "stars": 16003,
+        "stars_this_week": 16003,
+        "language": "Rust",
+        "url": "https://github.com/RightNow-AI/openfang",
+        "category": "agent-framework"
       },
       {
         "name": "claude-hud",
         "owner": "jarrodwatts",
-        "stars": 14674,
-        "stars_this_week": 4505,
+        "full_name": "jarrodwatts/claude-hud",
+        "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+        "stars": 15682,
+        "stars_this_week": 15682,
         "language": "JavaScript",
         "url": "https://github.com/jarrodwatts/claude-hud",
-        "description_zh": "Claude Code 实时 HUD 插件"
+        "category": "agent-framework"
       },
       {
-        "name": "cc-switch",
-        "owner": "farion1231",
-        "stars": 34834,
-        "stars_this_week": 3517,
-        "language": "Rust",
-        "url": "https://github.com/farion1231/cc-switch",
-        "description_zh": "跨平台 All-in-One 编码助手管理器"
-      },
-      {
-        "name": "next-ai-draw-io",
-        "owner": "DayuanJiang",
-        "stars": 25276,
-        "stars_this_week": 1492,
-        "language": "TypeScript",
-        "url": "https://github.com/DayuanJiang/next-ai-draw-io",
-        "description_zh": "AI + draw.io：自然语言画图"
-      },
-      {
-        "name": "codex",
+        "name": "symphony",
         "owner": "openai",
-        "stars": 68155,
-        "stars_this_week": 1484,
-        "language": "Rust",
-        "url": "https://github.com/openai/codex",
-        "description_zh": "OpenAI 终端轻量编码 Agent"
+        "full_name": "openai/symphony",
+        "description": "Symphony turns project work into isolated, autonomous implementation runs, allowing teams to manage work instead of supervising coding agents.",
+        "stars": 14331,
+        "stars_this_week": 14331,
+        "language": "Elixir",
+        "url": "https://github.com/openai/symphony",
+        "category": "agent-framework"
       },
       {
-        "name": "chrome-devtools-mcp",
-        "owner": "ChromeDevTools",
-        "stars": 32079,
-        "stars_this_week": 1459,
+        "name": "pua",
+        "owner": "tanweai",
+        "full_name": "tanweai/pua",
+        "description": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.",
+        "stars": 14157,
+        "stars_this_week": 14157,
         "language": "TypeScript",
-        "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-        "description_zh": "Chrome DevTools MCP 服务"
+        "url": "https://github.com/tanweai/pua",
+        "category": "agent-framework"
+      },
+      {
+        "name": "Agent-Reach",
+        "owner": "Panniantong",
+        "full_name": "Panniantong/Agent-Reach",
+        "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+        "stars": 14112,
+        "stars_this_week": 14112,
+        "language": "Python",
+        "url": "https://github.com/Panniantong/Agent-Reach",
+        "category": "agent-framework"
+      }
+    ],
+    "coding-tools": [
+      {
+        "name": "gstack",
+        "owner": "garrytan",
+        "full_name": "garrytan/gstack",
+        "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+        "stars": 59147,
+        "stars_this_week": 59147,
+        "language": "TypeScript",
+        "url": "https://github.com/garrytan/gstack",
+        "category": "coding-tools"
+      },
+      {
+        "name": "claw-code",
+        "owner": "instructkr",
+        "full_name": "instructkr/claw-code",
+        "description": "Better Harness Tools, not merely storing the archive of leaked Claude Code but also make shit things done. Now rewriting in Rust.",
+        "stars": 36857,
+        "stars_this_week": 36857,
+        "language": "Python",
+        "url": "https://github.com/instructkr/claw-code",
+        "category": "coding-tools"
+      },
+      {
+        "name": "llmfit",
+        "owner": "AlexsJones",
+        "full_name": "AlexsJones/llmfit",
+        "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+        "stars": 20390,
+        "stars_this_week": 20390,
+        "language": "Rust",
+        "url": "https://github.com/AlexsJones/llmfit",
+        "category": "coding-tools"
+      },
+      {
+        "name": "NemoClaw",
+        "owner": "NVIDIA",
+        "full_name": "NVIDIA/NemoClaw",
+        "description": "Run OpenClaw more securely inside NVIDIA OpenShell with managed inference",
+        "stars": 17924,
+        "stars_this_week": 17924,
+        "language": "JavaScript",
+        "url": "https://github.com/NVIDIA/NemoClaw",
+        "category": "coding-tools"
       }
     ],
     "finance-trading": [
       {
-        "name": "TradingAgents",
-        "owner": "TauricResearch",
-        "stars": 43369,
-        "stars_this_week": 8220,
+        "name": "daily_stock_analysis",
+        "owner": "ZhuLinsen",
+        "full_name": "ZhuLinsen/daily_stock_analysis",
+        "description": "LLM驱动的 A/H/美股智能分析器：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
+        "stars": 27323,
+        "stars_this_week": 27323,
         "language": "Python",
-        "url": "https://github.com/TauricResearch/TradingAgents",
-        "description_zh": "多 Agent LLM 金融交易框架"
-      },
-      {
-        "name": "TradingAgents-CN",
-        "owner": "hsliuping",
-        "stars": 21946,
-        "stars_this_week": 2657,
-        "language": "Python",
-        "url": "https://github.com/hsliuping/TradingAgents-CN",
-        "description_zh": "TradingAgents 中文增强版"
-      },
-      {
-        "name": "dexter",
-        "owner": "virattt",
-        "stars": 20200,
-        "stars_this_week": 1962,
-        "language": "TypeScript",
-        "url": "https://github.com/virattt/dexter",
-        "description_zh": "自主 Agent 深度金融研究"
-      }
-    ],
-    "content-gen": [
-      {
-        "name": "MoneyPrinterV2",
-        "owner": "FujiwaraChoki",
-        "stars": 26996,
-        "stars_this_week": 10133,
-        "language": "Python",
-        "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
-        "description_zh": "自动化线上赚钱流程"
-      },
-      {
-        "name": "Deep-Live-Cam",
-        "owner": "hacksider",
-        "stars": 84333,
-        "stars_this_week": 3667,
-        "language": "Python",
-        "url": "https://github.com/hacksider/Deep-Live-Cam",
-        "description_zh": "实时换脸+一键视频 deepfake"
-      },
-      {
-        "name": "MoneyPrinterTurbo",
-        "owner": "harry0703",
-        "stars": 53748,
-        "stars_this_week": 3362,
-        "language": "Python",
-        "url": "https://github.com/harry0703/MoneyPrinterTurbo",
-        "description_zh": "AI 一键生成高清短视频"
+        "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+        "category": "finance-trading"
       }
     ],
     "other": [
       {
-        "name": "project-nomad",
-        "owner": "Crosstalk-Solutions",
-        "stars": 19127,
-        "stars_this_week": 13244,
+        "name": "worldmonitor",
+        "owner": "koala73",
+        "full_name": "koala73/worldmonitor",
+        "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+        "stars": 45718,
+        "stars_this_week": 45718,
         "language": "TypeScript",
-        "url": "https://github.com/Crosstalk-Solutions/project-nomad",
-        "description_zh": "离线生存计算机：集成工具/知识/AI 的自包含系统"
+        "url": "https://github.com/koala73/worldmonitor",
+        "category": "other"
       },
       {
-        "name": "minimind",
-        "owner": "jingyaogong",
-        "stars": 44361,
-        "stars_this_week": 2617,
+        "name": "awesome-openclaw-skills",
+        "owner": "VoltAgent",
+        "full_name": "VoltAgent/awesome-openclaw-skills",
+        "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
+        "stars": 43383,
+        "stars_this_week": 43383,
+        "language": "",
+        "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+        "category": "other"
+      },
+      {
+        "name": "nanobot",
+        "owner": "HKUDS",
+        "full_name": "HKUDS/nanobot",
+        "description": "\"🐈 nanobot: The Ultra-Lightweight OpenClaw\"",
+        "stars": 37305,
+        "stars_this_week": 37305,
         "language": "Python",
-        "url": "https://github.com/jingyaogong/minimind",
-        "description_zh": "2 小时从零训练 64M 参数 GPT"
+        "url": "https://github.com/HKUDS/nanobot",
+        "category": "other"
       },
       {
-        "name": "arnis",
-        "owner": "louis-e",
-        "stars": 13798,
-        "stars_this_week": 1822,
-        "language": "Rust",
-        "url": "https://github.com/louis-e/arnis",
-        "description_zh": "在 Minecraft 中高精度生成真实世界地点"
+        "name": "picoclaw",
+        "owner": "sipeed",
+        "full_name": "sipeed/picoclaw",
+        "description": "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity",
+        "stars": 26893,
+        "stars_this_week": 26893,
+        "language": "Go",
+        "url": "https://github.com/sipeed/picoclaw",
+        "category": "other"
       },
       {
-        "name": "twenty",
-        "owner": "twentyhq",
-        "stars": 42429,
-        "stars_this_week": 1734,
+        "name": "nanoclaw",
+        "owner": "qwibitai",
+        "full_name": "qwibitai/nanoclaw",
+        "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs direct",
+        "stars": 26082,
+        "stars_this_week": 26082,
         "language": "TypeScript",
-        "url": "https://github.com/twentyhq/twenty",
-        "description_zh": "现代 Salesforce 替代品"
+        "url": "https://github.com/qwibitai/nanoclaw",
+        "category": "other"
+      },
+      {
+        "name": "pretext",
+        "owner": "chenglou",
+        "full_name": "chenglou/pretext",
+        "description": "",
+        "stars": 25954,
+        "stars_this_week": 25954,
+        "language": "TypeScript",
+        "url": "https://github.com/chenglou/pretext",
+        "category": "other"
+      },
+      {
+        "name": "rtk",
+        "owner": "rtk-ai",
+        "full_name": "rtk-ai/rtk",
+        "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+        "stars": 16000,
+        "stars_this_week": 16000,
+        "language": "Rust",
+        "url": "https://github.com/rtk-ai/rtk",
+        "category": "other"
+      },
+      {
+        "name": "awesome-ai-research-writing",
+        "owner": "Leey21",
+        "full_name": "Leey21/awesome-ai-research-writing",
+        "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
+        "stars": 15004,
+        "stars_this_week": 15004,
+        "language": "",
+        "url": "https://github.com/Leey21/awesome-ai-research-writing",
+        "category": "other"
+      },
+      {
+        "name": "voicebox",
+        "owner": "jamiepine",
+        "full_name": "jamiepine/voicebox",
+        "description": "The open-source voice synthesis studio",
+        "stars": 14350,
+        "stars_this_week": 14350,
+        "language": "TypeScript",
+        "url": "https://github.com/jamiepine/voicebox",
+        "category": "other"
       }
-    ]
-  },
-  "summary": {
-    "headline": "截至 2026-03-29（周日），本周共收录 26 个项目（周增 ≥1,000 star）",
-    "total_projects": 26,
-    "total_stars_this_week": 189770,
-    "top3_by_weekly_stars": [
-      { "rank": 1, "name": "everything-claude-code", "owner": "affaan-m", "stars_this_week": 21644, "total_stars": 114708, "category": "Agent 框架", "one_liner": "Claude Code 生态最全性能优化 harness" },
-      { "rank": 2, "name": "deer-flow", "owner": "bytedance", "stars_this_week": 18872, "total_stars": 51265, "category": "Agent 框架", "one_liner": "字节开源 SuperAgent，集成沙箱/记忆/工具/子Agent" },
-      { "rank": 3, "name": "superpowers", "owner": "obra", "stars_this_week": 17608, "total_stars": 120771, "category": "Agent 框架", "one_liner": "实战验证的 Agent 技能框架与开发方法论" }
-    ],
-    "category_breakdown": [
-      { "category": "🤖 Agent 框架", "count": 8, "pct": "31%", "note": "Claude Code 生态主导，字节 deer-flow 强势入局" },
-      { "category": "💻 编码工具", "count": 6, "pct": "23%", "note": "learn-claude-code、claude-hud、cc-switch 领跑" },
-      { "category": "📊 金融交易", "count": 3, "pct": "12%", "note": "TradingAgents 系列（英文+中文版）+ dexter" },
-      { "category": "🎨 内容生成", "count": 3, "pct": "12%", "note": "MoneyPrinter 系列 + Deep-Live-Cam" },
-      { "category": "🔧 数据基础设施", "count": 2, "pct": "8%", "note": "supermemory 记忆引擎 + claude-subconscious" },
-      { "category": "📦 其他", "count": 4, "pct": "15%", "note": "project-nomad（离线AI）、minimind（LLM教学）等" }
-    ],
-    "key_trends": [
-      "Agent 生态持续爆发：Claude Code 相关项目占据半壁江山，everything-claude-code 总星 11.4 万",
-      "金融 Agent 热度不减：TradingAgents (+8,220) 和中文版 (+2,657) 同时上榜，dexter 也获近 2k 周增",
-      "字节 deer-flow 一周 +18,872，SuperAgent harness 方向获市场验证",
-      "离线/生存类 AI 系统走红：project-nomad +13,244 反映 AI-in-a-box 需求",
-      "开发工具分化加速：cc-switch 做统一入口，chrome-devtools-mcp 做浏览器桥接，各自破千"
     ]
   }
 }
