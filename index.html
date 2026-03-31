@@ -913,6 +913,36 @@
       font-size: 11px; font-weight: 500; white-space: nowrap;
     }
 
+    /* ── Voices Tab Bar ── */
+    .voices-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      grid-column: 1 / -1;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+    .voices-tab {
+      padding: 8px 18px;
+      border-radius: 8px 8px 0 0;
+      border: 1px solid transparent;
+      border-bottom: none;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      background: transparent;
+      transition: all .15s;
+      margin-bottom: -1px;
+    }
+    .voices-tab:hover { color: var(--text); }
+    .voices-tab.active {
+      color: var(--accent);
+      background: var(--card);
+      border-color: var(--border);
+      border-bottom-color: var(--card);
+    }
+
     /* ── YouTubers Cards ── */
     .yt-card {
       background: #FFFFFF;
@@ -1125,6 +1155,66 @@
       flex-shrink: 0;
     }
     .yt-quiet-name { white-space: nowrap; }
+
+    /* ── X 博主卡片 ── */
+    .x-card {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--x-cat-color, var(--accent));
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      align-self: start;
+    }
+    .x-card:hover {
+      border-color: var(--x-cat-color, var(--accent));
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    }
+    .x-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .x-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .x-avatar-fallback {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .x-card-info { flex: 1; min-width: 0; }
+    .x-name { font-size: 14px; font-weight: 700; color: var(--text); margin: 0 0 2px; }
+    .x-handle {
+      font-size: 12px; color: var(--accent);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .x-followers { font-size: 11px; color: var(--muted); }
+    .x-focus-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+    .x-focus-tag {
+      font-size: 10px; padding: 2px 7px;
+      border-radius: 10px; border: 1px solid;
+      white-space: nowrap;
+    }
+    .x-desc { font-size: 12px; color: var(--muted); line-height: 1.5; margin: 0; }
+    .x-latest { border-top: 1px solid var(--border); padding-top: 10px; }
+    .x-latest-label { font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+    .x-post-item { font-size: 12px; color: var(--text); line-height: 1.5; margin-bottom: 6px; }
+    .x-post-meta { font-size: 11px; color: var(--muted); }
+    .x-profile-link {
+      font-size: 12px; font-weight: 600;
+      color: var(--x-cat-color, var(--accent));
+      text-decoration: none; margin-top: auto;
+    }
+    .x-profile-link:hover { text-decoration: underline; }
 
     /* ── 代表作 badge ── */
     .yt-video-pinned { background: var(--bg-3); border-radius: 6px; padding: 10px 12px; margin: 0 -12px; }
@@ -1979,9 +2069,9 @@ async function selectSector(id) {
     return;
   }
 
-  if (sector.topic === 'youtubers') {
-    document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}YouTubers`;
-    await renderYoutubers();
+  if (sector.topic === 'voices') {
+    document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}Voices`;
+    await renderVoices();
     return;
   }
 
@@ -3014,68 +3104,145 @@ function renderPaperCard(p) {
     </div>`;
 }
 
-// ── YouTubers ──
+// ── Voices（X + YouTube + 播客） ──
 let ytData = null;
+let xData = null;
+let voicesActiveTab = 'youtube'; // 默认 tab
 
 async function loadYoutubers() {
   if (ytData) return ytData;
-  try {
-    ytData = await fetchJSON('data/youtubers.json');
-    return ytData;
-  } catch(e) { return null; }
+  try { ytData = await fetchJSON('data/youtubers.json'); return ytData; }
+  catch(e) { return null; }
 }
 
-async function renderYoutubers() {
+async function loadXAccounts() {
+  if (xData) return xData;
+  try { xData = await fetchJSON('data/voices_x.json'); return xData; }
+  catch(e) { return null; }
+}
+
+async function renderVoices(tab) {
+  if (tab) voicesActiveTab = tab;
   const grid = document.getElementById('card-grid');
   grid.style.display = 'grid';
   grid.classList.add('yt-grid');
   grid.innerHTML = '<div class="loading">加载中…</div>';
 
-  const data = await loadYoutubers();
-  if (!data) { grid.innerHTML = '<div class="loading">暂无数据</div>'; return; }
+  // Tab bar HTML
+  const tabs = [
+    { id: 'youtube', label: '📺 YouTube' },
+    { id: 'x',       label: '𝕏 X / Twitter' },
+    { id: 'podcast', label: '🎙️ 播客' },
+  ];
+  const tabBar = `<div class="voices-tabs" style="grid-column:1/-1">
+    ${tabs.map(t => `<button class="voices-tab${voicesActiveTab===t.id?' active':''}"
+      onclick="renderVoices('${t.id}')">${t.label}</button>`).join('')}
+  </div>`;
 
-  // 分组：有内容的（有本周视频 OR 有代表作 pinned_videos）vs 完全无内容的
-  const withVideos = data.channels.filter(ch =>
-    (ch.latest_videos && ch.latest_videos.length > 0) ||
-    (ch.pinned_videos && ch.pinned_videos.length > 0)
-  );
-  const noVideos = data.channels.filter(ch =>
-    (!ch.latest_videos || ch.latest_videos.length === 0) &&
-    (!ch.pinned_videos || ch.pinned_videos.length === 0)
-  );
+  if (voicesActiveTab === 'youtube') {
+    const data = await loadYoutubers();
+    if (!data) { grid.innerHTML = tabBar + '<div class="loading">暂无数据</div>'; return; }
+    const withVideos = data.channels.filter(ch =>
+      (ch.latest_videos && ch.latest_videos.length > 0) ||
+      (ch.pinned_videos && ch.pinned_videos.length > 0)
+    );
+    const noVideos = data.channels.filter(ch =>
+      (!ch.latest_videos || ch.latest_videos.length === 0) &&
+      (!ch.pinned_videos || ch.pinned_videos.length === 0)
+    );
+    document.getElementById('sector-subtitle').innerHTML =
+      `${withVideos.length} 位本周有更新 · ${noVideos.length} 位暂无新内容 · ${data.updated_at}`;
+    let html = tabBar;
+    if (withVideos.length) {
+      html += `<div class="gh-category-header" style="grid-column:1/-1">
+        <span class="gh-cat-icon">🎬</span>
+        <span class="gh-cat-name">本周有更新</span>
+        <span class="gh-cat-count">${withVideos.length} 位博主</span>
+      </div>`;
+      withVideos.forEach(ch => { html += renderYtChannelCard(ch); });
+    }
+    if (noVideos.length) {
+      const quietList = noVideos.map(ch => `
+        <a href="${ch.url}" target="_blank" rel="noopener" class="yt-quiet-item">
+          <img class="yt-quiet-avatar" src="${ch.avatar_url}" alt="${ch.name}"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="yt-quiet-avatar-fallback" style="background:${ch.category_color||'#94A3B8'}">${ch.name[0]}</div>
+          <span class="yt-quiet-name">${ch.name}</span>
+        </a>`).join('');
+      html += `<div class="yt-quiet-section" style="grid-column:1/-1">
+        <div class="yt-quiet-label">🔇 本周暂无更新</div>
+        <div class="yt-quiet-list">${quietList}</div>
+      </div>`;
+    }
+    grid.innerHTML = html;
 
-  document.getElementById('sector-subtitle').innerHTML =
-    `${withVideos.length} 位本周有更新 · ${noVideos.length} 位暂无新内容 · ${data.updated_at}`;
+  } else if (voicesActiveTab === 'x') {
+    const data = await loadXAccounts();
+    if (!data) { grid.innerHTML = tabBar + '<div class="loading">暂无数据</div>'; return; }
+    document.getElementById('sector-subtitle').innerHTML =
+      `${data.accounts.length} 位博主 · ${data.updated_at}`;
+    // 按 category 分组
+    const cats = {};
+    data.accounts.forEach(a => {
+      if (!cats[a.category]) cats[a.category] = [];
+      cats[a.category].push(a);
+    });
+    let html = tabBar;
+    Object.entries(cats).forEach(([cat, accounts]) => {
+      const catColor = accounts[0].category_color || '#94A3B8';
+      html += `<div class="gh-category-header" style="grid-column:1/-1">
+        <span class="gh-cat-icon">𝕏</span>
+        <span class="gh-cat-name">${cat}</span>
+        <span class="gh-cat-count">${accounts.length} 位</span>
+      </div>`;
+      accounts.forEach(a => { html += renderXCard(a); });
+    });
+    grid.innerHTML = html;
 
-  let html = '';
-
-  // ── 有视频的卡片 ──
-  if (withVideos.length) {
-    html += `<div class="gh-category-header" style="grid-column:1/-1">
-      <span class="gh-cat-icon">🎬</span>
-      <span class="gh-cat-name">本周有更新</span>
-      <span class="gh-cat-count">${withVideos.length} 位博主</span>
+  } else if (voicesActiveTab === 'podcast') {
+    document.getElementById('sector-subtitle').innerHTML = '即将上线';
+    grid.innerHTML = tabBar + `<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);font-size:14px">
+      🎙️ 播客栏目即将上线<br><br>
+      <span style="font-size:12px">计划收录：Lex Fridman Podcast、Dwarkesh Podcast、No Priors、The MAD Podcast 等</span>
     </div>`;
-    withVideos.forEach(ch => { html += renderYtChannelCard(ch); });
   }
+}
 
-  // ── 无视频的：简洁横向列表，不占卡片空间 ──
-  if (noVideos.length) {
-    const quietList = noVideos.map(ch => `
-      <a href="${ch.url}" target="_blank" rel="noopener" class="yt-quiet-item">
-        <img class="yt-quiet-avatar" src="${ch.avatar_url}" alt="${ch.name}"
+
+
+function renderXCard(a) {
+  const catColor = a.category_color || '#94A3B8';
+  const focusTags = (a.focus || []).map(f =>
+    `<span class="x-focus-tag" style="border-color:${catColor}33;color:${catColor}">${f}</span>`
+  ).join('');
+  const posts = (a.latest_posts || []).slice(0, 1);
+  const postSection = posts.length ? `
+    <div class="x-latest">
+      <div class="x-latest-label">🔁 最新动态</div>
+      ${posts.map(p => `
+        <div class="x-post-item">${p.text}</div>
+        <div class="x-post-meta">${p.date || ''}</div>
+      `).join('')}
+    </div>` : '';
+  return `
+    <div class="x-card" style="--x-cat-color:${catColor}">
+      <div class="x-card-top">
+        <img class="x-avatar" src="${a.avatar_url}" alt="${a.name}"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div class="yt-quiet-avatar-fallback" style="background:${ch.category_color||'#94A3B8'}">${ch.name[0]}</div>
-        <span class="yt-quiet-name">${ch.name}</span>
-      </a>`).join('');
-
-    html += `<div class="yt-quiet-section" style="grid-column:1/-1">
-      <div class="yt-quiet-label">🔇 本周暂无更新</div>
-      <div class="yt-quiet-list">${quietList}</div>
+        <div class="x-avatar-fallback" style="display:none;background:${catColor}">${a.name[0]}</div>
+        <div class="x-card-info">
+          <h3 class="x-name">${a.name}</h3>
+          <div class="x-handle">
+            <a href="${a.url}" target="_blank" rel="noopener" style="color:var(--accent)">${a.handle}</a>
+            <span class="x-followers">${a.followers || ''}</span>
+          </div>
+          <div class="x-focus-tags">${focusTags}</div>
+        </div>
+      </div>
+      <p class="x-desc">${a.description}</p>
+      ${postSection}
+      <a class="x-profile-link" href="${a.url}" target="_blank" rel="noopener">𝕏 前往主页</a>
     </div>`;
-  }
-
-  grid.innerHTML = html;
 }
 
 function renderVideoItem(v, isPinned) {
