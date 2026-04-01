@@ -1889,20 +1889,22 @@
       /* ── topbar：左侧嵌入 ☰ 按钮 ── */
       #topbar { padding: 10px 14px; }
       #mobile-topbar-menu {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 34px; height: 34px;
+        width: 36px; height: 36px;
         border-radius: 8px;
         background: var(--bg-3);
         border: 1px solid var(--border);
         cursor: pointer;
-        font-size: 17px;
+        font-size: 18px;
         color: var(--text);
         flex-shrink: 0;
         margin-right: 10px;
+        user-select: none;
       }
-      .topbar-inner { align-items: center; }
+      #sidebar-close-btn { display: flex !important; }
+      .topbar-inner { align-items: center; gap: 0; }
       #sector-title { font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       #sector-subtitle { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; margin-top: 1px; }
 
