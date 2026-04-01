@@ -3209,18 +3209,7 @@ async function renderVoices() {
     ytDataResult.channels.forEach(ch => { html += renderVoiceCard(ch, 'youtube'); });
   }
 
-  // ── Section 2: X / Twitter ──
-  if (xDataResult) {
-    totalCount += xDataResult.accounts.length;
-    html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
-      <span class="gh-cat-icon">𝕏</span>
-      <span class="gh-cat-name">X / Twitter</span>
-      <span class="gh-cat-count">${xDataResult.accounts.length} 位博主</span>
-    </div>`;
-    xDataResult.accounts.forEach(a => { html += renderVoiceCard(a, 'x'); });
-  }
-
-  // ── Section 3: 播客 ──
+  // ── Section 2: 播客 ──
   if (podDataResult) {
     totalCount += podDataResult.shows.length;
     html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
@@ -3231,8 +3220,19 @@ async function renderVoices() {
     podDataResult.shows.forEach(p => { html += renderVoiceCard(p, 'podcast'); });
   }
 
+  // ── Section 3: X / Twitter ──
+  if (xDataResult) {
+    totalCount += xDataResult.accounts.length;
+    html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
+      <span class="gh-cat-icon">𝕏</span>
+      <span class="gh-cat-name">X / Twitter</span>
+      <span class="gh-cat-count">${xDataResult.accounts.length} 位博主</span>
+    </div>`;
+    xDataResult.accounts.forEach(a => { html += renderVoiceCard(a, 'x'); });
+  }
+
   document.getElementById('sector-subtitle').innerHTML =
-    `YouTube · X · 播客 共 ${totalCount} 个 · ${ytDataResult?.updated_at || ''}`;
+    `YouTube · 播客 · X 共 ${totalCount} 个 · ${ytDataResult?.updated_at || ''}`;
   grid.innerHTML = html;
 }
 
