@@ -3196,6 +3196,30 @@ function renderVoiceCard(item, type) {
       ${summaryHtml}
     </div>` : '');
 
+  // 双频道渲染（适用于如硅谷101 & 硅谷101播客）
+  const multiChannelSection = (type === 'youtube' && item.channels && item.channels.length > 0) ? `
+    <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+      ${item.channels.map(ch => {
+        const v = ch.latest_video || {};
+        return `
+          <div style="background:var(--card-bg);border-radius:8px;padding:10px 12px;border:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+              <span style="font-size:11px;font-weight:700;color:${catColor}">${ch.name}</span>
+              ${ch.subscribers ? `<span style="font-size:10px;color:var(--muted)">${ch.subscribers}</span>` : ''}
+              <a href="${ch.url}" target="_blank" rel="noopener"
+                style="margin-left:auto;font-size:10px;color:var(--accent);text-decoration:none">▶ 前往</a>
+            </div>
+            ${v.title ? `
+              <div style="font-size:11px;font-weight:600;color:var(--text);line-height:1.4">
+                <a href="${v.url || '#'}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">${v.title}</a>
+              </div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px">${v.date || ''}</div>
+              ${v.summary ? `<div style="font-size:11px;color:var(--muted);line-height:1.45;margin-top:3px">${v.summary}</div>` : ''}
+            ` : ''}
+          </div>`;
+      }).join('')}
+    </div>` : '';
+
   return `
     <div class="x-card" style="--x-cat-color:${catColor}">
       <div class="x-card-top">
@@ -3209,8 +3233,8 @@ function renderVoiceCard(item, type) {
         </div>
       </div>
       <p class="x-desc">${item.description}</p>
-      ${latestSection}
-      <a class="x-profile-link" href="${item.url}" target="_blank" rel="noopener">${typeCTA}</a>
+      ${multiChannelSection || latestSection}
+      ${multiChannelSection ? '' : `<a class="x-profile-link" href="${item.url}" target="_blank" rel="noopener">${typeCTA}</a>`}
     </div>`;
 }
 
