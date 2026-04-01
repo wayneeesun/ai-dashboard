@@ -28,7 +28,6 @@ COMPANIES = {
     "tencent":    ("700.HK",    95.57, "HKD", 0.128),  # 9,557M shares
     "alibaba":    ("9988.HK",  213.7,  "HKD", 0.128),  # 21,370M shares
     "meituan":    ("3690.HK",  163.7,  "HKD", 0.128),  # 16,370M shares
-    "pdd":        ("PDD.US",    14.2,  "USD", 1.0),    # 1.42B shares
     "baidu":      ("BIDU.US",    3.40, "USD", 1.0),    # 340M shares
     "jd":         ("JD.US",     14.5,  "USD", 1.0),    # 1.45B shares (ADR)
 
