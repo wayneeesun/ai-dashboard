@@ -17,7 +17,14 @@
         "哲学思考"
       ],
       "subscribers": "4.6M",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "#491 — (latest episode)",
+          "url": "https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4",
+          "date": "2026-02-01",
+          "summary": ""
+        }
+      ]
     },
     {
       "id": "mattwolfe",
@@ -34,7 +41,14 @@
         "产品测评"
       ],
       "subscribers": "950K",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "AI News: Anthropic Went Crazy This Week!",
+          "url": "https://www.youtube.com/@mreflow",
+          "date": "2026-03-28",
+          "summary": ""
+        }
+      ]
     },
     {
       "id": "fireship",
@@ -51,7 +65,14 @@
         "速览"
       ],
       "subscribers": "3.1M",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "The unhinged world of tech in 2026...",
+          "url": "https://www.youtube.com/watch?v=EKOU3JWDNLI",
+          "date": "2026-01-14",
+          "summary": ""
+        }
+      ]
     },
     {
       "id": "matthewberman",
@@ -68,7 +89,14 @@
         "AI 应用"
       ],
       "subscribers": "480K",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "Something big is happening...",
+          "url": "https://www.youtube.com/watch?v=31A41ckhb7Q",
+          "date": "2026-02-12",
+          "summary": ""
+        }
+      ]
     },
     {
       "id": "3b1b",
@@ -119,7 +147,14 @@
         "AI 进展"
       ],
       "subscribers": "390K",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "The State of AI - Q2 2026",
+          "url": "https://www.youtube.com/watch?v=LZeMZgJszKU",
+          "date": "2026-03-31",
+          "summary": ""
+        }
+      ]
     },
     {
       "id": "twominutepapers",
@@ -136,7 +171,14 @@
         "研究前沿"
       ],
       "subscribers": "1.5M",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "DeepMind's New AI Just Changed Science Forever",
+          "url": "https://www.youtube.com/@TwoMinutePapers",
+          "date": "2026-03-28",
+          "summary": ""
+        }
+      ]
     },
     {
       "id": "guigu101",
@@ -153,7 +195,14 @@
         "硅谷动态"
       ],
       "subscribers": "409K",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "E230｜1万亿收入预期背后：英伟达的巅峰与软肋",
+          "url": "https://www.youtube.com/watch?v=OpwVpEc6noc",
+          "date": "2026-03-26",
+          "summary": ""
+        }
+      ]
     },
     {
       "id": "davidshapiro",
@@ -170,7 +219,14 @@
         "未来趋势"
       ],
       "subscribers": "189K",
-      "latest_videos": []
+      "latest_videos": [
+        {
+          "title": "AI isn't going how we thought it would",
+          "url": "https://www.youtube.com/@DavidShapiroAI",
+          "date": "2026-03-25",
+          "summary": ""
+        }
+      ]
     }
   ]
 }
