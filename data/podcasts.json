@@ -67,6 +67,28 @@
         "date": "2026-02-03",
         "summary": "Nathan Labenz 与两位嘉宾讨论 AI 与法律交叉领域。AI Agent 在法律实践中的应用、监管框架演变、以及 AI 能力评估在法律场景中的挑战。"
       }
+    },
+    {
+      "id": "whynottv",
+      "name": "WhynotTV Podcast",
+      "handle": "@whynottv1999",
+      "url": "https://www.youtube.com/@whynottv1999",
+      "avatar_url": "https://ui-avatars.com/api/?name=WN&background=1E3A5F&color=fff&size=128&rounded=true&bold=true",
+      "category_color": "#1E3A5F",
+      "description": "深度、专业、硬核的 AI 科技播客，每期 2-4 小时。拆解底层技术细节与商业逻辑，也关照人生智慧与个人成长。嘉宾质量极高。",
+      "focus": [
+        "AI 深度访谈",
+        "技术拆解",
+        "人生智慧"
+      ],
+      "platform": "YouTube / Apple Podcasts / Spotify",
+      "search_query": "WhynotTV Podcast latest episode",
+      "latest_episode": {
+        "title": "翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast #4",
+        "url": "https://www.youtube.com/watch?v=I0DrcsDf3Os",
+        "date": "2026-01-16",
+        "summary": "与 OpenAI 工程师翁家翌的深度对话。从小时候的成长谈到清华、CMU 求学之路，再到加入 OpenAI 做强化学习和后训练 Infra 的工作细节。涵盖开源项目天授、tuixue 的开发背景，以及对 AI 行业和人生选择的思考。播放量 161K，硬核且有深度。"
+      }
     }
   ]
 }
