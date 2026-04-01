@@ -3138,15 +3138,16 @@ function renderVoiceCard(item, type) {
   let latestEp = null;
   if (type === 'youtube') {
     const vids = item.latest_videos || [];
-    if (vids.length > 0) latestEp = { title: vids[0].title, url: vids[0].url, date: vids[0].date };
+    if (vids.length > 0) latestEp = { title: vids[0].title, url: vids[0].url, date: vids[0].date, summary: vids[0].summary || '' };
   } else if (type === 'x') {
     const posts = item.latest_posts || [];
-    if (posts.length > 0) latestEp = { title: posts[0].text, url: item.url, date: posts[0].date };
+    if (posts.length > 0) latestEp = { title: posts[0].text, url: item.url, date: posts[0].date, summary: '' };
   } else if (type === 'podcast') {
     latestEp = item.latest_episode || null;
   }
 
   const typeIcon = type === 'youtube' ? '📺' : type === 'x' ? '𝕏' : '🎙️';
+  const latestLabel = type === 'x' ? '𝕏 近期动态' : (type === 'youtube' ? '📺 最新视频' : '🎙️ 最新一期');
   const typeCTA = type === 'youtube' ? '▶ 前往频道' : type === 'x' ? '𝕏 前往主页' : '🎙️ 前往收听';
   const handle = item.handle || '';
   const subtitle = type === 'podcast'
@@ -3154,13 +3155,16 @@ function renderVoiceCard(item, type) {
     : `<a href="${item.url}" target="_blank" rel="noopener" style="color:var(--accent)">${handle}</a>
        <span class="x-followers">${item.followers || item.subscribers || ''}</span>`;
 
+  const summaryHtml = latestEp && latestEp.summary
+    ? `<div class="x-post-summary" style="margin-top:4px;font-size:12px;color:var(--muted);line-height:1.5">${latestEp.summary}</div>` : '';
+
   const latestSection = latestEp ? `
     <div class="x-latest">
-      <div class="x-latest-label">${typeIcon} 最新一期</div>
-      <div class="x-post-item">
-        <a href="${latestEp.url || '#'}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">${latestEp.title}</a>
-      </div>
+      <div class="x-latest-label">${latestLabel}</div>
+      ${type === 'x' ? `<div class="x-post-item">${latestEp.title}</div>` :
+        `<div class="x-post-item"><a href="${latestEp.url || '#'}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">${latestEp.title}</a></div>`}
       <div class="x-post-meta">${latestEp.date || ''}</div>
+      ${summaryHtml}
     </div>` : '';
 
   return `
