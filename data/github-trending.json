@@ -719,5 +719,43 @@
         "category": "other"
       }
     ]
+  },
+  "summary": {
+    "headline": "本周 Agent 框架集体爆发，开源 AI 工具生态加速成型",
+    "total_projects": 30,
+    "top3_by_weekly_stars": [
+      "instructkr/claw-code",
+      "karpathy/autoresearch",
+      "openai/symphony"
+    ],
+    "category_breakdown": [
+      {
+        "category": "🤖 Agent 框架",
+        "count": 16,
+        "pct": "53%"
+      },
+      {
+        "category": "💻 编码工具",
+        "count": 4,
+        "pct": "13%"
+      },
+      {
+        "category": "📊 金融 & 交易",
+        "count": 1,
+        "pct": "3%"
+      },
+      {
+        "category": "📦 其他",
+        "count": 9,
+        "pct": "30%"
+      }
+    ],
+    "key_trends": [
+      "Claude Code 生态爆发：skills、HUD、多 agent 编排",
+      "Karpathy autoresearch 引发 AI 自主研究热潮",
+      "OpenAI Symphony：项目级 agent 隔离编排",
+      "OpenClaw 衍生项目密集上榜（NemoClaw、picoclaw、nanoclaw）",
+      "中文开发者活跃：PUA 讽刺项目、A股分析器上榜"
+    ]
   }
 }
