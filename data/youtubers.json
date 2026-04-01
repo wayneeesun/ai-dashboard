@@ -99,40 +99,6 @@
       ]
     },
     {
-      "id": "3b1b",
-      "name": "3Blue1Brown",
-      "handle": "@3blue1brown",
-      "url": "https://www.youtube.com/@3blue1brown",
-      "avatar_url": "https://ui-avatars.com/api/?name=3B1B&background=3B82F6&color=fff&size=128&rounded=true&bold=true",
-      "category": "技术深度",
-      "category_color": "#1D4ED8",
-      "description": "数学动画大神 Grant Sanderson，神经网络、Transformer 原理用动画讲得极度清晰。不追热点，只做经典内容。",
-      "focus": [
-        "数学直觉",
-        "神经网络",
-        "可视化"
-      ],
-      "subscribers": "6.8M",
-      "latest_videos": []
-    },
-    {
-      "id": "yannic",
-      "name": "Yannic Kilcher",
-      "handle": "@YannicKilcher",
-      "url": "https://www.youtube.com/@YannicKilcher",
-      "avatar_url": "https://ui-avatars.com/api/?name=YK&background=7C3AED&color=fff&size=128&rounded=true&bold=true",
-      "category": "技术深度",
-      "category_color": "#6D28D9",
-      "description": "论文精读频道，GPT、RLHF、Diffusion 等重要论文深度解析，AI 研究圈自己在看的频道。",
-      "focus": [
-        "论文精读",
-        "ML 研究",
-        "技术分析"
-      ],
-      "subscribers": "220K",
-      "latest_videos": []
-    },
-    {
       "id": "aiexplained",
       "name": "AI Explained",
       "handle": "@aiexplained-official",
