@@ -1834,9 +1834,132 @@
       color: var(--text-dim);
       font-size: 13px;
     }
+
+    /* ═══════════════════════════════════════
+       MOBILE RESPONSIVE  ≤768px
+       ═══════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* ── 侧边栏：默认隐藏，overlay 弹出 ── */
+      #sidebar {
+        position: fixed;
+        top: 0; left: 0;
+        height: 100%;
+        z-index: 200;
+        transform: translateX(-100%);
+        transition: transform 0.26s cubic-bezier(0.4,0,0.2,1);
+        width: 220px !important;
+        min-width: 220px !important;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.18);
+      }
+      #sidebar.mobile-open {
+        transform: translateX(0);
+      }
+      /* 遮罩层 */
+      #mobile-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.36);
+        z-index: 199;
+      }
+      #mobile-overlay.active { display: block; }
+
+      /* ── 汉堡按钮 ── */
+      #mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 12px; left: 12px;
+        z-index: 201;
+        width: 36px; height: 36px;
+        border-radius: 8px;
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        font-size: 18px;
+        color: var(--text);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      }
+
+      /* ── 桌面版 sidebar-toggle 隐藏 ── */
+      #sidebar-toggle { display: none; }
+
+      /* ── 主内容区占满全屏 ── */
+      #main { width: 100%; }
+
+      /* ── topbar ── */
+      #topbar { padding: 10px 14px 10px 58px; }
+      #sector-title { font-size: 17px; }
+      #sector-subtitle { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100vw - 70px); display: block; margin-top: 2px; }
+
+      /* ── card-grid 全宽，单列 ── */
+      #card-grid {
+        padding: 14px 12px 24px;
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+      }
+      #card-grid.yt-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* ── 公司卡片 ── */
+      .company-card { padding: 16px; }
+      .card-metrics { grid-template-columns: 1fr 1fr; } /* 保持 2×2 */
+      .metric { padding: 7px 9px; }
+      .metric-value { font-size: 12px; }
+      .metric-label { font-size: 10px; }
+      .card-desc { font-size: 12px; line-height: 1.55; -webkit-line-clamp: 3; }
+
+      /* ── GitHub Trend：Summary Banner ── */
+      .gh-summary-banner { padding: 16px; }
+      .gh-summary-top3 { flex-direction: column; gap: 10px; }
+      .gh-top3-item { min-width: unset; width: 100%; }
+      .gh-summary-cats { gap: 6px; }
+      .gh-cat-pill { font-size: 11px; padding: 4px 9px; }
+      .gh-summary-trends { gap: 6px; }
+      .gh-trend-tag { font-size: 11px; }
+      .gh-category-header { padding: 8px 12px; }
+
+      /* GH 卡片 footer stats 缩小 */
+      .gh-stat-label { font-size: 9px; }
+      .gh-stat-value { font-size: 14px; }
+
+      /* ── Voices (YT / 播客 / X) ── */
+      .voices-tabs { padding: 0 12px; gap: 6px; }
+      .voices-tab { font-size: 12px; padding: 6px 12px; }
+      .x-card, .yt-card { padding: 14px; }
+      .x-handle { font-size: 12px; }
+      .x-summary-block { font-size: 12px; }
+      .x-highlight { font-size: 12px; }
+
+      /* ── 论文卡片 ── */
+      .paper-card { padding: 14px; }
+      .paper-title { font-size: 13px; }
+      .paper-breakthrough { font-size: 12px; }
+      .paper-trends-label { font-size: 11px; padding: 8px 12px; }
+
+      /* ── Lab Feed ── */
+      .lab-feed-grid { grid-template-columns: 1fr !important; }
+      .lab-card { padding: 14px; }
+      .lab-post { padding: 10px 12px; }
+
+      /* ── 全局 detail overlay ── */
+      .detail-overlay { padding: 16px !important; }
+      .detail-content { padding: 16px !important; max-height: 80vh; overflow-y: auto; }
+    }
+
+    /* 汉堡按钮桌面端隐藏 */
+    #mobile-menu-btn { display: none; }
   </style>
 </head>
 <body>
+
+<!-- 移动端遮罩 -->
+<div id="mobile-overlay" onclick="closeMobileSidebar()"></div>
+<!-- 移动端汉堡按钮 -->
+<div id="mobile-menu-btn" onclick="openMobileSidebar()">☰</div>
 
 <!-- ── Sidebar ── -->
 <nav id="sidebar">
@@ -2574,7 +2697,7 @@ async function renderGithubTrending() {
     return;
   }
 
-  document.getElementById('sector-subtitle').innerHTML = `${data.projects.length} 个项目 · ${data.period === 'weekly' ? '本周' : data.period} · 更新于 ${data.updated_at} · <a href="${data.source || 'https://github.com/trending?since=weekly'}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">Source: ${data.source_label || 'GitHub Trending'} ↗</a>`;
+  document.getElementById('sector-subtitle').innerHTML = `${data.projects.length} 个项目 · 更新于 ${data.updated_at} · <a href="${data.source || 'https://github.com/trending?since=weekly'}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">Source: ${data.source_label || 'GitHub Trending'} ↗</a>`;
 
   // Group by category
   const catMap = {};
@@ -2966,13 +3089,32 @@ function switchTab(el, tabId) {
   document.getElementById(tabId).classList.add('active');
 }
 
-// Sidebar toggle
+// Sidebar toggle (desktop)
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const btn = document.getElementById('sidebar-toggle');
   const collapsed = sidebar.classList.toggle('collapsed');
   btn.textContent = collapsed ? '▶' : '◀';
   btn.title = collapsed ? '展开侧边栏' : '收缩侧边栏';
+}
+
+// Mobile sidebar
+function openMobileSidebar() {
+  document.getElementById('sidebar').classList.add('mobile-open');
+  document.getElementById('mobile-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileSidebar() {
+  document.getElementById('sidebar').classList.remove('mobile-open');
+  document.getElementById('mobile-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+// 移动端点导航项后自动收起侧边栏
+if (window.matchMedia('(max-width: 768px)').matches) {
+  document.addEventListener('click', function(e) {
+    const navItem = e.target.closest('.nav-item');
+    if (navItem) closeMobileSidebar();
+  });
 }
 
 // ── Papers ──
