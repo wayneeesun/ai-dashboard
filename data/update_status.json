@@ -3,27 +3,27 @@
     "us-internet": {
       "last_updated": "2026-04-01",
       "status": "ok",
-      "note": "市值已更新"
+      "note": ""
     },
     "cn-internet": {
       "last_updated": "2026-04-01",
       "status": "ok",
-      "note": "市值已更新"
+      "note": ""
     },
     "semiconductor": {
       "last_updated": "2026-04-01",
       "status": "ok",
-      "note": "市值已更新"
+      "note": ""
     },
     "software": {
       "last_updated": "2026-04-01",
       "status": "ok",
-      "note": "市值已更新"
+      "note": ""
     },
     "ai-native": {
       "last_updated": "2026-04-01",
       "status": "ok",
-      "note": "市值已更新"
+      "note": ""
     },
     "github-trend": {
       "last_updated": "2026-04-01",
@@ -38,7 +38,11 @@
     "paper-reading": {
       "last_updated": "2026-04-01",
       "status": "ok",
-      "note": "论文数据已更新（15篇）"
+      "note": ""
     }
+  },
+  "companies": {
+    "last_updated": "2026-04-01",
+    "news": []
   }
 }
