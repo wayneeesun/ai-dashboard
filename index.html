@@ -3136,12 +3136,41 @@ function renderVoiceCard(item, type) {
 
   // 获取最新一期内容
   let latestEp = null;
+  let xSummaryBlock = '';
   if (type === 'youtube') {
     const vids = item.latest_videos || [];
     if (vids.length > 0) latestEp = { title: vids[0].title, url: vids[0].url, date: vids[0].date, summary: vids[0].summary || '' };
   } else if (type === 'x') {
-    const posts = item.latest_posts || [];
-    if (posts.length > 0) latestEp = { title: posts[0].text, url: item.url, date: posts[0].date, summary: '' };
+    const lp = item.latest_posts || {};
+    // 新格式：latest_posts 是 dict，含 summary / post_count / has_update / highlights
+    if (lp && typeof lp === 'object' && !Array.isArray(lp) && lp.summary) {
+      const statusDot = lp.has_update
+        ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:6px"></span>'
+        : '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#94a3b8;margin-right:6px"></span>';
+      const statusText = lp.has_update ? `发了 ${lp.post_count} 帖子` : '没有更新';
+      let highlightsHtml = '';
+      if (lp.highlights && lp.highlights.length > 0) {
+        highlightsHtml = lp.highlights.map(h =>
+          `<div style="margin-top:6px;padding:6px 8px;background:var(--card-bg);border-left:3px solid var(--accent);border-radius:4px">
+            <span style="font-size:10px;color:var(--accent);font-weight:600">${h.type || ''}</span>
+            <div style="font-size:12px;font-weight:600;margin-top:2px">${h.title}</div>
+            ${h.note ? `<div style="font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4">${h.note}</div>` : ''}
+          </div>`
+        ).join('');
+      }
+      xSummaryBlock = `
+        <div class="x-latest">
+          <div class="x-latest-label" style="display:flex;align-items:center">
+            ${statusDot}𝕏 近 3 天动态 · ${statusText}
+          </div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5;margin-top:4px">${lp.summary}</div>
+          ${highlightsHtml}
+          <div class="x-post-meta" style="margin-top:6px">${lp.date || ''}</div>
+        </div>`;
+    } else if (Array.isArray(lp) && lp.length > 0) {
+      // 兼容旧格式
+      latestEp = { title: lp[0].text, url: item.url, date: lp[0].date, summary: '' };
+    }
   } else if (type === 'podcast') {
     latestEp = item.latest_episode || null;
   }
@@ -3158,14 +3187,14 @@ function renderVoiceCard(item, type) {
   const summaryHtml = latestEp && latestEp.summary
     ? `<div class="x-post-summary" style="margin-top:4px;font-size:12px;color:var(--muted);line-height:1.5">${latestEp.summary}</div>` : '';
 
-  const latestSection = latestEp ? `
+  const latestSection = xSummaryBlock || (latestEp ? `
     <div class="x-latest">
       <div class="x-latest-label">${latestLabel}</div>
       ${type === 'x' ? `<div class="x-post-item">${latestEp.title}</div>` :
         `<div class="x-post-item"><a href="${latestEp.url || '#'}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">${latestEp.title}</a></div>`}
       <div class="x-post-meta">${latestEp.date || ''}</div>
       ${summaryHtml}
-    </div>` : '';
+    </div>` : '');
 
   return `
     <div class="x-card" style="--x-cat-color:${catColor}">
