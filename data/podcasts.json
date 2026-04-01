@@ -1,0 +1,69 @@
+{
+  "updated_at": "2026-04-01",
+  "note": "播客节目列表。latest_episode 由 update_voices.py 通过 web_search 更新。",
+  "shows": [
+    {
+      "id": "dwarkesh",
+      "name": "Dwarkesh Podcast",
+      "handle": "@dwarkesh_sp",
+      "url": "https://www.dwarkeshpatel.com/podcast",
+      "avatar_url": "https://ui-avatars.com/api/?name=DP&background=7C3AED&color=fff&size=128&rounded=true&bold=true",
+      "category_color": "#7C3AED",
+      "description": "目前最好的 AI 研究者访谈。Sutskever、Schulman、Zuckerberg 都上过，问题质量极高，深度碾压大多数媒体。",
+      "focus": [
+        "前沿研究者",
+        "AI 战略",
+        "深度访谈"
+      ],
+      "platform": "Apple Podcasts / Spotify / YouTube",
+      "search_query": "Dwarkesh Patel podcast latest episode",
+      "latest_episode": {
+        "title": "Terence Tao – Kepler, Newton, and the true nature of mathematical discovery",
+        "url": "https://www.dwarkesh.com/p/terence-tao",
+        "date": "2026-03"
+      }
+    },
+    {
+      "id": "nopriors",
+      "name": "No Priors",
+      "handle": "@no_priors",
+      "url": "https://www.nopriorsshow.com",
+      "avatar_url": "https://ui-avatars.com/api/?name=NP&background=0F766E&color=fff&size=128&rounded=true&bold=true",
+      "category_color": "#0F766E",
+      "description": "a16z 出品，Sarah Guo 主持。AI 创始人/投资人视角，30-45 分钟高密度，信息比同类商业播客高一个档次。",
+      "focus": [
+        "AI 创业",
+        "投资视角",
+        "a16z"
+      ],
+      "platform": "Apple Podcasts / Spotify",
+      "search_query": "No Priors podcast Sarah Guo latest episode",
+      "latest_episode": {
+        "title": "Skill Issue: Andrej Karpathy on Code Agents, AutoResearch, and the End of Coding",
+        "url": "https://www.youtube.com/watch?v=kwSVtQ7dziU",
+        "date": "2026-03-20"
+      }
+    },
+    {
+      "id": "cogrev",
+      "name": "Cognitive Revolution",
+      "handle": "@cogrev_pod",
+      "url": "https://www.cognitiverevolution.ai",
+      "avatar_url": "https://ui-avatars.com/api/?name=CR&background=B45309&color=fff&size=128&rounded=true&bold=true",
+      "category_color": "#B45309",
+      "description": "Nathan Labenz 主持，专门评估 frontier model 实际能力，有大量自己做的 benchmark 测试，硬核但务实。",
+      "focus": [
+        "模型能力评估",
+        "Frontier AI",
+        "Benchmark"
+      ],
+      "platform": "Apple Podcasts / Spotify",
+      "search_query": "Cognitive Revolution podcast Nathan Labenz latest episode",
+      "latest_episode": {
+        "title": "Alan and Kevin join the Cognitive Revolution",
+        "url": "https://podcasts.apple.com/us/podcast/alan-and-kevin-join-the-cognitive-revolution/id1607949880?i=1000747839494",
+        "date": "2026-02-03"
+      }
+    }
+  ]
+}
