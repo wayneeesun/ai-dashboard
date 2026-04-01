@@ -3104,10 +3104,10 @@ function renderPaperCard(p) {
     </div>`;
 }
 
-// ── Voices（X + YouTube + 播客） ──
+// ── Voices（YouTube + X + 播客） ──
 let ytData = null;
 let xData = null;
-let voicesActiveTab = 'youtube'; // 默认 tab
+let podData = null;
 
 async function loadYoutubers() {
   if (ytData) return ytData;
@@ -3121,225 +3121,115 @@ async function loadXAccounts() {
   catch(e) { return null; }
 }
 
+async function loadPodcasts() {
+  if (podData) return podData;
+  try { podData = await fetchJSON('data/podcasts.json'); return podData; }
+  catch(e) { return null; }
+}
+
+// 统一的 Voice 卡片渲染：每个作者一张卡，显示最新一期
+function renderVoiceCard(item, type) {
+  const catColor = item.category_color || '#94A3B8';
+  const focusTags = (item.focus || []).map(f =>
+    `<span class="x-focus-tag" style="border-color:${catColor}33;color:${catColor}">${f}</span>`
+  ).join('');
+
+  // 获取最新一期内容
+  let latestEp = null;
+  if (type === 'youtube') {
+    const vids = item.latest_videos || [];
+    if (vids.length > 0) latestEp = { title: vids[0].title, url: vids[0].url, date: vids[0].date };
+  } else if (type === 'x') {
+    const posts = item.latest_posts || [];
+    if (posts.length > 0) latestEp = { title: posts[0].text, url: item.url, date: posts[0].date };
+  } else if (type === 'podcast') {
+    latestEp = item.latest_episode || null;
+  }
+
+  const typeIcon = type === 'youtube' ? '📺' : type === 'x' ? '𝕏' : '🎙️';
+  const typeCTA = type === 'youtube' ? '▶ 前往频道' : type === 'x' ? '𝕏 前往主页' : '🎙️ 前往收听';
+  const handle = item.handle || '';
+  const subtitle = type === 'podcast'
+    ? `<span style="color:var(--muted);font-size:11px">${item.platform || ''}</span>`
+    : `<a href="${item.url}" target="_blank" rel="noopener" style="color:var(--accent)">${handle}</a>
+       <span class="x-followers">${item.followers || item.subscribers || ''}</span>`;
+
+  const latestSection = latestEp ? `
+    <div class="x-latest">
+      <div class="x-latest-label">${typeIcon} 最新一期</div>
+      <div class="x-post-item">
+        <a href="${latestEp.url || '#'}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">${latestEp.title}</a>
+      </div>
+      <div class="x-post-meta">${latestEp.date || ''}</div>
+    </div>` : '';
+
+  return `
+    <div class="x-card" style="--x-cat-color:${catColor}">
+      <div class="x-card-top">
+        <img class="x-avatar" src="${item.avatar_url}" alt="${item.name}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="x-avatar-fallback" style="display:none;background:${catColor}">${item.name[0]}</div>
+        <div class="x-card-info">
+          <h3 class="x-name">${item.name}</h3>
+          <div class="x-handle">${subtitle}</div>
+          <div class="x-focus-tags">${focusTags}</div>
+        </div>
+      </div>
+      <p class="x-desc">${item.description}</p>
+      ${latestSection}
+      <a class="x-profile-link" href="${item.url}" target="_blank" rel="noopener">${typeCTA}</a>
+    </div>`;
+}
+
 async function renderVoices() {
   const grid = document.getElementById('card-grid');
   grid.style.display = 'grid';
   grid.classList.add('yt-grid');
   grid.innerHTML = '<div class="loading">加载中…</div>';
 
-  const [ytDataResult, xDataResult] = await Promise.all([loadYoutubers(), loadXAccounts()]);
+  const [ytDataResult, xDataResult, podDataResult] = await Promise.all([
+    loadYoutubers(), loadXAccounts(), loadPodcasts()
+  ]);
 
   let totalCount = 0;
   let html = '';
 
   // ── Section 1: YouTube ──
   if (ytDataResult) {
-    const withVideos = ytDataResult.channels.filter(ch =>
-      (ch.latest_videos && ch.latest_videos.length > 0) ||
-      (ch.pinned_videos && ch.pinned_videos.length > 0)
-    );
-    const noVideos = ytDataResult.channels.filter(ch =>
-      (!ch.latest_videos || ch.latest_videos.length === 0) &&
-      (!ch.pinned_videos || ch.pinned_videos.length === 0)
-    );
     totalCount += ytDataResult.channels.length;
     html += `<div class="gh-category-header" style="grid-column:1/-1">
       <span class="gh-cat-icon">📺</span>
       <span class="gh-cat-name">YouTube</span>
       <span class="gh-cat-count">${ytDataResult.channels.length} 位博主</span>
     </div>`;
-    if (withVideos.length) {
-      withVideos.forEach(ch => { html += renderYtChannelCard(ch); });
-    }
-    if (noVideos.length) {
-      const quietList = noVideos.map(ch => `
-        <a href="${ch.url}" target="_blank" rel="noopener" class="yt-quiet-item">
-          <img class="yt-quiet-avatar" src="${ch.avatar_url}" alt="${ch.name}"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-          <div class="yt-quiet-avatar-fallback" style="background:${ch.category_color||'#94A3B8'}">${ch.name[0]}</div>
-          <span class="yt-quiet-name">${ch.name}</span>
-        </a>`).join('');
-      html += `<div class="yt-quiet-section" style="grid-column:1/-1">
-        <div class="yt-quiet-label">🔇 本周暂无更新</div>
-        <div class="yt-quiet-list">${quietList}</div>
-      </div>`;
-    }
+    ytDataResult.channels.forEach(ch => { html += renderVoiceCard(ch, 'youtube'); });
   }
 
   // ── Section 2: X / Twitter ──
   if (xDataResult) {
     totalCount += xDataResult.accounts.length;
-    const cats = {};
-    xDataResult.accounts.forEach(a => {
-      if (!cats[a.category]) cats[a.category] = [];
-      cats[a.category].push(a);
-    });
     html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
       <span class="gh-cat-icon">𝕏</span>
       <span class="gh-cat-name">X / Twitter</span>
       <span class="gh-cat-count">${xDataResult.accounts.length} 位博主</span>
     </div>`;
-    xDataResult.accounts.forEach(a => { html += renderXCard(a); });
+    xDataResult.accounts.forEach(a => { html += renderVoiceCard(a, 'x'); });
   }
 
   // ── Section 3: 播客 ──
-  const podcasts = [
-    {
-      id: 'dwarkesh',
-      name: 'Dwarkesh Podcast',
-      handle: '@dwarkesh_sp',
-      url: 'https://www.dwarkeshpatel.com/podcast',
-      avatar_url: 'https://ui-avatars.com/api/?name=DP&background=7C3AED&color=fff&size=128&rounded=true&bold=true',
-      category_color: '#7C3AED',
-      description: '目前最好的 AI 研究者访谈。Sutskever、Schulman、Zuckerberg 都上过，问题质量极高，深度碾压大多数媒体。',
-      focus: ['前沿研究者', 'AI 战略', '深度访谈'],
-      platform: 'Apple Podcasts / Spotify / YouTube'
-    },
-    {
-      id: 'nopriors',
-      name: 'No Priors',
-      handle: '@no_priors',
-      url: 'https://www.nopriorsshow.com',
-      avatar_url: 'https://ui-avatars.com/api/?name=NP&background=0F766E&color=fff&size=128&rounded=true&bold=true',
-      category_color: '#0F766E',
-      description: 'a16z 出品，Sarah Guo 主持。AI 创始人/投资人视角，30-45 分钟高密度，信息比同类商业播客高一个档次。',
-      focus: ['AI 创业', '投资视角', 'a16z'],
-      platform: 'Apple Podcasts / Spotify'
-    },
-    {
-      id: 'cogrev',
-      name: 'Cognitive Revolution',
-      handle: '@cogrev_pod',
-      url: 'https://www.cognitiverevolution.ai',
-      avatar_url: 'https://ui-avatars.com/api/?name=CR&background=B45309&color=fff&size=128&rounded=true&bold=true',
-      category_color: '#B45309',
-      description: 'Nathan Labenz 主持，专门评估 frontier model 实际能力，有大量自己做的 benchmark 测试，硬核但务实。',
-      focus: ['模型能力评估', 'Frontier AI', 'Benchmark'],
-      platform: 'Apple Podcasts / Spotify'
-    }
-  ];
-  html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
-    <span class="gh-cat-icon">🎙️</span>
-    <span class="gh-cat-name">播客</span>
-    <span class="gh-cat-count">${podcasts.length} 个节目</span>
-  </div>`;
-  podcasts.forEach(p => {
-    const focusTags = (p.focus||[]).map(f =>
-      `<span class="x-focus-tag" style="border-color:${p.category_color}33;color:${p.category_color}">${f}</span>`
-    ).join('');
-    html += `
-      <div class="x-card" style="--x-cat-color:${p.category_color}">
-        <div class="x-card-top">
-          <img class="x-avatar" src="${p.avatar_url}" alt="${p.name}"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-          <div class="x-avatar-fallback" style="display:none;background:${p.category_color}">${p.name[0]}</div>
-          <div class="x-card-info">
-            <h3 class="x-name">${p.name}</h3>
-            <div class="x-handle"><span style="color:var(--muted);font-size:11px">${p.platform}</span></div>
-            <div class="x-focus-tags">${focusTags}</div>
-          </div>
-        </div>
-        <p class="x-desc">${p.description}</p>
-        <a class="x-profile-link" href="${p.url}" target="_blank" rel="noopener">🎙️ 前往收听</a>
-      </div>`;
-  });
-  totalCount += podcasts.length;
+  if (podDataResult) {
+    totalCount += podDataResult.shows.length;
+    html += `<div class="gh-category-header" style="grid-column:1/-1;margin-top:8px">
+      <span class="gh-cat-icon">🎙️</span>
+      <span class="gh-cat-name">播客</span>
+      <span class="gh-cat-count">${podDataResult.shows.length} 个节目</span>
+    </div>`;
+    podDataResult.shows.forEach(p => { html += renderVoiceCard(p, 'podcast'); });
+  }
 
   document.getElementById('sector-subtitle').innerHTML =
     `YouTube · X · 播客 共 ${totalCount} 个 · ${ytDataResult?.updated_at || ''}`;
   grid.innerHTML = html;
-}
-
-
-
-function renderXCard(a) {
-  const catColor = a.category_color || '#94A3B8';
-  const focusTags = (a.focus || []).map(f =>
-    `<span class="x-focus-tag" style="border-color:${catColor}33;color:${catColor}">${f}</span>`
-  ).join('');
-  const posts = (a.latest_posts || []).slice(0, 1);
-  const postSection = posts.length ? `
-    <div class="x-latest">
-      <div class="x-latest-label">🔁 最新动态</div>
-      ${posts.map(p => `
-        <div class="x-post-item">${p.text}</div>
-        <div class="x-post-meta">${p.date || ''}</div>
-      `).join('')}
-    </div>` : '';
-  return `
-    <div class="x-card" style="--x-cat-color:${catColor}">
-      <div class="x-card-top">
-        <img class="x-avatar" src="${a.avatar_url}" alt="${a.name}"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div class="x-avatar-fallback" style="display:none;background:${catColor}">${a.name[0]}</div>
-        <div class="x-card-info">
-          <h3 class="x-name">${a.name}</h3>
-          <div class="x-handle">
-            <a href="${a.url}" target="_blank" rel="noopener" style="color:var(--accent)">${a.handle}</a>
-            <span class="x-followers">${a.followers || ''}</span>
-          </div>
-          <div class="x-focus-tags">${focusTags}</div>
-        </div>
-      </div>
-      <p class="x-desc">${a.description}</p>
-      ${postSection}
-      <a class="x-profile-link" href="${a.url}" target="_blank" rel="noopener">𝕏 前往主页</a>
-    </div>`;
-}
-
-function renderVideoItem(v, isPinned) {
-  const badge = isPinned ? `<span class="yt-video-pinned-badge">代表作</span>` : '';
-  return `
-    <div class="yt-video-item${isPinned ? ' yt-video-pinned' : ''}">
-      <div class="yt-video-title">
-        <a href="${v.url || '#'}" target="_blank" rel="noopener">${v.title}</a>${badge}
-      </div>
-      <div class="yt-video-meta">${v.published_at || v.date || ''}</div>
-      ${v.summary ? `<div class="yt-video-summary">${v.summary}</div>` : ''}
-    </div>`;
-}
-
-function renderYtChannelCard(ch) {
-  const catColor = ch.category_color || '#94A3B8';
-  const focusTags = (ch.focus || []).map(f =>
-    `<span class="yt-focus-tag" style="border-color:${catColor}33;color:${catColor}">${f}</span>`
-  ).join('');
-
-  // 本周视频（latest_videos）最多显示 1 条，多余的折叠
-  const allWeekVideos = ch.latest_videos || [];
-  const weekVideos = allWeekVideos.slice(0, 1).map(v => renderVideoItem(v, false)).join('');
-  const weekExtra = allWeekVideos.length > 1
-    ? `<div class="yt-video-more"><a href="${ch.url}" target="_blank" rel="noopener">+ ${allWeekVideos.length - 1} 条更多视频 →</a></div>` : '';
-  // 代表作（pinned_videos），仅在无本周视频时显示，也最多 1 条
-  const pinnedVideos = (!weekVideos && ch.pinned_videos && ch.pinned_videos.length)
-    ? (ch.pinned_videos || []).slice(0, 1).map(v => renderVideoItem(v, true)).join('') : '';
-
-  const videoSection = weekVideos ? weekVideos + weekExtra : pinnedVideos;
-  const sectionLabel = weekVideos ? '📹 本周视频' : '📌 代表作';
-
-  return `
-    <div class="yt-card" style="--yt-cat-color:${catColor}">
-      <div class="yt-card-top">
-        <img class="yt-avatar" src="${ch.avatar_url}" alt="${ch.name}"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div class="yt-avatar-fallback" style="display:none;background:${catColor}">${ch.name[0]}</div>
-        <div class="yt-card-info">
-          <h3 class="yt-name">${ch.name}</h3>
-          <div class="yt-handle">
-            <a href="${ch.url}" target="_blank" rel="noopener" style="color:var(--accent)">${ch.handle}</a>
-            <span class="yt-subs">${ch.subscribers || ''}</span>
-          </div>
-          <div class="yt-focus-tags">${focusTags}</div>
-        </div>
-      </div>
-      <p class="yt-desc">${ch.description}</p>
-      ${videoSection ? `
-      <div class="yt-videos-section">
-        <div class="yt-videos-label">${sectionLabel}</div>
-        ${videoSection}
-      </div>` : ''}
-      <a class="yt-channel-link" href="${ch.url}" target="_blank" rel="noopener">▶ 前往频道</a>
-    </div>`;
 }
 
 // Update timestamp
