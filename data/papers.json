@@ -10,7 +10,11 @@
       "direction": "长上下文",
       "significance": "hot",
       "breakthrough": "提出 Memory Sparse Attention 机制，首次将端到端记忆模型上下文扩展到 1 亿 tokens，无需分块或近似。",
-      "tags": ["长上下文", "Attention", "Memory"],
+      "tags": [
+        "长上下文",
+        "Attention",
+        "Memory"
+      ],
       "authors": "EverMind-AI",
       "institution": "EverMind-AI",
       "hf_upvotes": 40,
@@ -26,7 +30,11 @@
       "direction": "多模态",
       "significance": "breakthrough",
       "breakthrough": "万亿参数规模的科学多模态基础模型，覆盖理工科文献、实验数据和图表理解。",
-      "tags": ["多模态", "科学AI", "Scaling"],
+      "tags": [
+        "多模态",
+        "科学AI",
+        "Scaling"
+      ],
       "authors": "Intern Large Models",
       "institution": "Intern Large Models",
       "hf_upvotes": 120,
@@ -42,12 +50,15 @@
       "direction": "图像生成",
       "significance": "breakthrough",
       "breakthrough": "细粒度人脸表情编辑模型，可精确控制局部肌肉运动，不破坏身份特征。",
-      "tags": ["图像生成", "人脸编辑"],
+      "tags": [
+        "图像生成",
+        "人脸编辑"
+      ],
       "authors": "Fudan University",
       "institution": "Fudan University",
       "hf_upvotes": 114,
       "github_stars": 1393,
-      "score": 7.10,
+      "score": 7.1,
       "date": "2026-03-27"
     },
     {
@@ -58,7 +69,11 @@
       "direction": "Agent",
       "significance": "notable",
       "breakthrough": "系统评测 Coding Agent 在长周期迭代任务中的退化现象，揭示现有 Agent 在多轮修改后的可靠性问题。",
-      "tags": ["Agent", "Coding", "Benchmark"],
+      "tags": [
+        "Agent",
+        "Coding",
+        "Benchmark"
+      ],
       "authors": "University of Wisconsin - Madison",
       "institution": "University of Wisconsin - Madison",
       "hf_upvotes": 26,
@@ -74,7 +89,10 @@
       "direction": "语音生成",
       "significance": "notable",
       "breakthrough": "Mistral AI 发布的高质量 TTS 模型，支持多语言、低延迟、可商用。",
-      "tags": ["语音生成", "TTS"],
+      "tags": [
+        "语音生成",
+        "TTS"
+      ],
       "authors": "Mistral AI",
       "institution": "Mistral AI",
       "hf_upvotes": 54,
@@ -90,7 +108,11 @@
       "direction": "多模态",
       "significance": "breakthrough",
       "breakthrough": "提出混合记忆机制用于动态视频世界模型，解决长时序场景中视觉状态遗忘问题。",
-      "tags": ["多模态", "Video", "Memory"],
+      "tags": [
+        "多模态",
+        "Video",
+        "Memory"
+      ],
       "authors": "H-EmbodVis",
       "institution": "H-EmbodVis",
       "hf_upvotes": 134,
@@ -100,31 +122,39 @@
     },
     {
       "id": "2603.24472",
-      "title": "CUA-Suite: Massive Human-annotated Video Demonstrations for Computer-Use Agents",
+      "title": "Why Does Self-Distillation (Sometimes) Degrade the Reasoning Capability of LLMs?",
       "url": "https://arxiv.org/abs/2603.24472",
       "github_url": "",
-      "direction": "Agent",
+      "direction": "推理",
       "significance": "notable",
-      "breakthrough": "大规模人工标注的 Computer-Use Agent 视频演示数据集，覆盖真实 GUI 操作场景。",
-      "tags": ["Agent", "Computer-Use", "Dataset"],
-      "authors": "ServiceNow",
-      "institution": "ServiceNow",
+      "breakthrough": "Microsoft Research 从机制层面分析自我蒸馏损害 LLM 推理能力的根本原因，对 reasoning model 训练有直接指导意义。",
+      "tags": [
+        "推理",
+        "蒸馏",
+        "训练方法"
+      ],
+      "authors": "Microsoft Research",
+      "institution": "Microsoft Research",
       "hf_upvotes": 87,
       "github_stars": 5,
       "score": 4.79,
       "date": "2026-03-26"
     },
     {
-      "id": "2603.24533",
-      "title": "Why Does Self-Distillation (Sometimes) Degrade the Reasoning Capability of LLMs?",
-      "url": "https://arxiv.org/abs/2603.24533",
+      "id": "2603.24440",
+      "title": "CUA-Suite: Massive Human-annotated Video Demonstrations for Computer-Use Agents",
+      "url": "https://arxiv.org/abs/2603.24440",
       "github_url": "",
-      "direction": "推理",
+      "direction": "Agent",
       "significance": "notable",
-      "breakthrough": "Microsoft Research 从机制层面分析自我蒸馏损害 LLM 推理能力的根本原因，对 reasoning model 训练有直接指导意义。",
-      "tags": ["推理", "蒸馏", "训练方法"],
-      "authors": "Microsoft Research",
-      "institution": "Microsoft Research",
+      "breakthrough": "大规模人工标注的 Computer-Use Agent 视频演示数据集，覆盖真实 GUI 操作场景。",
+      "tags": [
+        "Agent",
+        "Computer-Use",
+        "Dataset"
+      ],
+      "authors": "ServiceNow",
+      "institution": "ServiceNow",
       "hf_upvotes": 41,
       "github_stars": 287,
       "score": 5.03,
@@ -138,7 +168,11 @@
       "direction": "AI for Science",
       "significance": "notable",
       "breakthrough": "提出医疗 AI 科学家框架，能自主设计和执行医学研究假设，向 AI 驱动科学发现迈进。",
-      "tags": ["AI for Science", "医疗", "Agent"],
+      "tags": [
+        "AI for Science",
+        "医疗",
+        "Agent"
+      ],
       "authors": "",
       "institution": "",
       "hf_upvotes": 43,
@@ -154,7 +188,11 @@
       "direction": "安全",
       "significance": "notable",
       "breakthrough": "首次系统研究生成式多 Agent 系统中涌现的社会智能风险，对 Agent 安全部署有重要警示。",
-      "tags": ["安全", "Multi-Agent", "风险"],
+      "tags": [
+        "安全",
+        "Multi-Agent",
+        "风险"
+      ],
       "authors": "",
       "institution": "",
       "hf_upvotes": 33,
@@ -170,7 +208,11 @@
       "direction": "Agent",
       "significance": "notable",
       "breakthrough": "端到端视频 Agent 的高效强化学习框架，在视频理解和决策任务上达到 SOTA。",
-      "tags": ["Agent", "RL", "Video"],
+      "tags": [
+        "Agent",
+        "RL",
+        "Video"
+      ],
       "authors": "",
       "institution": "",
       "hf_upvotes": 39,
@@ -186,7 +228,11 @@
       "direction": "多模态",
       "significance": "notable",
       "breakthrough": "流式多镜头视频生成模型，支持交互式叙事场景的实时视频创作。",
-      "tags": ["多模态", "Video", "生成"],
+      "tags": [
+        "多模态",
+        "Video",
+        "生成"
+      ],
       "authors": "",
       "institution": "",
       "hf_upvotes": 110,
@@ -202,7 +248,11 @@
       "direction": "Agent",
       "significance": "notable",
       "breakthrough": "从 Agent 执行轨迹中蒸馏可迁移技能，提升 Agent 在新任务上的泛化能力。",
-      "tags": ["Agent", "蒸馏", "迁移学习"],
+      "tags": [
+        "Agent",
+        "蒸馏",
+        "迁移学习"
+      ],
       "authors": "",
       "institution": "",
       "hf_upvotes": 33,
@@ -218,7 +268,11 @@
       "direction": "安全",
       "significance": "notable",
       "breakthrough": "基于轨迹感知进化搜索的 LLM Agent 红队攻击框架，系统挖掘 Agent 安全漏洞。",
-      "tags": ["安全", "Red-Team", "Agent"],
+      "tags": [
+        "安全",
+        "Red-Team",
+        "Agent"
+      ],
       "authors": "KAIST AI",
       "institution": "KAIST AI",
       "hf_upvotes": 34,
@@ -234,7 +288,11 @@
       "direction": "图像生成",
       "significance": "notable",
       "breakthrough": "通过强化学习增强图像生成中的 Agentic 搜索能力，提升复杂提示下的生成质量。",
-      "tags": ["图像生成", "Agent", "RL"],
+      "tags": [
+        "图像生成",
+        "Agent",
+        "RL"
+      ],
       "authors": "",
       "institution": "",
       "hf_upvotes": 34,
