@@ -100,6 +100,13 @@
       "icon": "📄",
       "type": "topic",
       "topic": "paper-reading"
+    },
+    {
+      "id": "lab-feed",
+      "name": "Lab Feed",
+      "icon": "🔬",
+      "type": "topic",
+      "topic": "lab-feed"
     }
   ]
 }
