@@ -1,0 +1,100 @@
+{
+  "updated_at": "2026-04-01",
+  "note": "三大 AI 实验室官方 Blog 动态。来源：anthropic.com/news, openai.com/news, deepmind.google/blog。每日更新。",
+  "labs": [
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com/news",
+      "color": "#D97706",
+      "posts": [
+        {
+          "title": "Introducing Claude Opus 4.6",
+          "url": "https://www.anthropic.com/news/claude-opus-4-6",
+          "date": "2026-02-05",
+          "category": "模型",
+          "summary": "Anthropic 最新旗舰模型，在 agentic coding、computer use、tool use、搜索和金融任务上均达到行业领先水平。"
+        },
+        {
+          "title": "2026 Agentic Coding Trends Report",
+          "url": "https://www.anthropic.com/research/agentic-coding-trends-2026",
+          "date": "2026-02-10",
+          "category": "研究",
+          "summary": "18 页报告：软件开发范式正在从「人写代码」转向「人指挥 AI Agent 写代码」，任何人都成为开发者。"
+        },
+        {
+          "title": "Claude joins Amazon Nova as foundation model on AWS",
+          "url": "https://www.anthropic.com/news/aws-partnership",
+          "date": "2026-03-12",
+          "category": "产品",
+          "summary": "Claude 系列模型通过 Amazon Bedrock 提供企业级 API 访问，加深与 AWS 的战略合作。"
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "url": "https://openai.com/news/",
+      "color": "#10B981",
+      "posts": [
+        {
+          "title": "OpenAI raises $122 billion to accelerate the next phase of AI",
+          "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
+          "date": "2026-03-31",
+          "category": "公司",
+          "summary": "OpenAI 完成史上最大单轮融资 $122B，估值进一步攀升，资金用于加速 AGI 研究和基础设施建设。"
+        },
+        {
+          "title": "OpenAI to acquire Astral",
+          "url": "https://openai.com/index/openai-to-acquire-astral/",
+          "date": "2026-03-19",
+          "category": "收购",
+          "summary": "OpenAI 收购 Python 工具链公司 Astral（uv、ruff 作者），进一步布局开发者生态。"
+        },
+        {
+          "title": "Inside our approach to the Model Spec",
+          "url": "https://openai.com/index/our-approach-to-the-model-spec/",
+          "date": "2026-03-25",
+          "category": "安全",
+          "summary": "详解 OpenAI Model Spec 的制定过程：如何让模型行为对齐人类价值观，包括价值优先级排序和边界情形处理。"
+        },
+        {
+          "title": "Update on the OpenAI Foundation",
+          "url": "https://openai.com/index/update-on-the-openai-foundation/",
+          "date": "2026-03-24",
+          "category": "组织",
+          "summary": "OpenAI 非营利基金会宣布首年目标支出 $1B，聚焦 AI 安全研究、教育和社会影响领域。"
+        }
+      ]
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "url": "https://deepmind.google/blog/",
+      "color": "#3B82F6",
+      "posts": [
+        {
+          "title": "Gemini 3.1 Flash Live: Making audio AI more natural and reliable",
+          "url": "https://deepmind.google/blog/gemini-31-flash-live",
+          "date": "2026-03-15",
+          "category": "模型",
+          "summary": "实时语音 AI 模型更新，延迟更低、稳定性更强，支持更自然的多轮对话交互。"
+        },
+        {
+          "title": "Measuring progress toward AGI: A cognitive framework",
+          "url": "https://deepmind.google/blog/measuring-progress-toward-agi",
+          "date": "2026-03-20",
+          "category": "研究",
+          "summary": "DeepMind 提出评估 AGI 进展的认知框架，从感知、推理、规划、记忆四个维度定义可测量的能力里程碑。"
+        },
+        {
+          "title": "From games to biology and beyond: 10 years of AlphaGo's impact",
+          "url": "https://deepmind.google/blog/10-years-alphago",
+          "date": "2026-03-09",
+          "category": "研究",
+          "summary": "AlphaGo 十周年回顾：从围棋到蛋白质结构（AlphaFold）再到数学发现（AlphaProof），一条从游戏到科学的路径。"
+        }
+      ]
+    }
+  ]
+}
