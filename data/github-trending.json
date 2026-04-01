@@ -3,17 +3,70 @@
   "note": "GitHub 近7天新建仓库按 star 数排序（API: search/repositories?q=created:>2026-03-25&sort=stars）",
   "summary": {
     "headline": "Claude Code 源码泄露引爆社区，周榜前 15 席几乎全是相关衍生项目",
-    "top3": [
-      "instructkr/claw-code：史上最快破 50K，Claude Code 完整源码可运行版",
-      "openai/codex-plugin-cc：OpenAI 官方出手，让 Codex 在 Claude Code 里跑",
-      "claude-code-best/claude-code：企业私有化部署版，TypeScript 类型全修复"
+    "key_trend": "Claude Code npm 意外上传源码事件（3/31）是本周最大催化剂，几乎所有高 star 项目都源于此。OpenAI 罕见以官方身份发布兼容插件，信号意义强。",
+    "top3_by_weekly_stars": [
+      {
+        "rank": 1,
+        "owner": "instructkr",
+        "name": "claw-code",
+        "stars_this_week": "78252",
+        "total_stars": "78252",
+        "category": "Claude Code 生态",
+        "one_liner": "史上最快破 50K star 的仓库，Claude Code 完整可运行源码，Reddit 泄露事件引爆全球开发者围观。"
+      },
+      {
+        "rank": 2,
+        "owner": "sanbuphy",
+        "name": "claude-code-source-code",
+        "stars_this_week": "7947",
+        "total_stars": "7947",
+        "category": "Claude Code 生态",
+        "one_liner": "Claude Code 泄露源码整理版，即将修订。"
+      },
+      {
+        "rank": 3,
+        "owner": "openai",
+        "name": "codex-plugin-cc",
+        "stars_this_week": "6136",
+        "total_stars": "6136",
+        "category": "Claude Code 生态",
+        "one_liner": "OpenAI 官方插件：在 Claude Code 中调用 Codex 进行代码 Review 或任务委托，两家 cod"
+      }
     ],
-    "categories": {
-      "Claude Code 衍生": 14,
-      "Agent 工具": 4,
-      "其他": 7
-    },
-    "key_trend": "Claude Code npm 意外上传源码事件（3/31）是本周最大催化剂，几乎所有高 star 项目都源于此。OpenAI 罕见以官方身份发布兼容插件，信号意义强。"
+    "category_breakdown": [
+      {
+        "category": "Claude Code 生态",
+        "count": 14,
+        "pct": "56%"
+      },
+      {
+        "category": "Agent 工具",
+        "count": 3,
+        "pct": "12%"
+      },
+      {
+        "category": "多模态",
+        "count": 1,
+        "pct": "4%"
+      },
+      {
+        "category": "中国科技",
+        "count": 1,
+        "pct": "4%"
+      },
+      {
+        "category": "其他",
+        "count": 6,
+        "pct": "24%"
+      }
+    ],
+    "key_trends": [
+      "Claude Code 源码泄露",
+      "clean-room 重写热潮",
+      "OpenAI × Claude Code 互操作",
+      "Rust 重写浪潮",
+      "企业微信 AI 化"
+    ]
   },
   "projects": [
     {
@@ -27,7 +80,8 @@
       "language": "Rust",
       "stars": "78252",
       "stars_today": "",
-      "forks": "77386"
+      "forks": "77386",
+      "category": "claude-code"
     },
     {
       "rank": 2,
@@ -40,7 +94,8 @@
       "language": "TypeScript",
       "stars": "7947",
       "stars_today": "",
-      "forks": "15252"
+      "forks": "15252",
+      "category": "claude-code"
     },
     {
       "rank": 3,
@@ -53,7 +108,8 @@
       "language": "JavaScript",
       "stars": "6136",
       "stars_today": "",
-      "forks": "302"
+      "forks": "302",
+      "category": "claude-code"
     },
     {
       "rank": 4,
@@ -66,7 +122,8 @@
       "language": "TypeScript",
       "stars": "6005",
       "stars_today": "",
-      "forks": "10692"
+      "forks": "10692",
+      "category": "claude-code"
     },
     {
       "rank": 5,
@@ -79,7 +136,8 @@
       "language": "Rust",
       "stars": "4309",
       "stars_today": "",
-      "forks": "5525"
+      "forks": "5525",
+      "category": "claude-code"
     },
     {
       "rank": 6,
@@ -92,7 +150,8 @@
       "language": "Python",
       "stars": "3796",
       "stars_today": "",
-      "forks": "191"
+      "forks": "191",
+      "category": "other"
     },
     {
       "rank": 7,
@@ -105,7 +164,8 @@
       "language": "TypeScript",
       "stars": "3792",
       "stars_today": "",
-      "forks": "5044"
+      "forks": "5044",
+      "category": "claude-code"
     },
     {
       "rank": 8,
@@ -118,7 +178,8 @@
       "language": "JavaScript",
       "stars": "2563",
       "stars_today": "",
-      "forks": "310"
+      "forks": "310",
+      "category": "other"
     },
     {
       "rank": 9,
@@ -131,7 +192,8 @@
       "language": "",
       "stars": "1707",
       "stars_today": "",
-      "forks": "91"
+      "forks": "91",
+      "category": "claude-code"
     },
     {
       "rank": 10,
@@ -144,7 +206,8 @@
       "language": "Python",
       "stars": "1697",
       "stars_today": "",
-      "forks": "218"
+      "forks": "218",
+      "category": "other"
     },
     {
       "rank": 11,
@@ -157,7 +220,8 @@
       "language": "TypeScript",
       "stars": "1657",
       "stars_today": "",
-      "forks": "754"
+      "forks": "754",
+      "category": "claude-code"
     },
     {
       "rank": 12,
@@ -170,7 +234,8 @@
       "language": "TypeScript",
       "stars": "1577",
       "stars_today": "",
-      "forks": "185"
+      "forks": "185",
+      "category": "claude-code"
     },
     {
       "rank": 13,
@@ -183,7 +248,8 @@
       "language": "",
       "stars": "1534",
       "stars_today": "",
-      "forks": "1925"
+      "forks": "1925",
+      "category": "other"
     },
     {
       "rank": 14,
@@ -196,7 +262,8 @@
       "language": "TypeScript",
       "stars": "1451",
       "stars_today": "",
-      "forks": "2183"
+      "forks": "2183",
+      "category": "claude-code"
     },
     {
       "rank": 15,
@@ -209,7 +276,8 @@
       "language": "",
       "stars": "1303",
       "stars_today": "",
-      "forks": "630"
+      "forks": "630",
+      "category": "claude-code"
     },
     {
       "rank": 16,
@@ -222,7 +290,8 @@
       "language": "TypeScript",
       "stars": "1291",
       "stars_today": "",
-      "forks": "557"
+      "forks": "557",
+      "category": "claude-code"
     },
     {
       "rank": 17,
@@ -235,7 +304,8 @@
       "language": "Rust",
       "stars": "1286",
       "stars_today": "",
-      "forks": "67"
+      "forks": "67",
+      "category": "agent-tool"
     },
     {
       "rank": 18,
@@ -248,7 +318,8 @@
       "language": "HTML",
       "stars": "1280",
       "stars_today": "",
-      "forks": "158"
+      "forks": "158",
+      "category": "agent-tool"
     },
     {
       "rank": 19,
@@ -261,7 +332,8 @@
       "language": "",
       "stars": "1248",
       "stars_today": "",
-      "forks": "124"
+      "forks": "124",
+      "category": "multimodal"
     },
     {
       "rank": 20,
@@ -274,7 +346,8 @@
       "language": "Python",
       "stars": "1008",
       "stars_today": "",
-      "forks": "175"
+      "forks": "175",
+      "category": "china-tech"
     },
     {
       "rank": 21,
@@ -287,7 +360,8 @@
       "language": "Python",
       "stars": "985",
       "stars_today": "",
-      "forks": "124"
+      "forks": "124",
+      "category": "other"
     },
     {
       "rank": 22,
@@ -300,7 +374,8 @@
       "language": "TypeScript",
       "stars": "947",
       "stars_today": "",
-      "forks": "1368"
+      "forks": "1368",
+      "category": "claude-code"
     },
     {
       "rank": 23,
@@ -313,7 +388,8 @@
       "language": "",
       "stars": "943",
       "stars_today": "",
-      "forks": "53"
+      "forks": "53",
+      "category": "agent-tool"
     },
     {
       "rank": 24,
@@ -326,7 +402,8 @@
       "language": "",
       "stars": "870",
       "stars_today": "",
-      "forks": "42"
+      "forks": "42",
+      "category": "other"
     },
     {
       "rank": 25,
@@ -339,7 +416,40 @@
       "language": "TypeScript",
       "stars": "830",
       "stars_today": "",
-      "forks": "1694"
+      "forks": "1694",
+      "category": "claude-code"
+    }
+  ],
+  "categories": [
+    {
+      "id": "claude-code",
+      "icon": "🤖",
+      "name": "Claude Code 生态",
+      "description": "源码泄露事件衍生"
+    },
+    {
+      "id": "agent-tool",
+      "icon": "⚙️",
+      "name": "Agent 工具",
+      "description": "编排 / 工作流 / Harness"
+    },
+    {
+      "id": "multimodal",
+      "icon": "🎙️",
+      "name": "多模态",
+      "description": "语音 / 视频 / 视觉"
+    },
+    {
+      "id": "china-tech",
+      "icon": "🇨🇳",
+      "name": "中国科技",
+      "description": "企业微信 / 公众号"
+    },
+    {
+      "id": "other",
+      "icon": "📦",
+      "name": "其他",
+      "description": ""
     }
   ]
 }
