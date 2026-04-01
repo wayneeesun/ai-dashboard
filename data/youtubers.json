@@ -148,13 +148,13 @@
     },
     {
       "id": "guigu101",
-      "name": "硅谷101",
+      "name": "硅谷101 & 硅谷101播客",
       "handle": "@TheValley101",
       "url": "https://www.youtube.com/@TheValley101",
       "avatar_url": "https://ui-avatars.com/api/?name=硅谷&background=1E3A5F&color=fff&size=128&rounded=true&bold=true",
       "category": "行业动态",
       "category_color": "#1E3A5F",
-      "description": "泓君主持的深度访谈节目，英伟达、OpenAI、机器人等重大议题的中文最佳讲解。40万订阅，内容同步小宇宙，覆盖 AI/科技/美股核心叙事。",
+      "description": "泓君主持的两档节目：《硅谷101》视频节目（深度纪录片/访谈）和《硅谷101播客》（对谈访谈，小宇宙同步）。AI/科技/美股核心叙事的中文最佳讲解。",
       "focus": [
         "深度访谈",
         "AI 产业",
@@ -163,10 +163,36 @@
       "subscribers": "409K",
       "latest_videos": [
         {
-          "title": "机器人开源革命：“免费大脑”背后的四派力量与博弈",
+          "title": "机器人开源革命：免费大脑背后的四派力量与博弈",
           "url": "https://www.youtube.com/watch?v=kjqOsLdvSFg",
           "date": "2026-03-27",
-          "summary": "硬谷101 机器人系列。分析机器人开源生态四大阵营：NVIDIA Isaac、Google DeepMind RT、Meta 具身智能、中国创业公司。探讨“免费大脑”策略如何重塑产业格局。"
+          "summary": "分析机器人开源生态四大阵营：NVIDIA Isaac、Google DeepMind RT、Meta 具身智能、中国创业公司。探讨免费大脑策略如何重塑产业格局。"
+        }
+      ],
+      "channels": [
+        {
+          "name": "硅谷101",
+          "handle": "@TheValley101",
+          "url": "https://www.youtube.com/@TheValley101",
+          "subscribers": "409K",
+          "latest_video": {
+            "title": "机器人开源革命：免费大脑背后的四派力量与博弈",
+            "url": "https://www.youtube.com/watch?v=kjqOsLdvSFg",
+            "date": "2026-03-27",
+            "summary": "分析机器人开源生态四大阵营：NVIDIA Isaac、Google DeepMind RT、Meta 具身智能、中国创业公司。探讨免费大脑策略如何重塑产业格局。"
+          }
+        },
+        {
+          "name": "硅谷101播客",
+          "handle": "@valley101podcast",
+          "url": "https://www.youtube.com/@valley101podcast",
+          "subscribers": null,
+          "latest_video": {
+            "title": "E231｜从B2B到A2A：Agent新基建，如何让一人企业做全球生意？",
+            "url": "https://www.youtube.com/watch?v=B6eAjzDVhr8",
+            "date": "2026-04-01",
+            "summary": "与阿里国际站总裁张阔对谈，聊互联网巨头掌舵人在这一轮AI浪潮下，对新业务、新人才的思考与判断。从B2B到A2A的商业范式转变。"
+          }
         }
       ]
     },
