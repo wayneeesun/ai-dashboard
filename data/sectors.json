@@ -1,6 +1,13 @@
 {
   "nav": [
     {
+      "id": "overview",
+      "name": "Overview",
+      "icon": "🗂️",
+      "type": "overview",
+      "topic": "overview"
+    },
+    {
       "id": "key-companies",
       "name": "重点公司",
       "icon": "🏢",
@@ -34,7 +41,6 @@
             "jd"
           ]
         },
-
         {
           "id": "us-semi",
           "name": "半导体",
@@ -93,7 +99,6 @@
       "type": "topic",
       "topic": "voices"
     },
-
     {
       "id": "paper-reading",
       "name": "论文导读",
