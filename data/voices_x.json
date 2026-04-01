@@ -130,23 +130,6 @@
       ]
     },
     {
-      "id": "huggingface",
-      "name": "Hugging Face",
-      "handle": "@huggingface",
-      "url": "https://x.com/huggingface",
-      "avatar_url": "https://ui-avatars.com/api/?name=HF&background=fbbf24&color=1a1a1a&size=128&rounded=true&bold=true",
-      "category": "开源生态",
-      "category_color": "#D97706",
-      "description": "新模型、数据集、工具第一手发布渠道。开源 AI 生态的中枢，必须跟。",
-      "focus": [
-        "开源模型",
-        "数据集",
-        "工具"
-      ],
-      "followers": "1.1M",
-      "latest_posts": []
-    },
-    {
       "id": "akhaliq",
       "name": "AK",
       "handle": "@_akhaliq",
@@ -161,23 +144,6 @@
         "每日速报"
       ],
       "followers": "210K",
-      "latest_posts": []
-    },
-    {
-      "id": "kimmonismus",
-      "name": "Kim Monismus",
-      "handle": "@kimmonismus",
-      "url": "https://x.com/kimmonismus",
-      "avatar_url": "https://ui-avatars.com/api/?name=KM&background=64748b&color=fff&size=128&rounded=true&bold=true",
-      "category": "行业动态",
-      "category_color": "#64748B",
-      "description": "每天整理 AI 动态，速报型。覆盖面广，适合快速扫描当天有什么值得关注的事。",
-      "focus": [
-        "AI 速报",
-        "行业动态",
-        "欧洲视角"
-      ],
-      "followers": "180K",
       "latest_posts": []
     },
     {
