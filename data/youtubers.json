@@ -19,10 +19,10 @@
       "subscribers": "4.6M",
       "latest_videos": [
         {
-          "title": "#491 – OpenClaw: The Viral AI Agent – Peter Steinberger",
-          "url": "https://www.youtube.com/watch?v=YFjfBk8HI5o",
-          "date": "2026-02-11",
-          "summary": "Lex 与 OpenClaw 创始人 Peter Steinberger 深度对话。GitHub 史上最快突破 50K stars 的项目背后设计哲学，以及 Agent 生态对软件行业的颠覆性影响。"
+          "title": "#494 – Jensen Huang: NVIDIA – The $4 Trillion Company & the AI Revolution",
+          "url": "https://www.youtube.com/watch?v=vif8NQcjVf0",
+          "date": "2026-03-23",
+          "summary": "Lex 与英伟达 CEO 黄仁勳深度对话。讨论 NVIDIA 如何成为全球市值最高的公司、4 万亿美元市值背后的 AI 革命、算力布局、CUDA 生态护城河、以及黄仁勳对死亡和传承的思考。"
         }
       ]
     },
@@ -67,10 +67,10 @@
       "subscribers": "3.1M",
       "latest_videos": [
         {
-          "title": "The unhinged world of tech in 2026...",
-          "url": "https://www.youtube.com/watch?v=EKOU3JWDNLI",
-          "date": "2026-01-14",
-          "summary": "Fireship 年度科技盘点：从家用机器人到量子计算，10 个定义 2026 年的疯狂技术趋势。高密度、快节奏、辛辣点评。"
+          "title": "How to burn $30m on a JavaScript framework...",
+          "url": "https://www.youtube.com/watch?v=ReAnFFqvCeA",
+          "date": "2026-03-18",
+          "summary": "Fireship 拆解 famo.us 的兴衰史：这个曾经融资 3000 万美元的 JavaScript 渲染引擎如何从明星项目变成警示故事。前端框架赛道的资本陷阱。"
         }
       ]
     },
@@ -91,10 +91,10 @@
       "subscribers": "480K",
       "latest_videos": [
         {
-          "title": "Something big is happening...",
-          "url": "https://www.youtube.com/watch?v=31A41ckhb7Q",
-          "date": "2026-02-12",
-          "summary": "Matthew Berman 讨论 AI 行业结构性转变：自动驾驶、机器人、AI 对社会深层影响，对话 Rivian CEO RJ Scaringe。"
+          "title": "AI Self EVOLUTION (Meta Harness)",
+          "url": "https://www.youtube.com/watch?v=61JUHDK-em8",
+          "date": "2026-03-31",
+          "summary": "Matthew Berman 解读 Meta 最新发布的 AI 自我进化框架。AI 模型现在可以自动评估自己的弱点并进行定向改进，标志着 AI 自主进化的新阶段。"
         }
       ]
     },
@@ -200,7 +200,7 @@
           "title": "机器人开源革命：“免费大脑”背后的四派力量与博弈",
           "url": "https://www.youtube.com/watch?v=kjqOsLdvSFg",
           "date": "2026-03-27",
-          "summary": "硬谷101 机器人系列。分析机器人开源生态四大阵营：NVIDIA Isaac、Google DeepMind RT、Meta 具身智能、中国创业公司。探讨“免费大脑”策略如何重塑机器人产业格局。"
+          "summary": "硬谷101 机器人系列。分析机器人开源生态四大阵营：NVIDIA Isaac、Google DeepMind RT、Meta 具身智能、中国创业公司。探讨“免费大脑”策略如何重塑产业格局。"
         }
       ]
     },
@@ -221,10 +221,10 @@
       "subscribers": "189K",
       "latest_videos": [
         {
-          "title": "AI isn't going how we thought it would",
-          "url": "https://www.youtube.com/@DavidShapiroAI",
-          "date": "2026-03-25",
-          "summary": "David Shapiro 反思 AI 发展与早期预期的偏差。Agent 崛起超出预期，但通往 AGI 的路径更曲折。务实分析 AI 对就业市场的真实影响。"
+          "title": "We're already too late",
+          "url": "https://www.youtube.com/watch?v=8jV3HcmiWV8",
+          "date": "2026-03-29",
+          "summary": "David Shapiro 最新观点：AI 对就业和社会的影响已经超过临界点，政策制定者和教育体系的反应速度远远跟不上技术变革。后劳动经济学的紧迫性。"
         }
       ]
     }
