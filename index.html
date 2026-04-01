@@ -1905,12 +1905,31 @@
       }
 
       /* ── 公司卡片 ── */
-      .company-card { padding: 16px; }
-      .card-metrics { grid-template-columns: 1fr 1fr; } /* 保持 2×2 */
+      .company-card {
+        padding: 16px;
+        overflow: visible; /* 允许内容撑开高度 */
+        height: auto !important;
+      }
+      .card-metrics { grid-template-columns: 1fr 1fr; }
       .metric { padding: 7px 9px; }
       .metric-value { font-size: 12px; }
       .metric-label { font-size: 10px; }
-      .card-desc { font-size: 12px; line-height: 1.55; -webkit-line-clamp: 3; }
+
+      /* 去掉所有文字行数截断，让卡片自适应高度 */
+      .card-summary,
+      .card-desc,
+      .yt-desc,
+      .yt-video-title,
+      .yt-video-summary,
+      .x-summary-text,
+      .paper-breakthrough,
+      .gh-top3-meta {
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        -webkit-box-orient: unset !important;
+        overflow: visible !important;
+        max-height: none !important;
+      }
 
       /* ── GitHub Trend：Summary Banner ── */
       .gh-summary-banner { padding: 16px; }
