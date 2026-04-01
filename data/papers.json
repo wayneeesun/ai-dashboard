@@ -1,45 +1,41 @@
 {
-  "updated_at": "2026-03-31",
+  "updated_at": "2026-04-01",
   "week_range": "03/30-04/05",
   "papers": [
     {
-      "id": "2603.23516",
-      "title": "MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens",
-      "url": "https://arxiv.org/abs/2603.23516",
+      "id": "2603.25716",
+      "title": "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models",
+      "url": "https://arxiv.org/abs/2603.25716",
       "github_url": "",
       "direction": "长上下文",
-      "significance": "hot",
-      "breakthrough": "提出 Memory Sparse Attention 机制，首次将端到端记忆模型上下文扩展到 1 亿 tokens，无需分块或近似。",
+      "significance": "breakthrough",
+      "breakthrough": "提出混合记忆机制用于动态视频世界模型，解决长时序场景中视觉状态遗忘问题。结合短期工作记忆与长期压缩记忆，在视频生成和理解任务上超越现有方法。",
       "tags": [
-        "长上下文",
-        "Attention",
-        "Memory"
+        "长上下文"
       ],
-      "authors": "EverMind-AI",
-      "institution": "EverMind-AI",
-      "hf_upvotes": 40,
-      "github_stars": 2380,
-      "score": 7.83,
-      "date": "2026-03-27"
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 136,
+      "github_stars": 0,
+      "score": 2.95,
+      "date": "2026-03-30"
     },
     {
-      "id": "2603.25040",
-      "title": "Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale",
-      "url": "https://arxiv.org/abs/2603.25040",
+      "id": "2603.25502",
+      "title": "RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models",
+      "url": "https://arxiv.org/abs/2603.25502",
       "github_url": "",
       "direction": "多模态",
       "significance": "breakthrough",
-      "breakthrough": "万亿参数规模的科学多模态基础模型，覆盖理工科文献、实验数据和图表理解。",
+      "breakthrough": "通用真实世界图像修复模型，基于大规模图像编辑模型进行泛化修复。在去噪、超分、去模糊等多个修复任务上达到 SOTA，实用性强。",
       "tags": [
-        "多模态",
-        "科学AI",
-        "Scaling"
+        "多模态"
       ],
-      "authors": "Intern Large Models",
-      "institution": "Intern Large Models",
-      "hf_upvotes": 120,
-      "github_stars": 9,
-      "score": 4.82,
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 130,
+      "github_stars": 0,
+      "score": 2.93,
       "date": "2026-03-27"
     },
     {
@@ -49,36 +45,105 @@
       "github_url": "",
       "direction": "图像生成",
       "significance": "breakthrough",
-      "breakthrough": "细粒度人脸表情编辑模型，可精确控制局部肌肉运动，不破坏身份特征。",
+      "breakthrough": "细粒度人脸表情编辑模型，可精确控制局部肌肉运动，不破坏身份特征。构建了连续情感标注的 FFE 数据集。",
       "tags": [
-        "图像生成",
-        "人脸编辑"
+        "图像生成"
       ],
-      "authors": "Fudan University",
-      "institution": "Fudan University",
-      "hf_upvotes": 114,
-      "github_stars": 1393,
-      "score": 7.1,
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 113,
+      "github_stars": 0,
+      "score": 2.84,
       "date": "2026-03-27"
     },
     {
-      "id": "2603.24755",
-      "title": "SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks",
-      "url": "https://arxiv.org/abs/2603.24755",
+      "id": "2603.25746",
+      "title": "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling",
+      "url": "https://arxiv.org/abs/2603.25746",
       "github_url": "",
-      "direction": "Agent",
-      "significance": "notable",
-      "breakthrough": "系统评测 Coding Agent 在长周期迭代任务中的退化现象，揭示现有 Agent 在多轮修改后的可靠性问题。",
+      "direction": "多模态",
+      "significance": "breakthrough",
+      "breakthrough": "流式多镜头视频生成模型，支持交互式叙事场景的实时视频创作，保持多镜头间的角色一致性和叙事连贯性。",
       "tags": [
-        "Agent",
-        "Coding",
-        "Benchmark"
+        "多模态"
       ],
-      "authors": "University of Wisconsin - Madison",
-      "institution": "University of Wisconsin - Madison",
-      "hf_upvotes": 26,
-      "github_stars": 342,
-      "score": 5.17,
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 111,
+      "github_stars": 0,
+      "score": 2.83,
+      "date": "2026-03-30"
+    },
+    {
+      "id": "2603.25040",
+      "title": "Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale",
+      "url": "https://arxiv.org/abs/2603.25040",
+      "github_url": "",
+      "direction": "多模态",
+      "significance": "breakthrough",
+      "breakthrough": "万亿参数规模的科学多模态基础模型，覆盖理工科文献、实验数据和图表理解。在科学推理和跨模态理解任务上表现突出。",
+      "tags": [
+        "多模态"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 111,
+      "github_stars": 0,
+      "score": 2.83,
+      "date": "2026-03-27"
+    },
+    {
+      "id": "2603.25730",
+      "title": "PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference",
+      "url": "https://arxiv.org/abs/2603.25730",
+      "github_url": "",
+      "direction": "长上下文",
+      "significance": "breakthrough",
+      "breakthrough": "短视频训练即可实现长视频采样与长上下文推理。通过 PackForcing 机制，大幅降低长视频生成的训练成本。",
+      "tags": [
+        "长上下文"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 101,
+      "github_stars": 0,
+      "score": 2.77,
+      "date": "2026-03-30"
+    },
+    {
+      "id": "2603.24800",
+      "title": "Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration",
+      "url": "https://arxiv.org/abs/2603.24800",
+      "github_url": "",
+      "direction": "图像生成",
+      "significance": "notable",
+      "breakthrough": "参数高效校准 Diffusion Transformer，用少量参数即可显著提升图像生成质量。",
+      "tags": [
+        "图像生成"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 55,
+      "github_stars": 0,
+      "score": 2.42,
+      "date": "2026-03-27"
+    },
+    {
+      "id": "2603.25319",
+      "title": "MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data",
+      "url": "https://arxiv.org/abs/2603.25319",
+      "github_url": "",
+      "direction": "长上下文",
+      "significance": "notable",
+      "breakthrough": "多参考图像生成方法，通过结构化长上下文数据解决多图参考一致性问题。",
+      "tags": [
+        "长上下文"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 45,
+      "github_stars": 0,
+      "score": 2.3,
       "date": "2026-03-27"
     },
     {
@@ -90,155 +155,14 @@
       "significance": "notable",
       "breakthrough": "Mistral AI 发布的高质量 TTS 模型，支持多语言、低延迟、可商用。",
       "tags": [
-        "语音生成",
-        "TTS"
+        "语音生成"
       ],
-      "authors": "Mistral AI",
-      "institution": "Mistral AI",
-      "hf_upvotes": 54,
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 42,
       "github_stars": 0,
-      "score": 4.72,
+      "score": 2.26,
       "date": "2026-03-27"
-    },
-    {
-      "id": "2603.25716",
-      "title": "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models",
-      "url": "https://arxiv.org/abs/2603.25716",
-      "github_url": "",
-      "direction": "多模态",
-      "significance": "breakthrough",
-      "breakthrough": "提出混合记忆机制用于动态视频世界模型，解决长时序场景中视觉状态遗忘问题。",
-      "tags": [
-        "多模态",
-        "Video",
-        "Memory"
-      ],
-      "authors": "H-EmbodVis",
-      "institution": "H-EmbodVis",
-      "hf_upvotes": 134,
-      "github_stars": 0,
-      "score": 4.82,
-      "date": "2026-03-30"
-    },
-    {
-      "id": "2603.24472",
-      "title": "Why Does Self-Distillation (Sometimes) Degrade the Reasoning Capability of LLMs?",
-      "url": "https://arxiv.org/abs/2603.24472",
-      "github_url": "",
-      "direction": "推理",
-      "significance": "notable",
-      "breakthrough": "Microsoft Research 从机制层面分析自我蒸馏损害 LLM 推理能力的根本原因，对 reasoning model 训练有直接指导意义。",
-      "tags": [
-        "推理",
-        "蒸馏",
-        "训练方法"
-      ],
-      "authors": "Microsoft Research",
-      "institution": "Microsoft Research",
-      "hf_upvotes": 87,
-      "github_stars": 5,
-      "score": 4.79,
-      "date": "2026-03-26"
-    },
-    {
-      "id": "2603.24440",
-      "title": "CUA-Suite: Massive Human-annotated Video Demonstrations for Computer-Use Agents",
-      "url": "https://arxiv.org/abs/2603.24440",
-      "github_url": "",
-      "direction": "Agent",
-      "significance": "notable",
-      "breakthrough": "大规模人工标注的 Computer-Use Agent 视频演示数据集，覆盖真实 GUI 操作场景。",
-      "tags": [
-        "Agent",
-        "Computer-Use",
-        "Dataset"
-      ],
-      "authors": "ServiceNow",
-      "institution": "ServiceNow",
-      "hf_upvotes": 41,
-      "github_stars": 287,
-      "score": 5.03,
-      "date": "2026-03-26"
-    },
-    {
-      "id": "2603.28589",
-      "title": "Towards a Medical AI Scientist",
-      "url": "https://arxiv.org/abs/2603.28589",
-      "github_url": "",
-      "direction": "AI for Science",
-      "significance": "notable",
-      "breakthrough": "提出医疗 AI 科学家框架，能自主设计和执行医学研究假设，向 AI 驱动科学发现迈进。",
-      "tags": [
-        "AI for Science",
-        "医疗",
-        "Agent"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 43,
-      "github_stars": 0,
-      "score": 4.72,
-      "date": "2026-03-31"
-    },
-    {
-      "id": "2603.27771",
-      "title": "Emergent Social Intelligence Risks in Generative Multi-Agent Systems",
-      "url": "https://arxiv.org/abs/2603.27771",
-      "github_url": "",
-      "direction": "安全",
-      "significance": "notable",
-      "breakthrough": "首次系统研究生成式多 Agent 系统中涌现的社会智能风险，对 Agent 安全部署有重要警示。",
-      "tags": [
-        "安全",
-        "Multi-Agent",
-        "风险"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 33,
-      "github_stars": 0,
-      "score": 4.72,
-      "date": "2026-03-31"
-    },
-    {
-      "id": "2603.22918",
-      "title": "EVA: Efficient Reinforcement Learning for End-to-End Video Agent",
-      "url": "https://arxiv.org/abs/2603.22918",
-      "github_url": "",
-      "direction": "Agent",
-      "significance": "notable",
-      "breakthrough": "端到端视频 Agent 的高效强化学习框架，在视频理解和决策任务上达到 SOTA。",
-      "tags": [
-        "Agent",
-        "RL",
-        "Video"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 39,
-      "github_stars": 85,
-      "score": 4.79,
-      "date": "2026-03-26"
-    },
-    {
-      "id": "2603.25746",
-      "title": "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling",
-      "url": "https://arxiv.org/abs/2603.25746",
-      "github_url": "",
-      "direction": "多模态",
-      "significance": "notable",
-      "breakthrough": "流式多镜头视频生成模型，支持交互式叙事场景的实时视频创作。",
-      "tags": [
-        "多模态",
-        "Video",
-        "生成"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 110,
-      "github_stars": 0,
-      "score": 4.82,
-      "date": "2026-03-30"
     },
     {
       "id": "2603.25158",
@@ -249,66 +173,104 @@
       "significance": "notable",
       "breakthrough": "从 Agent 执行轨迹中蒸馏可迁移技能，提升 Agent 在新任务上的泛化能力。",
       "tags": [
-        "Agent",
-        "蒸馏",
-        "迁移学习"
+        "Agent"
       ],
       "authors": "",
       "institution": "",
-      "hf_upvotes": 33,
+      "hf_upvotes": 35,
       "github_stars": 0,
-      "score": 4.72,
+      "score": 2.15,
       "date": "2026-03-30"
     },
     {
-      "id": "2603.22341",
-      "title": "T-MAP: Red-Teaming LLM Agents with Trajectory-aware Evolutionary Search",
-      "url": "https://arxiv.org/abs/2603.22341",
+      "id": "2603.23516",
+      "title": "MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens",
+      "url": "https://arxiv.org/abs/2603.23516",
       "github_url": "",
-      "direction": "安全",
+      "direction": "长上下文",
       "significance": "notable",
-      "breakthrough": "基于轨迹感知进化搜索的 LLM Agent 红队攻击框架，系统挖掘 Agent 安全漏洞。",
+      "breakthrough": "提出 Memory Sparse Attention 机制，首次将端到端记忆模型上下文扩展到 1 亿 tokens。",
       "tags": [
-        "安全",
-        "Red-Team",
-        "Agent"
-      ],
-      "authors": "KAIST AI",
-      "institution": "KAIST AI",
-      "hf_upvotes": 34,
-      "github_stars": 6,
-      "score": 4.72,
-      "date": "2026-03-26"
-    },
-    {
-      "id": "2603.28767",
-      "title": "Gen-Searcher: Reinforcing Agentic Search for Image Generation",
-      "url": "https://arxiv.org/abs/2603.28767",
-      "github_url": "",
-      "direction": "图像生成",
-      "significance": "notable",
-      "breakthrough": "通过强化学习增强图像生成中的 Agentic 搜索能力，提升复杂提示下的生成质量。",
-      "tags": [
-        "图像生成",
-        "Agent",
-        "RL"
+        "长上下文"
       ],
       "authors": "",
       "institution": "",
-      "hf_upvotes": 34,
+      "hf_upvotes": 35,
       "github_stars": 0,
-      "score": 4.72,
-      "date": "2026-03-31"
+      "score": 2.15,
+      "date": "2026-03-27"
+    },
+    {
+      "id": "2603.22782",
+      "title": "Know3D: Prompting 3D Generation with Knowledge from Vision-Language Models",
+      "url": "https://arxiv.org/abs/2603.22782",
+      "github_url": "",
+      "direction": "多模态",
+      "significance": "emerging",
+      "breakthrough": "用视觉语言模型知识引导 3D 生成，提升 3D 内容创建的语义准确性。",
+      "tags": [
+        "多模态"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 29,
+      "github_stars": 0,
+      "score": 2.04,
+      "date": "2026-03-30"
+    },
+    {
+      "id": "2603.14366",
+      "title": "Representation Alignment for Just Image Transformers is not Easier than You Think",
+      "url": "https://arxiv.org/abs/2603.14366",
+      "github_url": "",
+      "direction": "多模态",
+      "significance": "emerging",
+      "breakthrough": "研究图像 Transformer 的表征对齐，发现并不像想象中那么容易。KAIST AI 出品。",
+      "tags": [
+        "多模态"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 26,
+      "github_stars": 0,
+      "score": 1.98,
+      "date": "2026-03-27"
+    },
+    {
+      "id": "2603.24755",
+      "title": "SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks",
+      "url": "https://arxiv.org/abs/2603.24755",
+      "github_url": "",
+      "direction": "Agent",
+      "significance": "emerging",
+      "breakthrough": "系统评测 Coding Agent 在长周期迭代任务中的退化现象，揭示现有 Agent 在多轮修改后的可靠性问题。",
+      "tags": [
+        "Agent"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 24,
+      "github_stars": 0,
+      "score": 1.93,
+      "date": "2026-03-27"
+    },
+    {
+      "id": "2603.24649",
+      "title": "MedOpenClaw: Auditable Medical Imaging Agents Reasoning over Uncurated Full Studies",
+      "url": "https://arxiv.org/abs/2603.24649",
+      "github_url": "",
+      "direction": "Agent",
+      "significance": "emerging",
+      "breakthrough": "可审计的医学影像 Agent，可处理未精挑的完整医学研究数据。TUM 出品。",
+      "tags": [
+        "Agent"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 22,
+      "github_stars": 0,
+      "score": 1.88,
+      "date": "2026-03-30"
     }
-  ],
-  "direction_summary": {
-    "headline": "本周热点：长上下文突破 1 亿 tokens，Agent 退化与安全风险受关注",
-    "emerging_directions": [
-      "长上下文",
-      "Agent",
-      "多模态",
-      "安全",
-      "推理"
-    ]
-  }
+  ]
 }
