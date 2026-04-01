@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-31",
+  "updated_at": "2026-04-01",
   "note": "Videos sourced via web search. Avatars use ui-avatars.com fallback with brand colors. Update weekly via scripts/update_youtubers.py",
   "channels": [
     {
