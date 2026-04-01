@@ -2087,6 +2087,12 @@ async function selectSector(id) {
     return;
   }
 
+  if (sector.topic === 'lab-feed') {
+    document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}三大实验室官方动态`;
+    await renderLabFeed();
+    return;
+  }
+
   if (sector.type === 'topic') {
     document.getElementById('sector-subtitle').innerHTML = updateText ? `<span ${updateColor}>${updateText}</span>` : '';
     grid.style.display = 'flex';
@@ -3236,6 +3242,77 @@ function renderVoiceCard(item, type) {
       ${multiChannelSection || latestSection}
       ${multiChannelSection ? '' : `<a class="x-profile-link" href="${item.url}" target="_blank" rel="noopener">${typeCTA}</a>`}
     </div>`;
+}
+
+async function renderLabFeed() {
+  const grid = document.getElementById('card-grid');
+  grid.style.display = 'flex';
+  grid.style.flexDirection = 'column';
+  grid.style.gap = '0';
+  grid.classList.remove('yt-grid');
+  grid.innerHTML = '<div class="loading">加载中…</div>';
+
+  let data;
+  try {
+    data = await fetchJSON('data/lab-feed.json');
+  } catch(e) {
+    grid.innerHTML = '<div class="loading">加载失败</div>';
+    return;
+  }
+
+  const catColors = { '模型': '#3B82F6', '研究': '#8B5CF6', '产品': '#10B981', '安全': '#EF4444', '公司': '#F59E0B', '收购': '#EC4899', '组织': '#6366F1' };
+
+  let html = `
+    <div style="padding:0 0 20px">
+      <div style="font-size:13px;color:var(--muted);margin-bottom:20px">
+        追踪 Anthropic · OpenAI · Google DeepMind 官方 Blog 的模型发布、研究动态、组织变动
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+  `;
+
+  for (const lab of data.labs) {
+    html += `
+      <div style="border:1px solid var(--border);border-radius:14px;overflow:hidden">
+        <div style="padding:14px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;background:var(--card-bg)">
+          <div style="width:10px;height:10px;border-radius:50%;background:${lab.color};flex-shrink:0"></div>
+          <span style="font-size:14px;font-weight:700;color:var(--text)">${lab.name}</span>
+          <a href="${lab.url}" target="_blank" rel="noopener"
+            style="margin-left:auto;font-size:11px;color:var(--accent);text-decoration:none">官方 Blog →</a>
+        </div>
+        <div>
+    `;
+
+    for (let i = 0; i < lab.posts.length; i++) {
+      const p = lab.posts[i];
+      const catColor = catColors[p.category] || '#94A3B8';
+      const border = i < lab.posts.length - 1 ? 'border-bottom:1px solid var(--border)' : '';
+      html += `
+        <div style="padding:13px 18px;${border};display:grid;grid-template-columns:1fr auto;gap:8px;align-items:start">
+          <div>
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px">
+              <span style="font-size:10px;font-weight:700;padding:1px 7px;border-radius:4px;
+                background:${catColor}22;color:${catColor}">${p.category}</span>
+              <span style="font-size:11px;color:var(--muted)">${p.date}</span>
+            </div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:4px">
+              <a href="${p.url}" target="_blank" rel="noopener"
+                style="color:var(--text);text-decoration:none"
+                onmouseover="this.style.color='var(--accent)'"
+                onmouseout="this.style.color='var(--text)'">${p.title}</a>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.5">${p.summary}</div>
+          </div>
+          <a href="${p.url}" target="_blank" rel="noopener"
+            style="font-size:11px;color:var(--accent);text-decoration:none;white-space:nowrap;margin-top:2px">↗</a>
+        </div>
+      `;
+    }
+
+    html += `</div></div>`;
+  }
+
+  html += `</div></div>`;
+  grid.innerHTML = html;
 }
 
 async function renderVoices() {
