@@ -3672,19 +3672,22 @@ async function renderOverview() {
 
   let html = `<div class="ov-date-banner">📅 ${today} · Dashboard 今日快照</div>`;
 
-  // ── 1. 重点公司 ──
-  const companyGroups = [
-    { id: 'us-internet',  icon: '🌐', name: '美国互联网' },
-    { id: 'cn-internet',  icon: '🇨🇳', name: '中国互联网' },
-    { id: 'us-semi',      icon: '🔬', name: '半导体' },
-    { id: 'us-software',  icon: '💾', name: '软件' },
-    { id: 'ai-native',    icon: '🤖', name: 'AI-Native' },
-  ];
-  for (const g of companyGroups) {
-    const st = sectorStatus[g.id] || {};
-    const note = st.note || '市值数据';
-    const body = `<div class="ov-item">${note || '市值已更新'}</div>`;
-    html += ovCard(g.id, g.icon, g.name, st.last_updated, body, 'companies');
+  // ── 1. 重点公司（聚合为一张卡片）──
+  {
+    const co = statusData?.companies || {};
+    const news = co.news || [];
+    const lastUpdated = co.last_updated || sectorStatus['us-internet']?.last_updated;
+
+    let body = '';
+    if (news.length > 0) {
+      body = news.map(n => {
+        const typeIcon = n.type === 'earnings' ? '📊' : n.type === 'news' ? '📰' : '📌';
+        return `<div class="ov-item"><b>${typeIcon} ${n.company}</b>：${n.headline}</div>`;
+      }).join('');
+    } else {
+      body = `<div class="ov-item ov-muted">暂无重要新闻或财报更新</div>`;
+    }
+    html += ovCard('us-internet', '🏢', '重点公司', lastUpdated, body, 'companies');
   }
 
   // ── 2. GitHub Trend ──
