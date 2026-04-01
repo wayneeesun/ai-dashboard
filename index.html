@@ -3094,6 +3094,7 @@ function renderPaperCard(p) {
       <h3 class="paper-title">
         <a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>
         <span class="paper-arxiv-id">arXiv:${p.id}</span>
+        ${p.hf_url ? `<a href="${p.hf_url}" target="_blank" rel="noopener" title="HuggingFace Daily Papers" style="margin-left:6px;font-size:11px;color:#FF6B35;text-decoration:none;font-weight:600">🤗 HF</a>` : ''}
       </h3>
       <div class="paper-breakthrough">${p.breakthrough}</div>
       <div class="paper-tags">${tagsHtml}</div>
