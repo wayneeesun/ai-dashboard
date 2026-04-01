@@ -90,5 +90,28 @@
         "summary": "与 OpenAI 工程师翁家翌的深度对话。从小时候的成长谈到清华、CMU 求学之路，再到加入 OpenAI 做强化学习和后训练 Infra 的工作细节。涵盖开源项目天授、tuixue 的开发背景，以及对 AI 行业和人生选择的思考。播放量 161K，硬核且有深度。"
       }
     }
+    ,
+    {
+      "id": "relentless",
+      "name": "Relentless",
+      "handle": "@ti_morse",
+      "url": "https://www.youtube.com/@ti_morse",
+      "avatar_url": "https://ui-avatars.com/api/?name=RL&background=991B1B&color=fff&size=128&rounded=true&bold=true",
+      "category_color": "#991B1B",
+      "description": "深度长访谈节目，专访 AI/科技行业内部人士。以 xAI 前工程师 Sulaiman Ghori 那期爆款闻名——内容直接、无公关滤镜，适合想了解公司真实内情的人。",
+      "focus": [
+        "AI 内部视角",
+        "深度访谈",
+        "科技内幕"
+      ],
+      "platform": "YouTube",
+      "search_query": "Relentless podcast ti_morse latest episode",
+      "latest_episode": {
+        "title": "WTF is happening at xAI | Sulaiman Ghori",
+        "url": "https://www.youtube.com/watch?v=8jN60eJr4Ps",
+        "date": "2026-01-15",
+        "summary": "xAI 内部工程师 Sulaiman Ghori 在节目上大量披露公司内情——Grok 开发现状、内部文化、与 OpenAI 的对比。本集发出后 Ghori 随即被解雇，178K 播放。"
+      }
+    }
   ]
 }
