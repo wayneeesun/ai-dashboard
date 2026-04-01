@@ -2562,8 +2562,10 @@ async function loadGithubTrending() {
 
 async function renderGithubTrending() {
   const grid = document.getElementById('card-grid');
-  grid.style.display = '';
+  grid.style.display = 'grid';
   grid.style.flexDirection = '';
+  grid.style.gap = '';
+  grid.classList.remove('yt-grid');
   grid.innerHTML = '<div class="loading">加载中…</div>';
 
   const data = await loadGithubTrending();
