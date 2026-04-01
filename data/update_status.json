@@ -1,37 +1,37 @@
 {
   "sectors": {
     "us-internet": {
-      "last_updated": "2026-03-31",
+      "last_updated": "2026-04-01",
       "status": "ok",
       "note": "市值已更新"
     },
     "cn-internet": {
-      "last_updated": "2026-03-31",
+      "last_updated": "2026-04-01",
       "status": "ok",
       "note": "市值已更新"
     },
     "semiconductor": {
-      "last_updated": "2026-03-31",
+      "last_updated": "2026-04-01",
       "status": "ok",
       "note": "市值已更新"
     },
     "software": {
-      "last_updated": "2026-03-31",
+      "last_updated": "2026-04-01",
       "status": "ok",
       "note": "市值已更新"
     },
     "ai-native": {
-      "last_updated": "2026-03-31",
+      "last_updated": "2026-04-01",
       "status": "ok",
       "note": "市值已更新"
     },
     "github-trend": {
-      "last_updated": "2026-03-31",
+      "last_updated": "2026-04-01",
       "status": "ok",
       "note": ""
     },
     "voices": {
-      "last_updated": "2026-03-31",
+      "last_updated": "2026-04-01",
       "status": "ok",
       "note": ""
     },
