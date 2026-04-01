@@ -1835,6 +1835,118 @@
       font-size: 13px;
     }
 
+    /* ══════════════════════════════════════
+       OVERVIEW
+       ══════════════════════════════════════ */
+    .ov-date-banner {
+      grid-column: 1 / -1;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 6px 4px 14px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+    .ov-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px 14px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .ov-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      opacity: 0.7;
+    }
+    .ov-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+      transform: translateY(-1px);
+    }
+    .ov-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ov-icon { font-size: 18px; flex-shrink: 0; }
+    .ov-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      flex: 1;
+    }
+    .ov-freshness {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .ov-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .ov-dot-green  { background: #22C55E; }
+    .ov-dot-yellow { background: #F59E0B; }
+    .ov-dot-red    { background: #EF4444; }
+    .ov-dot-grey   { background: #94A3B8; }
+    .ov-date {
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .ov-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .ov-headline {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .ov-item {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .ov-item b { color: var(--text); font-weight: 600; }
+    .ov-item.ov-muted { color: var(--text-dim); font-style: italic; }
+    .ov-muted { color: var(--text-dim); }
+    .ov-tag {
+      display: inline-block;
+      background: var(--bg-3);
+      border-radius: 10px;
+      padding: 2px 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-right: 4px;
+    }
+    .ov-card-footer {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 500;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+    }
+
     /* ═══════════════════════════════════════
        MOBILE RESPONSIVE  ≤768px
        ═══════════════════════════════════════ */
@@ -2134,9 +2246,13 @@ async function init() {
     }
   });
   renderSidebar();
-  // Auto-select first leaf sector
-  const firstLeaf = state.sectors.find(s => s.type === 'companies' && s.companies && s.companies.length > 0);
-  if (firstLeaf) selectSector(firstLeaf.id);
+  // Auto-select Overview on load
+  const overviewSector = state.sectors.find(s => s.topic === 'overview');
+  if (overviewSector) selectSector(overviewSector.id);
+  else {
+    const firstLeaf = state.sectors.find(s => s.type === 'companies' && s.companies && s.companies.length > 0);
+    if (firstLeaf) selectSector(firstLeaf.id);
+  }
 }
 
 // ── Freshness helper ──
@@ -2222,6 +2338,12 @@ async function selectSector(id) {
   const updateColor = freshClass === 'fresh' ? 'style="color:#22C55E"' : '';
 
   const grid = document.getElementById('card-grid');
+
+  if (sector.topic === 'overview') {
+    document.getElementById('sector-subtitle').innerHTML = `今日 Dashboard 快照 · ${new Date().toLocaleDateString('zh-CN')}`;
+    await renderOverview();
+    return;
+  }
 
   if (sector.topic === 'github-trend') {
     document.getElementById('sector-subtitle').innerHTML = `${updateText ? `<span ${updateColor}>${updateText}</span> · ` : ''}GitHub Trending`;
@@ -3495,6 +3617,150 @@ async function renderLabFeed() {
 
   html += `</div></div>`;
   grid.innerHTML = html;
+}
+
+// ══════════════════════════════════════════
+//  OVERVIEW
+// ══════════════════════════════════════════
+async function renderOverview() {
+  const grid = document.getElementById('card-grid');
+  grid.style.display = 'grid';
+  grid.style.flexDirection = '';
+  grid.style.gap = '';
+  grid.classList.remove('yt-grid');
+  // overview 用两列（桌面），移动端单列
+  grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(320px, 1fr))';
+  grid.innerHTML = '<div class="loading">加载中…</div>';
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  // 并发加载所有数据
+  const [ghData, ytData, podData, xData, paperData, labData, statusData] = await Promise.all([
+    fetchJSON('data/github-trending.json').catch(() => null),
+    fetchJSON('data/youtubers.json').catch(() => null),
+    fetchJSON('data/podcasts.json').catch(() => null),
+    fetchJSON('data/voices_x.json').catch(() => null),
+    fetchJSON('data/papers.json').catch(() => null),
+    fetchJSON('data/lab-feed.json').catch(() => null),
+    fetchJSON('data/update_status.json').catch(() => null),
+  ]);
+
+  const sectorStatus = statusData?.sectors || {};
+
+  // 工具函数：新鲜度点
+  function freshnessHtml(dateStr) {
+    if (!dateStr) return '<span class="ov-dot ov-dot-grey"></span>';
+    const diff = Math.floor((new Date(today) - new Date(dateStr)) / 86400000);
+    const cls = diff === 0 ? 'green' : diff <= 2 ? 'yellow' : 'red';
+    const label = diff === 0 ? '今日' : diff === 1 ? '昨日' : `${diff}天前`;
+    return `<span class="ov-dot ov-dot-${cls}"></span><span class="ov-date">${dateStr} · ${label}</span>`;
+  }
+
+  // 工具函数：卡片容器
+  function ovCard(id, icon, title, dateStr, bodyHtml, topic) {
+    return `
+    <div class="ov-card" onclick="selectSectorById('${id}')">
+      <div class="ov-card-header">
+        <span class="ov-icon">${icon}</span>
+        <span class="ov-title">${title}</span>
+        <span class="ov-freshness">${freshnessHtml(dateStr)}</span>
+      </div>
+      <div class="ov-card-body">${bodyHtml}</div>
+      <div class="ov-card-footer">查看详情 →</div>
+    </div>`;
+  }
+
+  let html = `<div class="ov-date-banner">📅 ${today} · Dashboard 今日快照</div>`;
+
+  // ── 1. 重点公司 ──
+  const companyGroups = [
+    { id: 'us-internet',  icon: '🌐', name: '美国互联网' },
+    { id: 'cn-internet',  icon: '🇨🇳', name: '中国互联网' },
+    { id: 'us-semi',      icon: '🔬', name: '半导体' },
+    { id: 'us-software',  icon: '💾', name: '软件' },
+    { id: 'ai-native',    icon: '🤖', name: 'AI-Native' },
+  ];
+  for (const g of companyGroups) {
+    const st = sectorStatus[g.id] || {};
+    const note = st.note || '市值数据';
+    const body = `<div class="ov-item">${note || '市值已更新'}</div>`;
+    html += ovCard(g.id, g.icon, g.name, st.last_updated, body, 'companies');
+  }
+
+  // ── 2. GitHub Trend ──
+  if (ghData) {
+    const s = ghData.summary || {};
+    const top1 = (ghData.projects || [])[0];
+    const body = `
+      <div class="ov-headline">${s.headline || ''}</div>
+      ${top1 ? `<div class="ov-item">🥇 <b>${top1.name}</b> ★${Number(top1.stars).toLocaleString()}</div>` : ''}
+      ${(s.key_trends || []).slice(0,3).map(t => `<span class="ov-tag">${t}</span>`).join('')}`;
+    html += ovCard('github-trend', '📈', 'GitHub Trend', ghData.updated_at, body, 'github-trend');
+  }
+
+  // ── 3. Voices（YouTube + 播客 + X）──
+  if (ytData || podData || xData) {
+    const items = [];
+    // 有最新视频的 YT 频道
+    const channels = ytData?.channels || [];
+    for (const ch of channels) {
+      const vids = ch.latest_videos || [];
+      const chans = ch.channels || [];
+      const latest = vids[0] || (chans[0]?.latest_videos || [])[0];
+      if (latest?.date >= '2026-03-28') {
+        items.push(`▶ ${ch.name}：${latest.title?.slice(0,30)}…`);
+      }
+    }
+    // 播客最新集
+    const shows = podData?.shows || [];
+    for (const s of shows.slice(0,2)) {
+      const ep = (s.latest_episodes || [])[0];
+      if (ep?.date >= '2026-03-28') items.push(`🎙 ${s.name}：${ep.title?.slice(0,28)}…`);
+    }
+    // X 有更新的账号
+    const accounts = xData?.accounts || [];
+    const activeX = accounts.filter(a => {
+      const lp = a.latest_posts;
+      return typeof lp === 'object' && !Array.isArray(lp) && lp.has_update;
+    });
+    if (activeX.length) items.push(`𝕏 ${activeX.length} 位博主近期有新动态`);
+
+    const updatedAt = ytData?.updated_at || xData?.updated_at;
+    const body = items.length
+      ? items.slice(0,4).map(i => `<div class="ov-item">${i}</div>`).join('')
+      : '<div class="ov-item ov-muted">暂无最新内容</div>';
+    html += ovCard('voices', '🎙️', 'Voices', updatedAt, body, 'voices');
+  }
+
+  // ── 4. 论文导读 ──
+  if (paperData) {
+    const hot = (paperData.papers || []).filter(p => p.significance === 'hot').slice(0, 3);
+    const body = hot.length
+      ? hot.map(p => `<div class="ov-item">🔥 ${p.title.slice(0,38)}… <span class="ov-tag">${p.direction}</span></div>`).join('')
+      : '<div class="ov-item ov-muted">暂无数据</div>';
+    html += ovCard('paper-reading', '📄', '论文导读', paperData.updated_at, body, 'paper-reading');
+  }
+
+  // ── 5. Lab Feed ──
+  if (labData) {
+    const body = (labData.labs || []).map(lab => {
+      const latest = lab.posts?.[0];
+      return latest
+        ? `<div class="ov-item"><b>${lab.name}</b>：${latest.title.slice(0,32)}… <span class="ov-muted">${latest.date}</span></div>`
+        : '';
+    }).join('');
+    html += ovCard('lab-feed', '🔬', 'Lab Feed', labData.updated_at, body || '<div class="ov-item ov-muted">暂无数据</div>', 'lab-feed');
+  }
+
+  html += `</div>`; // close wrapper — actually no wrapper, grid IS the container
+  // remove trailing </div>
+  grid.innerHTML = html;
+}
+
+// 通过 sector id 导航
+function selectSectorById(id) {
+  const sector = state.sectors.find(s => s.id === id);
+  if (sector) selectSector(sector.id);
 }
 
 async function renderVoices() {
