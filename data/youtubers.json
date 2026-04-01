@@ -19,10 +19,10 @@
       "subscribers": "4.6M",
       "latest_videos": [
         {
-          "title": "#491 — (latest episode)",
-          "url": "https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4",
-          "date": "2026-02-01",
-          "summary": ""
+          "title": "#491 – OpenClaw: The Viral AI Agent – Peter Steinberger",
+          "url": "https://www.youtube.com/watch?v=YFjfBk8HI5o",
+          "date": "2026-02-11",
+          "summary": "Lex 与 OpenClaw 创始人 Peter Steinberger 深度对话。GitHub 史上最快突破 50K stars 的项目背后设计哲学，以及 Agent 生态对软件行业的颠覆性影响。"
         }
       ]
     },
@@ -44,9 +44,9 @@
       "latest_videos": [
         {
           "title": "AI News: Anthropic Went Crazy This Week!",
-          "url": "https://www.youtube.com/@mreflow",
+          "url": "https://www.youtube.com/watch?v=OYyS0Gu5xj8",
           "date": "2026-03-28",
-          "summary": ""
+          "summary": "Matt Wolfe 本周 AI 新闻速报。重点覆盖 Anthropic 连续发布多个重磅更新，包括新模型能力、工具调用改进、Claude Code 生态快速扩张。"
         }
       ]
     },
@@ -70,7 +70,7 @@
           "title": "The unhinged world of tech in 2026...",
           "url": "https://www.youtube.com/watch?v=EKOU3JWDNLI",
           "date": "2026-01-14",
-          "summary": ""
+          "summary": "Fireship 年度科技盘点：从家用机器人到量子计算，10 个定义 2026 年的疯狂技术趋势。高密度、快节奏、辛辣点评。"
         }
       ]
     },
@@ -94,7 +94,7 @@
           "title": "Something big is happening...",
           "url": "https://www.youtube.com/watch?v=31A41ckhb7Q",
           "date": "2026-02-12",
-          "summary": ""
+          "summary": "Matthew Berman 讨论 AI 行业结构性转变：自动驾驶、机器人、AI 对社会深层影响，对话 Rivian CEO RJ Scaringe。"
         }
       ]
     },
@@ -152,7 +152,7 @@
           "title": "The State of AI - Q2 2026",
           "url": "https://www.youtube.com/watch?v=LZeMZgJszKU",
           "date": "2026-03-31",
-          "summary": ""
+          "summary": "AI Explained 季度报告。核心：AI 第二次浪潮由 Agentic 系统驱动，语言模型从聊天工具变成自主 Agent，企业级应用加速落地。"
         }
       ]
     },
@@ -176,7 +176,7 @@
           "title": "DeepMind's New AI Just Changed Science Forever",
           "url": "https://www.youtube.com/@TwoMinutePapers",
           "date": "2026-03-28",
-          "summary": ""
+          "summary": "Two Minute Papers 解读 DeepMind 最新科学 AI 突破。该模型在多个科学领域展示前所未有的推理能力，可能改变基础科学研究的方式。"
         }
       ]
     },
@@ -197,10 +197,10 @@
       "subscribers": "409K",
       "latest_videos": [
         {
-          "title": "E230｜1万亿收入预期背后：英伟达的巅峰与软肋",
-          "url": "https://www.youtube.com/watch?v=OpwVpEc6noc",
-          "date": "2026-03-26",
-          "summary": ""
+          "title": "机器人开源革命：“免费大脑”背后的四派力量与博弈",
+          "url": "https://www.youtube.com/watch?v=kjqOsLdvSFg",
+          "date": "2026-03-27",
+          "summary": "硬谷101 机器人系列。分析机器人开源生态四大阵营：NVIDIA Isaac、Google DeepMind RT、Meta 具身智能、中国创业公司。探讨“免费大脑”策略如何重塑机器人产业格局。"
         }
       ]
     },
@@ -224,7 +224,7 @@
           "title": "AI isn't going how we thought it would",
           "url": "https://www.youtube.com/@DavidShapiroAI",
           "date": "2026-03-25",
-          "summary": ""
+          "summary": "David Shapiro 反思 AI 发展与早期预期的偏差。Agent 崛起超出预期，但通往 AGI 的路径更曲折。务实分析 AI 对就业市场的真实影响。"
         }
       ]
     }
