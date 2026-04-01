@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-04-01",
-  "note": "X (Twitter) AI 博主列表，手动维护。latest_posts 字段留空，由脚本或手动更新。",
+  "note": "X (Twitter) AI 博主列表。latest_posts 为近3天发帖总结。",
   "accounts": [
     {
       "id": "karpathy",
@@ -17,12 +17,19 @@
         "深度思考"
       ],
       "followers": "960K",
-      "latest_posts": [
-        {
-          "text": "发推讨论 Build. For. Agents 理念——人类花了 40 年用 GUI 把终端藏起来，现在 Claude Code/Codex 却最爱 CLI 这种纯文本接口。Agent-native 设计正在重塑软件架构。",
-          "date": "近期活跃"
-        }
-      ]
+      "latest_posts": {
+        "summary": "近3天活跃发帖。重点讨论 Agentic Engineering 最佳实践：用英语分发任务给 AI Agent 并行工作，强调 Agent-native 软件设计的系统性框架（文档是否 LLM 可读？API 是否可脚本化？），引发全行业讨论。",
+        "post_count": "~5条",
+        "has_update": true,
+        "highlights": [
+          {
+            "type": "长文/观点",
+            "title": "Agentic Engineering 最佳实践",
+            "note": "系统阐述 AI 编程工作流：用英语给 Agent 布置任务，人类做 PM 而非写代码。被 LinkedIn/Medium 大量转发解读。"
+          }
+        ],
+        "date": "2026-03-29"
+      }
     },
     {
       "id": "ylecun",
@@ -39,29 +46,19 @@
         "Meta AI"
       ],
       "followers": "590K",
-      "latest_posts": [
-        {
-          "text": "LeCun 离开 Meta 创立 AMI Labs，发布面向医疗的 World Models。继续批判 LLM-only 路线，坚持世界模型才是通往真正智能的道路。",
-          "date": "近期活跃"
-        }
-      ]
-    },
-    {
-      "id": "garymarcus",
-      "name": "Gary Marcus",
-      "handle": "@GaryMarcus",
-      "url": "https://x.com/GaryMarcus",
-      "avatar_url": "https://ui-avatars.com/api/?name=GM&background=7c3aed&color=fff&size=128&rounded=true&bold=true",
-      "category": "技术深度",
-      "category_color": "#7C3AED",
-      "description": "AI 怀疑论者，专业拆穿炒作。信噪比极高，帮你避开 hype 陷阱。",
-      "focus": [
-        "AI 批评",
-        "可靠性",
-        "炒作识别"
-      ],
-      "followers": "350K",
-      "latest_posts": []
+      "latest_posts": {
+        "summary": "近3天低频发帖。主要转发 AMI Labs 相关进展和 World Models 研究论文。继续批判纯 LLM 路线，坚持世界模型是通往真正智能的必经之路。",
+        "post_count": "~2-3条",
+        "has_update": true,
+        "highlights": [
+          {
+            "type": "观点",
+            "title": "持续推动 World Models 叙事",
+            "note": "离开 Meta 后通过 AMI Labs 落地世界模型研究，带动一批 World Models 论文阅读清单讨论。"
+          }
+        ],
+        "date": "2026-03-30"
+      }
     },
     {
       "id": "sama",
@@ -78,12 +75,24 @@
         "AGI 战略"
       ],
       "followers": "3.2M",
-      "latest_posts": [
-        {
-          "text": "在 TreeHacks 2026 宣称“你们毕业时将进入一个拥有 AGI 的世界”。Enterprise AI 是 2026 年 OpenAI 核心优先级。",
-          "date": "近期活跃"
-        }
-      ]
+      "latest_posts": {
+        "summary": "近3天活跃。宣布 OpenAI 新非营利组织由 Jacob Trefethen 领导，首年计划花 $1B 用于 AI 公益投资。转发 Bloomberg 报道。此前发推感谢手写代码的程序员，引发巨大争议——被批'虚伪'。",
+        "post_count": "~4-5条",
+        "has_update": true,
+        "highlights": [
+          {
+            "type": "产品/战略",
+            "title": "OpenAI 非营利组织正式启动",
+            "note": "价值 $180B 的 OpenAI Foundation，首年花 $1B，由 Jacob Trefethen 和团队领导。"
+          },
+          {
+            "type": "观点/争议",
+            "title": "感谢程序员推文引争议",
+            "note": "'I have so much gratitude to people who wrote extremely complex software character-by-character' — 被大量开发者批评为 tone-deaf。"
+          }
+        ],
+        "date": "2026-03-31"
+      }
     },
     {
       "id": "demishassabis",
@@ -100,12 +109,19 @@
         "Google"
       ],
       "followers": "510K",
-      "latest_posts": [
-        {
-          "text": "DeepMind 发布新科学 AI 模型，在多个基础科学领域展示突破性推理能力。Hassabis 继续推动 AI for Science 战略。",
-          "date": "近期活跃"
-        }
-      ]
+      "latest_posts": {
+        "summary": "近3天有动态。接受 CBS 60 Minutes 采访讨论 AI 消灭疾病的愿景；在 India AI Impact Summit 发言称当前 AI 模型是'frozen'的，缺乏长期规划和持续学习能力。",
+        "post_count": "~2条",
+        "has_update": true,
+        "highlights": [
+          {
+            "type": "观点",
+            "title": "AI 仍缺乏 long-term planning",
+            "note": "India AI Summit 发言：当前模型训练后即'冻结'，无法持续学习，距真正通用智能尚远。"
+          }
+        ],
+        "date": "2026-03-30"
+      }
     },
     {
       "id": "drjimfan",
@@ -122,12 +138,13 @@
         "NVIDIA"
       ],
       "followers": "280K",
-      "latest_posts": [
-        {
-          "text": "预测 2026 将是 Large World Models 在机器人领域奠基的元年。具身智能 + 多模态 AI 从实验室走向真实世界，NVIDIA 全面押注。",
-          "date": "近期活跃"
-        }
-      ]
+      "latest_posts": {
+        "summary": "近3天较安静。此前发布 DreamDojo（基于 NVIDIA Cosmos 的开源 World Model 训练框架），持续推动 Physical AI 叙事。宣称 2026 是 Large World Models 奠基之年。",
+        "post_count": "~1-2条",
+        "has_update": false,
+        "highlights": [],
+        "date": "2026-03-28"
+      }
     },
     {
       "id": "akhaliq",
@@ -144,7 +161,19 @@
         "每日速报"
       ],
       "followers": "210K",
-      "latest_posts": []
+      "latest_posts": {
+        "summary": "日常高频更新。持续发布每日最新 AI 论文摘要和 demo 视频，覆盖 HuggingFace Daily Papers。近期关注本地 AI 运动，认为 2026 是 local AI 最重要的一年。",
+        "post_count": "~15-20条",
+        "has_update": true,
+        "highlights": [
+          {
+            "type": "观点",
+            "title": "2026 是 Local AI 运动关键年",
+            "note": "认为本地运行模型的趋势将在 2026 迎来爆发，开源社区势能持续积累。"
+          }
+        ],
+        "date": "2026-04-01"
+      }
     },
     {
       "id": "bindureddy",
@@ -161,7 +190,19 @@
         "投资视角"
       ],
       "followers": "95K",
-      "latest_posts": []
+      "latest_posts": {
+        "summary": "近3天有动态。期待 Gemini Flash 3.1 发布，认为 Flash 一直是 Google 最好的模型。批评 Google 在 AI 竞争中的战略失误。持续关注开源/去中心化 AI。",
+        "post_count": "~3-4条",
+        "has_update": true,
+        "highlights": [
+          {
+            "type": "观点",
+            "title": "看好 Gemini Flash 3.1",
+            "note": "'Flash has always been Google's best model'——期待即将发布的 Flash 3.1 能比 Pro 更好地泛化。"
+          }
+        ],
+        "date": "2026-03-30"
+      }
     }
   ]
 }
