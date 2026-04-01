@@ -18,9 +18,10 @@
       "platform": "Apple Podcasts / Spotify / YouTube",
       "search_query": "Dwarkesh Patel podcast latest episode",
       "latest_episode": {
-        "title": "Terence Tao – Kepler, Newton, and the true nature of mathematical discovery",
+        "title": "Terence Tao — Kepler, Newton, and the true nature of mathematical discovery",
         "url": "https://www.dwarkesh.com/p/terence-tao",
-        "date": "2026-03"
+        "date": "2026-03-20",
+        "summary": "Dwarkesh 与陶哲轩深度对话。从开普勒如何发现行星运动定律谈起，探讨数学发现的本质、AI 对数学研究的影响、以及人类直觉在形式化证明时代的价值。"
       }
     },
     {
@@ -39,9 +40,10 @@
       "platform": "Apple Podcasts / Spotify",
       "search_query": "No Priors podcast Sarah Guo latest episode",
       "latest_episode": {
-        "title": "Skill Issue: Andrej Karpathy on Code Agents, AutoResearch, and the End of Coding",
+        "title": "Skill Issue: Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era",
         "url": "https://www.youtube.com/watch?v=kwSVtQ7dziU",
-        "date": "2026-03-20"
+        "date": "2026-03-20",
+        "summary": "No Priors 邀请 Karpathy 讨论 Code Agent 的崛起。当 AI Agent 能自主设计实验、收集数据并改进自己时，软件工程和科研会如何被重塑。包含就业市场数据分析和开源 vs 闭源讨论。"
       }
     },
     {
@@ -62,7 +64,8 @@
       "latest_episode": {
         "title": "Alan and Kevin join the Cognitive Revolution",
         "url": "https://podcasts.apple.com/us/podcast/alan-and-kevin-join-the-cognitive-revolution/id1607949880?i=1000747839494",
-        "date": "2026-02-03"
+        "date": "2026-02-03",
+        "summary": "Nathan Labenz 与两位嘉宾讨论 AI 与法律交叉领域。AI Agent 在法律实践中的应用、监管框架演变、以及 AI 能力评估在法律场景中的挑战。"
       }
     }
   ]
