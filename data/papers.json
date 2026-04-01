@@ -3,58 +3,137 @@
   "week_range": "03/30-04/05",
   "papers": [
     {
+      "id": "2603.25551",
+      "title": "MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens",
+      "url": "https://arxiv.org/abs/2603.25551",
+      "github_url": "https://github.com/EverMind-AI/MSA",
+      "direction": "长上下文",
+      "significance": "hot",
+      "breakthrough": "We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio. Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens. ",
+      "tags": [
+        "长上下文"
+      ],
+      "authors": "Alexander H. Liu, Alexis Tacnet, Andy Ehrenberg et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 2401,
+      "score": 7.83,
+      "date": "2026-03-29",
+      "hf_url": "https://huggingface.co/papers/2603.25551"
+    },
+    {
+      "id": "2603.23516",
+      "title": "MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens",
+      "url": "https://arxiv.org/abs/2603.23516",
+      "github_url": "https://github.com/EverMind-AI/MSA",
+      "direction": "长上下文",
+      "significance": "hot",
+      "breakthrough": "Long-term memory is a cornerstone of human intelligence. Enabling AI to process lifetime-scale information remains a long-standing pursuit in the field. Due to the constraints of full-attention architectures, the effective context length of large language models (LLMs) is typically limited to 1M tok",
+      "tags": [
+        "长上下文"
+      ],
+      "authors": "Yu Chen, Runkai Chen, Sheng Yi et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 2401,
+      "score": 7.83,
+      "date": "2026-03-29",
+      "hf_url": "https://huggingface.co/papers/2603.23516"
+    },
+    {
+      "id": "2603.24755",
+      "title": "SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks",
+      "url": "https://arxiv.org/abs/2603.24755",
+      "github_url": "https://github.com/UWisconsin/slopcodebench",
+      "direction": "Agent",
+      "significance": "hot",
+      "breakthrough": "arXiv 2603.24755",
+      "tags": [
+        "Agent"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 5551,
+      "github_stars": 0,
+      "score": 5.17,
+      "date": "2026-03-29",
+      "hf_url": "https://huggingface.co/papers/2603.24755"
+    },
+    {
+      "id": "2603.28589",
+      "title": "Towards a Medical AI Scientist",
+      "url": "https://arxiv.org/abs/2603.28589",
+      "github_url": "",
+      "direction": "前沿方法",
+      "significance": "hot",
+      "breakthrough": "arXiv 2603.28589",
+      "tags": [
+        "前沿方法"
+      ],
+      "authors": "",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 0,
+      "score": 4.72,
+      "date": "2026-03-31",
+      "hf_url": "https://huggingface.co/papers/2603.28589"
+    },
+    {
+      "id": "2603.28767",
+      "title": "Gen-Searcher: Reinforcing Agentic Search for Image Generation",
+      "url": "https://arxiv.org/abs/2603.28767",
+      "github_url": "",
+      "direction": "Agent",
+      "significance": "hot",
+      "breakthrough": "Recent image generation models have shown strong capabilities in generating high-fidelity and photorealistic images. However, they are fundamentally constrained by frozen internal knowledge, thus often failing on real-world scenarios that are knowledge-intensive or require up-to-date information. In",
+      "tags": [
+        "Agent"
+      ],
+      "authors": "Kaituo Feng, Manyuan Zhang, Shuang Chen et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 0,
+      "score": 4.72,
+      "date": "2026-03-31",
+      "hf_url": "https://huggingface.co/papers/2603.28767"
+    },
+    {
+      "id": "2603.27771",
+      "title": "Emergent Social Intelligence Risks in Generative Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2603.27771",
+      "github_url": "",
+      "direction": "Agent",
+      "significance": "hot",
+      "breakthrough": "Multi-agent systems composed of large generative models are rapidly moving from laboratory prototypes to real-world deployments, where they jointly plan, negotiate, and allocate shared resources to solve complex tasks. While such systems promise unprecedented scalability and autonomy, their collecti",
+      "tags": [
+        "Agent"
+      ],
+      "authors": "Yue Huang, Yu Jiang, Wenjie Wang et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 0,
+      "score": 4.72,
+      "date": "2026-03-31",
+      "hf_url": "https://huggingface.co/papers/2603.27771"
+    },
+    {
       "id": "2603.25716",
       "title": "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models",
       "url": "https://arxiv.org/abs/2603.25716",
       "github_url": "",
       "direction": "长上下文",
-      "significance": "breakthrough",
-      "breakthrough": "提出混合记忆机制用于动态视频世界模型，解决长时序场景中视觉状态遗忘问题。结合短期工作记忆与长期压缩记忆，在视频生成和理解任务上超越现有方法。",
+      "significance": "hot",
+      "breakthrough": "Video world models have shown immense potential in simulating the physical world, yet existing memory mechanisms primarily treat environments as static canvases. When dynamic subjects hide out of sight and later re-emerge, current methods often struggle, leading to frozen, distorted, or vanishing su",
       "tags": [
         "长上下文"
       ],
-      "authors": "",
+      "authors": "Kaijin Chen, Dingkang Liang, Xin Zhou et al.",
       "institution": "",
-      "hf_upvotes": 136,
+      "hf_upvotes": 2603,
       "github_stars": 0,
-      "score": 2.95,
-      "date": "2026-03-30"
-    },
-    {
-      "id": "2603.25502",
-      "title": "RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models",
-      "url": "https://arxiv.org/abs/2603.25502",
-      "github_url": "",
-      "direction": "多模态",
-      "significance": "breakthrough",
-      "breakthrough": "通用真实世界图像修复模型，基于大规模图像编辑模型进行泛化修复。在去噪、超分、去模糊等多个修复任务上达到 SOTA，实用性强。",
-      "tags": [
-        "多模态"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 130,
-      "github_stars": 0,
-      "score": 2.93,
-      "date": "2026-03-27"
-    },
-    {
-      "id": "2603.25728",
-      "title": "PixelSmile: Toward Fine-Grained Facial Expression Editing",
-      "url": "https://arxiv.org/abs/2603.25728",
-      "github_url": "",
-      "direction": "图像生成",
-      "significance": "breakthrough",
-      "breakthrough": "细粒度人脸表情编辑模型，可精确控制局部肌肉运动，不破坏身份特征。构建了连续情感标注的 FFE 数据集。",
-      "tags": [
-        "图像生成"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 113,
-      "github_stars": 0,
-      "score": 2.84,
-      "date": "2026-03-27"
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.25716"
     },
     {
       "id": "2603.25746",
@@ -62,107 +141,37 @@
       "url": "https://arxiv.org/abs/2603.25746",
       "github_url": "",
       "direction": "多模态",
-      "significance": "breakthrough",
-      "breakthrough": "流式多镜头视频生成模型，支持交互式叙事场景的实时视频创作，保持多镜头间的角色一致性和叙事连贯性。",
+      "significance": "hot",
+      "breakthrough": "Multi-shot video generation is crucial for long narrative storytelling, yet current bidirectional architectures suffer from limited interactivity and high latency. We propose ShotStream, a novel causal multi-shot architecture that enables interactive storytelling and efficient on-the-fly frame gener",
       "tags": [
         "多模态"
       ],
-      "authors": "",
+      "authors": "Yawen Luo, Xiaoyu Shi, Junhao Zhuang et al.",
       "institution": "",
-      "hf_upvotes": 111,
+      "hf_upvotes": 2603,
       "github_stars": 0,
-      "score": 2.83,
-      "date": "2026-03-30"
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.25746"
     },
     {
-      "id": "2603.25040",
-      "title": "Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale",
-      "url": "https://arxiv.org/abs/2603.25040",
-      "github_url": "",
-      "direction": "多模态",
-      "significance": "breakthrough",
-      "breakthrough": "万亿参数规模的科学多模态基础模型，覆盖理工科文献、实验数据和图表理解。在科学推理和跨模态理解任务上表现突出。",
-      "tags": [
-        "多模态"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 111,
-      "github_stars": 0,
-      "score": 2.83,
-      "date": "2026-03-27"
-    },
-    {
-      "id": "2603.25730",
+      "id": "2603.25502",
       "title": "PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference",
-      "url": "https://arxiv.org/abs/2603.25730",
+      "url": "https://arxiv.org/abs/2603.25502",
       "github_url": "",
       "direction": "长上下文",
-      "significance": "breakthrough",
-      "breakthrough": "短视频训练即可实现长视频采样与长上下文推理。通过 PackForcing 机制，大幅降低长视频生成的训练成本。",
+      "significance": "hot",
+      "breakthrough": "Image restoration under real-world degradations is critical for downstream tasks such as autonomous driving and object detection. However, existing restoration models are often limited by the scale and distribution of their training data, resulting in poor generalization to real-world scenarios. Rec",
       "tags": [
         "长上下文"
       ],
-      "authors": "",
+      "authors": "Yufeng Yang, Xianfang Zeng, Zhangqi Jiang et al.",
       "institution": "",
-      "hf_upvotes": 101,
+      "hf_upvotes": 2603,
       "github_stars": 0,
-      "score": 2.77,
-      "date": "2026-03-30"
-    },
-    {
-      "id": "2603.24800",
-      "title": "Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration",
-      "url": "https://arxiv.org/abs/2603.24800",
-      "github_url": "",
-      "direction": "图像生成",
-      "significance": "notable",
-      "breakthrough": "参数高效校准 Diffusion Transformer，用少量参数即可显著提升图像生成质量。",
-      "tags": [
-        "图像生成"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 55,
-      "github_stars": 0,
-      "score": 2.42,
-      "date": "2026-03-27"
-    },
-    {
-      "id": "2603.25319",
-      "title": "MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data",
-      "url": "https://arxiv.org/abs/2603.25319",
-      "github_url": "",
-      "direction": "长上下文",
-      "significance": "notable",
-      "breakthrough": "多参考图像生成方法，通过结构化长上下文数据解决多图参考一致性问题。",
-      "tags": [
-        "长上下文"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 45,
-      "github_stars": 0,
-      "score": 2.3,
-      "date": "2026-03-27"
-    },
-    {
-      "id": "2603.25551",
-      "title": "Voxtral TTS",
-      "url": "https://arxiv.org/abs/2603.25551",
-      "github_url": "",
-      "direction": "语音生成",
-      "significance": "notable",
-      "breakthrough": "Mistral AI 发布的高质量 TTS 模型，支持多语言、低延迟、可商用。",
-      "tags": [
-        "语音生成"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 42,
-      "github_stars": 0,
-      "score": 2.26,
-      "date": "2026-03-27"
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.25502"
     },
     {
       "id": "2603.25158",
@@ -170,89 +179,18 @@
       "url": "https://arxiv.org/abs/2603.25158",
       "github_url": "",
       "direction": "Agent",
-      "significance": "notable",
-      "breakthrough": "从 Agent 执行轨迹中蒸馏可迁移技能，提升 Agent 在新任务上的泛化能力。",
+      "significance": "hot",
+      "breakthrough": "Equipping Large Language Model (LLM) agents with domain-specific skills is critical for tackling complex tasks. Yet, manual authoring creates a severe scalability bottleneck. Conversely, automated skill generation often yields fragile or fragmented results because it either relies on shallow paramet",
       "tags": [
         "Agent"
       ],
-      "authors": "",
+      "authors": "Jingwei Ni, Yihao Liu, Xinpeng Liu et al.",
       "institution": "",
-      "hf_upvotes": 35,
+      "hf_upvotes": 2603,
       "github_stars": 0,
-      "score": 2.15,
-      "date": "2026-03-30"
-    },
-    {
-      "id": "2603.23516",
-      "title": "MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens",
-      "url": "https://arxiv.org/abs/2603.23516",
-      "github_url": "",
-      "direction": "长上下文",
-      "significance": "notable",
-      "breakthrough": "提出 Memory Sparse Attention 机制，首次将端到端记忆模型上下文扩展到 1 亿 tokens。",
-      "tags": [
-        "长上下文"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 35,
-      "github_stars": 0,
-      "score": 2.15,
-      "date": "2026-03-27"
-    },
-    {
-      "id": "2603.22782",
-      "title": "Know3D: Prompting 3D Generation with Knowledge from Vision-Language Models",
-      "url": "https://arxiv.org/abs/2603.22782",
-      "github_url": "",
-      "direction": "多模态",
-      "significance": "emerging",
-      "breakthrough": "用视觉语言模型知识引导 3D 生成，提升 3D 内容创建的语义准确性。",
-      "tags": [
-        "多模态"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 29,
-      "github_stars": 0,
-      "score": 2.04,
-      "date": "2026-03-30"
-    },
-    {
-      "id": "2603.14366",
-      "title": "Representation Alignment for Just Image Transformers is not Easier than You Think",
-      "url": "https://arxiv.org/abs/2603.14366",
-      "github_url": "",
-      "direction": "多模态",
-      "significance": "emerging",
-      "breakthrough": "研究图像 Transformer 的表征对齐，发现并不像想象中那么容易。KAIST AI 出品。",
-      "tags": [
-        "多模态"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 26,
-      "github_stars": 0,
-      "score": 1.98,
-      "date": "2026-03-27"
-    },
-    {
-      "id": "2603.24755",
-      "title": "SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks",
-      "url": "https://arxiv.org/abs/2603.24755",
-      "github_url": "",
-      "direction": "Agent",
-      "significance": "emerging",
-      "breakthrough": "系统评测 Coding Agent 在长周期迭代任务中的退化现象，揭示现有 Agent 在多轮修改后的可靠性问题。",
-      "tags": [
-        "Agent"
-      ],
-      "authors": "",
-      "institution": "",
-      "hf_upvotes": 24,
-      "github_stars": 0,
-      "score": 1.93,
-      "date": "2026-03-27"
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.25158"
     },
     {
       "id": "2603.24649",
@@ -260,17 +198,106 @@
       "url": "https://arxiv.org/abs/2603.24649",
       "github_url": "",
       "direction": "Agent",
-      "significance": "emerging",
-      "breakthrough": "可审计的医学影像 Agent，可处理未精挑的完整医学研究数据。TUM 出品。",
+      "significance": "hot",
+      "breakthrough": "Currently, evaluating vision-language models (VLMs) in medical imaging tasks oversimplifies clinical reality by relying on pre-selected 2D images that demand significant manual labor to curate. This setup misses the core challenge of realworld diagnostics: a true clinical agent must actively navigat",
       "tags": [
         "Agent"
       ],
-      "authors": "",
+      "authors": "Weixiang Shen, Yanzhu Hu, Che Liu et al.",
       "institution": "",
-      "hf_upvotes": 22,
+      "hf_upvotes": 2603,
       "github_stars": 0,
-      "score": 1.88,
-      "date": "2026-03-30"
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.24649"
+    },
+    {
+      "id": "2603.25804",
+      "title": "RealChart2Code: Advancing Chart-to-Code Generation with Real Data and Multi-Task Evaluation",
+      "url": "https://arxiv.org/abs/2603.25804",
+      "github_url": "",
+      "direction": "图像生成",
+      "significance": "hot",
+      "breakthrough": "Vision-Language Models (VLMs) have demonstrated impressive capabilities in code generation across various domains. However, their ability to replicate complex, multi-panel visualizations from real-world data remains largely unassessed. To address this gap, we introduce \\textbf{\\texttt{RealChart2Code",
+      "tags": [
+        "图像生成"
+      ],
+      "authors": "Jiajun Zhang, Yuying Li, Zhixun Li et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 0,
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.25804"
+    },
+    {
+      "id": "2603.25723",
+      "title": "Natural-Language Agent Harnesses",
+      "url": "https://arxiv.org/abs/2603.25723",
+      "github_url": "",
+      "direction": "Agent",
+      "significance": "hot",
+      "breakthrough": "Agent performance increasingly depends on \\emph{harness engineering}, yet harness design is usually buried in controller code and runtime-specific conventions, making it hard to transfer, compare, and study as a scientific object. We ask whether the high-level control logic of an agent harness can i",
+      "tags": [
+        "Agent"
+      ],
+      "authors": "Linyue Pan, Lexiao Zou, Shuo Guo et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 0,
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.25723"
+    },
+    {
+      "id": "2603.25750",
+      "title": "Sommelier: Scalable Open Multi-turn Audio Pre-processing for Full-duplex Speech Language Models",
+      "url": "https://arxiv.org/abs/2603.25750",
+      "github_url": "",
+      "direction": "语音生成",
+      "significance": "hot",
+      "breakthrough": "As the paradigm of AI shifts from text-based LLMs to Speech Language Models (SLMs), there is a growing demand for full-duplex systems capable of real-time, natural human-computer interaction. However, the development of such models is constrained by the scarcity of high-quality, multi-speaker conver",
+      "tags": [
+        "语音生成"
+      ],
+      "authors": "Kyudan Jung, Jihwan Kim, Soyoon Kim et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 0,
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.25750"
+    },
+    {
+      "id": "2603.24477",
+      "title": "Composer 2 Technical Report",
+      "url": "https://arxiv.org/abs/2603.24477",
+      "github_url": "",
+      "direction": "前沿方法",
+      "significance": "hot",
+      "breakthrough": "Composer 2 is a specialized model designed for agentic software engineering. The model demonstrates strong long-term planning and coding intelligence while maintaining the ability to efficiently solve problems for interactive use. The model is trained in two phases: first, continued pretraining to i",
+      "tags": [
+        "前沿方法"
+      ],
+      "authors": "Cursor Research,  :, Aaron Chan et al.",
+      "institution": "",
+      "hf_upvotes": 2603,
+      "github_stars": 0,
+      "score": 4.72,
+      "date": "2026-03-30",
+      "hf_url": "https://huggingface.co/papers/2603.24477"
     }
-  ]
+  ],
+  "direction_summary": {
+    "headline": "本周热点: 长上下文",
+    "emerging_directions": [
+      "长上下文",
+      "Agent",
+      "前沿方法",
+      "多模态",
+      "图像生成"
+    ]
+  },
+  "source": "HuggingFace Daily Papers",
+  "source_url": "https://huggingface.co/papers"
 }
