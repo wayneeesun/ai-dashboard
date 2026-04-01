@@ -3625,13 +3625,11 @@ async function renderOverview() {
   grid.style.flexDirection = '';
   grid.style.gap = '';
   grid.classList.remove('yt-grid');
-  // overview 用两列（桌面），移动端单列
   grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(320px, 1fr))';
   grid.innerHTML = '<div class="loading">加载中…</div>';
 
   const today = new Date().toISOString().slice(0, 10);
 
-  // 并发加载所有数据
   const [ghData, ytData, podData, xData, paperData, labData, statusData] = await Promise.all([
     fetchJSON('data/github-trending.json').catch(() => null),
     fetchJSON('data/youtubers.json').catch(() => null),
@@ -3643,18 +3641,22 @@ async function renderOverview() {
   ]);
 
   const sectorStatus = statusData?.sectors || {};
+  const NO_UPDATE = `<div class="ov-item ov-muted">暂无今日更新</div>`;
 
-  // 工具函数：新鲜度点
+  // 新鲜度标签
   function freshnessHtml(dateStr) {
-    if (!dateStr) return '<span class="ov-dot ov-dot-grey"></span>';
+    if (!dateStr) return '<span class="ov-dot ov-dot-grey"></span><span class="ov-date">未知</span>';
     const diff = Math.floor((new Date(today) - new Date(dateStr)) / 86400000);
     const cls = diff === 0 ? 'green' : diff <= 2 ? 'yellow' : 'red';
-    const label = diff === 0 ? '今日' : diff === 1 ? '昨日' : `${diff}天前`;
-    return `<span class="ov-dot ov-dot-${cls}"></span><span class="ov-date">${dateStr} · ${label}</span>`;
+    const label = diff === 0 ? '今日已更新' : diff === 1 ? '昨日更新' : `${diff}天前更新`;
+    return `<span class="ov-dot ov-dot-${cls}"></span><span class="ov-date">${label}</span>`;
   }
 
-  // 工具函数：卡片容器
-  function ovCard(id, icon, title, dateStr, bodyHtml, topic) {
+  // 是否今日更新
+  function isToday(dateStr) { return dateStr === today; }
+
+  // 卡片模板
+  function ovCard(id, icon, title, dateStr, bodyHtml) {
     return `
     <div class="ov-card" onclick="selectSectorById('${id}')">
       <div class="ov-card-header">
@@ -3667,93 +3669,113 @@ async function renderOverview() {
     </div>`;
   }
 
-  let html = `<div class="ov-date-banner">📅 ${today} · Dashboard 今日快照</div>`;
+  let html = `<div class="ov-date-banner">📅 ${today} · 今日快照</div>`;
 
-  // ── 1. 重点公司（聚合为一张卡片）──
+  // ── 1. 重点公司 ──
   {
     const co = statusData?.companies || {};
     const news = co.news || [];
-    const lastUpdated = co.last_updated || sectorStatus['us-internet']?.last_updated;
-
-    let body = '';
-    if (news.length > 0) {
+    const lastUpdated = co.last_updated;
+    let body;
+    if (isToday(lastUpdated) && news.length > 0) {
       body = news.map(n => {
-        const typeIcon = n.type === 'earnings' ? '📊' : n.type === 'news' ? '📰' : '📌';
-        return `<div class="ov-item"><b>${typeIcon} ${n.company}</b>：${n.headline}</div>`;
+        const icon = n.type === 'earnings' ? '📊' : n.type === 'news' ? '📰' : '📌';
+        return `<div class="ov-item">${icon} <b>${n.company}</b>：${n.headline}</div>`;
       }).join('');
+    } else if (isToday(lastUpdated)) {
+      body = `<div class="ov-item ov-muted">暂无重要新闻或财报</div>`;
     } else {
-      body = `<div class="ov-item ov-muted">暂无重要新闻或财报更新</div>`;
+      body = NO_UPDATE;
     }
-    html += ovCard('us-internet', '🏢', '重点公司', lastUpdated, body, 'companies');
+    html += ovCard('us-internet', '🏢', '重点公司', lastUpdated, body);
   }
 
   // ── 2. GitHub Trend ──
-  if (ghData) {
-    const s = ghData.summary || {};
-    const top1 = (ghData.projects || [])[0];
-    const body = `
-      <div class="ov-headline">${s.headline || ''}</div>
-      ${top1 ? `<div class="ov-item">🥇 <b>${top1.name}</b> ★${Number(top1.stars).toLocaleString()}</div>` : ''}
-      ${(s.key_trends || []).slice(0,3).map(t => `<span class="ov-tag">${t}</span>`).join('')}`;
-    html += ovCard('github-trend', '📈', 'GitHub Trend', ghData.updated_at, body, 'github-trend');
+  {
+    const dateStr = ghData?.updated_at;
+    let body;
+    if (isToday(dateStr) && ghData) {
+      const s = ghData.summary || {};
+      const top1 = (ghData.projects || [])[0];
+      body = `
+        ${s.headline ? `<div class="ov-headline">${s.headline}</div>` : ''}
+        ${top1 ? `<div class="ov-item">🥇 <b>${top1.name}</b> · ★${Number(top1.stars).toLocaleString()}</div>` : ''}
+        <div>${(s.key_trends || []).slice(0,3).map(t => `<span class="ov-tag">${t}</span>`).join('')}</div>`;
+    } else {
+      body = NO_UPDATE;
+    }
+    html += ovCard('github-trend', '📈', 'GitHub Trend', dateStr, body);
   }
 
-  // ── 3. Voices（YouTube + 播客 + X）──
-  if (ytData || podData || xData) {
-    const items = [];
-    // 有最新视频的 YT 频道
-    const channels = ytData?.channels || [];
-    for (const ch of channels) {
-      const vids = ch.latest_videos || [];
-      const chans = ch.channels || [];
-      const latest = vids[0] || (chans[0]?.latest_videos || [])[0];
-      if (latest?.date >= '2026-03-28') {
-        items.push(`▶ ${ch.name}：${latest.title?.slice(0,30)}…`);
+  // ── 3. Voices ──
+  {
+    const dateStr = ytData?.updated_at || xData?.updated_at;
+    let body;
+    if (isToday(dateStr)) {
+      const items = [];
+      // YT：今日有新视频的频道
+      for (const ch of (ytData?.channels || [])) {
+        const vids = ch.latest_videos || [];
+        const latest = vids[0];
+        if (latest?.date === today) items.push(`▶ <b>${ch.name}</b>：${latest.title?.slice(0,32)}`);
       }
-    }
-    // 播客最新集
-    const shows = podData?.shows || [];
-    for (const s of shows.slice(0,2)) {
-      const ep = (s.latest_episodes || [])[0];
-      if (ep?.date >= '2026-03-28') items.push(`🎙 ${s.name}：${ep.title?.slice(0,28)}…`);
-    }
-    // X 有更新的账号
-    const accounts = xData?.accounts || [];
-    const activeX = accounts.filter(a => {
-      const lp = a.latest_posts;
-      return typeof lp === 'object' && !Array.isArray(lp) && lp.has_update;
-    });
-    if (activeX.length) items.push(`𝕏 ${activeX.length} 位博主近期有新动态`);
+      // 播客：今日有新集
+      for (const s of (podData?.shows || [])) {
+        const ep = (s.latest_episodes || [])[0];
+        if (ep?.date === today) items.push(`🎙 <b>${s.name}</b>：${ep.title?.slice(0,32)}`);
+      }
+      // X：今日有更新的账号数
+      const activeX = (xData?.accounts || []).filter(a => {
+        const lp = a.latest_posts;
+        return typeof lp === 'object' && !Array.isArray(lp) && lp.date === today;
+      });
+      if (activeX.length) items.push(`𝕏 今日 ${activeX.length} 位博主有新动态`);
 
-    const updatedAt = ytData?.updated_at || xData?.updated_at;
-    const body = items.length
-      ? items.slice(0,4).map(i => `<div class="ov-item">${i}</div>`).join('')
-      : '<div class="ov-item ov-muted">暂无最新内容</div>';
-    html += ovCard('voices', '🎙️', 'Voices', updatedAt, body, 'voices');
+      body = items.length
+        ? items.map(i => `<div class="ov-item">${i}</div>`).join('')
+        : `<div class="ov-item ov-muted">今日暂无新内容</div>`;
+    } else {
+      body = NO_UPDATE;
+    }
+    html += ovCard('voices', '🎙️', 'Voices', dateStr, body);
   }
 
   // ── 4. 论文导读 ──
-  if (paperData) {
-    const hot = (paperData.papers || []).filter(p => p.significance === 'hot').slice(0, 3);
-    const body = hot.length
-      ? hot.map(p => `<div class="ov-item">🔥 ${p.title.slice(0,38)}… <span class="ov-tag">${p.direction}</span></div>`).join('')
-      : '<div class="ov-item ov-muted">暂无数据</div>';
-    html += ovCard('paper-reading', '📄', '论文导读', paperData.updated_at, body, 'paper-reading');
+  {
+    const dateStr = paperData?.updated_at;
+    let body;
+    if (isToday(dateStr) && paperData) {
+      const hot = (paperData.papers || []).filter(p => p.significance === 'hot').slice(0, 3);
+      body = hot.length
+        ? hot.map(p => `<div class="ov-item">🔥 ${p.title.slice(0,40)} <span class="ov-tag">${p.direction}</span></div>`).join('')
+        : `<div class="ov-item ov-muted">今日暂无热门论文</div>`;
+    } else {
+      body = NO_UPDATE;
+    }
+    html += ovCard('paper-reading', '📄', '论文导读', dateStr, body);
   }
 
   // ── 5. Lab Feed ──
-  if (labData) {
-    const body = (labData.labs || []).map(lab => {
-      const latest = lab.posts?.[0];
-      return latest
-        ? `<div class="ov-item"><b>${lab.name}</b>：${latest.title.slice(0,32)}… <span class="ov-muted">${latest.date}</span></div>`
-        : '';
-    }).join('');
-    html += ovCard('lab-feed', '🔬', 'Lab Feed', labData.updated_at, body || '<div class="ov-item ov-muted">暂无数据</div>', 'lab-feed');
+  {
+    const dateStr = labData?.updated_at;
+    let body;
+    if (isToday(dateStr) && labData) {
+      // 显示今日发布的 post
+      const todayPosts = [];
+      for (const lab of (labData.labs || [])) {
+        for (const post of (lab.posts || [])) {
+          if (post.date === today) todayPosts.push(`<div class="ov-item"><b>${lab.name}</b>：${post.title.slice(0,36)}</div>`);
+        }
+      }
+      body = todayPosts.length
+        ? todayPosts.join('')
+        : `<div class="ov-item ov-muted">今日暂无新发布</div>`;
+    } else {
+      body = NO_UPDATE;
+    }
+    html += ovCard('lab-feed', '🔬', 'Lab Feed', dateStr, body);
   }
 
-  html += `</div>`; // close wrapper — actually no wrapper, grid IS the container
-  // remove trailing </div>
   grid.innerHTML = html;
 }
 
