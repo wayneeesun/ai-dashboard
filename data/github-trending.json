@@ -1,455 +1,725 @@
 {
-  "updated_at": "2026-04-01",
-  "note": "GitHub 近7天新建仓库按 star 数排序（API: search/repositories?q=created:>2026-03-25&sort=stars）",
-  "summary": {
-    "headline": "Claude Code 源码泄露引爆社区，周榜前 15 席几乎全是相关衍生项目",
-    "key_trend": "Claude Code npm 意外上传源码事件（3/31）是本周最大催化剂，几乎所有高 star 项目都源于此。OpenAI 罕见以官方身份发布兼容插件，信号意义强。",
-    "top3_by_weekly_stars": [
-      {
-        "rank": 1,
-        "owner": "instructkr",
-        "name": "claw-code",
-        "stars_this_week": "78252",
-        "total_stars": "78252",
-        "category": "Claude Code 生态",
-        "one_liner": "史上最快破 50K star 的仓库，Claude Code 完整可运行源码，Reddit 泄露事件引爆全球开发者围观。"
-      },
-      {
-        "rank": 2,
-        "owner": "sanbuphy",
-        "name": "claude-code-source-code",
-        "stars_this_week": "7947",
-        "total_stars": "7947",
-        "category": "Claude Code 生态",
-        "one_liner": "Claude Code 泄露源码整理版，即将修订。"
-      },
-      {
-        "rank": 3,
-        "owner": "openai",
-        "name": "codex-plugin-cc",
-        "stars_this_week": "6136",
-        "total_stars": "6136",
-        "category": "Claude Code 生态",
-        "one_liner": "OpenAI 官方插件：在 Claude Code 中调用 Codex 进行代码 Review 或任务委托，两家 cod"
-      }
-    ],
-    "category_breakdown": [
-      {
-        "category": "Claude Code 生态",
-        "count": 14,
-        "pct": "56%"
-      },
-      {
-        "category": "Agent 工具",
-        "count": 3,
-        "pct": "12%"
-      },
-      {
-        "category": "多模态",
-        "count": 1,
-        "pct": "4%"
-      },
-      {
-        "category": "中国科技",
-        "count": 1,
-        "pct": "4%"
-      },
-      {
-        "category": "其他",
-        "count": 6,
-        "pct": "24%"
-      }
-    ],
-    "key_trends": [
-      "Claude Code 源码泄露",
-      "clean-room 重写热潮",
-      "OpenAI × Claude Code 互操作",
-      "Rust 重写浪潮",
-      "企业微信 AI 化"
-    ]
-  },
-  "projects": [
-    {
-      "rank": 1,
-      "name": "instructkr/claw-code",
-      "owner": "instructkr",
-      "repo": "claw-code",
-      "url": "https://github.com/instructkr/claw-code",
-      "description": "史上最快破 50K star 的仓库，Claude Code 完整可运行源码，Reddit 泄露事件引爆全球开发者围观。",
-      "description_en": "The fastest repo in history to surpass 50K stars ⭐, reaching the milestone in just 2 hours after publication. Better Harness Tools, not merely storing the archive of leaked Claude Code but make real things done. Now rewriting in Rust using oh-my-codex.",
-      "language": "Rust",
-      "stars": "78252",
-      "stars_today": "",
-      "forks": "77386",
-      "category": "claude-code"
-    },
-    {
-      "rank": 2,
-      "name": "sanbuphy/claude-code-source-code",
-      "owner": "sanbuphy",
-      "repo": "claude-code-source-code",
-      "url": "https://github.com/sanbuphy/claude-code-source-code",
-      "description": "Claude Code 泄露源码整理版，即将修订。",
-      "description_en": "It will be revised soon.",
-      "language": "TypeScript",
-      "stars": "7947",
-      "stars_today": "",
-      "forks": "15252",
-      "category": "claude-code"
-    },
-    {
-      "rank": 3,
-      "name": "openai/codex-plugin-cc",
-      "owner": "openai",
-      "repo": "codex-plugin-cc",
-      "url": "https://github.com/openai/codex-plugin-cc",
-      "description": "OpenAI 官方插件：在 Claude Code 中调用 Codex 进行代码 Review 或任务委托，两家 coding agent 实现互操作。",
-      "description_en": "Use Codex from Claude Code to review code or delegate tasks.",
-      "language": "JavaScript",
-      "stars": "6136",
-      "stars_today": "",
-      "forks": "302",
-      "category": "claude-code"
-    },
-    {
-      "rank": 4,
-      "name": "ChinaSiro/claude-code-sourcemap",
-      "owner": "ChinaSiro",
-      "repo": "claude-code-sourcemap",
-      "url": "https://github.com/ChinaSiro/claude-code-sourcemap",
-      "description": "Claude Code 源码 sourcemap 解包版本。",
-      "description_en": "",
-      "language": "TypeScript",
-      "stars": "6005",
-      "stars_today": "",
-      "forks": "10692",
-      "category": "claude-code"
-    },
-    {
-      "rank": 5,
-      "name": "Kuberwastaken/claude-code",
-      "owner": "Kuberwastaken",
-      "repo": "claude-code",
-      "url": "https://github.com/Kuberwastaken/claude-code",
-      "description": "用 Rust 重写的 Claude Code + 源码原理拆解文档。",
-      "description_en": "Claude Code in Rust & a Breakdown of How it Works",
-      "language": "Rust",
-      "stars": "4309",
-      "stars_today": "",
-      "forks": "5525",
-      "category": "claude-code"
-    },
-    {
-      "rank": 6,
-      "name": "titanwings/colleague-skill",
-      "owner": "titanwings",
-      "repo": "colleague-skill",
-      "url": "https://github.com/titanwings/colleague-skill",
-      "description": "将离职同事的工作方式固化为 AI Skill，「数字生命 1.0」概念实验。",
-      "description_en": "将冰冷的离别化为温暖的 Skill，欢迎加入数字生命1.0！",
-      "language": "Python",
-      "stars": "3796",
-      "stars_today": "",
-      "forks": "191",
-      "category": "other"
-    },
-    {
-      "rank": 7,
-      "name": "claude-code-best/claude-code",
-      "owner": "claude-code-best",
-      "repo": "claude-code",
-      "url": "https://github.com/claude-code-best/claude-code",
-      "description": "原汁原味可运行版 Claude Code，含 Bun 编译执行版和 TypeScript 类型完整修复，支持企业私有化部署。",
-      "description_en": "原汁原昧 Claude Code 可运行版; Bun 可编译执行版; Typescript 类型全修复; 企业级可靠性; 安全无毒, lock 文件保真, 可直接 bun i; bun run dev 启动",
-      "language": "TypeScript",
-      "stars": "3792",
-      "stars_today": "",
-      "forks": "5044",
-      "category": "claude-code"
-    },
-    {
-      "rank": 8,
-      "name": "magnum6actual/flipoff",
-      "owner": "magnum6actual",
-      "repo": "flipoff",
-      "url": "https://github.com/magnum6actual/flipoff",
-      "description": "免费的翻页式分屏显示模拟器，支持任何电视屏幕，复古机场航班牌风格。",
-      "description_en": "Free split-flap display emulator for any TV. The classic flip-board look, without the $3,500 hardware.",
-      "language": "JavaScript",
-      "stars": "2563",
-      "stars_today": "",
-      "forks": "310",
-      "category": "other"
-    },
-    {
-      "rank": 9,
-      "name": "drona23/claude-token-efficient",
-      "owner": "drona23",
-      "repo": "claude-token-efficient",
-      "url": "https://github.com/drona23/claude-token-efficient",
-      "description": "通用 CLAUDE.md 模板，可将 Claude 输出 token 减少 63%，降低 API 成本。",
-      "description_en": "Universal CLAUDE.md - cut Claude output tokens by 63%. Drop-in. No code changes.",
-      "language": "",
-      "stars": "1707",
-      "stars_today": "",
-      "forks": "91",
-      "category": "claude-code"
-    },
-    {
-      "rank": 10,
-      "name": "garinasset/leak-check",
-      "owner": "garinasset",
-      "repo": "leak-check",
-      "url": "https://github.com/garinasset/leak-check",
-      "description": "个人信息泄漏检测接口，查询自己的数据是否在暗网数据库中出现。",
-      "description_en": "个人信息 “泄漏” 检测接口",
-      "language": "Python",
-      "stars": "1697",
-      "stars_today": "",
-      "forks": "218",
-      "category": "other"
-    },
-    {
-      "rank": 11,
-      "name": "tvytlx/claude-code-deep-dive",
-      "owner": "tvytlx",
-      "repo": "claude-code-deep-dive",
-      "url": "https://github.com/tvytlx/claude-code-deep-dive",
-      "description": "Claude Code 源码深度研究报告，逐模块拆解架构和实现细节。",
-      "description_en": "Claude Code 源码深度研究报告",
-      "language": "TypeScript",
-      "stars": "1657",
-      "stars_today": "",
-      "forks": "754",
-      "category": "claude-code"
-    },
-    {
-      "rank": 12,
-      "name": "qiuzhi2046/Qclaw",
-      "owner": "qiuzhi2046",
-      "repo": "Qclaw",
-      "url": "https://github.com/qiuzhi2046/Qclaw",
-      "description": "OpenClaw 图形界面封装，不需要命令行，小白也能轻松使用。",
-      "description_en": "不用命令行，小白也能轻松玩转 OpenClaw",
-      "language": "TypeScript",
-      "stars": "1577",
-      "stars_today": "",
-      "forks": "185",
-      "category": "claude-code"
-    },
-    {
-      "rank": 13,
-      "name": "chatgptprojects/clear-code",
-      "owner": "chatgptprojects",
-      "repo": "clear-code",
-      "url": "https://github.com/chatgptprojects/clear-code",
-      "description": "AI 代码生成工具，详见开发者 X 主页。",
-      "description_en": "https://x.com/paidev",
-      "language": "",
-      "stars": "1534",
-      "stars_today": "",
-      "forks": "1925",
-      "category": "other"
-    },
-    {
-      "rank": 14,
-      "name": "oboard/claude-code-rev",
-      "owner": "oboard",
-      "repo": "claude-code-rev",
-      "url": "https://github.com/oboard/claude-code-rev",
-      "description": "另一个可运行的 ClaudeCode 源码版本。",
-      "description_en": "Runnable ClaudeCode source code",
-      "language": "TypeScript",
-      "stars": "1451",
-      "stars_today": "",
-      "forks": "2183",
-      "category": "claude-code"
-    },
-    {
-      "rank": 15,
-      "name": "Leonxlnx/claude-code-system-prompts",
-      "owner": "Leonxlnx",
-      "repo": "claude-code-system-prompts",
-      "url": "https://github.com/Leonxlnx/claude-code-system-prompts",
-      "description": "研究 Claude Code 等 AI coding assistant 的 system prompt 和 agentic 工作原理。",
-      "description_en": "Research into how agentic AI coding assistants work — reconstructed prompt patterns, agent coordination, and security classification",
-      "language": "",
-      "stars": "1303",
-      "stars_today": "",
-      "forks": "630",
-      "category": "claude-code"
-    },
-    {
-      "rank": 16,
-      "name": "shipany-ai/open-agent-sdk",
-      "owner": "shipany-ai",
-      "repo": "open-agent-sdk",
-      "url": "https://github.com/shipany-ai/open-agent-sdk",
-      "description": "无 CLI 依赖的开源 Agent SDK，Claude Code / Codex CLI 的轻量替代方案。",
-      "description_en": "Agent-SDK without CLI dependencies, as an alternative to claude-agent-sdk, completely open source",
-      "language": "TypeScript",
-      "stars": "1291",
-      "stars_today": "",
-      "forks": "557",
-      "category": "claude-code"
-    },
-    {
-      "rank": 17,
-      "name": "WecomTeam/wecom-cli",
-      "owner": "WecomTeam",
-      "repo": "wecom-cli",
-      "url": "https://github.com/WecomTeam/wecom-cli",
-      "description": "企业微信开放平台命令行工具，让人类和 AI Agent 都能在终端操作企业微信。",
-      "description_en": "企业微信开放平台命令行工具 — 让人类和 AI Agent 都能在终端中操作企业微信",
-      "language": "Rust",
-      "stars": "1286",
-      "stars_today": "",
-      "forks": "67",
-      "category": "agent-tool"
-    },
-    {
-      "rank": 18,
-      "name": "revfactory/harness",
-      "owner": "revfactory",
-      "repo": "harness",
-      "url": "https://github.com/revfactory/harness",
-      "description": "元 Skill：设计特定领域的 Agent 团队，自动生成角色分工和协作框架。",
-      "description_en": "A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.",
-      "language": "HTML",
-      "stars": "1280",
-      "stars_today": "",
-      "forks": "158",
-      "category": "agent-tool"
-    },
-    {
-      "rank": 19,
-      "name": "yetone/voice-input-src",
-      "owner": "yetone",
-      "repo": "voice-input-src",
-      "url": "https://github.com/yetone/voice-input-src",
-      "description": "语音输入工具源码。",
-      "description_en": "",
-      "language": "",
-      "stars": "1248",
-      "stars_today": "",
-      "forks": "124",
-      "category": "multimodal"
-    },
-    {
-      "rank": 20,
-      "name": "oaker-io/wewrite",
-      "owner": "oaker-io",
-      "repo": "wewrite",
-      "url": "https://github.com/oaker-io/wewrite",
-      "description": "公众号文章全流程 AI Skill：热点抓取 → 选题 → 写作 → SEO 优化，一条龙。",
-      "description_en": "公众号文章全流程 AI Skill for Claude Code — 热点抓取 → 选题 → 写作 → SEO → 视觉AI → 排版 → 微信草稿箱",
-      "language": "Python",
-      "stars": "1008",
-      "stars_today": "",
-      "forks": "175",
-      "category": "china-tech"
-    },
-    {
-      "rank": 21,
-      "name": "jxnxts/mcp-brasil",
-      "owner": "jxnxts",
-      "repo": "mcp-brasil",
-      "url": "https://github.com/jxnxts/mcp-brasil",
-      "description": "MCP Server，对接 41 个巴西公共 API（税务、法律、地理等）。",
-      "description_en": "MCP Server para 41 APIs públicas brasileiras",
-      "language": "Python",
-      "stars": "985",
-      "stars_today": "",
-      "forks": "124",
-      "category": "other"
-    },
-    {
-      "rank": 22,
-      "name": "NanmiCoder/claude-code-haha",
-      "owner": "NanmiCoder",
-      "repo": "claude-code-haha",
-      "url": "https://github.com/NanmiCoder/claude-code-haha",
-      "description": "Claude Code 泄露源码本地可运行整理版，加了中文注释。",
-      "description_en": "Claude Code leaked source - locally runnable version",
-      "language": "TypeScript",
-      "stars": "947",
-      "stars_today": "",
-      "forks": "1368",
-      "category": "claude-code"
-    },
-    {
-      "rank": 23,
-      "name": "walkinglabs/awesome-harness-engineering",
-      "owner": "walkinglabs",
-      "repo": "awesome-harness-engineering",
-      "url": "https://github.com/walkinglabs/awesome-harness-engineering",
-      "description": "Harness 工程精选资源列表，工具和最佳实践汇总。",
-      "description_en": "🛠️ Awesome tools & guides for harness engineering.",
-      "language": "",
-      "stars": "943",
-      "stars_today": "",
-      "forks": "53",
-      "category": "agent-tool"
-    },
-    {
-      "rank": 24,
-      "name": "legalize-dev/legalize-es",
-      "owner": "legalize-dev",
-      "repo": "legalize-es",
-      "url": "https://github.com/legalize-dev/legalize-es",
-      "description": "西班牙全部法律法规的 Git 仓库版，每条法律是一个 Markdown 文件，可 diff 追踪修订历史。",
-      "description_en": "Spanish legislation as a Git repo — every law is a Markdown file, every reform a commit. 8,600+ laws.",
-      "language": "",
-      "stars": "870",
-      "stars_today": "",
-      "forks": "42",
-      "category": "other"
-    },
-    {
-      "rank": 25,
-      "name": "ponponon/claude_code_src",
-      "owner": "ponponon",
-      "repo": "claude_code_src",
-      "url": "https://github.com/ponponon/claude_code_src",
-      "description": "2026-03-31 Claude Code 意外将源码上传至 npm（版本 2.1.88），此为存档。",
-      "description_en": "2026.3.31 claude code 意外把包含源码的文件上传到 npm 仓库，版本号是 2.1.88，其中 cli.js.map 文件有 57MB 的体积，claude code 的源码在该文件的 sourcesContent 字段里面，解压还原后有 70w 行代码",
-      "language": "TypeScript",
-      "stars": "830",
-      "stars_today": "",
-      "forks": "1694",
-      "category": "claude-code"
-    }
-  ],
+  "updated_at": "2026-04-03",
+  "period": "weekly",
+  "filter": "GitHub Trending 周榜，全品类不限领域，按本周新增 star 排序",
+  "source": "https://github.com/trending?since=weekly",
+  "source_label": "GitHub Trending (Weekly)",
   "categories": [
     {
-      "id": "claude-code",
+      "id": "agent-framework",
+      "name": "Agent 框架",
       "icon": "🤖",
-      "name": "Claude Code 生态",
-      "description": "源码泄露事件衍生"
+      "description": "编排、运行、优化 AI Agent 的基础设施"
     },
     {
-      "id": "agent-tool",
-      "icon": "⚙️",
-      "name": "Agent 工具",
-      "description": "编排 / 工作流 / Harness"
+      "id": "data-infra",
+      "name": "数据 & 基础设施",
+      "icon": "🔧",
+      "description": "数据解析、记忆引擎、信息检索"
     },
     {
-      "id": "multimodal",
-      "icon": "🎙️",
-      "name": "多模态",
-      "description": "语音 / 视频 / 视觉"
+      "id": "coding-tools",
+      "name": "编码工具",
+      "icon": "💻",
+      "description": "代码生成、辅助开发、IDE 插件"
     },
     {
-      "id": "china-tech",
-      "icon": "🇨🇳",
-      "name": "中国科技",
-      "description": "企业微信 / 公众号"
+      "id": "finance-trading",
+      "name": "金融 & 交易",
+      "icon": "📊",
+      "description": "量化交易、金融分析、加密资产"
+    },
+    {
+      "id": "content-gen",
+      "name": "内容生成",
+      "icon": "🎨",
+      "description": "图像、视频、音乐生成"
+    },
+    {
+      "id": "creative-tools",
+      "name": "创意工具",
+      "icon": "🎮",
+      "description": "游戏、3D、设计、创作类"
     },
     {
       "id": "other",
-      "icon": "📦",
       "name": "其他",
-      "description": ""
+      "icon": "📦",
+      "description": "其他技术项目"
     }
-  ]
+  ],
+  "projects": [
+    {
+      "name": "everything-claude-code",
+      "owner": "affaan-m",
+      "full_name": "affaan-m/everything-claude-code",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "stars": 133625,
+      "stars_this_week": 133625,
+      "language": "JavaScript",
+      "url": "https://github.com/affaan-m/everything-claude-code",
+      "category": "agent-framework"
+    },
+    {
+      "name": "paperclip",
+      "owner": "paperclipai",
+      "full_name": "paperclipai/paperclip",
+      "description": "Open-source orchestration for zero-human companies",
+      "stars": 45119,
+      "stars_this_week": 45119,
+      "language": "TypeScript",
+      "url": "https://github.com/paperclipai/paperclip",
+      "category": "agent-framework"
+    },
+    {
+      "name": "antigravity-awesome-skills",
+      "owner": "sickn33",
+      "full_name": "sickn33/antigravity-awesome-skills",
+      "description": "Installable GitHub library of 1,340+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill coll",
+      "stars": 30104,
+      "stars_this_week": 30104,
+      "language": "Python",
+      "url": "https://github.com/sickn33/antigravity-awesome-skills",
+      "category": "agent-framework"
+    },
+    {
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "full_name": "HKUDS/CLI-Anything",
+      "description": "CLI-Anything: Making ALL Software Agent-Native -- CLI-Hub: https://clianything.cc/",
+      "stars": 27119,
+      "stars_this_week": 27119,
+      "language": "Python",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "category": "agent-framework"
+    },
+    {
+      "name": "agent-browser",
+      "owner": "vercel-labs",
+      "full_name": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "stars": 26308,
+      "stars_this_week": 26308,
+      "language": "Rust",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "category": "agent-framework"
+    },
+    {
+      "name": "cli",
+      "owner": "googleworkspace",
+      "full_name": "googleworkspace/cli",
+      "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
+      "stars": 23604,
+      "stars_this_week": 23604,
+      "language": "Rust",
+      "url": "https://github.com/googleworkspace/cli",
+      "category": "agent-framework"
+    },
+    {
+      "name": "oh-my-claudecode",
+      "owner": "Yeachan-Heo",
+      "full_name": "Yeachan-Heo/oh-my-claudecode",
+      "description": "Teams-first Multi-agent orchestration for Claude Code",
+      "stars": 22201,
+      "stars_this_week": 22201,
+      "language": "TypeScript",
+      "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+      "category": "agent-framework"
+    },
+    {
+      "name": "OpenViking",
+      "owner": "volcengine",
+      "full_name": "volcengine/OpenViking",
+      "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need throu",
+      "stars": 20614,
+      "stars_this_week": 20614,
+      "language": "Python",
+      "url": "https://github.com/volcengine/OpenViking",
+      "category": "agent-framework"
+    },
+    {
+      "name": "marketingskills",
+      "owner": "coreyhaines31",
+      "full_name": "coreyhaines31/marketingskills",
+      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "stars": 18456,
+      "stars_this_week": 18456,
+      "language": "JavaScript",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "category": "agent-framework"
+    },
+    {
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "full_name": "mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "stars": 17700,
+      "stars_this_week": 17700,
+      "language": "Python",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "category": "agent-framework"
+    },
+    {
+      "name": "openfang",
+      "owner": "RightNow-AI",
+      "full_name": "RightNow-AI/openfang",
+      "description": "Open-source Agent Operating System",
+      "stars": 16145,
+      "stars_this_week": 16145,
+      "language": "Rust",
+      "url": "https://github.com/RightNow-AI/openfang",
+      "category": "agent-framework"
+    },
+    {
+      "name": "pua",
+      "owner": "tanweai",
+      "full_name": "tanweai/pua",
+      "description": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.",
+      "stars": 14706,
+      "stars_this_week": 14706,
+      "language": "TypeScript",
+      "url": "https://github.com/tanweai/pua",
+      "category": "agent-framework"
+    },
+    {
+      "name": "Agent-Reach",
+      "owner": "Panniantong",
+      "full_name": "Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "stars": 14607,
+      "stars_this_week": 14607,
+      "language": "Python",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "category": "agent-framework"
+    },
+    {
+      "name": "edict",
+      "owner": "cft0808",
+      "full_name": "cft0808/edict",
+      "description": "🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
+      "stars": 14051,
+      "stars_this_week": 14051,
+      "language": "Python",
+      "url": "https://github.com/cft0808/edict",
+      "category": "agent-framework"
+    },
+    {
+      "name": "claw-code",
+      "owner": "ultraworkers",
+      "full_name": "ultraworkers/claw-code",
+      "description": "[Notice] The repo temporarily locked while ownership transfer. in the meantime we maintain on here: https://github.com/ultraworkers/claw-code-parity. The fastest repo in history to surpass 100K stars ",
+      "stars": 150419,
+      "stars_this_week": 150419,
+      "language": "Rust",
+      "url": "https://github.com/ultraworkers/claw-code",
+      "category": "coding-tools"
+    },
+    {
+      "name": "gstack",
+      "owner": "garrytan",
+      "full_name": "garrytan/gstack",
+      "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+      "stars": 62146,
+      "stars_this_week": 62146,
+      "language": "TypeScript",
+      "url": "https://github.com/garrytan/gstack",
+      "category": "coding-tools"
+    },
+    {
+      "name": "llmfit",
+      "owner": "AlexsJones",
+      "full_name": "AlexsJones/llmfit",
+      "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+      "stars": 20851,
+      "stars_this_week": 20851,
+      "language": "Rust",
+      "url": "https://github.com/AlexsJones/llmfit",
+      "category": "coding-tools"
+    },
+    {
+      "name": "NemoClaw",
+      "owner": "NVIDIA",
+      "full_name": "NVIDIA/NemoClaw",
+      "description": "Run OpenClaw more securely inside NVIDIA OpenShell with managed inference",
+      "stars": 18229,
+      "stars_this_week": 18229,
+      "language": "JavaScript",
+      "url": "https://github.com/NVIDIA/NemoClaw",
+      "category": "coding-tools"
+    },
+    {
+      "name": "daily_stock_analysis",
+      "owner": "ZhuLinsen",
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM驱动的 A/H/美股智能分析器：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
+      "stars": 27753,
+      "stars_this_week": 27753,
+      "language": "Python",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "category": "finance-trading"
+    },
+    {
+      "name": "json-render",
+      "owner": "vercel-labs",
+      "full_name": "vercel-labs/json-render",
+      "description": "The Generative UI framework",
+      "stars": 13891,
+      "stars_this_week": 13891,
+      "language": "TypeScript",
+      "url": "https://github.com/vercel-labs/json-render",
+      "category": "creative-tools"
+    },
+    {
+      "name": "worldmonitor",
+      "owner": "koala73",
+      "full_name": "koala73/worldmonitor",
+      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "stars": 46073,
+      "stars_this_week": 46073,
+      "language": "TypeScript",
+      "url": "https://github.com/koala73/worldmonitor",
+      "category": "other"
+    },
+    {
+      "name": "awesome-openclaw-skills",
+      "owner": "VoltAgent",
+      "full_name": "VoltAgent/awesome-openclaw-skills",
+      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
+      "stars": 43864,
+      "stars_this_week": 43864,
+      "language": "",
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "category": "other"
+    },
+    {
+      "name": "nanobot",
+      "owner": "HKUDS",
+      "full_name": "HKUDS/nanobot",
+      "description": "\"🐈 nanobot: The Ultra-Lightweight Personal AI Assistant\"",
+      "stars": 37680,
+      "stars_this_week": 37680,
+      "language": "Python",
+      "url": "https://github.com/HKUDS/nanobot",
+      "category": "other"
+    },
+    {
+      "name": "pretext",
+      "owner": "chenglou",
+      "full_name": "chenglou/pretext",
+      "description": "",
+      "stars": 34041,
+      "stars_this_week": 34041,
+      "language": "TypeScript",
+      "url": "https://github.com/chenglou/pretext",
+      "category": "other"
+    },
+    {
+      "name": "zeroclaw",
+      "owner": "zeroclaw-labs",
+      "full_name": "zeroclaw-labs/zeroclaw",
+      "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, ANY OS, ANY PLATFORM — deploy anywhere, swap anything 🦀",
+      "stars": 29265,
+      "stars_this_week": 29265,
+      "language": "Rust",
+      "url": "https://github.com/zeroclaw-labs/zeroclaw",
+      "category": "other"
+    },
+    {
+      "name": "picoclaw",
+      "owner": "sipeed",
+      "full_name": "sipeed/picoclaw",
+      "description": "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity",
+      "stars": 27133,
+      "stars_this_week": 27133,
+      "language": "Go",
+      "url": "https://github.com/sipeed/picoclaw",
+      "category": "other"
+    },
+    {
+      "name": "nanoclaw",
+      "owner": "qwibitai",
+      "full_name": "qwibitai/nanoclaw",
+      "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs direct",
+      "stars": 26311,
+      "stars_this_week": 26311,
+      "language": "TypeScript",
+      "url": "https://github.com/qwibitai/nanoclaw",
+      "category": "other"
+    },
+    {
+      "name": "rtk",
+      "owner": "rtk-ai",
+      "full_name": "rtk-ai/rtk",
+      "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+      "stars": 16792,
+      "stars_this_week": 16792,
+      "language": "Rust",
+      "url": "https://github.com/rtk-ai/rtk",
+      "category": "other"
+    },
+    {
+      "name": "voicebox",
+      "owner": "jamiepine",
+      "full_name": "jamiepine/voicebox",
+      "description": "The open-source voice synthesis studio",
+      "stars": 14406,
+      "stars_this_week": 14406,
+      "language": "TypeScript",
+      "url": "https://github.com/jamiepine/voicebox",
+      "category": "other"
+    },
+    {
+      "name": "CoPaw",
+      "owner": "agentscope-ai",
+      "full_name": "agentscope-ai/CoPaw",
+      "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
+      "stars": 14280,
+      "stars_this_week": 14280,
+      "language": "Python",
+      "url": "https://github.com/agentscope-ai/CoPaw",
+      "category": "other"
+    }
+  ],
+  "by_category": {
+    "agent-framework": [
+      {
+        "name": "everything-claude-code",
+        "owner": "affaan-m",
+        "full_name": "affaan-m/everything-claude-code",
+        "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+        "stars": 133625,
+        "stars_this_week": 133625,
+        "language": "JavaScript",
+        "url": "https://github.com/affaan-m/everything-claude-code",
+        "category": "agent-framework"
+      },
+      {
+        "name": "paperclip",
+        "owner": "paperclipai",
+        "full_name": "paperclipai/paperclip",
+        "description": "Open-source orchestration for zero-human companies",
+        "stars": 45119,
+        "stars_this_week": 45119,
+        "language": "TypeScript",
+        "url": "https://github.com/paperclipai/paperclip",
+        "category": "agent-framework"
+      },
+      {
+        "name": "antigravity-awesome-skills",
+        "owner": "sickn33",
+        "full_name": "sickn33/antigravity-awesome-skills",
+        "description": "Installable GitHub library of 1,340+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill coll",
+        "stars": 30104,
+        "stars_this_week": 30104,
+        "language": "Python",
+        "url": "https://github.com/sickn33/antigravity-awesome-skills",
+        "category": "agent-framework"
+      },
+      {
+        "name": "CLI-Anything",
+        "owner": "HKUDS",
+        "full_name": "HKUDS/CLI-Anything",
+        "description": "CLI-Anything: Making ALL Software Agent-Native -- CLI-Hub: https://clianything.cc/",
+        "stars": 27119,
+        "stars_this_week": 27119,
+        "language": "Python",
+        "url": "https://github.com/HKUDS/CLI-Anything",
+        "category": "agent-framework"
+      },
+      {
+        "name": "agent-browser",
+        "owner": "vercel-labs",
+        "full_name": "vercel-labs/agent-browser",
+        "description": "Browser automation CLI for AI agents",
+        "stars": 26308,
+        "stars_this_week": 26308,
+        "language": "Rust",
+        "url": "https://github.com/vercel-labs/agent-browser",
+        "category": "agent-framework"
+      },
+      {
+        "name": "cli",
+        "owner": "googleworkspace",
+        "full_name": "googleworkspace/cli",
+        "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
+        "stars": 23604,
+        "stars_this_week": 23604,
+        "language": "Rust",
+        "url": "https://github.com/googleworkspace/cli",
+        "category": "agent-framework"
+      },
+      {
+        "name": "oh-my-claudecode",
+        "owner": "Yeachan-Heo",
+        "full_name": "Yeachan-Heo/oh-my-claudecode",
+        "description": "Teams-first Multi-agent orchestration for Claude Code",
+        "stars": 22201,
+        "stars_this_week": 22201,
+        "language": "TypeScript",
+        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+        "category": "agent-framework"
+      },
+      {
+        "name": "OpenViking",
+        "owner": "volcengine",
+        "full_name": "volcengine/OpenViking",
+        "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need throu",
+        "stars": 20614,
+        "stars_this_week": 20614,
+        "language": "Python",
+        "url": "https://github.com/volcengine/OpenViking",
+        "category": "agent-framework"
+      },
+      {
+        "name": "marketingskills",
+        "owner": "coreyhaines31",
+        "full_name": "coreyhaines31/marketingskills",
+        "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+        "stars": 18456,
+        "stars_this_week": 18456,
+        "language": "JavaScript",
+        "url": "https://github.com/coreyhaines31/marketingskills",
+        "category": "agent-framework"
+      },
+      {
+        "name": "last30days-skill",
+        "owner": "mvanhorn",
+        "full_name": "mvanhorn/last30days-skill",
+        "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+        "stars": 17700,
+        "stars_this_week": 17700,
+        "language": "Python",
+        "url": "https://github.com/mvanhorn/last30days-skill",
+        "category": "agent-framework"
+      },
+      {
+        "name": "openfang",
+        "owner": "RightNow-AI",
+        "full_name": "RightNow-AI/openfang",
+        "description": "Open-source Agent Operating System",
+        "stars": 16145,
+        "stars_this_week": 16145,
+        "language": "Rust",
+        "url": "https://github.com/RightNow-AI/openfang",
+        "category": "agent-framework"
+      },
+      {
+        "name": "pua",
+        "owner": "tanweai",
+        "full_name": "tanweai/pua",
+        "description": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.",
+        "stars": 14706,
+        "stars_this_week": 14706,
+        "language": "TypeScript",
+        "url": "https://github.com/tanweai/pua",
+        "category": "agent-framework"
+      },
+      {
+        "name": "Agent-Reach",
+        "owner": "Panniantong",
+        "full_name": "Panniantong/Agent-Reach",
+        "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+        "stars": 14607,
+        "stars_this_week": 14607,
+        "language": "Python",
+        "url": "https://github.com/Panniantong/Agent-Reach",
+        "category": "agent-framework"
+      },
+      {
+        "name": "edict",
+        "owner": "cft0808",
+        "full_name": "cft0808/edict",
+        "description": "🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
+        "stars": 14051,
+        "stars_this_week": 14051,
+        "language": "Python",
+        "url": "https://github.com/cft0808/edict",
+        "category": "agent-framework"
+      }
+    ],
+    "coding-tools": [
+      {
+        "name": "claw-code",
+        "owner": "ultraworkers",
+        "full_name": "ultraworkers/claw-code",
+        "description": "[Notice] The repo temporarily locked while ownership transfer. in the meantime we maintain on here: https://github.com/ultraworkers/claw-code-parity. The fastest repo in history to surpass 100K stars ",
+        "stars": 150419,
+        "stars_this_week": 150419,
+        "language": "Rust",
+        "url": "https://github.com/ultraworkers/claw-code",
+        "category": "coding-tools"
+      },
+      {
+        "name": "gstack",
+        "owner": "garrytan",
+        "full_name": "garrytan/gstack",
+        "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+        "stars": 62146,
+        "stars_this_week": 62146,
+        "language": "TypeScript",
+        "url": "https://github.com/garrytan/gstack",
+        "category": "coding-tools"
+      },
+      {
+        "name": "llmfit",
+        "owner": "AlexsJones",
+        "full_name": "AlexsJones/llmfit",
+        "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+        "stars": 20851,
+        "stars_this_week": 20851,
+        "language": "Rust",
+        "url": "https://github.com/AlexsJones/llmfit",
+        "category": "coding-tools"
+      },
+      {
+        "name": "NemoClaw",
+        "owner": "NVIDIA",
+        "full_name": "NVIDIA/NemoClaw",
+        "description": "Run OpenClaw more securely inside NVIDIA OpenShell with managed inference",
+        "stars": 18229,
+        "stars_this_week": 18229,
+        "language": "JavaScript",
+        "url": "https://github.com/NVIDIA/NemoClaw",
+        "category": "coding-tools"
+      }
+    ],
+    "finance-trading": [
+      {
+        "name": "daily_stock_analysis",
+        "owner": "ZhuLinsen",
+        "full_name": "ZhuLinsen/daily_stock_analysis",
+        "description": "LLM驱动的 A/H/美股智能分析器：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
+        "stars": 27753,
+        "stars_this_week": 27753,
+        "language": "Python",
+        "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+        "category": "finance-trading"
+      }
+    ],
+    "creative-tools": [
+      {
+        "name": "json-render",
+        "owner": "vercel-labs",
+        "full_name": "vercel-labs/json-render",
+        "description": "The Generative UI framework",
+        "stars": 13891,
+        "stars_this_week": 13891,
+        "language": "TypeScript",
+        "url": "https://github.com/vercel-labs/json-render",
+        "category": "creative-tools"
+      }
+    ],
+    "other": [
+      {
+        "name": "worldmonitor",
+        "owner": "koala73",
+        "full_name": "koala73/worldmonitor",
+        "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+        "stars": 46073,
+        "stars_this_week": 46073,
+        "language": "TypeScript",
+        "url": "https://github.com/koala73/worldmonitor",
+        "category": "other"
+      },
+      {
+        "name": "awesome-openclaw-skills",
+        "owner": "VoltAgent",
+        "full_name": "VoltAgent/awesome-openclaw-skills",
+        "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
+        "stars": 43864,
+        "stars_this_week": 43864,
+        "language": "",
+        "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+        "category": "other"
+      },
+      {
+        "name": "nanobot",
+        "owner": "HKUDS",
+        "full_name": "HKUDS/nanobot",
+        "description": "\"🐈 nanobot: The Ultra-Lightweight Personal AI Assistant\"",
+        "stars": 37680,
+        "stars_this_week": 37680,
+        "language": "Python",
+        "url": "https://github.com/HKUDS/nanobot",
+        "category": "other"
+      },
+      {
+        "name": "pretext",
+        "owner": "chenglou",
+        "full_name": "chenglou/pretext",
+        "description": "",
+        "stars": 34041,
+        "stars_this_week": 34041,
+        "language": "TypeScript",
+        "url": "https://github.com/chenglou/pretext",
+        "category": "other"
+      },
+      {
+        "name": "zeroclaw",
+        "owner": "zeroclaw-labs",
+        "full_name": "zeroclaw-labs/zeroclaw",
+        "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, ANY OS, ANY PLATFORM — deploy anywhere, swap anything 🦀",
+        "stars": 29265,
+        "stars_this_week": 29265,
+        "language": "Rust",
+        "url": "https://github.com/zeroclaw-labs/zeroclaw",
+        "category": "other"
+      },
+      {
+        "name": "picoclaw",
+        "owner": "sipeed",
+        "full_name": "sipeed/picoclaw",
+        "description": "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity",
+        "stars": 27133,
+        "stars_this_week": 27133,
+        "language": "Go",
+        "url": "https://github.com/sipeed/picoclaw",
+        "category": "other"
+      },
+      {
+        "name": "nanoclaw",
+        "owner": "qwibitai",
+        "full_name": "qwibitai/nanoclaw",
+        "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs direct",
+        "stars": 26311,
+        "stars_this_week": 26311,
+        "language": "TypeScript",
+        "url": "https://github.com/qwibitai/nanoclaw",
+        "category": "other"
+      },
+      {
+        "name": "rtk",
+        "owner": "rtk-ai",
+        "full_name": "rtk-ai/rtk",
+        "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+        "stars": 16792,
+        "stars_this_week": 16792,
+        "language": "Rust",
+        "url": "https://github.com/rtk-ai/rtk",
+        "category": "other"
+      },
+      {
+        "name": "voicebox",
+        "owner": "jamiepine",
+        "full_name": "jamiepine/voicebox",
+        "description": "The open-source voice synthesis studio",
+        "stars": 14406,
+        "stars_this_week": 14406,
+        "language": "TypeScript",
+        "url": "https://github.com/jamiepine/voicebox",
+        "category": "other"
+      },
+      {
+        "name": "CoPaw",
+        "owner": "agentscope-ai",
+        "full_name": "agentscope-ai/CoPaw",
+        "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
+        "stars": 14280,
+        "stars_this_week": 14280,
+        "language": "Python",
+        "url": "https://github.com/agentscope-ai/CoPaw",
+        "category": "other"
+      }
+    ]
+  }
 }
