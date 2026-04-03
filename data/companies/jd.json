@@ -21,17 +21,17 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$43B",
+      "market_cap": "$41B",
       "ltm_revenue": "—",
       "ltm_revenue_growth": "—",
       "ltm_operating_margin": "—",
       "ltm_capex": "—",
       "capex_growth_yoy": "—",
       "as_of": "—",
-      "market_cap_usd_bn": 42.9,
-      "price": 29.57,
+      "market_cap_usd_bn": 41.3,
+      "price": 28.48,
       "price_currency": "USD",
-      "updated_at": "2026-04-01"
+      "updated_at": "2026-04-03"
     },
     "key_debates": [
       "用户活跃度与 GMV 增速",
