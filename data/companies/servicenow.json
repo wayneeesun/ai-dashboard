@@ -21,17 +21,17 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$107B",
+      "market_cap": "$106B",
       "ltm_revenue": "—",
       "ltm_revenue_growth": "—",
       "ltm_operating_margin": "—",
       "ltm_capex": "—",
       "capex_growth_yoy": "—",
       "as_of": "—",
-      "market_cap_usd_bn": 107.1,
-      "price": 102.0,
+      "market_cap_usd_bn": 105.6,
+      "price": 100.55,
       "price_currency": "USD",
-      "updated_at": "2026-04-05"
+      "updated_at": "2026-04-08"
     },
     "key_debates": [
       "AI Agent 定价模式",
