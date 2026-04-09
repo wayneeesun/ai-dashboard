@@ -35,8 +35,8 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$2.3T",
-      "market_cap_usd_bn": 2278.1,
+      "market_cap": "$2.4T",
+      "market_cap_usd_bn": 2358.0,
       "ltm_revenue": "$638B",
       "ltm_revenue_growth": "11%",
       "ltm_operating_income": "$90B",
@@ -46,9 +46,9 @@
       "aws_run_rate": "$142B",
       "aws_backlog": "$244B",
       "as_of": "Q4 2025",
-      "price": 213.79,
+      "price": 221.28,
       "price_currency": "USD",
-      "updated_at": "2026-04-08"
+      "updated_at": "2026-04-09"
     },
     "key_debates": [
       {
