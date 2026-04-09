@@ -29,8 +29,8 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$3.7T",
-      "market_cap_usd_bn": 3687.2,
+      "market_cap": "$3.8T",
+      "market_cap_usd_bn": 3832.2,
       "ltm_revenue": "$403B",
       "ltm_revenue_growth": "18%",
       "ltm_operating_income": "$143.5B",
@@ -38,9 +38,9 @@
       "ltm_capex": "$91.4B",
       "fy26_capex_guidance": "$175-185B",
       "as_of": "Q4 2025",
-      "price": 305.41,
+      "price": 317.42,
       "price_currency": "USD",
-      "updated_at": "2026-04-08"
+      "updated_at": "2026-04-09"
     },
     "key_debates": [
       {
