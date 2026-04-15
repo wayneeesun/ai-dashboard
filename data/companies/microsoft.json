@@ -26,17 +26,17 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$2.8T",
+      "market_cap": "$2.9T",
       "ltm_revenue": "—",
       "ltm_revenue_growth": "—",
       "ltm_operating_margin": "—",
       "ltm_capex": "—",
       "capex_growth_yoy": "—",
       "as_of": "—",
-      "market_cap_usd_bn": 2755.6,
-      "price": 370.87,
+      "market_cap_usd_bn": 2920.0,
+      "price": 393.006,
       "price_currency": "USD",
-      "updated_at": "2026-04-13"
+      "updated_at": "2026-04-15"
     },
     "key_debates": [
       "Azure AI 增速持续性",
