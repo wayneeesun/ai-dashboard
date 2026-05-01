@@ -16,17 +16,17 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$66B",
+      "market_cap": "$65B",
       "ltm_revenue": "—",
       "ltm_revenue_growth": "—",
       "ltm_operating_margin": "—",
       "ltm_capex": "—",
       "capex_growth_yoy": "—",
       "as_of": "—",
-      "market_cap_usd_bn": 65.8,
-      "price": 207.07,
+      "market_cap_usd_bn": 65.2,
+      "price": 204.97,
       "price_currency": "USD",
-      "updated_at": "2026-04-27"
+      "updated_at": "2026-05-01"
     },
     "key_debates": [
       "Workers AI 货币化时间线",
