@@ -22,16 +22,16 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$152B",
+      "market_cap": "$151B",
       "ltm_revenue": "—",
       "ltm_revenue_growth": "—",
       "ltm_operating_margin": "—",
       "ltm_capex": "—",
       "as_of": "2026-03-28",
-      "market_cap_usd_bn": 151.5,
-      "price": 448.29,
+      "market_cap_usd_bn": 150.8,
+      "price": 446.12,
       "price_currency": "USD",
-      "updated_at": "2026-04-27",
+      "updated_at": "2026-05-01",
       "shares_outstanding": "~338M",
       "fy26_capex_guidance": "轻资产"
     },
