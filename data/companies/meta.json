@@ -23,17 +23,17 @@
       }
     ],
     "key_metrics": {
-      "market_cap": "$1.7T",
+      "market_cap": "$1.5T",
       "ltm_revenue": "$164.5B",
       "ltm_revenue_growth": "22%",
       "ltm_operating_income": "$69.4B",
       "ltm_operating_margin": "42%",
       "ltm_capex": "$67.5B",
       "as_of": "Q4 2025",
-      "market_cap_usd_bn": 1707.8,
-      "price": 675.03,
+      "market_cap_usd_bn": 1546.4,
+      "price": 611.23,
       "price_currency": "USD",
-      "updated_at": "2026-04-27",
+      "updated_at": "2026-05-01",
       "fy26_capex_guidance": "$115-135B",
       "fy26_opex_guidance": "$114-119B"
     },
